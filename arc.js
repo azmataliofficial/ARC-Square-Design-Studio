@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".stat-number");
-    const duration = 1500; // ⏱️ 10 seconds (milliseconds)
+    const duration = 1500;
 
     counters.forEach(counter => {
         const target = +counter.getAttribute("data-target");
@@ -144,14 +144,3 @@ function sendWhatsApp() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -27,33 +27,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="arc.css">
 </head>
-<style>
-        body.dark-mode {
-        --primary-color: #1a1c1e;
-        --secondary-color: #2d3238;
-        --accent-color: #b5c18e;
-        --text-color: #e8e6e3;
-        background-color: #121212;
-    }
-
-    #toggleBtn {
-        background: transparent;
-        border: 2px solid var(--accent-color);
-        border-radius: 50px;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-    }
-</style>
-
 <body>
     <!-- Navigation -->
     <div class="header">
         <div class="nav-bar">
             <div class="logo-section">
                 <div class="logo-img">
-                    <img src="logo.png"
-                        alt="logo">
+                    <img src="logo.png" alt="logo">
                 </div>
                 <div class="brand-name">
                     <span>ARC<span id="span"> Square</span></span>
@@ -66,20 +46,16 @@
             </button>
 
             <div class="nav-links">
-                <a href="#home" class="nav-link">Home</a>
+
+                <button id="toggleBtn">
+                    <i id="icon" class="fas fa-moon"></i>
+                </button>
+
                 <a href="#about" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#gallery" class="nav-link">Gallery</a>
                 <a href="#contact" class="nav-link">Contact</a>
-            </div>
-
-            <div class="nav-btn">
-                <i class="fas fa-phone"></i>
-                <div class="btn-text">
-                    <span class="small-text">Consultation</span>
-                    <span class="phone">+880 1711 111111</span>
-                </div>
             </div>
         </div>
     </div>
@@ -195,35 +171,6 @@
                 <button id="sendWhatsAppMessage">
                     <i class="fas fa-paper-plane"></i>
                 </button>
-            </div>
-        </div>
-    </div>
-    <div class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="about-content">
-                        <h2 class="section-title">About ARC Square Design Studio</h2>
-                        <p class="section-description">
-                            ARC Square Design Studio is a leading architectural design company specializing in creating
-                            bespoke
-                            interior spaces that blend functionality with aesthetics. With a team of experienced
-                            architects
-                            and designers, we strive to exceed client expectations and deliver exceptional results.
-                        </p>
-                        <a href="#contact" class="btn btn-primary">Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                            alt="About ARC Square Design Studio">
-                        <img src="https://cdn.britannica.com/52/100552-050-FE16CE9A/Solomon-R-Guggenheim-Museum-New-York-City.jpg"
-                            alt="">
-                        <img src="https://cdn.britannica.com/69/188469-050-3608B038/Colosseum-Rome.jpg" alt="">
-                        <img src="https://cdn.britannica.com/69/188469-050-3608B038/Colosseum-Rome.jpg" alt="">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
