@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Martel Sans", sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 
@@ -494,6 +494,111 @@ body.dark-mode {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+
+
+
+
+
+
+
+
+/* About Section */
+
+.about-section {
+    background: var(--glass-bg);
+}
+
+.about-container .upper-sec{
+    margin: 50px 0;
+    text-align: center;
+}
+
+.about-container .upper-sec h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.about-container .upper-sec p{
+    font-size: 1.1rem;
+    margin: 0 auto;
+}
+
+.about-container .lower-sec{
+    display: flex;
+    gap: 60px;
+    margin: 0 80px;
+
+}
+
+.about-container .lower-sec .left p,
+.about-container .lower-sec .right p{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.about-container .lower-sec .left,
+.about-container .lower-sec .right{
+    flex: 1;
+}
+
+.about-container .lower-sec .left h2,
+.about-container .lower-sec .right h2{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-container .container-points{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-container .container-points .point{
+    display: flex;
+    gap: 20px ;
+}
+
+.about-container .container-points .point .left{
+    flex: 1;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container .container-points .point .left span{
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+.about-container .container-points .point .right{
+    flex: 11;
+}
+
+.about-container .container-points .point .right h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.about-container .container-points .point .right p{
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+
+
+
+
 
 
 /* Footer creat by bolt.new ai */
