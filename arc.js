@@ -132,29 +132,29 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".stat-number");
-    const duration = 1500;
 
-    counters.forEach(counter => {
-        const target = +counter.getAttribute("data-target");
-        let start = 0;
-        const startTime = performance.now();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.dataset.target;
+                let start = 0;
+                const duration = 1500;
+                const startTime = performance.now();
 
-        const updateCount = (currentTime) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
+                const update = (currentTime) => {
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    counter.innerText = Math.floor(progress * target);
+                    progress < 1 ? requestAnimationFrame(update) : counter.innerText = target + "+";
+                };
 
-            const currentValue = Math.floor(progress * target);
-            counter.innerText = currentValue;
-
-            if (progress < 1) {
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.innerText = target + "+";
+                requestAnimationFrame(update);
+                observer.unobserve(counter);
             }
-        };
+        });
+    }, { threshold: 0.5 });
 
-        requestAnimationFrame(updateCount);
-    });
+    counters.forEach(counter => observer.observe(counter));
 });
 
 
