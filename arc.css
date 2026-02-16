@@ -499,16 +499,16 @@ body.dark-mode {
 /* Footer creat by bolt.new ai */
 .footer {
     background: var(--text-color);
-    color: var(--primary-color);
+    color: var(--white);
     padding: 60px 0 20px;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .footer-col h3,
@@ -523,14 +523,21 @@ body.dark-mode {
 
 .footer-col p {
     line-height: 1.6;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 100;
 }
 
 .footer-col ul {
     list-style: none;
+    padding: 0px;
 }
 
 .footer-col ul li {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 100;
 }
 
 .footer-col ul li a {
@@ -538,10 +545,12 @@ body.dark-mode {
     text-decoration: none;
     transition: color 0.3s ease;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 100;
 }
 
 .footer-col ul li a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .contact-info li {
@@ -568,12 +577,12 @@ body.dark-mode {
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     transform: translateY(-3px);
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--secondary-color);
+    border-top: 1px solid var(--primary-color);
     padding-top: 20px;
     text-align: center;
     position: relative;
@@ -581,14 +590,14 @@ body.dark-mode {
 
 .footer-bottom p {
     font-size: 14px;
+    color: var(--primary-color);
 }
 
 .footer-bottom p a {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     text-decoration: none;
-    font-weight: 700;
+    cursor: pointer;
 }
-
 
 
 /* Responsive Design */
