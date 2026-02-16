@@ -12,7 +12,7 @@
     /* Primary Colors */
     --dark-blue: #2c2c2c;
     --medium-blue: #b89b4a;
-    --slate-gray: #6a6a6a;
+    --slate-gray: #8a8989;
     --off-white: #f5f2e8;
     --pure-white: #FFFFFF;
     --glass-bg: #ffffffdd;
@@ -95,7 +95,7 @@
 .brand-name span:last-child {
     font-size: 12px;
     letter-spacing: 1px;
-    color: var(--text-primary); 
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -174,7 +174,7 @@
     min-height: 600px;
     overflow: hidden;
     background-color: var(--bg-primary);
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 30px 30px;
 }
 
 .slide {
@@ -521,11 +521,96 @@
 
 
 
+
+/* Satisfaction Section */
+.satisfaction-cont {
+    max-width: 100vw;
+    margin: 0 auto;
+    background: var(--text-secondary);
+    border-radius: 30px;
+    padding: 50px 40px;
+}
+
+/* Content Section */
+.satisfaction-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.satisfaction-content h2 {
+    font-size: 36px;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.satisfaction-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+/* Grid Section */
+.satisfaction-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.satisfaction-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--pure-white);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.satisfaction-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--box-shadow);
+}
+
+/* Icons */
+.satisfaction-item i {
+    font-size: 45px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--medium-blue), var(--dark-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.satisfaction-item h3 {
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.satisfaction-item p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
 /* About Section */
 .about-section {
-    background-color: var(--off-white);
+    background-color: var(--pure-white);
     padding-bottom: 60px;
-    border-radius: 50px 50px 0 0;
 }
 
 .about-container .upper-sec {
@@ -737,21 +822,12 @@
 
 
 /* Responsive Design */
-@media (max-width: 1375px) {
-   
-}
+@media (max-width: 1375px) {}
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) {}
 
-}
+@media (max-width: 768px) {}
 
-@media (max-width: 768px) {
-  
-}
+@media (max-width: 480px) {}
 
-@media (max-width: 480px) {
-   
-}
-@media (max-width: 350px) {
-   
-}
+@media (max-width: 350px) {}
