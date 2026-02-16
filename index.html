@@ -30,109 +30,94 @@
 
 <body>
     <!-- Navigation -->
-    <div class="header">
-        <div class="nav-bar">
-            <div class="logo-section">
-                <div class="logo-img">
-                    <img src="logo.png" alt="logo">
+    <div class="main-content">
+        <div class="header">
+            <div class="nav-bar">
+                <div class="logo-section">
+                    <div class="logo-img">
+                        <img src="logo.png" alt="logo">
+                    </div>
+                    <div class="brand-name">
+                        <span>ARC<span id="span"> Square</span></span>
+                        <span>Design Studio</span>
+                    </div>
                 </div>
-                <div class="brand-name">
-                    <span>ARC<span id="span"> Square</span></span>
-                    <span>Design Studio</span>
-                </div>
-            </div>
 
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="nav-links">
-
-                <button id="toggleBtn">
-                    <i id="icon" class="fas fa-moon"></i>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
                 </button>
 
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </div>
+                <div class="nav-links">
 
-    <div class="slideshow-container">
-        <!-- Slide 1 -->
-        <div class="slide slide-1 active">
-            <div class="slide-content">
-                <h1 class="slide-title">Creating Spaces That Inspire</h1>
-                <p class="slide-description">Transforming visionary concepts into breathtaking architectural realities.
-                    We blend innovation with functionality to create spaces that stand the test of time.</p>
-            </div>
-        </div>
+                    <button id="toggleBtn">
+                        <i id="icon" class="fas fa-moon"></i>
+                    </button>
 
-        <!-- Slide 2 -->
-        <div class="slide slide-2">
-            <div class="slide-content">
-                <h1 class="slide-title">Innovative Structural Solutions</h1>
-                <p class="slide-description">Pushing the boundaries of architectural design with cutting-edge technology
-                    and sustainable materials for a better tomorrow.</p>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
             </div>
         </div>
+        <!-- HERO SLIDER section -->
+        <section class="hero" id="hero">
+            <!-- slides will be injected via JS, but we build structure dynamically? easier: predefine in HTML and control -->
+            <div class="slide active"
+                style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="overlay"></div>
+                <div class="slide-content">
+                    <h1>Modern Living Spaces</h1>
+                    <p>Where architecture meets comfort</p>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="overlay"></div>
+                <div class="slide-content">
+                    <h1>Modern Interior Design</h1>
+                    <p>Designed with modern aesthetics in mind</p>
+                </div>
+            </div>
+            <div class="slide"
+                style="background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="overlay"></div>
+                <div class="slide-content">
+                    <h1>Stunning Exterior Design</h1>
+                    <p>Architecture that inspires</p>
+                </div>
+            </div>
 
-        <!-- Slide 3 -->
-        <div class="slide slide-3">
-            <div class="slide-content">
-                <h1 class="slide-title">Eco-Friendly Design Philosophy</h1>
-                <p class="slide-description">Creating harmony between built environments and nature through sustainable
-                    practices and energy-efficient designs.</p>
-            </div>
-        </div>
+            <!-- arrows & dots -->
+            <button class="arrow arrow-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+            <div class="dots" id="dotsContainer"></div>
+        </section>
 
-        <!-- Slide 4 -->
-        <div class="slide slide-4">
-            <div class="slide-content">
-                <h1 class="slide-title">Bespoke Interior Spaces</h1>
-                <p class="slide-description">Crafting personalized interiors that reflect client personalities while
-                    maintaining architectural integrity and functionality.</p>
+        <!-- STATS section with counting animation -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="statExp">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="statClients">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="statProjects">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="statAwards">0</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Slide Indicators -->
-        <div class="slide-indicators">
-            <div class="indicator active" data-slide="0">
-                <div class="indicator-progress"></div>
-            </div>
-            <div class="indicator" data-slide="1">
-                <div class="indicator-progress"></div>
-            </div>
-            <div class="indicator" data-slide="2">
-                <div class="indicator-progress"></div>
-            </div>
-            <div class="indicator" data-slide="3">
-                <div class="indicator-progress"></div>
-            </div>
-        </div>
-
-        <!-- Stats Bar -->
-        <div class="stats-bar">
-            <div class="stat-item">
-                <span class="stat-number" data-target="150">150+</span>
-                <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="12">0+</span>
-                <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="50">50+</span>
-                <span class="stat-label">Happy Clients</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="24">24</span>
-                <span class="stat-label">Awards Won</span>
-            </div>
-        </div>
+        </section>
     </div>
 
 
@@ -300,9 +285,10 @@
                 <div class="footer-col">
                     <h4>Contact Info</h4>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Design Street, Architecture City</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@arcsquare.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Shop no. 2/24 ground floor B.D.A Complex M.G Road
+                            Bulandshahar, Uttar Pradesh 203001</li>
+                        <li><i class="fas fa-phone"></i> +91 96509 27987</li>
+                        <li><i class="fas fa-envelope"></i>arcsquaredesignstudio</li>
                     </ul>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -314,7 +300,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 ARC Square Design Studio || All rights reserved <a href="https://azmataliofficial.vercel.app/" target="_blank">&nbsp; azmataliofficial</a></p>
+                <p>&copy; 2024 ARC Square Design Studio || All rights reserved <a
+                        href="https://azmataliofficial.vercel.app/" target="_blank">&nbsp; azmataliofficial</a></p>
             </div>
         </div>
     </footer>

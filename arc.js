@@ -1,67 +1,134 @@
+(function () {
+    // ----- HERO SLIDER -----
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    const dotsContainer = document.getElementById('dotsContainer');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoInterval;
 
+    // create dots
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            if (i === currentSlide) dot.classList.add('active');
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', function (e) {
+                const idx = parseInt(e.target.getAttribute('data-index'));
+                goToSlide(idx);
+                resetTimer();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
 
+    function goToSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        currentSlide = index;
+        // update dots
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            if (i === currentSlide) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+    }
 
+    function nextSlide() {
+        let next = (currentSlide + 1) % totalSlides;
+        goToSlide(next);
+    }
 
-// Slideshow
-const slides = document.querySelectorAll('.slide');
-const indicators = document.querySelectorAll('.indicator');
-let currentSlide = 0;
-let slideInterval;
-const slideDuration = 4000;
+    function prevSlide() {
+        let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(prev);
+    }
 
-// Initialize Slideshow
-function initSlideshow() {
-    // Set first slide as active
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
+    function startAutoSlide() {
+        autoInterval = setInterval(nextSlide, 5000);
+    }
 
-    // Start the automatic slideshow
-    startSlideshow();
-}
+    function resetTimer() {
+        clearInterval(autoInterval);
+        startAutoSlide();
+    }
 
-// Start Automatic Slideshow
-function startSlideshow() {
-    slideInterval = setInterval(() => {
+    // event listeners
+    nextBtn.addEventListener('click', function () {
         nextSlide();
-    }, slideDuration);
-}
-
-// Go to Next Slide
-function nextSlide() {
-    // Remove active class from current slide
-    slides[currentSlide].classList.remove('active');
-    indicators[currentSlide].classList.remove('active');
-
-    // Move to next slide
-    currentSlide = (currentSlide + 1) % slides.length;
-
-    // Add active class to new slide
-    slides[currentSlide].classList.add('active');
-    indicators[currentSlide].classList.add('active');
-}
-
-// Button Click Events
-document.querySelectorAll('.btn-primary').forEach(button => {
-    button.addEventListener('click', () => {
-        alert('Exploring our architectural portfolio...');
+        resetTimer();
     });
-});
-
-document.querySelectorAll('.btn-secondary').forEach(button => {
-    button.addEventListener('click', () => {
-        alert('Opening consultation form...');
+    prevBtn.addEventListener('click', function () {
+        prevSlide();
+        resetTimer();
     });
-});
 
-// Initialize on Load
-window.addEventListener('load', () => {
-    initSlideshow();
+    // init dots and first slide active
+    createDots();
+    goToSlide(0);   // ensure first active
+    startAutoSlide();
 
-    // Start progress bar animation for first slide
-    const firstProgress = indicators[0].querySelector('.indicator-progress');
-    firstProgress.style.transition = `width ${slideDuration}ms linear`;
-    firstProgress.style.width = '100%';
-});
+    // ----- STATS COUNTER (like React useEffect) -----
+    const targetValues = {
+        experience: 15,
+        clients: 240,
+        projects: 380,
+        awards: 28
+    };
+
+    const statExp = document.getElementById('statExp');
+    const statClients = document.getElementById('statClients');
+    const statProjects = document.getElementById('statProjects');
+    const statAwards = document.getElementById('statAwards');
+
+    function animateStats() {
+        const duration = 2000; // 2 sec
+        const steps = 60;
+        const intervalTime = duration / steps;
+        let step = 0;
+
+        const timer = setInterval(() => {
+            step++;
+            const progress = step / steps; // 0 to 1
+
+            // current values (floor)
+            const exp = Math.floor(targetValues.experience * progress);
+            const clients = Math.floor(targetValues.clients * progress);
+            const projects = Math.floor(targetValues.projects * progress);
+            const awards = Math.floor(targetValues.awards * progress);
+
+            statExp.innerText = exp + '+';
+            statClients.innerText = clients + '+';
+            statProjects.innerText = projects + '+';
+            statAwards.innerText = awards + '+';
+
+            if (step >= steps) {
+                clearInterval(timer);
+                // set final exact values with '+'
+                statExp.innerText = targetValues.experience + '+';
+                statClients.innerText = targetValues.clients + '+';
+                statProjects.innerText = targetValues.projects + '+';
+                statAwards.innerText = targetValues.awards + '+';
+            }
+        }, intervalTime);
+    }
+
+    // start stats counter when page loads (you can also trigger when visible, but simple)
+    window.addEventListener('load', animateStats);
+
+    // (optional: re-run if needed but once is enough)
+    // for beginners: stats start counting on load just like react useEffect with empty deps.
+})();
+
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".stat-number");
