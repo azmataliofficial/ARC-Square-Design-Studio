@@ -29,9 +29,9 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <div class="main-content" id="main-content">
-        <div class="header">
+
+    <header class="main-content" id="main-content">
+        <nav>
             <div class="nav-bar">
                 <div class="logo-section">
                     <div class="logo-img">
@@ -48,7 +48,6 @@
                 </button>
 
                 <div class="nav-links">
-
                     <button id="toggleBtn">
                         <i id="icon" class="fas fa-moon"></i>
                     </button>
@@ -60,10 +59,13 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
             </div>
-        </div>
+        </nav>
+
+
+
         <!-- HERO SLIDER section -->
-        <section class="hero" id="hero">
-            <!-- slides will be injected via JS, but we build structure dynamically? easier: predefine in HTML and control -->
+
+        <section class="hero-sec" id="hero">
             <div class="slide active"
                 style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');">
                 <div class="overlay"></div>
@@ -94,205 +96,231 @@
             <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
             <div class="dots" id="dotsContainer"></div>
         </section>
+    </header>
 
+
+
+
+    <main>
         <!-- STATS section with counting animation -->
-        <section class="stats-section">
+
+        <section class="stats-sec">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" id="statExp" data-target="15">0+</div>
-                        <div class="stat-label">Years Experience</div>
+                <div class="grid">
+                    <div class="item">
+                        <div class="number" id="statExp" data-target="15">0+</div>
+                        <div class="label">Years Experience</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="statClients" data-target="900">0+</div>
-                        <div class="stat-label">Happy Clients</div>
+                    <div class="item">
+                        <div class="number" id="statClients" data-target="900">0+</div>
+                        <div class="label">Happy Clients</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="statProjects" data-target="500">0+</div>
-                        <div class="stat-label">Projects Completed</div>
+                    <div class="item">
+                        <div class="number" id="statProjects" data-target="500">0+</div>
+                        <div class="label">Projects Completed</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="statAwards" data-target="35">0+</div>
-                        <div class="stat-label">Awards Won</div>
+                    <div class="item">
+                        <div class="number" id="statAwards" data-target="35">0+</div>
+                        <div class="label">Awards Won</div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
 
-    <!-- WhatsApp Chat Widget -->
-    <div class="whatsapp-widget">
-        <div class="whatsapp-icon" id="whatsappToggle">
-            <i class="fab fa-whatsapp"></i>
-            <span class="notification-badge">1</span>
-        </div>
 
-        <div class="whatsapp-chat-box" id="whatsappChatBox">
-            <div class="chat-header">
-                <div class="header-content">
-                    <div class="avatar">
-                        <i class="fab fa-whatsapp"></i>
+        <!-- WhatsApp Chat Widget -->
+        <section class="whatsapp-sec">
+            <div class="widget">
+                <div class="icon" id="whatsappToggle">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="notifi-badge">1</span>
+                </div>
+
+                <div class="chat-box" id="whatsappChatBox">
+                    <div class="header">
+                        <div class="content">
+                            <div class="avatar">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info">
+                                <h5>ARC Square Support</h5>
+                                <p>Typically replies within 1 Day</p>
+                            </div>
+                        </div>
+                        <button class="close-btn" id="closeChat">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
-                    <div class="header-info">
-                        <h5>ARC Square Support</h5>
-                        <p>Typically replies within 1 Day</p>
+
+                    <div class="body">
+                        <div class="message received">
+                            <p>Hello! 👋 Welcome to ARC Square Design Studio. How can we assist you with your
+                                architectural
+                                project today?</p>
+                            <span class="mess-time">10:00 AM</span>
+                        </div>
                     </div>
-                </div>
-                <button class="close-chat" id="closeChat">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
 
-            <div class="chat-body">
-                <div class="chat-message received">
-                    <p>Hello! 👋 Welcome to ARC Square Design Studio. How can we assist you with your architectural
-                        project today?</p>
-                    <span class="message-time">10:00 AM</span>
-                </div>
-            </div>
-
-            <div class="chat-input">
-                <input type="text" id="whatsappMessageInput" placeholder="Type your message...">
-                <button id="sendWhatsAppMessage">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <!-- Client Satisfaction -->
-    <div class="satisfaction-cont">
-        <div class="satisfaction-content">
-            <h2>Welcome to ARC Square Design Studio</h2>
-            <p>We are a team of passionate architects and designers dedicated to creating exceptional spaces that
-                inspire and transform. With over 15 years of experience, we bring your vision to life through innovative
-                design and meticulous attention to detail.</p>
-        </div>
-        <div class="satisfaction-grid">
-            <div class="satisfaction-item">
-                <i class="fa-regular fa-circle-check"></i>
-                <h3>Quality Design</h3>
-                <p>Every project is crafted with precision and care, ensuring the highest standards of design
-                    excellence.</p>
-            </div>
-            <div class="satisfaction-item">
-                <i class="fa-regular fa-clock"></i>
-                <h3>Timely Delivery</h3>
-                <p>We value your time and ensure projects are completed within the agreed timeline without compromising
-                    quality.</p>
-            </div>
-            <div class="satisfaction-item">
-                <i class="fa-regular fa-thumbs-up"></i>
-                <h3>Client Satisfaction</h3>
-                <p>Your satisfaction is our priority. We work closely with you to ensure every detail meets your
-                    expectations.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ABOUT section -->
-    <div class="about-section" id="about">
-        <div class="about-container">
-            <div class="upper-sec">
-                <h1>About Us</h1>
-                <p>Crafting exceptional spaces through innovative design and architectural excellence.</p>
-            </div>
-            <div class="lower-sec">
-                <div class="left">
-                    <h2>Our Story</h2>
-                    <p>
-                        Founded in 2009, ARC Square Design Studio has grown from a small boutique firm into one of the
-                        region's most respected architectural and design practices. Our journey began with a simple
-                        vision:
-                        to create spaces that not only look beautiful but also enhance the way people live, work, and
-                        interact.
-                    </p>
-                    <p>
-                        Over the years, we've had the privilege of working on diverse projects ranging from intimate
-                        residential renovations to large-scale commercial developments. Each project is an opportunity
-                        for
-                        us to push creative boundaries while staying true to our core principles of functionality,
-                        sustainability, and timeless design.
-                    </p>
-                    <p>
-                        Today, our team of talented architects, designers, and project managers continues to deliver
-                        exceptional results, combining technical expertise with artistic vision to transform dreams into
-                        reality
-                    </p>
-                </div>
-
-                <div class="right">
-
-                    <h2>Our Philosophy</h2>
-                    <p>
-                        At ARC Square, we believe that great design is more than just aesthetics. It's about creating
-                        spaces
-                        that tell a story, evoke emotions, and serve their purpose beautifully. Our approach is rooted
-                        in
-                        three fundamental principles.
-                    </p>
-
-                    <div class="container-points">
-                        <div class="point">
-                            <div class="left">
-                                <span>1</span>
-                            </div>
-                            <div class="right">
-                                <h3>Collaborative Design</h3>
-                                <p>
-                                    At ARC Square, we believe that great design is more than just aesthetics. It's about
-                                    creating spaces that tell a story, evoke emotions, and serve their purpose
-                                    beautifully.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="point">
-                            <div class="left">
-                                <span>2</span>
-                            </div>
-                            <div class="right">
-                                <h3>Sustainable Practic</h3>
-                                <p>
-                                    We're committed to environmentally responsible design, incorporating sustainable
-                                    materials and energy-efficient solutions in every project
-                                </p>
-                            </div>
-                        </div>
-                        <div class="point">
-                            <div class="left">
-                                <span>3</span>
-                            </div>
-                            <div class="right">
-                                <h3>Timeless Excellence</h3>
-                                <p>
-                                    We create designs that stand the test of time, balancing contemporary trends with
-                                    classic princi ensure lasting beauty and functionality.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="input">
+                        <input type="text" id="whatsappMessageInput" placeholder="Type your message...">
+                        <button id="send-Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+
+
+
+        <!-- Client Satisfaction -->
+
+        <section class="satisfaction-sec">
+            <div class="container">
+                <div class="content">
+                    <h2>Welcome to ARC Square Design Studio</h2>
+                    <p>We are a team of passionate architects and designers dedicated to creating exceptional spaces
+                        that
+                        inspire and transform. With over 15 years of experience, we bring your vision to life through
+                        innovative
+                        design and meticulous attention to detail.</p>
+                </div>
+                <div class="grid">
+                    <div class="item">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <h3>Quality Design</h3>
+                        <p>Every project is crafted with precision and care, ensuring the highest standards of design
+                            excellence.</p>
+                    </div>
+                    <div class="item">
+                        <i class="fa-regular fa-clock"></i>
+                        <h3>Timely Delivery</h3>
+                        <p>We value your time and ensure projects are completed within the agreed timeline without
+                            compromising
+                            quality.</p>
+                    </div>
+                    <div class="item">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        <h3>Client Satisfaction</h3>
+                        <p>Your satisfaction is our priority. We work closely with you to ensure every detail meets your
+                            expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ABOUT section -->
+
+        <section class="about-sec" id="about">
+            <div class="container">
+                <div class="upper-sec">
+                    <h1>About Us</h1>
+                    <p>Crafting exceptional spaces through innovative design and architectural excellence.</p>
+                </div>
+                <div class="lower-sec">
+                    <div class="left">
+                        <h2>Our Story</h2>
+                        <p>
+                            Founded in 2009, ARC Square Design Studio has grown from a small boutique firm into one of
+                            the
+                            region's most respected architectural and design practices. Our journey began with a simple
+                            vision:
+                            to create spaces that not only look beautiful but also enhance the way people live, work,
+                            and
+                            interact.
+                        </p>
+                        <p>
+                            Over the years, we've had the privilege of working on diverse projects ranging from intimate
+                            residential renovations to large-scale commercial developments. Each project is an
+                            opportunity
+                            for
+                            us to push creative boundaries while staying true to our core principles of functionality,
+                            sustainability, and timeless design.
+                        </p>
+                        <p>
+                            Today, our team of talented architects, designers, and project managers continues to deliver
+                            exceptional results, combining technical expertise with artistic vision to transform dreams
+                            into
+                            reality
+                        </p>
+                    </div>
+
+                    <div class="right">
+                        <h2>Our Philosophy</h2>
+                        <p>
+                            At ARC Square, we believe that great design is more than just aesthetics. It's about
+                            creating
+                            spaces
+                            that tell a story, evoke emotions, and serve their purpose beautifully. Our approach is
+                            rooted
+                            in
+                            three fundamental principles.
+                        </p>
+                        <div class="container-points">
+                            <div class="point">
+                                <div class="left">
+                                    <span>1</span>
+                                </div>
+                                <div class="right">
+                                    <h3>Collaborative Design</h3>
+                                    <p>
+                                        At ARC Square, we believe that great design is more than just aesthetics. It's
+                                        about
+                                        creating spaces that tell a story, evoke emotions, and serve their purpose
+                                        beautifully.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <div class="left">
+                                    <span>2</span>
+                                </div>
+                                <div class="right">
+                                    <h3>Sustainable Practic</h3>
+                                    <p>
+                                        We're committed to environmentally responsible design, incorporating sustainable
+                                        materials and energy-efficient solutions in every project
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="point">
+                                <div class="left">
+                                    <span>3</span>
+                                </div>
+                                <div class="right">
+                                    <h3>Timeless Excellence</h3>
+                                    <p>
+                                        We create designs that stand the test of time, balancing contemporary trends
+                                        with
+                                        classic princi ensure lasting beauty and functionality.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
 
 
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
+            <div class="grid">
+                <div class="col">
                     <h3>ARC SQUARE</h3>
                     <p>Creating exceptional architectural designs and interior spaces that inspire and transform the way
                         people live and work.</p>
                 </div>
 
-                <div class="footer-col">
+                <div class="col">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -305,7 +333,7 @@
                     </ul>
                 </div>
 
-                <div class="footer-col">
+                <div class="col">
                     <h4>Services</h4>
                     <ul>
                         <li>Architecture</li>
@@ -316,15 +344,15 @@
                     </ul>
                 </div>
 
-                <div class="footer-col">
+                <div class="col">
                     <h4>Contact Info</h4>
-                    <ul class="contact-info">
+                    <ul class="info">
                         <li><i class="fas fa-map-marker-alt"></i>Shop no. 2/24 ground floor B.D.A Complex M.G Road
                             Bulandshahar, Uttar Pradesh 203001</li>
                         <li><i class="fas fa-phone"></i> +91 96509 27987</li>
                         <li><i class="fas fa-envelope"></i>arcsquaredesignstudio</li>
                     </ul>
-                    <div class="social-links">
+                    <div class="links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
