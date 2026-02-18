@@ -778,34 +778,34 @@ main .about-sec .container .container-points .point .right p {
 
 
 /* Services Section */
-.services-sec {
+main .services-sec {
     margin: 0 auto; 
     padding: 100px 0;
     background-color: var(--off-white);
     border-radius: 30px 30px 0 0;
 }
 
-.services-sec .service-cont {
+main .services-sec .service-cont {
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
 }
 
-.services-sec .service-cont h2 {
+main .services-sec .service-cont h2 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--dark-blue);
 }
 
-.services-sec .service-cont p {
+main .services-sec .service-cont p {
     font-size: 1.1rem;
     margin: 0 0 30px auto;
     color: var(--slate-gray);
 }
 
 /* Services Grid */
-.services-sec .grid-cont {
+main .services-sec .grid-cont {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
@@ -814,7 +814,7 @@ main .about-sec .container .container-points .point .right p {
     width: 100%;
 }
 
-.services-sec .grid-cont .card {
+main .services-sec .grid-cont .card {
     max-width: 400px;
     width: 100%;
     background: white;
@@ -823,7 +823,7 @@ main .about-sec .container .container-points .point .right p {
 }
 
 /* Card Image Container */
-.services-sec .grid-cont .card .image {
+main .services-sec .grid-cont .card .image {
     position: relative;
     width: 100%;
     height: 270px;
@@ -831,7 +831,7 @@ main .about-sec .container .container-points .point .right p {
     background: #f0f0f0;
 }
 
-.services-sec .grid-cont .card .image img {
+main .services-sec .grid-cont .card .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -839,12 +839,12 @@ main .about-sec .container .container-points .point .right p {
     display: block;
 }
 
-.services-sec .grid-cont .card:hover  #card-img {
+main .services-sec .grid-cont .card:hover  #card-img {
     transform: scale(1.08);
 }
 
 /* Overlay Effect */
-.services-sec .grid-cont .card .image .overlay {
+main .services-sec .grid-cont .card .image .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -854,12 +854,12 @@ main .about-sec .container .container-points .point .right p {
     transition: opacity 0.4s ease;
 }
 
-.services-sec .grid-cont .card:hover #card-over {
+main .services-sec .grid-cont .card:hover #card-over {
     opacity: 1;
 }
 
 /* Content Overlay */
-.services-sec .grid-cont .card .image .content {
+main .services-sec .grid-cont .card .image .content {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -872,13 +872,13 @@ main .about-sec .container .container-points .point .right p {
     transition: all 0.4s ease;
 }
 
-.services-sec .grid-cont .card:hover #card-cont {
+main .services-sec .grid-cont .card:hover #card-cont {
     transform: translateY(0);
     opacity: 1;
     z-index: 999;
 }
 
-.services-sec .grid-cont .card .image .content span {
+main .services-sec .grid-cont .card .image .content span {
     display: inline-block;
     font-size: 12px;
     font-weight: 600;
@@ -890,24 +890,24 @@ main .about-sec .container .container-points .point .right p {
     margin-bottom: 8px;
 }
 
-.services-sec .grid-cont .card .image .content h2 {
+main .services-sec .grid-cont .card .image .content h2 {
     font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.services-sec .grid-cont .card .content {
+main .services-sec .grid-cont .card .content {
     padding: 0.6rem 1.75rem;
     background: var(--pure-white);
 }
 
-.services-sec .grid-cont .card .content .description {
+main .services-sec .grid-cont .card .content .description {
     color: var(--slate-gray);
     font-size: 1rem;
 }
 
-.services-sec .grid-cont .card .content .learn-more {
+main .services-sec .grid-cont .card .content .learn-more {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -922,23 +922,19 @@ main .about-sec .container .container-points .point .right p {
     transition: all 0.3s ease;
 }
 
-.services-sec .grid-cont .card .content .learn-more::after {
+main .services-sec .grid-cont .card .content .learn-more::after {
     content: '→';
     font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
 
-.services-sec .grid-cont .card .content .learn-more:hover {
+main .services-sec .grid-cont .card .content .learn-more:hover {
     gap: 0.75rem;
 }
 
-.services-sec .grid-cont .card .content .learn-more:hover::after {
+main .services-sec .grid-cont .card .content .learn-more:hover::after {
     transform: translateX(5px);
 }
-
-
-
-
 
 
 
