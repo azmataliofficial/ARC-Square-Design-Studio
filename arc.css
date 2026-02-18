@@ -9,7 +9,7 @@
 }
 
 :root {
-    /* Primary Colors */
+    /* Primary Colors */ 
     --dark-blue: #2c2c2c;
     --medium-blue: #b89b4a;
     --slate-gray: #8a8989;
@@ -37,7 +37,7 @@
 
 
 /* Header Styles */
-.header {
+header nav {
     position: fixed;
     top: 20px;
     left: 0;
@@ -45,7 +45,7 @@
     z-index: 1000;
 }
 
-.nav-bar {
+header nav .nav-bar {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0px 50px;
@@ -59,55 +59,57 @@
     transition: all 0.3s ease;
 }
 
+
 /* Logo section */
-.logo-section {
+header nav .nav-bar .logo-section {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.logo-img img {
+header nav .nav-bar .logo-section .logo-img img {
     width: 75px;
     height: 75px;
     object-fit: contain;
 }
 
-.brand-name {
+header nav .nav-bar .logo-section .brand-name {
     display: flex;
     flex-direction: column;
     line-height: 1.5;
     text-align: center;
 }
 
-.brand-name span:nth-child(1) {
+header nav .nav-bar .logo-section .brand-name span:nth-child(1) {
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 1px;
     color: var(--medium-blue);
 }
 
-.brand-name #span {
+header nav .nav-bar .logo-section .brand-name #span {
     font-size: 20px;
     font-weight: 300;
     color: var(--dark-blue);
 }
 
-.brand-name span:last-child {
+header nav .nav-bar .logo-section .brand-name span:last-child {
     font-size: 12px;
     letter-spacing: 1px;
     color: var(--text-primary);
     font-weight: 600;
 }
 
+
 /* Nav links */
-.nav-links {
+header nav .nav-bar .nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 28px;
 }
 
-.nav-link {
+header nav .nav-bar .nav-links .nav-link {
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -116,8 +118,9 @@
     transition: var(--transition);
 }
 
+
 /* Hover underline animation */
-.nav-link::after {
+header nav .nav-bar .nav-links .nav-link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -128,17 +131,17 @@
     transition: var(--transition);
 }
 
-.nav-link:hover::after {
+header nav .nav-bar .nav-links .nav-link:hover::after {
     width: 100%;
 }
 
-.nav-link:hover {
+header nav .nav-bar .nav-links .nav-link:hover {
     color: var(--text-primary);
 }
 
-/* toggle button */
 
-#toggleBtn {
+/* toggle button */
+header nav .nav-bar .nav-links #toggleBtn {
     background-color: transparent;
     border: 2px solid var(--text-primary);
     border-radius: 50px;
@@ -151,8 +154,9 @@
     justify-content: center;
 }
 
+
 /* Mobile menu button (hidden by default) */
-.mobile-menu-btn {
+header nav .nav-bar .mobile-menu-btn {
     display: none;
     background: none;
     border: none;
@@ -162,22 +166,17 @@
 }
 
 
-
-
-
-
 /* Hero slider section */
-.hero {
+header .hero-sec {
     position: relative;
     height: 100vh;
-    /* slightly less than full for comfortable view */
     min-height: 600px;
     overflow: hidden;
     background-color: var(--bg-primary);
     border-radius: 0 0 30px 30px;
 }
 
-.slide {
+header .hero-sec .slide {
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -189,19 +188,19 @@
     justify-content: center;
 }
 
-.slide.active {
+header .hero-sec .active {
     opacity: 1;
-    z-index: 10;
+    z-index: 10; 
 }
 
-.overlay {
+header .hero-sec .slide .overlay {
     position: absolute;
     inset: 0;
     background: var(--overlay-color);
     z-index: 1;
 }
 
-.slide-content {
+header .hero-sec .slide .slide-content {
     position: relative;
     z-index: 20;
     text-align: center;
@@ -211,14 +210,14 @@
     max-width: 900px;
 }
 
-.slide-content h1 {
+header .hero-sec .slide .slide-content h1 {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
     animation: fadeUp 1s ease;
 }
 
-.slide-content p {
+header .hero-sec .slide .slide-content p {
     font-size: 1.3rem;
     opacity: 0.9;
     animation: fadeUp 1s 0.2s both;
@@ -237,7 +236,7 @@
 }
 
 /* arrows */
-.arrow {
+header .hero-sec .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -257,15 +256,15 @@
     transition: background 0.2s;
 }
 
-.arrow:hover {
+header .hero-sec .arrow:hover {
     background: var(--slate-gray);
 }
 
-.arrow-left {
+header .hero-sec .arrow-left {
     left: 20px;
 }
 
-.arrow-right {
+header .hero-sec .arrow-right {
     right: 20px;
 }
 
@@ -340,7 +339,7 @@
 
 
 /* dots */
-.dots {
+header .hero-sec .dots {
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -350,7 +349,7 @@
     z-index: 30;
 }
 
-.dot {
+header .hero-sec .dots .dot {
     width: 12px;
     height: 12px;
     background-color: var(--slate-gray);
@@ -360,46 +359,48 @@
     transition: all 0.2s;
 }
 
-.dot.active {
+header .hero-sec .dots .dot.active {
     background-color: var(--off-white);
     width: 36px;
     border-radius: 20px;
 }
 
 
+
+
 /* stats emerald section */
-.stats-section {
+main .stats-sec {
     background-color: var(--pure-white);
     padding: 4rem 1.5rem 4rem 1.5rem;
 }
 
-.container {
+main .stats-sec .container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.stats-grid {
+main .stats-sec .container .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     text-align: center;
 }
 
-.stat-item {
+main .stats-sec .container .grid .item {
     padding: 2rem 1.5rem;
     background-color: var(--glass-bg);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.stat-number {
+main .stats-sec .container .grid .item .number {
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--medium-blue);
     line-height: 1.2;
 }
 
-.stat-label {
+main .stats-sec .container .grid .item .label {
     color: var(--text-secondary);
     font-weight: 500;
     font-size: 1.2rem;
@@ -407,14 +408,14 @@
 
 
 /* WhatsApp Chat Widget */
-.whatsapp-widget {
+main .whatsapp-sec .widget {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
 }
 
-.whatsapp-icon {
+main .whatsapp-sec .widget .icon {
     width: 50px;
     height: 50px;
     background: #25D366;
@@ -430,12 +431,12 @@
     position: relative;
 }
 
-.whatsapp-icon:hover {
+main .whatsapp-sec .widget .icon:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
 }
 
-.notification-badge {
+main .whatsapp-sec .widget .icon .notifi-badge {
     position: absolute;
     top: -5px;
     right: -5px;
@@ -450,7 +451,7 @@
     justify-content: center;
 }
 
-.whatsapp-chat-box {
+main .whatsapp-sec .widget .chat-box {
     position: absolute;
     bottom: 80px;
     right: 0;
@@ -465,13 +466,13 @@
     transition: all 0.3s ease;
 }
 
-.whatsapp-chat-box.active {
+main .whatsapp-sec .widget .chat-box.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
 }
 
-.chat-header {
+main .whatsapp-sec .widget .chat-box .header {
     background: #075E54;
     color: white;
     padding: 20px;
@@ -480,13 +481,13 @@
     align-items: center;
 }
 
-.header-content {
+main .whatsapp-sec .widget .chat-box .header .content {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.header-content .avatar {
+main .whatsapp-sec .widget .chat-box .header .content .avatar {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.2);
@@ -497,18 +498,18 @@
     font-size: 20px;
 }
 
-.header-info h5 {
+main .whatsapp-sec .widget .chat-box .header .content .info h5 {
     margin: 0;
     font-size: 1rem;
 }
 
-.header-info p {
+main .whatsapp-sec .widget .chat-box .header .content .info p {
     margin: 0;
     font-size: 0.8rem;
     opacity: 0.8;
 }
 
-.close-chat {
+main .whatsapp-sec .widget .chat-box .header .close-btn {
     background: none;
     border: none;
     color: white;
@@ -517,22 +518,22 @@
     transition: var(--transition);
 }
 
-.chat-body {
+main .whatsapp-sec .widget .chat-box .body {
     padding: 20px;
     max-height: 400px;
     overflow-y: auto;
 }
 
-.chat-message {
+main .whatsapp-sec .widget .chat-box .body .mess {
     margin-bottom: 15px;
     max-width: 80%;
 }
 
-.chat-message.received {
+main .whatsapp-sec .widget .chat-box .body .received {
     align-self: flex-start;
 }
 
-.chat-message p {
+main .whatsapp-sec .widget .chat-box .body .mess p {
     background: #f0f0f0;
     padding: 12px 15px;
     border-radius: 18px 18px 18px 4px;
@@ -541,7 +542,7 @@
     color: #333;
 }
 
-.message-time {
+main .whatsapp-sec .widget .chat-box .body .mess .mess-time {
     display: block;
     font-size: 0.7rem;
     color: #999;
@@ -549,14 +550,14 @@
     text-align: right;
 }
 
-.chat-input {
+main .whatsapp-sec .widget .chat-box .input {
     padding: 15px 20px;
     border-top: 1px solid #eee;
     display: flex;
     gap: 10px;
 }
 
-.chat-input input {
+main .whatsapp-sec .widget .chat-box .input input {
     flex: 1;
     border: 1px solid #ddd;
     border-radius: 50px;
@@ -566,11 +567,11 @@
     transition: var(--transition);
 }
 
-.chat-input input:focus {
+main .whatsapp-sec .widget .chat-box .input input:focus {
     border-color: #25D366;
 }
 
-.chat-input button {
+main .whatsapp-sec .widget .chat-box .input button {
     width: 45px;
     height: 45px;
     background: #25D366;
@@ -582,18 +583,15 @@
     transition: var(--transition);
 }
 
-.chat-input button:hover {
+main .whatsapp-sec .widget .chat-box .input button:hover {
     background: #128C7E;
     transform: rotate(15deg);
 }
 
 
 
-
-
-
 /* Satisfaction Section */
-.satisfaction-cont {
+main .satisfaction-sec .container {
     max-width: 100vw;
     margin: 0 auto;
     background: var(--off-white);
@@ -601,14 +599,13 @@
     padding: 50px 40px;
 }
 
-/* Content Section */
-.satisfaction-content {
+main .satisfaction-sec .container .content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 50px auto;
 }
 
-.satisfaction-content h2 {
+main .satisfaction-sec .container .content h2 {
     font-size: 36px;
     color: var(--text-primary);
     margin-bottom: 20px;
@@ -617,14 +614,14 @@
     padding-bottom: 15px;
 }
 
-.satisfaction-content p {
+main .satisfaction-sec .container .content p {
     font-size: 16px;
     line-height: 1.8;
     color: var(--text-primary);
 }
 
 /* Grid Section */
-.satisfaction-grid {
+main .satisfaction-sec .container .grid {
     max-width: 1400px;
     margin: 0 auto;
     display: grid;
@@ -632,7 +629,7 @@
     gap: 30px;
 }
 
-.satisfaction-item {
+main .satisfaction-sec .container .grid .item {
     text-align: center;
     padding: 30px 20px;
     background: var(--pure-white);
@@ -640,13 +637,13 @@
     transition: all 0.3s ease, box-shadow 0.3s ease;
 }
 
-.satisfaction-item:hover {
-    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
-    scale: 1.05;
+main .satisfaction-sec .container .grid .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--box-shadow);
 }
 
 /* Icons */
-.satisfaction-item i {
+main .satisfaction-sec .container .grid .item i {
     font-size: 45px;
     margin-bottom: 20px;
     background: linear-gradient(135deg, var(--medium-blue), var(--dark-blue));
@@ -655,14 +652,14 @@
     display: inline-block;
 }
 
-.satisfaction-item h3 {
+main .satisfaction-sec .container .grid .item h3 {
     font-size: 22px;
     color: var(--text-primary);
     margin-bottom: 15px;
     font-weight: 600;
 }
 
-.satisfaction-item p {
+main .satisfaction-sec .container .grid .item p {
     font-size: 14px;
     line-height: 1.7;
     color: var(--text-secondary);
@@ -675,78 +672,76 @@
 
 
 
-
-
 /* About Section */
-.about-section {
+main .about-sec {
     background-color: var(--pure-white);
     padding-bottom: 60px;
 }
 
-.about-container .upper-sec {
+main .about-sec .container .upper-sec {
     padding: 100px 0 50px 0;
     text-align: center;
 }
 
-.about-container .upper-sec h1 {
+main .about-sec .container .upper-sec h1 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
 }
 
-.about-container .upper-sec p {
+main .about-sec .container .upper-sec p {
     font-size: 1.1rem;
     margin: 0 auto;
     color: var(--text-secondary);
 }
 
-.about-container .lower-sec {
+main .about-sec .container .lower-sec {
     display: flex;
     gap: 60px;
-    margin: 0 80px;
+    margin: 0 30px;
 
 }
 
-.about-container .lower-sec .left p,
-.about-container .lower-sec .right p {
+main .about-sec .container .lower-sec .left p,
+main .about-sec .container .lower-sec .right p {
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-secondary);
 }
 
-.about-container .lower-sec .left,
-.about-container .lower-sec .right {
+main .about-sec .container .lower-sec .left,
+main .about-sec .container .lower-sec .right {
     flex: 1;
 }
 
-.about-container .lower-sec .left h2,
-.about-container .lower-sec .right h2 {
+main .about-sec .container .lower-sec .left h2,
+main .about-sec .container .lower-sec .right h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-primary);
 }
 
-.about-container .container-points {
+main .about-sec .container .container-points {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.about-container .container-points .point {
+main .about-sec .container .container-points .point {
     display: flex;
     gap: 20px;
 }
 
-.about-container .container-points .point .left {
+main .about-sec .container .container-points .point .left {
     flex: 1;
     font-size: 20px;
     display: flex;
     justify-content: center;
 }
 
-.about-container .container-points .point .left span {
+main .about-sec .container .container-points .point .left span {
     width: 50px;
     height: 50px;
     border-radius: 6px;
@@ -758,17 +753,17 @@
     font-weight: 700;
 }
 
-.about-container .container-points .point .right {
+main .about-sec .container .container-points .point .right {
     flex: 11;
 }
 
-.about-container .container-points .point .right h3 {
+main .about-sec .container .container-points .point .right h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-primary);
 }
 
-.about-container .container-points .point .right p {
+main .about-sec .container .container-points .point .right p {
     font-size: 0.9rem;
     line-height: 1.4;
     color: var(--text-secondary);
@@ -954,55 +949,55 @@
 
 
 /* Footer creat by bolt.new ai */
-.footer {
+footer {
     background-color: var(--dark-blue);
     color: var(--pure-white);
     padding: 60px 0 20px;
 }
 
-.footer-container {
+footer .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.footer-grid {
+footer .container .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 25px;
 }
 
-.footer-col h3,
-.footer-col h4 {
+footer .container .grid  h3,
+footer .container .grid  h4 {
     color: var(--pure-white);
     margin-bottom: 20px;
 }
 
-.footer-col h3 {
+footer .container .grid .col h3 {
     font-size: 24px;
 }
 
-.footer-col p {
+footer .container .grid .col p {
     line-height: 1.6;
     color: var(--pure-white);
     font-size: 14px;
     font-weight: 300;
 }
 
-.footer-col ul {
+footer .container .grid .col ul {
     list-style: none;
     padding: 0px;
 }
 
-.footer-col ul li {
+footer .container .grid .col ul li {
     margin-bottom: 6px;
     color: var(--pure-white);
     font-size: 14px;
     font-weight: 300;
 }
 
-.footer-col ul li a {
+footer .container .grid .col ul li a {
     color: var(--pure-white);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -1011,52 +1006,52 @@
     font-weight: 300;
 }
 
-.footer-col ul li a:hover {
+footer .container .grid .col ul li a:hover {
     color: var(--off-white);
     font-weight: 500;
 }
 
-.contact-info li {
+footer .container .grid .col .info li {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.contact-info i {
+footer .container .grid .col .info i {
     color: var(--pure-white);
     width: 16px;
 }
 
-.social-links {
+footer .container .grid .col .links {
     display: flex;
     gap: 16px;
     margin-top: 20px;
 }
 
-.social-links a {
+footer .container .grid .col .links a {
     color: var(--pure-white);
     font-size: 20px;
     transition: all 0.3s ease;
 }
 
-.social-links a:hover {
+footer .container .grid .col .links a:hover {
     color: var(--off-white);
     transform: translateY(-3px);
 }
 
-.footer-bottom {
+footer .footer-bottom {
     border-top: 1px solid var(--border-color);
     padding-top: 20px;
     text-align: center;
     position: relative;
 }
 
-.footer-bottom p {
+footer .footer-bottom p {
     font-size: 14px;
     color: var(--pure-white);
 }
 
-.footer-bottom p a {
+footer .footer-bottom p a {
     color: var(--medium-blue);
     text-decoration: none;
     cursor: pointer;
