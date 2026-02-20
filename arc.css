@@ -820,7 +820,7 @@ main .services-sec .grid-cont .card {
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    
+
 }
 
 /* Card Image Container */
@@ -830,7 +830,7 @@ main .services-sec .grid-cont .card .image {
     height: 270px;
     overflow: hidden;
     background: #f0f0f0;
-    
+
 }
 
 main .services-sec .grid-cont .card .image img {
@@ -938,6 +938,148 @@ main .services-sec .grid-cont .card .content .learn-more:hover {
 main .services-sec .grid-cont .card .content .learn-more:hover::after {
     transform: translateX(5px);
 }
+
+
+
+
+
+
+/* SERVICE POPUP SECTION */
+main .pop-sec {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+main .pop-sec .conta::-webkit-scrollbar {
+    display: none;
+}
+
+main .pop-sec .conta {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 800px;
+    width: 100%;
+    height: 85vh;
+    background: var(--pure-white);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+main .pop-sec .conta .uper-part {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    /* border-radius: 12px; */
+}
+
+main .pop-sec .conta .uper-part img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .pop-sec .conta .uper-part .closE-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--dark-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .pop-sec .conta .uper-part .closE-btn i {
+    position: fixed;
+    transition: all 0.3s ease;
+}
+
+main .pop-sec .conta .uper-part .closE-btn i:hover {
+    transform: rotate(90deg);
+    color: var(--medium-blue);
+}
+
+main .pop-sec .conta .uper-part .closE-btn i:active {
+    transform: rotate(180deg);
+    transform: scale(1.2);
+}
+
+main .pop-sec .lower-part {
+    padding: 20px;
+}
+
+main .pop-sec .lower-part .cont span {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+main .pop-sec .lower-part .cont h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--dark-blue);
+    margin: 15px 0;
+}
+
+main .pop-sec .lower-part .cont p {
+    color: var(--slate-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+main .pop-sec .lower-part .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .pop-sec .lower-part .gallery .images {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+main .pop-sec .lower-part .gallery .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
 
 /* Consultation section */
 .service-consult-cont {
@@ -1249,7 +1391,6 @@ main .project-sec .pro-cont .projects .projects-grid {
 
 /* Gallery like pinterst theme */
 .gallery-sec {
-    /* padding: 2rem 1rem; */
     padding: 100px 0 30px;
     display: flex;
     justify-content: center;
@@ -1353,137 +1494,6 @@ main .project-sec .pro-cont .projects .projects-grid {
 
 
 
-
-/* SERVICE POPUP SECTION */
-main .pop-sec{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-main .pop-sec .conta::-webkit-scrollbar{
-    display: none;
-}
-
-main .pop-sec .conta{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    max-width: 800px;
-    width: 100%;
-    height: 85vh;
-    background: var(--pure-white);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-main .pop-sec .conta .uper-part{
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    /* border-radius: 12px; */
-}
-main .pop-sec .conta .uper-part img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-main .pop-sec .conta .uper-part .closE-btn{
-    position:absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: var(--dark-blue);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-main .pop-sec .conta .uper-part .closE-btn i{
-    position:fixed;
-    transition: all 0.3s ease;
-}
-
-main .pop-sec .conta .uper-part .closE-btn i:hover{
-    transform: rotate(90deg);  
-    color: var(--medium-blue); 
-}
-
-main .pop-sec .conta .uper-part .closE-btn i:active{
-    transform: rotate(180deg);
-    transform: scale(1.2);
-}
-
-main .pop-sec .lower-part {
-    padding: 20px;
-}
-
-main .pop-sec .lower-part .cont span{
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-top: 10px;
-}
-
-main .pop-sec .lower-part .cont h2 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--dark-blue);
-    margin: 15px 0;
-}
-
-main .pop-sec .lower-part .cont p {
-    color: var(--slate-gray);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-main .pop-sec .lower-part .gallery{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-main .pop-sec .lower-part .gallery .images{
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-}
-
-main .pop-sec .lower-part .gallery .images img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 
 
