@@ -213,6 +213,25 @@ function sendWhatsApp() {
 }
 
 
+let popsec = document.getElementById("pop-sec")
+let cardbtn = document.querySelectorAll(".learn-more")
+let closebtn = document.getElementById("close-pop")
+
+function openpop(){
+    popsec.style.opacity = "1"
+    popsec.style.visibility = "visible"
+}
+
+
+cardbtn.forEach(btn => {
+    btn.addEventListener("click", openpop)
+})
+
+closebtn.addEventListener("click", function(){
+    popsec.style.opacity = "0"
+    popsec.style.visibility = "hidden"
+})
+
 
 
 
