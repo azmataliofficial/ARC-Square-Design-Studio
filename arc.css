@@ -1499,6 +1499,74 @@ main .project-sec .pro-cont .projects .projects-grid {
 
 
 
+
+
+
+
+
+
+
+/* Contact section */
+.contact-sec {
+    padding: 100px 0 30px;
+    /* display: flex;
+    justify-content: center; */
+    margin: 0 auto;
+}
+
+.contact-head{
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.contact-head h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.contact-head p {
+    font-size: 1.1rem;
+    margin: 0 0 30px auto;
+    color: var(--slate-gray);
+}
+
+.contact-cont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 0 auto;
+}
+.contact-tab{
+    background-color: var(--pure-white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.contact-tab h2{
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+.contact-tab p{
+    font-size: 1.1rem;
+    margin: 0 0 30px auto;
+    color: var(--slate-gray);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Footer creat by bolt.new ai */
 footer {
     background-color: var(--dark-blue);
