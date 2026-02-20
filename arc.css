@@ -173,7 +173,6 @@ header .hero-sec {
     min-height: 600px;
     overflow: hidden;
     background-color: var(--bg-primary);
-    border-radius: 0 0 30px 30px;
 }
 
 header .hero-sec .slide {
@@ -261,11 +260,11 @@ header .hero-sec .arrow:hover {
 }
 
 header .hero-sec .arrow-left {
-    left: 20px;
+    left: 60px;
 }
 
 header .hero-sec .arrow-right {
-    right: 20px;
+    right: 60px;
 }
 
 
@@ -375,7 +374,7 @@ main .stats-sec {
 }
 
 main .stats-sec .container {
-    max-width: 1400px;
+    max-width: 1425px;
     margin: 0 auto;
 }
 
@@ -601,7 +600,7 @@ main .satisfaction-sec .container {
 
 main .satisfaction-sec .container .content {
     text-align: center;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto 50px auto;
 }
 
@@ -635,6 +634,7 @@ main .satisfaction-sec .container .grid .item {
     background: var(--pure-white);
     border-radius: 15px;
     transition: all 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 main .satisfaction-sec .container .grid .item:hover {
@@ -808,9 +808,9 @@ main .services-sec .service-cont p {
 /* Services Grid */
 main .services-sec .grid-cont {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1280px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
     margin: 75px auto 0 auto;
     width: 100%;
 }
@@ -818,7 +818,7 @@ main .services-sec .grid-cont {
 main .services-sec .grid-cont .card {
     max-width: 400px;
     width: 100%;
-    background: white;
+    background: var(--pure-white);
     border-radius: 16px;
     overflow: hidden;
 
@@ -828,7 +828,7 @@ main .services-sec .grid-cont .card {
 main .services-sec .grid-cont .card .image {
     position: relative;
     width: 100%;
-    height: 270px;
+    height: 220px;
     overflow: hidden;
     background: #f0f0f0;
 
@@ -969,7 +969,7 @@ main .pop-sec .conta::-webkit-scrollbar {
 main .pop-sec .conta {
     overflow-y: scroll;
     overflow-x: hidden;
-    max-width: 800px;
+    max-width: 710px;
     width: 100%;
     height: 85vh;
     background: var(--pure-white);
@@ -980,7 +980,7 @@ main .pop-sec .conta {
 main .pop-sec .conta .uper-part {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: auto;
     overflow: hidden;
     position: relative;
     /* border-radius: 12px; */
@@ -988,7 +988,7 @@ main .pop-sec .conta .uper-part {
 
 main .pop-sec .conta .uper-part img {
     width: 100%;
-    height: 100%;
+    height: 420px;
     object-fit: cover;
 }
 
@@ -1093,7 +1093,7 @@ main .pop-sec .lower-part .gallery .images img {
 }
 
 .consult-cont {
-    max-width: 84vw;
+    max-width: 1400px;
     text-align: left;
     padding: 40px;
     background: var(--medium-blue);
@@ -1156,8 +1156,9 @@ main .pop-sec .lower-part .gallery .images img {
 
 /* Projects Tab's Section */
 main .project-sec {
-    width: 90vw;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 100px 0;
     background-color: var(--pure-white);
     border-radius: 30px 30px 0 0;
@@ -1177,13 +1178,14 @@ main .project-sec .pro-head h2 {
 
 main .project-sec .pro-head p {
     font-size: 1.1rem;
-    margin: 0 0 30px auto;
+    margin: auto;
     color: var(--slate-gray);
 }
 
 main .project-sec .pro-cont {
     position: relative;
     min-height: 400px;
+    max-width: 1400px;
 }
 
 main .project-sec .pro-cont .pro-tabs {
@@ -1401,7 +1403,7 @@ main .project-sec .pro-cont .projects .projects-grid {
 }
 
 .gallery-cont {
-    max-width: 1280px;
+    max-width: 1400px;
     width: 100%;
 }
 

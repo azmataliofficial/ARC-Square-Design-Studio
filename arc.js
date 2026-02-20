@@ -403,6 +403,11 @@ function toggleLike(button) {
       cat: "portrait",
     },
     {
+      img: "https://images.pexels.com/photos/1128795/pexels-photo-1128795.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+      title: "golden hour",
+      cat: "portrait",
+    },
+    {
       img: "https://images.pexels.com/photos/2896387/pexels-photo-2896387.jpeg?auto=compress&cs=tinysrgb&w=600&h=950&fit=crop",
       title: "verdant dreams",
       cat: "nature",
