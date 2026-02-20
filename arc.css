@@ -647,6 +647,7 @@ main .satisfaction-sec .container .grid .item i {
     font-size: 45px;
     margin-bottom: 20px;
     background: linear-gradient(135deg, var(--medium-blue), var(--dark-blue));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
