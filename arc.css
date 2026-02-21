@@ -10,19 +10,28 @@
 
 :root {
     /* Primary Colors */
-    --dark-blue: #2c2c2c;
-    --medium-blue: #b89b4a;
+    --dark-gray: #2c2c2c;
+    --medium-yellow: #b89b4a;
     --slate-gray: #8a8989;
     --off-white: #f5f2e8;
     --pure-white: #FFFFFF;
     --glass-bg: #ffffffdd;
 
     /* Usage Variables */
+    --bg-primary: var(--pure-white);
+    --bg-secondary: var(--off-white);
     --text-primary: #2c2c2c;
     --text-secondary: var(--slate-gray);
-    --btn-primary: var(--dark-blue);
+    --heading-color: var(--dark-gray);
+    --nav-bg: var(--pure-white);
+    --nav-text: var(--dark-gray);
+    --nav-hover: var(--medium-yellow);
+    --btn-primary: var(--dark-gray);
+    --btn-hover: #1a1a1a;
+    --btn-accent: var(--medium-yellow);
     --border-color: #e0daca;
     --shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
+    --overlay-color: rgba(44, 44, 44, 0.4);
     --transition: all 0.3s ease;
 }
 
@@ -75,13 +84,13 @@ header nav .nav-bar .logo-section .brand-name span:nth-child(1) {
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 1px;
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
 }
 
 header nav .nav-bar .logo-section .brand-name #span {
     font-size: 20px;
     font-weight: 300;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 
 header nav .nav-bar .logo-section .brand-name span:last-child {
@@ -118,7 +127,7 @@ header nav .nav-bar .nav-links .nav-link::after {
     bottom: -6px;
     width: 0;
     height: 2px;
-    background: var(--medium-blue);
+    background: var(--medium-yellow);
     transition: var(--transition);
 }
 
@@ -268,7 +277,7 @@ header .hero-sec .arrow-right {
     cursor: pointer;
     align-items: center;
     gap: 0.75rem;
-    background-color: var(--medium-blue);
+    background-color: var(--medium-yellow);
     color: var(--pure-white);
     border-radius: 10rem;
     font-weight: 600;
@@ -285,7 +294,7 @@ header .hero-sec .arrow-right {
     width: 25px;
     height: 25px;
     position: relative;
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
     background-color: var(--pure-white);
     border-radius: 50%;
     display: grid;
@@ -294,8 +303,8 @@ header .hero-sec .arrow-right {
 }
 
 .button:hover {
-    background-color: var(--pure-white);
-    color: var(--medium-blue);
+  background: var(--dark-gray);
+  color: var(--pure-white);
 }
 
 .button:hover .button__icon-wrapper {
@@ -303,8 +312,8 @@ header .hero-sec .arrow-right {
     width: 25px;
     height: 25px;
     position: relative;
-    color: var(--pure-white);
-    background-color: var(--medium-blue);
+    color: var(--dark-gray);
+    background-color: var(--pure-white);
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -386,7 +395,7 @@ main .stats-sec .container .grid .item {
 main .stats-sec .container .grid .item .number {
     font-size: 3.5rem;
     font-weight: 800;
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
     line-height: 1.2;
 }
 
@@ -637,7 +646,7 @@ main .satisfaction-sec .container .grid .item:hover {
 main .satisfaction-sec .container .grid .item i {
     font-size: 45px;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--medium-blue), var(--dark-blue));
+    background: linear-gradient(135deg, var(--medium-yellow), var(--dark-gray));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -737,7 +746,7 @@ main .about-sec .container .container-points .point .left span {
     width: 50px;
     height: 50px;
     border-radius: 6px;
-    background: var(--medium-blue);
+    background: var(--medium-yellow);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -787,7 +796,7 @@ main .services-sec .service-cont h2 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 
 main .services-sec .service-cont p {
@@ -908,7 +917,7 @@ main .services-sec .grid-cont .card .content .learn-more {
     gap: 0.5rem;
     background: none;
     border: none;
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
     font-weight: 600;
     font-size: 1rem;
     padding: 0.5rem 0;
@@ -944,7 +953,7 @@ main .services-sec .consultation .cont {
     max-width: 1400px;
     text-align: left;
     padding: 40px;
-    background: var(--medium-blue);
+    background: var(--medium-yellow);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -966,8 +975,8 @@ main .services-sec .consultation .cont p {
 }
 
 main .services-sec .consultation .cont button {
-    background: var(--pure-white);
-    color: var(--medium-blue);
+    background: var(--medium-yellow);
+    color: var(--pure-white);
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -982,16 +991,23 @@ main .services-sec .consultation .cont button {
 
 main .services-sec .consultation .cont button i {
     font-size: 20px;
-    background-color: var(--off-white);
+    background-color: var(--medium-yellow);
     border-radius: 50%;
     padding: 10px;
+    transition: all 0.3s ease   ;
 }
 
 main .services-sec .consultation .cont button:hover {
-    background: var(--medium-blue);
+    background: var(--dark-gray);
     color: var(--pure-white);
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+main .services-sec .consultation .cont button:hover i {
+    background-color: var(--pure-white);
+    color: var(--dark-gray);
+    transform: rotate(15deg);
 }
 
 
@@ -1059,7 +1075,7 @@ main .pop-sec .conta .uper-part .closE-btn {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -1071,7 +1087,7 @@ main .pop-sec .conta .uper-part .closE-btn i {
 
 main .pop-sec .conta .uper-part .closE-btn i:hover {
     transform: rotate(90deg);
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
 }
 
 main .pop-sec .conta .uper-part .closE-btn i:active {
@@ -1099,7 +1115,7 @@ main .pop-sec .lower-part .cont h2 {
     font-size: 32px;
     font-weight: 700;
     line-height: 1.3;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
     margin: 15px 0;
 }
 
@@ -1158,7 +1174,7 @@ main .project-sec .pro-head h2 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 
 main .project-sec .pro-head p {
@@ -1195,11 +1211,11 @@ main .project-sec .pro-cont .pro-tabs .pro-tab {
 
 main .project-sec .pro-cont .pro-tabs .pro-tab:hover {
     border-color: var(--off-white);
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
 }
 
 main .project-sec .pro-cont .pro-tabs .pro-tab.active {
-    background: var(--medium-blue);
+    background: var(--medium-yellow);
     border-color: var(--border-color);
     color: var(--pure-white);
 }
@@ -1357,7 +1373,7 @@ main .project-sec .pro-cont .projects .projects-grid {
 }
 
 .pro-content span {
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1401,7 +1417,7 @@ main .gallery-sec .cont .head h1 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 
 main .gallery-sec .cont .head p {
@@ -1484,10 +1500,6 @@ main .gallery-sec .cont .photos figcaption span {
 
 
 
-
-
-
-
 /* blog section */
 main .blog-sec {
     padding: 100px 0 30px;
@@ -1510,7 +1522,7 @@ main .blog-sec .container .head h1 {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 
 main .blog-sec .container .head p {
@@ -1587,7 +1599,7 @@ main .blog-sec .container .blog-grid .card .content span {
 main .blog-sec .container .blog-grid .card .content h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
     margin: 1.2rem 0 0.8rem 0;
 }
 
@@ -1598,7 +1610,7 @@ main .blog-sec .container .blog-grid .card .content p {
 }
 
 main .blog-sec .container .blog-grid .card .content button {
-    background: var(--medium-blue);
+    background: var(--medium-yellow);
     color: var(--pure-white);
     border: none;
     padding: 10px 20px;
@@ -1610,7 +1622,7 @@ main .blog-sec .container .blog-grid .card .content button {
 }
 
 main .blog-sec .container .blog-grid .card .content button:hover {
-    background: var(--dark-blue);
+    background: var(--dark-gray);
 }
 
 
@@ -1643,7 +1655,7 @@ main .blog-sec .container .blog-grid .card .content button:hover {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 
 .contact-head p {
@@ -1668,7 +1680,7 @@ main .blog-sec .container .blog-grid .card .content button:hover {
     font-size: 2rem;
     margin-bottom: 10px;
     font-weight: 700;
-    color: var(--dark-blue);
+    color: var(--dark-gray);
 }
 .contact-tab p{
     font-size: 1.1rem;
@@ -1689,7 +1701,7 @@ main .blog-sec .container .blog-grid .card .content button:hover {
 
 /* Footer creat by bolt.new ai */
 footer {
-    background-color: var(--dark-blue);
+    background-color: var(--dark-gray);
     color: var(--pure-white);
     padding: 60px 0 20px;
 }
@@ -1791,7 +1803,7 @@ footer .footer-bottom p {
 }
 
 footer .footer-bottom p a {
-    color: var(--medium-blue);
+    color: var(--medium-yellow);
     text-decoration: none;
     cursor: pointer;
 }
