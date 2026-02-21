@@ -212,7 +212,7 @@ header .hero-sec .slide .slide-content {
 header .hero-sec .slide .slide-content h1 {
     font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     animation: fadeUp 1s ease;
 }
 
@@ -220,6 +220,7 @@ header .hero-sec .slide .slide-content p {
     font-size: 1.3rem;
     opacity: 0.9;
     animation: fadeUp 1s 0.2s both;
+    margin-bottom: 1rem;
 }
 
 @keyframes fadeUp {
@@ -679,6 +680,11 @@ main .about-sec {
     padding-bottom: 60px;
 }
 
+main .about-sec .container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 main .about-sec .container .upper-sec {
     padding: 100px 0 50px 0;
     text-align: center;
@@ -698,9 +704,8 @@ main .about-sec .container .upper-sec p {
 }
 
 main .about-sec .container .lower-sec {
+    gap: 32px;
     display: flex;
-    gap: 60px;
-    margin: 0 30px;
 
 }
 
@@ -709,11 +714,18 @@ main .about-sec .container .lower-sec .right p {
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-secondary);
+    padding-bottom: 10px ;
 }
 
-main .about-sec .container .lower-sec .left,
-main .about-sec .container .lower-sec .right {
+main .about-sec .container .lower-sec .left{
     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+main .about-sec .container .lower-sec .right {
+    flex: 1.05;
+    display: flex;
+    flex-direction: column;
 }
 
 main .about-sec .container .lower-sec .left h2,
@@ -1639,53 +1651,199 @@ main .blog-sec .container .blog-grid .card .content button:hover {
 
 
 /* Contact section */
-.contact-sec {
-    padding: 100px 0 30px;
-    /* display: flex;
-    justify-content: center; */
+main .contact-sec {
+    padding: 100px 0 ;
     margin: 0 auto;
 }
 
-.contact-head{
+main .contact-sec .head{
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4rem;
 }
 
-.contact-head h1{
+main .contact-sec .head h1{
     font-size: 3rem;
-    margin-bottom: 10px;
     font-weight: 700;
     color: var(--dark-gray);
 }
 
-.contact-head p {
+main .contact-sec .head p {
     font-size: 1.1rem;
-    margin: 0 0 30px auto;
     color: var(--slate-gray);
 }
 
-.contact-cont{
+main .contact-sec .body{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+    max-width: 1400px;
     margin: 0 auto;
 }
-.contact-tab{
+
+main .contact-sec .body .cont-tab h2{
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--dark-gray);
+}
+main .contact-sec .body .cont-tab p{
+    margin: 0 0 30px auto;
+    color: var(--slate-gray);
+    letter-spacing: 0.5px;
+}
+
+main .contact-sec .body .cont-tab .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+main .contact-sec .body .cont-tab .cards .card {
+    display: flex;
+    gap: 1.5rem;
+}
+
+main .contact-sec .body .cont-tab .cards .card .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    flex-shrink: 0;
+    height: 50px;
+    background: linear-gradient(135deg, var(--medium-yellow), #a88a3a);
+    border-radius: 12px;
+    color: var(--pure-white);
+    font-size: 1.5rem;
+}
+
+main .contact-sec .body .cont-tab .cards .card .detail h3 {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+main .contact-sec .body .cont-tab .cards .card .detail p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+main .contact-sec .body .cont-tab .cards .map {
+    margin-top: 0.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+main .contact-sec .body .cont-tab .cards .map iframe {
+    width: 100% ;
+    height: 400px;
+    border: none;
+}
+
+main .contact-sec .body form {
     background-color: var(--pure-white);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-.contact-tab h2{
+
+main .contact-sec .body form h2 {
     font-size: 2rem;
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--dark-gray);
 }
-.contact-tab p{
-    font-size: 1.1rem;
-    margin: 0 0 30px auto;
-    color: var(--slate-gray);
+
+main .contact-sec .body form .form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Input Container */
+main .contact-sec .body form .form-inputs .cont {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+main .contact-sec .body form .form-inputs .cont label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+main .contact-sec .body form .form-inputs .cont input{
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--pure-white);
+    transition: all var(--transition);
+}
+main .contact-sec .body form .form-inputs .cont textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    height: 220px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--pure-white);
+    transition: all var(--transition);
+}
+
+main .contact-sec .body form .form-inputs .cont input::placeholder,
+main .contact-sec .body form .form-inputs .cont textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+main .contact-sec .body form .form-inputs .cont input:focus,
+main .contact-sec .body form .form-inputs .cont textarea:focus {
+    outline: none;
+    border-color: var(--medium-yellow);
+    box-shadow: 0 0 0 3px rgba(184, 155, 74, 0.1);
+    background-color: #fafaf8;
+}
+
+main .contact-sec .body form .form-inputs .cont textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+main .contact-sec .body form .form-inputs button {
+    margin-top: 1rem;
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--btn-primary);
+    color: var(--pure-white);
+    cursor: pointer;
+    transition: all var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+main .contact-sec .body form .form-inputs button:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(44, 44, 44, 0.3);
+}
+
+main .contact-sec .body form .form-inputs button:active {
+    transform: translateY(0);
 }
 
 
@@ -1810,12 +1968,226 @@ footer .footer-bottom p a {
 
 
 /* Responsive Design */
-@media (max-width: 1375px) {}
+@media (max-width: 1375px) {
+    .contact-cont {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        padding: 0 20px;
+    }
+}
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    .contact-sec {
+        padding: 80px 20px 30px;
+    }
 
-@media (max-width: 768px) {}
+    .contact-head h1 {
+        font-size: 2.5rem;
+    }
 
-@media (max-width: 480px) {}
+    .contact-cont {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-@media (max-width: 350px) {}
+    .contact-form h2,
+    .contact-tab h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-map iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-sec {
+        padding: 60px 15px;
+    }
+
+    .contact-head h1 {
+        font-size: 2rem;
+    }
+
+    .contact-head p {
+        font-size: 1rem;
+    }
+
+    .contact-cont {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact-tab,
+    .contact-form {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+
+    .contact-cards {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+
+    .contact-icons {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .contact-dtl h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-map iframe {
+        height: 300px;
+    }
+
+    .input-cont input,
+    .input-cont textarea {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    .contact-input .button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-sec {
+        padding: 50px 10px;
+    }
+
+    .contact-head h1 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .contact-head p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-tab,
+    .contact-form {
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-tab h2,
+    .contact-form h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-tab p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-card {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .contact-cards {
+        padding: 1rem;
+        border-left-width: 3px;
+    }
+
+    .contact-icons {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .contact-dtl h3 {
+        font-size: 1rem;
+    }
+
+    .contact-dtl p {
+        font-size: 0.9rem;
+    }
+
+    .contact-map iframe {
+        height: 250px;
+    }
+
+    .contact-input {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .input-cont label {
+        font-size: 0.9rem;
+    }
+
+    .input-cont input,
+    .input-cont textarea {
+        padding: 10px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .input-cont textarea {
+        min-height: 100px;
+    }
+
+    .contact-input .button {
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .contact-sec {
+        padding: 40px 5px;
+    }
+
+    .contact-head h1 {
+        font-size: 1.25rem;
+    }
+
+    .contact-head p {
+        font-size: 0.85rem;
+    }
+
+    .contact-tab,
+    .contact-form {
+        padding: 0.8rem;
+    }
+
+    .contact-tab h2,
+    .contact-form h2 {
+        font-size: 1.1rem;
+    }
+
+    .contact-icons {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .contact-dtl h3 {
+        font-size: 0.95rem;
+    }
+
+    .contact-dtl p {
+        font-size: 0.85rem;
+    }
+
+    .input-cont label {
+        font-size: 0.85rem;
+    }
+
+    .contact-input .button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+}
