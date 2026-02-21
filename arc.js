@@ -8,6 +8,7 @@
   const totalSlides = slides.length;
   let autoInterval;
 
+
   // create dots
   function createDots() {
     dotsContainer.innerHTML = "";
@@ -31,7 +32,6 @@
     });
     slides[index].classList.add("active");
     currentSlide = index;
-    // update dots
     document.querySelectorAll(".dot").forEach((dot, i) => {
       if (i === currentSlide) dot.classList.add("active");
       else dot.classList.remove("active");
@@ -57,7 +57,6 @@
     startAutoSlide();
   }
 
-  // event listeners
   nextBtn.addEventListener("click", function () {
     nextSlide();
     resetTimer();
@@ -67,10 +66,10 @@
     resetTimer();
   });
 
-  // init dots and first slide active
   createDots();
-  goToSlide(0); // ensure first active
+  goToSlide(0);
   startAutoSlide();
+
 
   // get start button script
   document.addEventListener("click", (e) => {
@@ -83,7 +82,8 @@
     }
   });
 
-  // ----- STATS COUNTER (like React useEffect) -----
+
+  // ----- STATS ANIMATION -----
   const targetValues = {
     experience: 15,
     clients: 240,
@@ -97,16 +97,15 @@
   const statAwards = document.getElementById("statAwards");
 
   function animateStats() {
-    const duration = 2000; // 2 sec
+    const duration = 2000;
     const steps = 60;
     const intervalTime = duration / steps;
     let step = 0;
 
     const timer = setInterval(() => {
       step++;
-      const progress = step / steps; // 0 to 1
+      const progress = step / steps;
 
-      // current values (floor)
       const exp = Math.floor(targetValues.experience * progress);
       const clients = Math.floor(targetValues.clients * progress);
       const projects = Math.floor(targetValues.projects * progress);
@@ -119,7 +118,6 @@
 
       if (step >= steps) {
         clearInterval(timer);
-        // set final exact values with '+'
         statExp.innerText = targetValues.experience + "+";
         statClients.innerText = targetValues.clients + "+";
         statProjects.innerText = targetValues.projects + "+";
@@ -128,15 +126,12 @@
     }, intervalTime);
   }
 
-  // start stats counter when page loads (you can also trigger when visible, but simple)
   window.addEventListener("load", animateStats);
 
-  // (optional: re-run if needed but once is enough)
-  // for beginners: stats start counting on load just like react useEffect with empty deps.
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".stat-number");
+  const counters = document.querySelectorAll(".number");
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -167,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
   counters.forEach((counter) => observer.observe(counter));
 });
 
+
 // WhatsApp Chat Box
 const whatsappToggle = document.getElementById("whatsappToggle");
 const whatsappChatBox = document.getElementById("whatsappChatBox");
@@ -187,7 +183,6 @@ if (closeChat) {
   });
 }
 
-// Send WhatsApp message
 if (sendWhatsAppMessage) {
   sendWhatsAppMessage.addEventListener("click", sendWhatsApp);
 }
@@ -203,7 +198,7 @@ if (whatsappMessageInput) {
 function sendWhatsApp() {
   const message = whatsappMessageInput.value.trim();
   if (message) {
-    const phoneNumber = "9540674341"; // Replace with actual number
+    const phoneNumber = "9540674341";
     const encodedMessage = encodeURIComponent(
       `Hello ARC Square Design Studio,\n\n${message}\n\n`,
     );
@@ -213,13 +208,15 @@ function sendWhatsApp() {
     whatsappMessageInput.value = "";
     whatsappChatBox.classList.remove("active");
 
-    // Show confirmation
     if (typeof showNotification === "function") {
       showNotification("Message prepared for WhatsApp!", "success");
     }
   }
 }
 
+
+
+// Service Cards Pop-up Script
 let popsec = document.getElementById("pop-sec");
 let cardbtn = document.querySelectorAll(".learn-more");
 let closebtn = document.getElementById("close-pop");
@@ -238,86 +235,70 @@ closebtn.addEventListener("click", function () {
   popsec.style.visibility = "hidden";
 });
 
+
+
 // Projects Tabs script
-// tabs funtions
 document.addEventListener("DOMContentLoaded", function () {
-  // Sab tabs ko select karo
   const tabs = document.querySelectorAll(".pro-tab");
 
-  // Har tab ke liye event listener add karo
   tabs.forEach((tab) => {
     tab.addEventListener("click", function () {
-      // Pehle saare tabs se active class hatao
+
       tabs.forEach((t) => t.classList.remove("active"));
 
-      // Is tab ko active banao
       this.classList.add("active");
 
-      // Category lo jis par click kiya
       let category = this.getAttribute("data-category");
 
-      // Saare cards lo
       let cards = document.querySelectorAll(".pro-card");
 
-      // Har card ko check karo
       cards.forEach((card) => {
-        // Agar category 'all' hai ya card ki category match karti hai
         if (
           category === "all" ||
           card.getAttribute("data-category") === category
         ) {
-          card.style.display = "block"; // Dikhado
+          card.style.display = "block";
         } else {
-          card.style.display = "none"; // Chhupao
+          card.style.display = "none";
         }
       });
     });
   });
 });
 
+
 // likes function
 function loadLikes() {
-  // Check karo localStorage mein likes hain ya nahi
   let savedLikes = localStorage.getItem("projectLikes");
 
   if (savedLikes) {
-    // Agar hain to use karo
     return JSON.parse(savedLikes);
   } else {
-    // Nahin hain to empty object banao
     return {};
   }
 }
 
-// Likes ko localStorage mein save karo
 function saveLikes(likes) {
   localStorage.setItem("projectLikes", JSON.stringify(likes));
 }
 
-// Jab page load ho to likes set karo
 document.addEventListener("DOMContentLoaded", function () {
-  // Saare like buttons lo
   let likeButtons = document.querySelectorAll(".like-btn");
-  let likes = loadLikes(); // Saved likes lo
+  let likes = loadLikes();
 
-  // Har button ke liye
   likeButtons.forEach((btn, index) => {
     let countSpan = btn.querySelector(".like-count");
     let icon = btn.querySelector("i");
 
-    // Har card ko unique ID do (agar nahi hai to)
     let card = btn.closest(".pro-card");
     let cardId = card.getAttribute("data-id");
 
-    // Agar card ID nahi hai to bana do
     if (!cardId) {
       cardId = "card-" + index;
       card.setAttribute("data-id", cardId);
     }
 
-    // Check karo is card ka like saved hai ya nahi
     if (likes[cardId]) {
-      // Saved like hai to set karo
       countSpan.textContent = likes[cardId].count;
 
       if (likes[cardId].liked) {
@@ -328,63 +309,53 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.className = "fa-regular fa-heart";
       }
     } else {
-      // Naya card hai to default 0
       countSpan.textContent = "0";
       likes[cardId] = { count: 0, liked: false };
     }
   });
 
-  // Save karo
   saveLikes(likes);
 });
 
+
 // Like button toggle function
 function toggleLike(button) {
-  // Icon aur count lo
   let icon = button.querySelector("i");
   let countSpan = button.querySelector(".like-count");
   let count = parseInt(countSpan.textContent);
 
-  // Card ka ID lo
   let card = button.closest(".pro-card");
   let cardId = card.getAttribute("data-id");
 
-  // Saare likes lo localStorage se
   let likes = loadLikes();
 
-  // Check karo liked hai ya nahi
   if (button.classList.contains("liked")) {
-    // Unlike karo
     icon.className = "fa-regular fa-heart";
     count--;
     button.classList.remove("liked");
 
-    // Save karo
     likes[cardId] = { count: count, liked: false };
   } else {
-    // Like karo
     icon.className = "fa-solid fa-heart";
     count++;
     button.classList.add("liked");
 
-    // Save karo
     likes[cardId] = { count: count, liked: true };
 
-    // Heart beat animation
     icon.style.animation = "heartBeat 0.3s ease";
     setTimeout(() => {
       icon.style.animation = "";
     }, 300);
   }
 
-  // Count update karo
   countSpan.textContent = count;
 
-  // localStorage mein save karo
   saveLikes(likes);
 }
 
-// images like pintrest theme
+
+
+// Pinterest-like Masonry Grid for Gallery Section
 (function () {
   const pins = [
     {
@@ -396,11 +367,6 @@ function toggleLike(button) {
       img: "https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
       title: "urban layers",
       cat: "architecture",
-    },
-    {
-      img: "https://images.pexels.com/photos/1128795/pexels-photo-1128795.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-      title: "golden hour",
-      cat: "portrait",
     },
     {
       img: "https://images.pexels.com/photos/1128795/pexels-photo-1128795.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
@@ -471,28 +437,22 @@ function toggleLike(button) {
 
   const grid = document.getElementById("pinterestGrid");
 
-  // loop through pins and build <figure> cards
   for (let i = 0; i < pins.length; i++) {
     const item = pins[i];
 
-    // create elements
     const figure = document.createElement("figure");
     const img = document.createElement("img");
     const figCaption = document.createElement("figcaption");
 
-    // set image attributes
     img.src = item.img;
     img.alt = `${item.title} – ${item.cat}`;
-    img.loading = "lazy"; // better performance
+    img.loading = "lazy";
 
-    // fill caption
     figCaption.innerHTML = `<strong>${item.title}</strong><span>${item.cat}</span>`;
 
-    // assemble
     figure.appendChild(img);
     figure.appendChild(figCaption);
 
-    // append to masonry grid
     grid.appendChild(figure);
   }
 })();
