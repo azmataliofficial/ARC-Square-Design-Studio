@@ -18,20 +18,11 @@
     --glass-bg: #ffffffdd;
 
     /* Usage Variables */
-    --bg-primary: var(--pure-white);
-    --bg-secondary: var(--off-white);
     --text-primary: #2c2c2c;
     --text-secondary: var(--slate-gray);
-    --heading-color: var(--dark-blue);
-    --nav-bg: var(--pure-white);
-    --nav-text: var(--dark-blue);
-    --nav-hover: var(--medium-blue);
     --btn-primary: var(--dark-blue);
-    --btn-hover: #1a1a1a;
-    --btn-accent: var(--medium-blue);
     --border-color: #e0daca;
     --shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
-    --overlay-color: rgba(44, 44, 44, 0.4);
     --transition: all 0.3s ease;
 }
 
@@ -1487,6 +1478,10 @@ main .gallery-sec .cont .photos figcaption span {
     margin-top: 0.4rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+
+
+
 
 
 
