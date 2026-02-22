@@ -13,7 +13,7 @@
     --dark-gray: #2c2c2c;
     --medium-yellow: #b89b4a;
     --slate-gray: #8a8989;
-    --off-white: #f5f2e8;
+    --off-white: #b89b4a0b;
     --pure-white: #FFFFFF;
     --glass-bg: #ffffffdd;
 
@@ -965,7 +965,7 @@ main .services-sec .consultation .cont {
     max-width: 1400px;
     text-align: left;
     padding: 40px;
-    background: var(--medium-yellow);
+    background: var(--border-color);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -1527,7 +1527,7 @@ main .blog-sec .container {
 
 main .blog-sec .container .head {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 main .blog-sec .container .head h1 {
@@ -1539,13 +1539,13 @@ main .blog-sec .container .head h1 {
 
 main .blog-sec .container .head p {
     font-size: 1.1rem;
-    margin: 0 0 60px auto;
+    margin: 0 0 50px auto;
     color: var(--slate-gray);
 }
 
 main .blog-sec .container .blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
@@ -1565,12 +1565,12 @@ main .blog-sec .container .blog-grid .card:hover {
 
 main .blog-sec .container .blog-grid .card .image {
     width: 100%;
+    aspect-ratio: 16/9;
     overflow: hidden;
 }
 
 main .blog-sec .container .blog-grid .card .image img {
     width: 100%;
-    height: 240px;
     border-radius: 12px 12px 0 0;
     object-fit: cover;
     cursor: pointer;
@@ -1609,23 +1609,22 @@ main .blog-sec .container .blog-grid .card .content span {
 }
 
 main .blog-sec .container .blog-grid .card .content h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dark-gray);
-    margin: 1.2rem 0 0.8rem 0;
+    font-size: 1.2rem;
+    color: var(--slate-gray);
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 main .blog-sec .container .blog-grid .card .content p {
     color: var(--slate-gray);
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 main .blog-sec .container .blog-grid .card .content button {
     background: var(--medium-yellow);
     color: var(--pure-white);
     border: none;
-    padding: 10px 20px;
+    /* padding: 10px 15px; */
     font-size: 1rem;
     font-weight: 600;
     border-radius: 50px;
@@ -1739,7 +1738,7 @@ main .contact-sec .body .cont-tab .cards .map {
 
 main .contact-sec .body .cont-tab .cards .map iframe {
     width: 100% ;
-    height: 400px;
+    height: 40vh;
     border: none;
 }
 
@@ -1817,7 +1816,7 @@ main .contact-sec .body form .form-inputs .cont textarea:focus {
 
 main .contact-sec .body form .form-inputs .cont textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 100px;
     font-family: inherit;
 }
 
@@ -1828,7 +1827,7 @@ main .contact-sec .body form .form-inputs button {
     font-weight: 600;
     border: none;
     border-radius: 8px;
-    background-color: var(--btn-primary);
+    background-color: var(--medium-yellow);
     color: var(--pure-white);
     cursor: pointer;
     transition: all var(--transition);
