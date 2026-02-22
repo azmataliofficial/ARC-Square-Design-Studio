@@ -13,7 +13,7 @@
     --dark-gray: #2c2c2c;
     --medium-yellow: #b89b4a;
     --slate-gray: #8a8989;
-    --off-white: #b89b4a0b;
+    --off-white: #f3e5be30;
     --pure-white: #FFFFFF;
     --glass-bg: #ffffffdd;
 
@@ -54,7 +54,7 @@ header nav .nav-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
 }
@@ -203,7 +203,7 @@ header .hero-sec .slide .slide-content {
     position: relative;
     z-index: 20;
     text-align: center;
-    color: var(--off-white);
+    color: var(--pure-white);
     padding: 0 1.5rem;
     margin-top: 400px;
     max-width: 900px;
@@ -212,7 +212,6 @@ header .hero-sec .slide .slide-content {
 header .hero-sec .slide .slide-content h1 {
     font-size: 3rem;
     font-weight: 800;
-    /* margin-bottom: 1rem; */
     animation: fadeUp 1s ease;
 }
 
@@ -243,7 +242,7 @@ header .hero-sec .arrow {
     background: var(--overlay-color);
     backdrop-filter: blur(4px);
     border: none;
-    color: var(--off-white);
+    color: var(--pure-white);
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -304,8 +303,8 @@ header .hero-sec .arrow-right {
 }
 
 .button:hover {
-  background: var(--dark-gray);
-  color: var(--pure-white);
+    background: var(--dark-gray);
+    color: var(--pure-white);
 }
 
 .button:hover .button__icon-wrapper {
@@ -360,7 +359,7 @@ header .hero-sec .dots .dot {
 }
 
 header .hero-sec .dots .dot.active {
-    background-color: var(--off-white);
+    background-color: var(--pure-white);
     width: 36px;
     border-radius: 20px;
 }
@@ -390,7 +389,7 @@ main .stats-sec .container .grid .item {
     padding: 2rem 1.5rem;
     background-color: var(--glass-bg);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .stats-sec .container .grid .item .number {
@@ -458,7 +457,7 @@ main .whatsapp-sec .widget .chat-box {
     width: 350px;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     overflow: hidden;
     transform: translateY(20px);
     opacity: 0;
@@ -635,12 +634,12 @@ main .satisfaction-sec .container .grid .item {
     background: var(--pure-white);
     border-radius: 15px;
     transition: all 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .satisfaction-sec .container .grid .item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px var(--box-shadow);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 /* Icons */
@@ -714,14 +713,15 @@ main .about-sec .container .lower-sec .right p {
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-secondary);
-    padding-bottom: 10px ;
+    padding-bottom: 10px;
 }
 
-main .about-sec .container .lower-sec .left{
+main .about-sec .container .lower-sec .left {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 main .about-sec .container .lower-sec .right {
     flex: 1.05;
     display: flex;
@@ -833,7 +833,7 @@ main .services-sec .grid-cont .card {
     background: var(--pure-white);
     border-radius: 16px;
     overflow: hidden;
-
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 /* Card Image Container */
@@ -968,7 +968,7 @@ main .services-sec .consultation .cont {
     background: var(--border-color);
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .services-sec .consultation .cont h2 {
@@ -998,7 +998,7 @@ main .services-sec .consultation .cont button {
     transition: all 0.3s ease;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .services-sec .consultation .cont button i {
@@ -1006,14 +1006,14 @@ main .services-sec .consultation .cont button i {
     background-color: var(--medium-yellow);
     border-radius: 50%;
     padding: 10px;
-    transition: all 0.3s ease   ;
+    transition: all 0.3s ease;
 }
 
 main .services-sec .consultation .cont button:hover {
     background: var(--dark-gray);
     color: var(--pure-white);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .services-sec .consultation .cont button:hover i {
@@ -1222,7 +1222,7 @@ main .project-sec .pro-cont .pro-tabs .pro-tab {
 }
 
 main .project-sec .pro-cont .pro-tabs .pro-tab:hover {
-    border-color: var(--off-white);
+    border-color: var(--slate-gray);
     color: var(--medium-yellow);
 }
 
@@ -1268,7 +1268,7 @@ main .project-sec .pro-cont .projects .projects-grid {
     background: var(--pure-white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     transition: all 0.3s ease;
 }
 
@@ -1458,7 +1458,7 @@ main .gallery-sec .cont .photos figure {
 
 main .gallery-sec .cont .photos figure:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .gallery-sec .cont .photos img {
@@ -1516,7 +1516,7 @@ main .gallery-sec .cont .photos figcaption span {
 main .blog-sec {
     padding: 100px 0 30px;
     background-color: var(--pure-white);
-     border-radius: 30px;
+    border-radius: 30px;
 }
 
 main .blog-sec .container {
@@ -1552,7 +1552,7 @@ main .blog-sec .container .blog-grid {
 main .blog-sec .container .blog-grid .card {
     background: var(--pure-white);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     transition: all 0.3s ease;
     border-radius: 12px;
     overflow: hidden;
@@ -1560,7 +1560,7 @@ main .blog-sec .container .blog-grid .card {
 
 main .blog-sec .container .blog-grid .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .blog-sec .container .blog-grid .card .image {
@@ -1577,11 +1577,11 @@ main .blog-sec .container .blog-grid .card .image img {
     transition: all 0.5s ease;
 }
 
-main .blog-sec .container .blog-grid .card .image img:hover{
+main .blog-sec .container .blog-grid .card .image img:hover {
     transform: scale(1.05);
 }
 
-main .blog-sec .container .blog-grid .card .image span{
+main .blog-sec .container .blog-grid .card .image span {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -1651,16 +1651,16 @@ main .blog-sec .container .blog-grid .card .content button:hover {
 
 /* Contact section */
 main .contact-sec {
-    padding: 100px 0 ;
+    padding: 100px 0;
     margin: 0 auto;
 }
 
-main .contact-sec .head{
+main .contact-sec .head {
     text-align: center;
     margin-bottom: 4rem;
 }
 
-main .contact-sec .head h1{
+main .contact-sec .head h1 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--dark-gray);
@@ -1671,7 +1671,7 @@ main .contact-sec .head p {
     color: var(--slate-gray);
 }
 
-main .contact-sec .body{
+main .contact-sec .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
@@ -1679,13 +1679,14 @@ main .contact-sec .body{
     margin: 0 auto;
 }
 
-main .contact-sec .body .cont-tab h2{
+main .contact-sec .body .cont-tab h2 {
     font-size: 2.2rem;
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--dark-gray);
 }
-main .contact-sec .body .cont-tab p{
+
+main .contact-sec .body .cont-tab p {
     margin: 0 0 30px auto;
     color: var(--slate-gray);
     letter-spacing: 0.5px;
@@ -1733,11 +1734,11 @@ main .contact-sec .body .cont-tab .cards .map {
     margin-top: 0.5rem;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .contact-sec .body .cont-tab .cards .map iframe {
-    width: 100% ;
+    width: 100%;
     height: 40vh;
     border: none;
 }
@@ -1746,7 +1747,7 @@ main .contact-sec .body form {
     background-color: var(--pure-white);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .contact-sec .body form h2 {
@@ -1778,7 +1779,7 @@ main .contact-sec .body form .form-inputs .cont label {
     letter-spacing: 0.5px;
 }
 
-main .contact-sec .body form .form-inputs .cont input{
+main .contact-sec .body form .form-inputs .cont input {
     padding: 12px 15px;
     border: 2px solid var(--border-color);
     border-radius: 8px;
@@ -1788,6 +1789,7 @@ main .contact-sec .body form .form-inputs .cont input{
     background-color: var(--pure-white);
     transition: all var(--transition);
 }
+
 main .contact-sec .body form .form-inputs .cont textarea {
     padding: 12px 15px;
     border: 2px solid var(--border-color);
@@ -1810,7 +1812,7 @@ main .contact-sec .body form .form-inputs .cont input:focus,
 main .contact-sec .body form .form-inputs .cont textarea:focus {
     outline: none;
     border-color: var(--medium-yellow);
-    box-shadow: 0 0 0 3px rgba(184, 155, 74, 0.1);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     background-color: #fafaf8;
 }
 
@@ -1838,7 +1840,7 @@ main .contact-sec .body form .form-inputs button {
 main .contact-sec .body form .form-inputs button:hover {
     background-color: var(--btn-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(44, 44, 44, 0.3);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
 main .contact-sec .body form .form-inputs button:active {
@@ -1915,7 +1917,7 @@ footer .container .grid .col ul li a {
 }
 
 footer .container .grid .col ul li a:hover {
-    color: var(--off-white);
+    color: var(--slate-gray);
     font-weight: 500;
 }
 
@@ -1943,7 +1945,7 @@ footer .container .grid .col .links a {
 }
 
 footer .container .grid .col .links a:hover {
-    color: var(--off-white);
+    color: var(--slate-gray);
     transform: translateY(-3px);
 }
 
@@ -2074,7 +2076,7 @@ footer .footer-bottom p a {
     .contact-form {
         padding: 1rem;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     }
 
     .contact-tab h2,
