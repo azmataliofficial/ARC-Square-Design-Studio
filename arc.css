@@ -304,8 +304,8 @@ header .hero-sec .arrow-right {
 }
 
 .button:hover {
-  background: var(--dark-gray);
-  color: var(--pure-white);
+    background: var(--dark-gray);
+    color: var(--pure-white);
 }
 
 .button:hover .button__icon-wrapper {
@@ -714,14 +714,15 @@ main .about-sec .container .lower-sec .right p {
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-secondary);
-    padding-bottom: 10px ;
+    padding-bottom: 10px;
 }
 
-main .about-sec .container .lower-sec .left{
+main .about-sec .container .lower-sec .left {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 main .about-sec .container .lower-sec .right {
     flex: 1.05;
     display: flex;
@@ -1006,7 +1007,7 @@ main .services-sec .consultation .cont button i {
     background-color: var(--medium-yellow);
     border-radius: 50%;
     padding: 10px;
-    transition: all 0.3s ease   ;
+    transition: all 0.3s ease;
 }
 
 main .services-sec .consultation .cont button:hover {
@@ -1516,7 +1517,7 @@ main .gallery-sec .cont .photos figcaption span {
 main .blog-sec {
     padding: 100px 0 30px;
     background-color: var(--pure-white);
-     border-radius: 30px;
+    border-radius: 30px;
 }
 
 main .blog-sec .container {
@@ -1567,6 +1568,7 @@ main .blog-sec .container .blog-grid .card .image {
     width: 100%;
     aspect-ratio: 16/9;
     overflow: hidden;
+    position: relative;
 }
 
 main .blog-sec .container .blog-grid .card .image img {
@@ -1577,11 +1579,11 @@ main .blog-sec .container .blog-grid .card .image img {
     transition: all 0.5s ease;
 }
 
-main .blog-sec .container .blog-grid .card .image img:hover{
+main .blog-sec .container .blog-grid .card .image img:hover {
     transform: scale(1.05);
 }
 
-main .blog-sec .container .blog-grid .card .image span{
+main .blog-sec .container .blog-grid .card .image span {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -1651,16 +1653,16 @@ main .blog-sec .container .blog-grid .card .content button:hover {
 
 /* Contact section */
 main .contact-sec {
-    padding: 100px 0 ;
+    padding: 100px 0;
     margin: 0 auto;
 }
 
-main .contact-sec .head{
+main .contact-sec .head {
     text-align: center;
     margin-bottom: 4rem;
 }
 
-main .contact-sec .head h1{
+main .contact-sec .head h1 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--dark-gray);
@@ -1671,7 +1673,7 @@ main .contact-sec .head p {
     color: var(--slate-gray);
 }
 
-main .contact-sec .body{
+main .contact-sec .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
@@ -1679,13 +1681,14 @@ main .contact-sec .body{
     margin: 0 auto;
 }
 
-main .contact-sec .body .cont-tab h2{
+main .contact-sec .body .cont-tab h2 {
     font-size: 2.2rem;
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--dark-gray);
 }
-main .contact-sec .body .cont-tab p{
+
+main .contact-sec .body .cont-tab p {
     margin: 0 0 30px auto;
     color: var(--slate-gray);
     letter-spacing: 0.5px;
@@ -1737,7 +1740,7 @@ main .contact-sec .body .cont-tab .cards .map {
 }
 
 main .contact-sec .body .cont-tab .cards .map iframe {
-    width: 100% ;
+    width: 100%;
     height: 40vh;
     border: none;
 }
@@ -1778,7 +1781,7 @@ main .contact-sec .body form .form-inputs .cont label {
     letter-spacing: 0.5px;
 }
 
-main .contact-sec .body form .form-inputs .cont input{
+main .contact-sec .body form .form-inputs .cont input {
     padding: 12px 15px;
     border: 2px solid var(--border-color);
     border-radius: 8px;
@@ -1788,6 +1791,7 @@ main .contact-sec .body form .form-inputs .cont input{
     background-color: var(--pure-white);
     transition: all var(--transition);
 }
+
 main .contact-sec .body form .form-inputs .cont textarea {
     padding: 12px 15px;
     border: 2px solid var(--border-color);
