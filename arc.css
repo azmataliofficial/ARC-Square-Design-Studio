@@ -957,6 +957,9 @@ main .services-sec .grid-cont .card .content .learn-more:hover::after {
     transform: translateX(5px);
 }
 
+
+/* Consultation Section */
+
 main .services-sec .consultation {
     padding: 50px 20px;
     min-height: 300px;
@@ -970,7 +973,7 @@ main .services-sec .consultation .cont {
     max-width: 1400px;
     text-align: left;
     padding: 40px;
-    background: var(--border-color);
+    /* background: var(--border-color); */
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
@@ -1625,7 +1628,7 @@ main .blog-sec .container .blog-grid .card .content button {
     background: var(--medium-yellow);
     color: var(--pure-white);
     border: none;
-    /* padding: 10px 15px; */
+    padding: 10px 15px;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 50px;
