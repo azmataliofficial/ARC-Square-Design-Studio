@@ -8,6 +8,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Primary Colors */
     --dark-gray: #2c2c2c;
@@ -268,8 +272,7 @@ header .hero-sec .arrow-right {
 }
 
 
-/* Get start button */
-.button {
+header .hero-sec .slide .slide-content button {
     line-height: 1;
     text-decoration: none;
     display: inline-flex;
@@ -289,7 +292,7 @@ header .hero-sec .arrow-right {
     transition: background-color 0.3s;
 }
 
-.button__icon-wrapper {
+header .hero-sec .slide .slide-content button .button__icon-wrapper {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -302,12 +305,12 @@ header .hero-sec .arrow-right {
     overflow: hidden;
 }
 
-.button:hover {
+header .hero-sec .slide .slide-content button:hover {
     background: var(--dark-gray);
     color: var(--pure-white);
 }
 
-.button:hover .button__icon-wrapper {
+header .hero-sec .slide .slide-content button:hover .button__icon-wrapper {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -320,17 +323,17 @@ header .hero-sec .arrow-right {
     overflow: hidden;
 }
 
-.button__icon-svg--copy {
+header .hero-sec .slide .slide-content button .button__icon-svg--copy {
     position: absolute;
     transform: translate(-150%, 150%);
 }
 
-.button:hover .button__icon-svg:first-child {
+header .hero-sec .slide .slide-content button:hover .button__icon-svg:first-child {
     transition: transform 0.3s ease-in-out;
     transform: translate(150%, -150%);
 }
 
-.button:hover .button__icon-svg--copy {
+header .hero-sec .slide .slide-content button:hover .button__icon-svg--copy {
     transition: transform 0.3s ease-in-out 0.1s;
     transform: translate(0);
 }

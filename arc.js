@@ -71,18 +71,6 @@
   startAutoSlide();
 
 
-  // get start button script
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".button");
-    if (btn?.textContent.includes("Get Start")) {
-      e.preventDefault();
-      document
-        .getElementById("services")
-        ?.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-
-
   // ----- STATS ANIMATION -----
   const targetValues = {
     experience: 15,
