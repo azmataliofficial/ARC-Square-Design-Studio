@@ -7,13 +7,16 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 :root {
     /* Primary Colors */
     --dark-gray: #2c2c2c;
     --medium-yellow: #b89b4a;
     --slate-gray: #8a8989;
-    --off-white: #f3e5be30;
+    --off-white: #c6c6c629;
     --pure-white: #FFFFFF;
     --glass-bg: #ffffffdd;
 
@@ -976,7 +979,7 @@ main .services-sec .consultation .cont h2 {
     margin-bottom: 20px;
     font-weight: 600;
     letter-spacing: -0.5px;
-    color: var(--pure-white);
+    color: var(--dark-gray);
 }
 
 main .services-sec .consultation .cont p {
@@ -984,6 +987,7 @@ main .services-sec .consultation .cont p {
     line-height: 1.6;
     margin-bottom: 30px;
     opacity: 0.9;
+    color: var(--slate-gray);
 }
 
 main .services-sec .consultation .cont button {
@@ -1099,12 +1103,6 @@ main .pop-sec .conta .uper-part .closE-btn i {
 
 main .pop-sec .conta .uper-part .closE-btn i:hover {
     transform: rotate(90deg);
-    color: var(--medium-yellow);
-}
-
-main .pop-sec .conta .uper-part .closE-btn i:active {
-    transform: rotate(180deg);
-    transform: scale(1.2);
 }
 
 main .pop-sec .lower-part {

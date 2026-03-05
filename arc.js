@@ -81,7 +81,7 @@
         ?.scrollIntoView({ behavior: "smooth" });
     }
   });
-
+  
 
   // ----- STATS ANIMATION -----
   const targetValues = {
