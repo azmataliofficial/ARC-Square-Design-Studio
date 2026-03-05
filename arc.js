@@ -444,3 +444,78 @@ function toggleLike(button) {
     grid.appendChild(figure);
   }
 })();
+
+
+let serCardDetails = [
+  {
+    mainImage: "images/Architect main.jpg",
+    cardCategory: "Architecture",
+    cardTittle: "Modern Architect",
+    cardDecription: "We design modern homes, villas, offices, shops, and showrooms that look beautiful and work perfectly for your needs. Our team plans every detail carefully – from the way rooms connect to how sunlight enters your space. We create buildings that stand strong, look impressive, and make you feel proud. Whether you want a cozy home or a grand commercial space, we turn your ideas into real structures that match your lifestyle and budget.",
+  },
+  {
+    mainImage: "images/interior main.jpg",
+    cardCategory: "Interior Design",
+    cardTittle: "Modern Drawing Area",
+    cardDecription: "We transform empty spaces into beautiful, comfortable rooms where you'll love spending time. For homes and villas, we create warm, personal spaces that reflect your style. For offices, shops, and showrooms, we design smart layouts that impress customers and help your business grow. We handle everything – wall colors, furniture, lighting, and decorations – to make your space both stylish and functional.",
+  },
+  {
+    mainImage: "images/Exterior main.jpg",
+    cardCategory: "Exterior Design",
+    cardTittle: "Commercial Villa",
+    cardDecription: "We make the outside of your building look stunning and welcoming. For modern homes and villas, we create beautiful facades, elegant entrances, and attractive outdoor areas. For offices, shops, and showrooms, we design exteriors that catch people's attention and make your business stand out. We work with materials, colors, and lighting to give your building a personality that impresses everyone who sees it.",
+  },
+  {
+    mainImage: "images/Planning main.jpg",
+    cardCategory: "Planning",
+    cardTittle: "Home Planning",
+    cardDecription: "Before we build anything, we create smart plans that save you time and money. We study your space carefully and design layouts that make the best use of every square foot. For homes and villas, we ensure smooth movement between rooms. For offices, shops, and showrooms, we plan spaces that improve work flow and customer experience. Good planning means fewer problems later and a space that truly works for you.",
+  },
+  {
+    mainImage: "images/2D main.jpg",
+    cardCategory: "2D Modeling",
+    cardTittle: "Villa Drawing",
+    cardDecription: "We create detailed drawings that show exactly how your project will look and work. These floor plans, elevations, and layouts help you understand every room's size, door positions, window placements, and more. For homes and villas, we map out your perfect living space. For offices, shops, and showrooms, we plan efficient layouts. These 2D designs are your project's roadmap – clear, simple, and easy to follow.",
+  },
+  {
+    mainImage: "images/3D main.jpg",
+    cardCategory: "3D Modeling",
+    cardTittle: "Modern 3D Villa",
+    cardDecription: "We bring your project to life with realistic 3D models that let you see your finished space before we start building. You can walk through your future home, villa, office, shop, or showroom on screen. See how colors look together, how furniture fits, and how light moves through rooms. This helps you make changes easily and feel confident about your decisions. What you imagine, we show you in stunning detail.",
+  },
+]
+
+
+for (let cards = 0; cards < serCardDetails.length; cards++) {
+  const element = serCardDetails[cards];
+
+  let mainContainer = document.getElementById("ser-grid-cont")
+
+  mainContainer.innerHTML += `
+                 <div class="card">
+                   <div  class="image">
+                        <img
+                            src="${element.mainImage}"
+                            alt="Modern Living Room with Natural Light" loading="lazy">
+                        <div class="overlay" id="card-over"></div>
+                        <div class="content" id="card-cont">
+                            <span>${element.cardCategory}</span>
+                            <h2>${element.cardTittle}</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="description">
+                           ${element.cardDecription}
+                        </p>
+                        <button class="learn-more" aria-label="Learn more about Modern Living Room design">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                `
+
+
+
+  console.log(element.cardCategory)
+
+}
