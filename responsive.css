@@ -1,0 +1,1259 @@
+@media screen and (max-width: 1280px) {
+
+    /* Navigation */
+    header nav .nav-bar {
+        max-width: 1100px;
+        padding: 0px 30px;
+    }
+
+    /* Hero Section */
+    header .hero-sec .slide .slide-content h1 {
+        font-size: 2.8rem;
+    }
+
+    header .hero-sec .slide .slide-content p {
+        font-size: 1.2rem;
+    }
+
+    /* Stats Section */
+    main .stats-sec .container .grid .item .number {
+        font-size: 3rem;
+    }
+
+    main .stats-sec .container .grid .item .label {
+        font-size: 1.1rem;
+    }
+
+    /* Services Grid */
+    main .services-sec .grid-cont {
+        max-width: 1100px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    /* Projects Grid */
+    main .project-sec .pro-cont .projects .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Blog Grid */
+    main .blog-sec .container .blog-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    /* Gallery */
+    main .gallery-sec .cont .photos {
+        column-count: 4;
+    }
+
+    /* Contact Section */
+    main .contact-sec .body {
+        max-width: 1100px;
+        gap: 2rem;
+    }
+
+    /* Footer */
+    footer .container {
+        max-width: 1100px;
+    }
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+    /* Navigation */
+    header nav .nav-bar {
+        max-width: 900px;
+        padding: 0px 20px;
+    }
+
+    header nav .nav-bar .logo-section .logo-img img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
+    header nav .nav-bar .logo-section .brand-name #span {
+        font-size: 18px;
+    }
+
+    header nav .nav-bar .nav-links {
+        gap: 20px;
+    }
+
+    header nav .nav-bar .nav-links .nav-link {
+        font-size: 13px;
+    }
+
+    /* Hero Section */
+    header .hero-sec .slide .slide-content {
+        margin-top: 350px;
+    }
+
+    header .hero-sec .slide .slide-content h1 {
+        font-size: 2.5rem;
+    }
+
+    header .hero-sec .slide .slide-content p {
+        font-size: 1.1rem;
+    }
+
+    header .hero-sec .arrow-left {
+        left: 30px;
+    }
+
+    header .hero-sec .arrow-right {
+        right: 30px;
+    }
+
+    header .hero-sec .arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+
+    /* Stats Section */
+    main .stats-sec .container .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    main .stats-sec {
+        padding: 3rem 1.5rem;
+    }
+
+    /* Satisfaction Section */
+    main .satisfaction-sec .container {
+        padding: 40px 30px;
+    }
+
+    main .satisfaction-sec .container .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .satisfaction-sec .container .content h2 {
+        font-size: 32px;
+    }
+
+    /* About Section */
+    main .about-sec .container .lower-sec {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    main .about-sec .container .upper-sec h1 {
+        font-size: 2.5rem;
+    }
+
+    main .about-sec .container .lower-sec .left h2,
+    main .about-sec .container .lower-sec .right h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Services Section */
+    main .services-sec .service-cont h2 {
+        font-size: 2.5rem;
+    }
+
+    main .services-sec .grid-cont {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        padding: 0 20px;
+    }
+
+    main .services-sec .grid-cont .card {
+        max-width: 100%;
+    }
+
+    /* Consultation Section */
+    main .services-sec .consultation .cont {
+        padding: 30px;
+    }
+
+    main .services-sec .consultation .cont h2 {
+        font-size: 1.8rem;
+    }
+
+    main .services-sec .consultation .cont p {
+        font-size: 1rem;
+    }
+
+    /* Projects Section */
+    main .project-sec .pro-head h2 {
+        font-size: 2.5rem;
+    }
+
+    main .project-sec .pro-cont .projects .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+
+    main .project-sec .pro-cont .pro-tabs .pro-tab {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    /* Blog Section */
+    main .blog-sec .container .head h1 {
+        font-size: 2.5rem;
+    }
+
+    main .blog-sec .container .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+
+    /* Gallery Section */
+    main .gallery-sec .cont .head h1 {
+        font-size: 2.5rem;
+    }
+
+    main .gallery-sec .cont .photos {
+        column-count: 3;
+        padding: 0 20px;
+    }
+
+    /* Contact Section */
+    main .contact-sec .head h1 {
+        font-size: 2.5rem;
+    }
+
+    main .contact-sec .body {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        padding: 0 20px;
+    }
+
+    main .contact-sec .body .cont-tab h2 {
+        font-size: 2rem;
+    }
+
+    main .contact-sec .body form h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer */
+    footer .container .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    /* Popup Section */
+    main .pop-sec .conta {
+        max-width: 600px;
+        height: 80vh;
+    }
+
+    main .pop-sec .conta .uper-part img {
+        height: 350px;
+    }
+
+    main .pop-sec .lower-part .cont h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* Navigation */
+    header nav {
+        top: 10px;
+    }
+
+    header nav .nav-bar {
+        padding: 10px 20px;
+        border-radius: 50px;
+    }
+
+    header nav .nav-bar .mobile-menu-btn {
+        display: block;
+    }
+
+    header nav .nav-bar .nav-links {
+        position: fixed;
+        top: 90px;
+        left: 20px;
+        right: 20px;
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000;
+    }
+
+    header nav .nav-bar .nav-links.active {
+        display: flex;
+    }
+
+    header nav .nav-bar .nav-links #toggleBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
+    header nav .nav-bar .logo-section .brand-name #span {
+        font-size: 16px;
+    }
+
+    header nav .nav-bar .logo-section .brand-name span:last-child {
+        font-size: 10px;
+    }
+
+    /* Hero Section */
+    header .hero-sec {
+        height: 90vh;
+    }
+
+    header .hero-sec .slide .slide-content {
+        margin-top: 300px;
+        padding: 0 1rem;
+    }
+
+    header .hero-sec .slide .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    header .hero-sec .slide .slide-content p {
+        font-size: 1rem;
+    }
+
+    header .hero-sec .arrow-left {
+        left: 15px;
+    }
+
+    header .hero-sec .arrow-right {
+        right: 15px;
+    }
+
+    header .hero-sec .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    header .hero-sec .dots {
+        bottom: 20px;
+    }
+
+    /* Stats Section */
+    main .stats-sec {
+        padding: 2rem 1rem;
+    }
+
+    main .stats-sec .container .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    main .stats-sec .container .grid .item {
+        padding: 1.5rem;
+    }
+
+    main .stats-sec .container .grid .item .number {
+        font-size: 2.5rem;
+    }
+
+    /* WhatsApp Widget */
+    main .whatsapp-sec .widget .chat-box {
+        width: 300px;
+        right: 0;
+        bottom: 70px;
+    }
+
+    main .whatsapp-sec .widget {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Satisfaction Section */
+    main .satisfaction-sec .container {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    main .satisfaction-sec .container .content h2 {
+        font-size: 28px;
+    }
+
+    main .satisfaction-sec .container .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    main .satisfaction-sec .container .grid .item {
+        padding: 25px 15px;
+    }
+
+    /* About Section */
+    main .about-sec .container .upper-sec {
+        padding: 80px 20px 30px;
+    }
+
+    main .about-sec .container .upper-sec h1 {
+        font-size: 2rem;
+    }
+
+    main .about-sec .container .upper-sec p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    main .about-sec .container .lower-sec {
+        padding: 0 20px;
+    }
+
+    main .about-sec .container .lower-sec .left h2,
+    main .about-sec .container .lower-sec .right h2 {
+        font-size: 1.6rem;
+    }
+
+    main .about-sec .container .container-points .point .left span {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* Services Section */
+    main .services-sec {
+        padding: 80px 0 20px;
+    }
+
+    main .services-sec .service-cont h2 {
+        font-size: 2rem;
+    }
+
+    main .services-sec .service-cont p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    main .services-sec .grid-cont {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 20px;
+    }
+
+    main .services-sec .grid-cont .card .image {
+        height: 200px;
+    }
+
+    main .services-sec .grid-cont .card .image .content h2 {
+        font-size: 20px;
+    }
+
+    main .services-sec .grid-cont .card .content .description {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* Consultation Section */
+    main .services-sec .consultation {
+        padding: 30px 20px;
+    }
+
+    main .services-sec .consultation .cont {
+        padding: 25px;
+        text-align: center;
+    }
+
+    main .services-sec .consultation .cont h2 {
+        font-size: 1.6rem;
+    }
+
+    main .services-sec .consultation .cont p {
+        font-size: 0.95rem;
+    }
+
+    main .services-sec .consultation .cont button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    /* Projects Section */
+    main .project-sec {
+        padding: 80px 0;
+    }
+
+    main .project-sec .pro-head h2 {
+        font-size: 2rem;
+    }
+
+    main .project-sec .pro-head p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    main .project-sec .pro-cont .pro-tabs {
+        gap: 0.5rem;
+        padding: 0 15px;
+    }
+
+    main .project-sec .pro-cont .pro-tabs .pro-tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    main .project-sec .pro-cont .projects .projects-grid {
+        grid-template-columns: 2fr;
+        padding: 0 15px;
+    }
+
+    .pro-content {
+        padding: 1.2rem;
+    }
+
+    /* Blog Section */
+    main .blog-sec {
+        padding: 80px 0 20px;
+    }
+
+    main .blog-sec .container .head h1 {
+        font-size: 2rem;
+    }
+
+    main .blog-sec .container .head p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    main .blog-sec .container .blog-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    main .blog-sec .container .blog-grid .card .content {
+        padding: 1.2rem;
+    }
+
+    main .blog-sec .container .blog-grid .card .content h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Gallery Section */
+    main .gallery-sec {
+        padding: 80px 0 20px;
+    }
+
+    main .gallery-sec .cont .head h1 {
+        font-size: 2rem;
+    }
+
+    main .gallery-sec .cont .head p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    main .gallery-sec .cont .photos {
+        column-count: 2;
+        padding: 0 15px;
+    }
+
+    /* Contact Section */
+    main .contact-sec {
+        padding: 80px 0;
+    }
+
+    main .contact-sec .head h1 {
+        font-size: 2rem;
+    }
+
+    main .contact-sec .head p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    main .contact-sec .body {
+        padding: 0 15px;
+    }
+
+    main .contact-sec .body .cont-tab h2 {
+        font-size: 1.8rem;
+    }
+
+    main .contact-sec .body .cont-tab .cards .card {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    main .contact-sec .body form {
+        padding: 1.5rem;
+    }
+
+    main .contact-sec .body form h2 {
+        font-size: 1.6rem;
+    }
+
+    main .contact-sec .body form .form-inputs .cont textarea {
+        height: 150px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 40px 0 20px;
+    }
+
+    footer .container .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    footer .container .grid .col {
+        text-align: center;
+    }
+
+    footer .container .grid .col .info li {
+        justify-content: center;
+    }
+
+    footer .container .grid .col .links {
+        justify-content: center;
+    }
+
+    /* Popup Section */
+    main .pop-sec .conta {
+        max-width: 90%;
+        height: 80vh;
+    }
+
+    main .pop-sec .conta .uper-part img {
+        height: 250px;
+    }
+
+    main .pop-sec .lower-part .gallery .images {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 5px;
+    }
+
+    main .pop-sec .lower-part .gallery .images img {
+        height: 150px;
+    }
+
+    main .pop-sec .lower-part .cont h2 {
+        font-size: 24px;
+    }
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    /* Navigation */
+    header nav .nav-bar {
+        padding: 8px 15px;
+        margin: 0 20px;
+    }
+
+    header nav .nav-bar .logo-section .logo-img img {
+        width: 45px;
+        height: 45px;
+        margin-left: 10px;
+    }
+
+    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
+    header nav .nav-bar .logo-section .brand-name #span {
+        font-size: 14px;
+    }
+
+    header nav .nav-bar .mobile-menu-btn{
+        margin-right: 12px;
+    }
+
+    header nav .nav-bar .logo-section .brand-name span:last-child {
+        font-size: 9px;
+    }
+
+    header nav .nav-bar .nav-links {
+        top: 80px;
+        left: 15px;
+        right: 15px;
+        padding: 20px;
+    }
+
+    /* Hero Section */
+    header .hero-sec {
+        height: 95vh;
+        min-height: 500px;
+    }
+
+    header .hero-sec .slide .slide-content {
+        margin-top: 450px;
+    }
+
+    header .hero-sec .slide .slide-content h1 {
+        font-size: 1.5rem;
+    }
+
+    header .hero-sec .slide .slide-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    header .hero-sec .slide .slide-content button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        text-decoration: none;
+        margin-bottom: 5rem;
+    }
+
+    header .hero-sec .arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    header .hero-sec .dots .dot {
+        width: 8px;
+        height: 8px;
+        margin-bottom: 15px;
+    }
+
+    header .hero-sec .dots .dot.active {
+        width: 24px;
+    }
+
+    /* Stats Section */
+    main .stats-sec {
+        padding: 1.5rem 0.6rem;
+    }
+
+    main .stats-sec .container .grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    main .stats-sec .container .grid .item {
+        padding: 1rem;
+    }
+
+    main .stats-sec .container .grid .item .number {
+        font-size: 2rem;
+    }
+
+    main .stats-sec .container .grid .item .label {
+        font-size: 0.9rem;
+    }
+
+    /* WhatsApp Widget */
+    main .whatsapp-sec .widget .icon {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+    }
+
+    main .whatsapp-sec .widget .chat-box {
+        width: 350px;
+        bottom: 65px;
+    }
+
+    main .whatsapp-sec .widget .chat-box .header {
+        padding: 15px;
+    }
+
+    main .whatsapp-sec .widget .chat-box .body {
+        padding: 15px;
+        max-height: 300px;
+    }
+
+    main .whatsapp-sec .widget .chat-box .input {
+        padding: 10px 15px;
+        width: 100%;
+    }
+    main .whatsapp-sec .widget .chat-box input{
+        width: 100%;
+    }
+
+    /* Satisfaction Section */
+    main .satisfaction-sec .container {
+        padding: 20px 10px;
+    }
+
+    main .satisfaction-sec .container .content{
+        padding: 0 15px;
+    }
+
+    main .satisfaction-sec .container .content h2 {
+        font-size: 24px;
+        padding-bottom: 10px;
+    }
+
+    main .satisfaction-sec .container .content p {
+        font-size: 14px;
+    }
+
+    main .satisfaction-sec .container .grid{
+        padding: 0 15px;
+    }
+
+    main .satisfaction-sec .container .grid .item i {
+        font-size: 35px;
+    }
+
+    main .satisfaction-sec .container .grid .item h3 {
+        font-size: 20px;
+    }
+
+    main .satisfaction-sec .container .grid .item p {
+        font-size: 13px;
+    }
+
+    /* About Section */
+    main .about-sec .container .upper-sec {
+        padding: 60px 15px 20px;
+    }
+
+    main .about-sec .container .upper-sec h1 {
+        font-size: 1.8rem;
+    }
+
+    main .about-sec .container .upper-sec p {
+        font-size: 0.9rem;
+    }
+
+    main .about-sec .container .lower-sec {
+        padding: 0 20px;
+    }
+
+    main .about-sec .container .lower-sec .left h2,
+    main .about-sec .container .lower-sec .right h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    main .about-sec .container .lower-sec .left p,
+    main .about-sec .container .lower-sec .right p {
+        font-size: 0.9rem;
+    }
+
+    main .about-sec .container .container-points .point {
+        gap: 10px;
+    }
+
+    main .about-sec .container .container-points .point .left span {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    main .about-sec .container .container-points .point .right h3 {
+        font-size: 1rem;
+    }
+
+    main .about-sec .container .container-points .point .right p {
+        font-size: 0.85rem;
+    }
+
+    /* Services Section */
+    main .services-sec {
+        padding: 60px 0 15px;
+    }
+
+    main .services-sec .service-cont h2 {
+        font-size: 1.8rem;
+    }
+
+    main .services-sec .service-cont p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    main .services-sec .grid-cont {
+        margin-top: 40px;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .services-sec .grid-cont .card .image {
+        height: 100px;
+    }
+
+    main .services-sec .grid-cont .card .image .content {
+        padding: 15px;
+    }
+
+    main .services-sec .grid-cont .card .image .content span {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+
+    main .services-sec .grid-cont .card .image .content h2 {
+        font-size: 18px;
+    }
+
+    main .services-sec .grid-cont .card .content {
+        padding: 0.5rem 1.2rem;
+    }
+
+    main .services-sec .grid-cont .card .content .description {
+        font-size: 0.9rem;
+        overflow: hidden;
+        height: 60px;
+    }
+
+    main .services-sec .grid-cont .card .content .learn-more {
+        font-size: 0.9rem;
+    }
+
+    /* Consultation Section */
+    main .services-sec .consultation .cont {
+        padding: 20px 15px;
+    }
+
+    main .services-sec .consultation .cont h2 {
+        font-size: 1.4rem;
+    }
+
+    main .services-sec .consultation .cont p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    main .services-sec .consultation .cont button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    main .services-sec .consultation .cont button i {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    /* Projects Section */
+    main .project-sec {
+        padding: 60px 0;
+    }
+
+    main .project-sec .pro-head h2 {
+        font-size: 1.8rem;
+    }
+
+    main .project-sec .pro-head p {
+        font-size: 0.9rem;
+    }
+
+    main .project-sec .pro-cont .pro-tabs {
+        gap: 0.3rem;
+        margin-bottom: 2rem;
+    }
+
+    main .project-sec .pro-cont .pro-tabs .pro-tab {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    main .project-sec .pro-cont .projects .projects-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pro-cont-head h3 {
+        font-size: 1rem;
+    }
+
+    .like-btn {
+        font-size: 0.9rem;
+    }
+
+    .pro-content span {
+        font-size: 0.8rem;
+    }
+
+    /* Blog Section */
+    main .blog-sec {
+        padding: 60px 0 15px;
+        /* grid-template-columns: repeat(2, 1fr); */
+    }
+
+    main .blog-sec .container .head h1 {
+        font-size: 1.8rem;
+    }
+
+    main .blog-sec .container .head p {
+        font-size: 0.9rem;
+    }
+
+    main .blog-sec .container .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .blog-sec .container .blog-grid .card .image span {
+        top: 10px;
+        left: 10px;
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+
+    main .blog-sec .container .blog-grid .card .content span {
+        font-size: 12px;
+    }
+
+    main .blog-sec .container .blog-grid .card .content h2 {
+        font-size: 1rem;
+    }
+
+    main .blog-sec .container .blog-grid .card .content p {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    main .blog-sec .container .blog-grid .card .content button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Gallery Section */
+    main .gallery-sec {
+        padding: 60px 0 15px;
+    }
+
+    main .gallery-sec .cont .head h1 {
+        font-size: 1.8rem;
+    }
+
+    main .gallery-sec .cont .head p {
+        font-size: 0.9rem;
+    }
+
+    main .gallery-sec .cont .photos {
+        column-count: 2;
+    }
+
+    main .gallery-sec .cont .photos figcaption strong {
+        font-size: 1rem;
+    }
+
+    main .gallery-sec .cont .photos figcaption span {
+        font-size: 0.7rem;
+    }
+
+    /* Contact Section */
+    main .contact-sec {
+        padding: 60px 0;
+    }
+
+    main .contact-sec .head h1 {
+        font-size: 1.8rem;
+    }
+
+    main .contact-sec .head p {
+        font-size: 0.9rem;
+    }
+
+    main .contact-sec .body .cont-tab h2 {
+        font-size: 1.6rem;
+    }
+
+    main .contact-sec .body .cont-tab p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    main .contact-sec .body .cont-tab .cards .card .icons {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    main .contact-sec .body .cont-tab .cards .card .detail h3 {
+        font-size: 1.1rem;
+    }
+
+    main .contact-sec .body .cont-tab .cards .card .detail p {
+        font-size: 0.85rem;
+    }
+
+    main .contact-sec .body .cont-tab .cards .map iframe {
+        height: 250px;
+    }
+
+    main .contact-sec .body form {
+        padding: 1.2rem;
+    }
+
+    main .contact-sec .body form h2 {
+        font-size: 1.4rem;
+    }
+
+    main .contact-sec .body form .form-inputs .cont label {
+        font-size: 0.85rem;
+    }
+
+    main .contact-sec .body form .form-inputs .cont input,
+    main .contact-sec .body form .form-inputs .cont textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    main .contact-sec .body form .form-inputs button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 0 15px;
+    }
+
+    footer .container .grid {
+        gap: 20px;
+    }
+
+    footer .container .grid .col h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    footer .container .grid .col h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    footer .container .grid .col p,
+    footer .container .grid .col ul li,
+    footer .container .grid .col ul li a {
+        font-size: 13px;
+    }
+
+    footer .container .grid .col .links a {
+        font-size: 18px;
+    }
+
+    footer .footer-bottom p {
+        font-size: 12px;
+    }
+
+    /* Popup Section */
+    main .pop-sec .conta {
+        height: 90vh;
+    }
+
+    main .pop-sec .conta .uper-part img {
+        height: 200px;
+    }
+
+    main .pop-sec .lower-part {
+        padding: 15px;
+    }
+
+    main .pop-sec .lower-part .cont h2 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    main .pop-sec .lower-part .cont p {
+        font-size: 0.9rem;
+    }
+
+    main .pop-sec .lower-part .gallery .images img {
+        height: 120px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 320px) {
+
+    /* Navigation */
+    header nav .nav-bar .logo-section {
+        gap: 8px;
+    }
+
+    header nav .nav-bar .logo-section .logo-img img {
+        width: 35px;
+        height: 35px;
+    }
+
+    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
+    header nav .nav-bar .logo-section .brand-name #span {
+        font-size: 12px;
+    }
+
+    /* Hero Section */
+    header .hero-sec .slide .slide-content h1 {
+        font-size: 1.3rem;
+    }
+
+    header .hero-sec .slide .slide-content p {
+        font-size: 0.8rem;
+    }
+
+    header .hero-sec .arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    /* WhatsApp Widget */
+    main .whatsapp-sec .widget .chat-box {
+        width: 250px;
+    }
+
+    /* Stats Section */
+    main .stats-sec .container .grid .item .number {
+        font-size: 1.8rem;
+    }
+
+    /* Services Section */
+    main .services-sec .service-cont h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Projects Section */
+    main .project-sec .pro-head h2 {
+        font-size: 1.6rem;
+    }
+
+    main .project-sec .pro-cont .pro-tabs .pro-tab {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    /* Blog Section */
+    main .blog-sec .container .head h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Gallery Section */
+    main .gallery-sec .cont .head h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Contact Section */
+    main .contact-sec .head h1 {
+        font-size: 1.6rem;
+    }
+
+    main .contact-sec .body .cont-tab h2 {
+        font-size: 1.4rem;
+    }
+
+    main .contact-sec .body form {
+        padding: 1rem;
+    }
+
+    main .contact-sec .body form h2 {
+        font-size: 1.3rem;
+    }
+
+    main .contact-sec .body form .form-inputs button {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer .container .grid .col .links a {
+        font-size: 16px;
+    }
+}

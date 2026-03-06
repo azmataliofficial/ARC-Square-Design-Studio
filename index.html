@@ -23,6 +23,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="arc.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
@@ -71,7 +72,7 @@
                     <h1>Modern Living Spaces</h1>
                     <p>Where architecture meets comfort</p>
                     <a href="#services">
-                        <button style="--clr: #7808d0">
+                        <button style="--clr: #7808d0" style="text-decoration: none;">
                             <span class="button__icon-wrapper">
                                 <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="button__icon-svg" width="10">
@@ -99,7 +100,7 @@
                     <h1>Modern Interior Design</h1>
                     <p>Designed with modern aesthetics in mind</p>
                     <a href="#services">
-                        <button style="--clr: #7808d0">
+                        <button style="--clr: #7808d0" style="text-decoration: none;">
                             <span class="button__icon-wrapper">
                                 <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="button__icon-svg" width="10">
@@ -127,7 +128,7 @@
                     <h1>Stunning Exterior Design</h1>
                     <p>Architecture that inspires</p>
                     <a href="#services">
-                        <button style="--clr: #7808d0">
+                        <button style="--clr: #7808d0" style="text-decoration: none;">
                             <span class="button__icon-wrapper">
                                 <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                                     class="button__icon-svg" width="10">
@@ -170,15 +171,15 @@
                         <div class="label">Years Experience</div>
                     </div>
                     <div class="item">
-                        <div class="number" id="statClients" data-target="900">0+</div>
+                        <div class="number" id="statClients" data-target="240">0+</div>
                         <div class="label">Happy Clients</div>
                     </div>
                     <div class="item">
-                        <div class="number" id="statProjects" data-target="500">0+</div>
+                        <div class="number" id="statProjects" data-target="380">0+</div>
                         <div class="label">Projects Completed</div>
                     </div>
                     <div class="item">
-                        <div class="number" id="statAwards" data-target="35">0+</div>
+                        <div class="number" id="statAwards" data-target="28">0+</div>
                         <div class="label">Awards Won</div>
                     </div>
                 </div>
@@ -216,7 +217,7 @@
                             <p>Hello! 👋 Welcome to ARC Square Design Studio. How can we assist you with your
                                 architectural
                                 project today?</p>
-                            <span class="mess-time">10:00 AM</span>
+                            <span class="mess-time" >10:00 AM</span>
                         </div>
                     </div>
 
@@ -371,26 +372,7 @@
             </div>
 
             <div id="ser-grid-cont" class="grid-cont">
-                <!-- <div id="ser-card" class="card">
-                    <div  class="image">
-                        <img class="ser-card-img"
-                            src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Modern Living Room with Natural Light" loading="lazy">
-                        <div class="overlay" id="card-over"></div>
-                        <div class="content" id="card-cont">
-                            <span class="ser-card-catag">Interior Design</span>
-                            <h2v class="ser-card-ttl">Modern Living Room</h2>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <p class="ser-card-dsc" class="description">
-                            Complete interior design solutions for residential and commercial spaces.
-                        </p>
-                        <button class="learn-more" aria-label="Learn more about Modern Living Room design">
-                            Learn More
-                        </button>
-                    </div>
-                </div> -->
+               <!-- Card avilable in script inner html -->
             </div>
 
             <div class="consultation" id="consultation">
@@ -456,11 +438,11 @@
                 <div class="pro-tabs">
                     <button class="pro-tab active" data-category="all">All</button>
                     <button class="pro-tab" data-category="architecture">Architecture</button>
-                    <button class="pro-tab" data-category="interior">Interior Design</button>
-                    <button class="pro-tab" data-category="exterior">Exterior Design</button>
+                    <button class="pro-tab" data-category="interior">Interior</button>
+                    <button class="pro-tab" data-category="exterior">Exterior</button>
                     <button class="pro-tab" data-category="planning">Planning</button>
-                    <button class="pro-tab" data-category="2d">2D Modeling</button>
-                    <button class="pro-tab" data-category="3d">3D Modeling</button>
+                    <button class="pro-tab" data-category="2d">2D</button>
+                    <button class="pro-tab" data-category="3d">3D</button>
                 </div>
 
                 <div class="projects active" id="all-projects" data-category="all">

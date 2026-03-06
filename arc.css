@@ -544,12 +544,14 @@ main .whatsapp-sec .widget .chat-box .body .mess p {
     color: #333;
 }
 
-main .whatsapp-sec .widget .chat-box .body .mess .mess-time {
-    display: block;
+main .whatsapp-sec .widget .chat-box .body .mess-time {
     font-size: 0.7rem;
-    color: #999;
+    color: #7f7f7f;
     margin-top: 5px;
     text-align: right;
+    background-color: rgba(125, 125, 125, 0.305);
+    padding: 2px 8px;
+    border-radius: 10px;
 }
 
 main .whatsapp-sec .widget .chat-box .input {
