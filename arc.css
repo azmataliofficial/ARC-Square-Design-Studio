@@ -123,7 +123,6 @@ header nav .nav-bar .nav-links .nav-link {
 }
 
 
-/* Hover underline animation */
 header nav .nav-bar .nav-links .nav-link::after {
     content: "";
     position: absolute;
@@ -143,8 +142,12 @@ header nav .nav-bar .nav-links .nav-link:hover {
     color: var(--text-primary);
 }
 
+header nav .nav-bar .nav-links .nav-link.active::after{
+    width: 100%;
+}
 
-/* toggle button */
+
+
 header nav .nav-bar .nav-links #toggleBtn {
     background-color: transparent;
     border: 2px solid var(--text-primary);
@@ -167,6 +170,21 @@ header nav .nav-bar .mobile-menu-btn {
     font-size: 24px;
     color: var(--text-primary);
     cursor: pointer;
+}
+
+/* when nav-links has 'open' class (mobile) move into view */
+header nav .nav-bar .nav-links.open {
+    right: 0;
+}
+
+/* dark mode color overrides */
+body.dark {
+    --bg-primary: #2c2c2c;
+    --bg-secondary: #1f1f1f;
+    --text-primary: #f0f0f0;
+    --text-secondary: #ccc;
+    --nav-bg: #2c2c2c;
+    --nav-text: #f0f0f0;
 }
 
 
@@ -2006,6 +2024,20 @@ footer .footer-bottom p a {
 }
 
 @media (max-width: 768px) {
+    /* mobile nav adjustments */
+    header nav .nav-bar .mobile-menu-btn { display: block; }
+    header nav .nav-bar .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--nav-bg);
+        padding: 100px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
     .contact-sec {
         padding: 60px 15px;
     }

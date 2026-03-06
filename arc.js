@@ -1,3 +1,32 @@
+const sections = document.querySelectorAll(".slide-sec");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function updateActivelinks(){
+  const scroll = window.scrollY
+  let current = ''
+
+  sections.forEach((section)=>{
+    const top = section.offsetTop
+    const height = section.clientHeight
+
+    if(scroll >= top -300 && scroll < top + height -300){
+      current = section.id
+    }
+  })
+
+  if(scroll < 100 ) {
+    current = 'home'
+  }
+  navLinks.forEach((link)=>{
+    link.classList.toggle('active', link.dataset.section == current)
+  })
+}
+
+window.addEventListener('scroll', updateActivelinks);
+window.addEventListener('load', updateActivelinks);
+
+
+
 (function () {
   // ----- HERO SLIDER -----
   const slides = document.querySelectorAll(".slide");
@@ -575,5 +604,13 @@ function openpop(index) {
       popsec.style.visibility = "hidden";
     });
   }
+
+  // hide popup when clicking outside content
+  popsec.addEventListener('click', e => {
+    if (e.target === popsec) {
+      popsec.style.opacity = "0";
+      popsec.style.visibility = "hidden";
+    }
+  });
 }
 
