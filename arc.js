@@ -1,3 +1,32 @@
+const sections = document.querySelectorAll(".slide-sec");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function updateActivelinks(){
+  const scroll = window.scrollY
+  let current = ''
+
+  sections.forEach((section)=>{
+    const top = section.offsetTop
+    const height = section.clientHeight
+
+    if(scroll >= top -300 && scroll < top + height -300){
+      current = section.id
+    }
+  })
+
+  if(scroll < 100 ) {
+    current = 'home'
+  }
+  navLinks.forEach((link)=>{
+    link.classList.toggle('active', link.dataset.section == current)
+  })
+}
+
+window.addEventListener('scroll', updateActivelinks);
+window.addEventListener('load', updateActivelinks);
+
+
+
 (function () {
   // ----- HERO SLIDER -----
   const slides = document.querySelectorAll(".slide");
@@ -203,25 +232,6 @@ function sendWhatsApp() {
 }
 
 
-
-// Service Cards Pop-up Script
-let popsec = document.getElementById("pop-sec");
-let cardbtn = document.querySelectorAll(".learn-more");
-let closebtn = document.getElementById("close-pop");
-
-function openpop() {
-  popsec.style.opacity = "1";
-  popsec.style.visibility = "visible";
-}
-
-cardbtn.forEach((btn) => {
-  btn.addEventListener("click", openpop);
-});
-
-closebtn.addEventListener("click", function () {
-  popsec.style.opacity = "0";
-  popsec.style.visibility = "hidden";
-});
 
 
 
@@ -446,51 +456,72 @@ function toggleLike(button) {
 })();
 
 
+
+// service section cards
+
 let serCardDetails = [
   {
     mainImage: "images/Architect main.jpg",
     cardCategory: "Architecture",
     cardTittle: "Modern Architect",
     cardDecription: "We design modern homes, villas, offices, shops, and showrooms that look beautiful and work perfectly for your needs. Our team plans every detail carefully – from the way rooms connect to how sunlight enters your space. We create buildings that stand strong, look impressive, and make you feel proud. Whether you want a cozy home or a grand commercial space, we turn your ideas into real structures that match your lifestyle and budget.",
+    gallaryimg1: "images/Architect 1.jpg",
+    gallaryimg2: "images/Architect 2.jpg",
+    gallaryimg3: "images/Architect 3.jpg"
   },
   {
     mainImage: "images/interior main.jpg",
     cardCategory: "Interior Design",
     cardTittle: "Modern Drawing Area",
     cardDecription: "We transform empty spaces into beautiful, comfortable rooms where you'll love spending time. For homes and villas, we create warm, personal spaces that reflect your style. For offices, shops, and showrooms, we design smart layouts that impress customers and help your business grow. We handle everything – wall colors, furniture, lighting, and decorations – to make your space both stylish and functional.",
+    gallaryimg1: "images/interior 1.jpg",
+    gallaryimg2: "images/interior 2.jpg",
+    gallaryimg3: "images/interior 3.jpg"
   },
   {
     mainImage: "images/Exterior main.jpg",
     cardCategory: "Exterior Design",
     cardTittle: "Commercial Villa",
     cardDecription: "We make the outside of your building look stunning and welcoming. For modern homes and villas, we create beautiful facades, elegant entrances, and attractive outdoor areas. For offices, shops, and showrooms, we design exteriors that catch people's attention and make your business stand out. We work with materials, colors, and lighting to give your building a personality that impresses everyone who sees it.",
+    gallaryimg1: "images/Exterior 1.jpg",
+    gallaryimg2: "images/Exterior 2.jpg",
+    gallaryimg3: "images/Exterior 3.jpg"
   },
   {
     mainImage: "images/Planning main.jpg",
     cardCategory: "Planning",
     cardTittle: "Home Planning",
     cardDecription: "Before we build anything, we create smart plans that save you time and money. We study your space carefully and design layouts that make the best use of every square foot. For homes and villas, we ensure smooth movement between rooms. For offices, shops, and showrooms, we plan spaces that improve work flow and customer experience. Good planning means fewer problems later and a space that truly works for you.",
+    gallaryimg1: "images/Planning 1.jpg",
+    gallaryimg2: "images/Planning 2.jpg",
+    gallaryimg3: "images/Planning 3.jpg"
   },
   {
     mainImage: "images/2D main.jpg",
     cardCategory: "2D Modeling",
     cardTittle: "Villa Drawing",
     cardDecription: "We create detailed drawings that show exactly how your project will look and work. These floor plans, elevations, and layouts help you understand every room's size, door positions, window placements, and more. For homes and villas, we map out your perfect living space. For offices, shops, and showrooms, we plan efficient layouts. These 2D designs are your project's roadmap – clear, simple, and easy to follow.",
+    gallaryimg1: "images/2D 1.jpg",
+    gallaryimg2: "images/2D 2.jpg",
+    gallaryimg3: "images/2D 3.jpg"
   },
   {
     mainImage: "images/3D main.jpg",
     cardCategory: "3D Modeling",
     cardTittle: "Modern 3D Villa",
     cardDecription: "We bring your project to life with realistic 3D models that let you see your finished space before we start building. You can walk through your future home, villa, office, shop, or showroom on screen. See how colors look together, how furniture fits, and how light moves through rooms. This helps you make changes easily and feel confident about your decisions. What you imagine, we show you in stunning detail.",
+    gallaryimg1: "images/3D 1.jpg",
+    gallaryimg2: "images/3D 2.jpg",
+    gallaryimg3: "images/3D 3.jpg"
   },
 ]
 
 
 for (let cards = 0; cards < serCardDetails.length; cards++) {
   const element = serCardDetails[cards];
+  let mainContainer = document.getElementById("ser-grid-cont");
 
-  let mainContainer = document.getElementById("ser-grid-cont")
-
+  // each button gets a data-index so we know which card was clicked
   mainContainer.innerHTML += `
                  <div class="card">
                    <div  class="image">
@@ -507,15 +538,79 @@ for (let cards = 0; cards < serCardDetails.length; cards++) {
                         <p class="description">
                            ${element.cardDecription}
                         </p>
-                        <button class="learn-more" aria-label="Learn more about Modern Living Room design">
+                        <button class="learn-more" data-index="${cards}" aria-label="Learn more about Modern Living Room design">
                             Learn More
                         </button>
                     </div>
-                </div>
-                `
-
-
-
-  console.log(element.cardCategory)
-
+                 </div>
+                `;
 }
+
+
+
+
+
+let popsec = document.getElementById("pop-sec");
+let closebtn = document.getElementById("close-pop");
+
+
+const cardbtn = document.querySelectorAll(".learn-more");
+cardbtn.forEach((btn) => {
+  const idx = parseInt(btn.getAttribute("data-index"), 10);
+  btn.addEventListener("click", () => openpop(idx));
+});
+
+
+function openpop(index) {
+  const detail = serCardDetails[index];
+  if (!detail) return;
+
+  popsec.innerHTML = `
+              <div class="conta">
+                <div class="uper-part">
+                    <img src="${detail.mainImage}"
+                        alt="${detail.cardTittle}">
+                    <div class="closE-btn">
+                        <i id="close-pop" class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="lower-part">
+                    <div class="cont">
+                        <span>${detail.cardCategory}</span>
+                        <h2>${detail.cardTittle}</h2>
+                        <p>${detail.cardDecription}</p>
+                    </div>
+                    <div class="gallery">
+                        <h3>Gallery</h3>
+                        <div class="images">
+                            <img src="${detail.gallaryimg1}"
+                                alt="">
+                            <img src="${detail.gallaryimg2}"
+                                alt="">
+                            <img src="${detail.gallaryimg3}"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+  popsec.style.opacity = "1";
+  popsec.style.visibility = "visible";
+
+  const innerClose = popsec.querySelector("#close-pop");
+  if (innerClose) {
+    innerClose.addEventListener("click", () => {
+      popsec.style.opacity = "0";
+      popsec.style.visibility = "hidden";
+    });
+  }
+
+  // hide popup when clicking outside content
+  popsec.addEventListener('click', e => {
+    if (e.target === popsec) {
+      popsec.style.opacity = "0";
+      popsec.style.visibility = "hidden";
+    }
+  });
+}
+
