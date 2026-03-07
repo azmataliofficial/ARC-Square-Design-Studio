@@ -653,7 +653,7 @@ main .satisfaction-sec .container .grid {
 
 main .satisfaction-sec .container .grid .item {
     text-align: center;
-    padding: 30px 20px;
+    padding: 30px 20px 40px 20px;
     background: var(--pure-white);
     border-radius: 15px;
     transition: all 0.3s ease, box-shadow 0.3s ease;
@@ -684,11 +684,9 @@ main .satisfaction-sec .container .grid .item h3 {
 }
 
 main .satisfaction-sec .container .grid .item p {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.7;
     color: var(--text-secondary);
-    max-width: 250px;
-    margin: 0 auto;
 }
 
 
