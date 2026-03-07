@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.className = "nav-overlay";
     document.body.appendChild(overlay);
 
-    btn.onclick = function () {
+    btn.onclick = function (event) {
+      event.stopPropagation(); // Important: event ko rokta hai
       menu.classList.toggle("active");
       overlay.classList.toggle("active");
 
@@ -51,18 +52,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
+    document.addEventListener("click", function (event) {
+      if (menu.classList.contains("active")) {
+        if (!menu.contains(event.target) && !btn.contains(event.target)) {
+          closeMenu();
+        }
+      }
+    });
+
+    overlay.addEventListener("click", function () {
+      closeMenu();
+    });
+
+    function closeMenu() {
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+      document.body.style.overflow = "";
+
+      let icon = btn.querySelector("i");
+      if (icon) icon.className = "fas fa-bars";
+    }
+
     window.onresize = function () {
       if (window.innerWidth > 768) {
-        menu.classList.remove("active");
-        overlay.classList.remove("active");
-        document.body.style.overflow = "";
-        if (btn.querySelector("i"))
-          btn.querySelector("i").className = "fas fa-bars";
+        closeMenu();
       }
     };
   }
 });
-
 
 
 
@@ -223,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const whatsappToggle = document.getElementById("whatsappToggle");
 const whatsappChatBox = document.getElementById("whatsappChatBox");
 const closeChat = document.getElementById("closeChat");
-const sendWhatsAppMessage = document.getElementById("sendWhatsAppMessage");
+const sendMessage = document.getElementById("send-Message");
 const whatsappMessageInput = document.getElementById("whatsappMessageInput");
 
 if (whatsappToggle) {
@@ -239,8 +256,8 @@ if (closeChat) {
   });
 }
 
-if (sendWhatsAppMessage) {
-  sendWhatsAppMessage.addEventListener("click", sendWhatsApp);
+if (sendMessage) {
+  sendMessage.addEventListener("click", sendWhatsApp);
 }
 
 if (whatsappMessageInput) {
@@ -250,6 +267,19 @@ if (whatsappMessageInput) {
     }
   });
 }
+
+function getTime() {
+  let d = new Date();
+  h = d.getHours();
+  m = d.getMinutes();
+  am = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  return `${h}:${m < 10 ? '0' + m : m} ${am}`;
+}
+document.getElementById("receivedTime").textContent = getTime();
+setInterval(() => {
+  document.getElementById("receivedTime").textContent = getTime();
+}, 60000);
 
 function sendWhatsApp() {
   const message = whatsappMessageInput.value.trim();
