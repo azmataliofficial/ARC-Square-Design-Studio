@@ -64,6 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
       closeMenu();
     });
 
+    // **Target container jahan click karne se menu close ho jayega**
+    let targetContainer = document.querySelector("#nav-links"); // Yahan apna container selector daalein
+    
+    if (targetContainer) {
+      targetContainer.addEventListener("click", function(event) {
+        if (menu.classList.contains("active")) {
+          closeMenu();
+        }
+      });
+    }
+
     function closeMenu() {
       menu.classList.remove("active");
       overlay.classList.remove("active");
@@ -80,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
   }
 });
-
 
 
 (function () {
