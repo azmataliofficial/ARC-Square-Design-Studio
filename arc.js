@@ -1,29 +1,68 @@
 const sections = document.querySelectorAll(".slide-sec");
 const navLinks = document.querySelectorAll(".nav-link");
 
-function updateActivelinks(){
+function updateActivelinks() {
   const scroll = window.scrollY
   let current = ''
 
-  sections.forEach((section)=>{
+  sections.forEach((section) => {
     const top = section.offsetTop
     const height = section.clientHeight
 
-    if(scroll >= top -300 && scroll < top + height -300){
+    if (scroll >= top - 300 && scroll < top + height - 300) {
       current = section.id
     }
   })
 
-  if(scroll < 100 ) {
+  if (scroll < 100) {
     current = 'home'
   }
-  navLinks.forEach((link)=>{
+  navLinks.forEach((link) => {
     link.classList.toggle('active', link.dataset.section == current)
   })
 }
 
 window.addEventListener('scroll', updateActivelinks);
 window.addEventListener('load', updateActivelinks);
+
+
+
+// for mobile menu button
+document.addEventListener("DOMContentLoaded", function () {
+  let btn = document.querySelector(".mobile-menu-btn");
+  let menu = document.querySelector(".nav-links");
+
+  if (btn && menu) {
+    let overlay = document.createElement("div");
+    overlay.className = "nav-overlay";
+    document.body.appendChild(overlay);
+
+    btn.onclick = function () {
+      menu.classList.toggle("active");
+      overlay.classList.toggle("active");
+
+      let icon = btn.querySelector("i");
+      if (menu.classList.contains("active")) {
+        icon.className = "fas fa-times";
+        document.body.style.overflow = "hidden";
+      } else {
+        icon.className = "fas fa-bars";
+        document.body.style.overflow = "";
+      }
+    };
+
+    window.onresize = function () {
+      if (window.innerWidth > 768) {
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+        if (btn.querySelector("i"))
+          btn.querySelector("i").className = "fas fa-bars";
+      }
+    };
+  }
+});
+
 
 
 
