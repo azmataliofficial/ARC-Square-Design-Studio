@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // **Target container jahan click karne se menu close ho jayega**
     let targetContainer = document.querySelector("#nav-links"); // Yahan apna container selector daalein
-    
+
     if (targetContainer) {
-      targetContainer.addEventListener("click", function(event) {
+      targetContainer.addEventListener("click", function (event) {
         if (menu.classList.contains("active")) {
           closeMenu();
         }
@@ -640,6 +640,7 @@ for (let cards = 0; cards < serCardDetails.length; cards++) {
 
 let popsec = document.getElementById("pop-sec");
 let closebtn = document.getElementById("close-pop");
+let body = document.querySelector('body');
 
 
 const cardbtn = document.querySelectorAll(".learn-more");
@@ -684,12 +685,14 @@ function openpop(index) {
 
   popsec.style.opacity = "1";
   popsec.style.visibility = "visible";
+  body.style.overflow = "hidden";
 
   const innerClose = popsec.querySelector("#close-pop");
   if (innerClose) {
     innerClose.addEventListener("click", () => {
       popsec.style.opacity = "0";
       popsec.style.visibility = "hidden";
+      body.style.overflow = "auto";
     });
   }
 
@@ -698,7 +701,9 @@ function openpop(index) {
     if (e.target === popsec) {
       popsec.style.opacity = "0";
       popsec.style.visibility = "hidden";
+      body.style.overflow = "auto";
     }
   });
+
 }
 
