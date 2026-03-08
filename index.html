@@ -37,22 +37,24 @@
                     </div>
                 </div>
 
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+
+                <button id="toggleBtn">
+                    <i id="icon" class="fas fa-moon"></i>
                 </button>
 
                 <div class="nav-links" id="nav-links">
-                    <button id="toggleBtn">
-                        <i id="icon" class="fas fa-moon"></i>
-                    </button>
-                    <a href="#main-content" class="nav-link active" data-section="home">Home</a>
-                    <a href="#about" class="nav-link" data-section="about">About</a>
-                    <a href="#services" class="nav-link" data-section="services">Services</a>
-                    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                    <a href="#gallery" class="nav-link" data-section="gallery">Gallery</a>
-                    <a href="#blog" class="nav-link" data-section="blog">Blog</a>
-                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    <button class="nav-link active" data-section="home" onclick="scrollToSection('main-content')">Home</button>
+                    <button class="nav-link" data-section="about" onclick="scrollToSection('about')">About</button>
+                    <button class="nav-link" data-section="services" onclick="scrollToSection('services')">Services</button>
+                    <button class="nav-link" data-section="projects" onclick="scrollToSection('projects')">Projects</button>
+                    <button class="nav-link" data-section="gallery" onclick="scrollToSection('gallery')">Gallery</button>
+                    <button class="nav-link" data-section="blog" onclick="scrollToSection('blog')">Blog</button>
+                    <button class="nav-link" data-section="contact" onclick="scrollToSection('contact')">Contact</button>
                 </div>
+
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </nav>
 
@@ -66,26 +68,26 @@
                 <div class="slide-content">
                     <h1>Modern Living Spaces</h1>
                     <p>Where architecture meets comfort</p>
-                    <a href="#services">
-                        <button style="--clr: #7808d0" style="text-decoration: none;">
-                            <span class="button__icon-wrapper">
-                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg" width="10">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
+                    <!-- <a href="#services"> -->
+                    <button style="--clr: #7808d0" onclick="scrollToSection(services)" style="text-decoration: none;">
+                        <span class="button__icon-wrapper">
+                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="button__icon-svg" width="10">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
 
-                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg button__icon-svg--copy">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            Get Start
-                        </button>
-                    </a>
+                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                class="button__icon-svg button__icon-svg--copy">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        Get Start
+                    </button>
+                    <!-- </a> -->
                 </div>
             </div>
             <div class="slide"
@@ -94,26 +96,26 @@
                 <div class="slide-content">
                     <h1>Modern Interior Design</h1>
                     <p>Designed with modern aesthetics in mind</p>
-                    <a href="#services">
-                        <button style="--clr: #7808d0" style="text-decoration: none;">
-                            <span class="button__icon-wrapper">
-                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg" width="10">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
+                    <!-- <a href="#services"> -->
+                    <button style="--clr: #7808d0" onclick="scrollToSection(services)" style="text-decoration: none;">
+                        <span class="button__icon-wrapper">
+                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="button__icon-svg" width="10">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
 
-                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg button__icon-svg--copy">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            Get Start
-                        </button>
-                    </a>
+                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                class="button__icon-svg button__icon-svg--copy">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        Get Start
+                    </button>
+                    <!-- </a> -->
                 </div>
             </div>
             <div class="slide"
@@ -122,26 +124,26 @@
                 <div class="slide-content">
                     <h1>Stunning Exterior Design</h1>
                     <p>Architecture that inspires</p>
-                    <a href="#services">
-                        <button style="--clr: #7808d0" style="text-decoration: none;">
-                            <span class="button__icon-wrapper">
-                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg" width="10">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
+                    <!-- <a href="#services"> -->
+                    <button style="--clr: #7808d0" onclick="scrollToSection(services)" style="text-decoration: none;">
+                        <span class="button__icon-wrapper">
+                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="button__icon-svg" width="10">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
 
-                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg button__icon-svg--copy">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            Get Start
-                        </button>
-                    </a>
+                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                class="button__icon-svg button__icon-svg--copy">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        Get Start
+                    </button>
+                    <!-- </a> -->
                 </div>
             </div>
 
@@ -369,7 +371,7 @@
             <div id="ser-grid-cont" class="grid-cont">
                 <!-- Card avilable in script inner html -->
             </div>
-            
+
             <section class="pop-sec" id="pop-sec"></section>
 
             <div class="consultation" id="consultation">

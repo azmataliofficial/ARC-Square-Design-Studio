@@ -27,6 +27,15 @@ window.addEventListener('load', updateActivelinks);
 
 
 
+function scrollToSection(sectionId){
+  let element = document.getElementById(sectionId)
+  if(element) {
+    element.scrollIntoView({behavior:"auto"})
+  }
+}
+
+
+
 // for mobile menu button
 document.addEventListener("DOMContentLoaded", function () {
   let btn = document.querySelector(".mobile-menu-btn");
