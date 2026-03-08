@@ -53,6 +53,7 @@ header nav .nav-bar {
 header nav .nav-bar .logo-section {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
 }
 
@@ -90,17 +91,37 @@ header nav .nav-bar .logo-section .brand-name span:last-child {
 }
 
 
-/* Nav links */
-header nav .nav-bar .nav-links {
+header nav .nav-bar .item-cont {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 28px;
+    gap: 40px;
 }
 
-header nav .nav-bar .nav-links .nav-link {
+header nav .nav-bar .item-cont #toggleBtn {
+    background-color: transparent;
+    border: 2px solid var(--text-primary);
+    border-radius: 50px;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Nav links */
+header nav .nav-bar .item-cont .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+header nav .nav-bar .item-cont .nav-links .nav-link {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text-primary);
     position: relative;
@@ -108,45 +129,54 @@ header nav .nav-bar .nav-links .nav-link {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 2px 15px;
 }
 
 
-header nav .nav-bar .nav-links .nav-link::after {
+header nav .nav-bar .item-cont .nav-links .nav-link::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: -6px;
-    width: 0;
-    height: 2px;
+    height: 0;
+    width: 80%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+header nav .nav-bar .item-cont .nav-links .nav-link:hover::after {
     background: var(--medium-yellow);
     transition: all 0.3s ease;
 }
 
-header nav .nav-bar .nav-links .nav-link:hover::after {
-    width: 100%;
-}
-
-header nav .nav-bar .nav-links .nav-link:hover {
+header nav .nav-bar .item-cont .nav-links .nav-link:hover:not(.active) {
     color: var(--text-primary);
+    transform: translateY(-7px) scale(1.05);
+    transition: all 0.3s ease;
 }
 
-header nav .nav-bar .nav-links .nav-link.active::after {
-    width: 100%;
+header nav .nav-bar .item-cont .nav-links .nav-link:active {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
 }
 
+header nav .nav-bar .item-cont .nav-links .nav-link.active {
+    font-size: 16px;
+    font-weight: 700;
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
 
+header nav .nav-bar .item-cont .nav-links .nav-link.active::after {
+    height: 4px;
+    background: var(--medium-yellow);
+    transition: all 0.3s ease;
+}
 
-header nav .nav-bar .nav-links #toggleBtn {
-    background-color: transparent;
-    border: 2px solid var(--text-primary);
-    border-radius: 50px;
-    color: var(--text-primary);
-    width: 40px;
-    height: 35px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+header nav .nav-bar .item-cont .nav-links .nav-link:active::after {
+    background: transparent !important;
+    transition: all 0.3s ease;
 }
 
 

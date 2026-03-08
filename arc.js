@@ -1,7 +1,14 @@
 const sections = document.querySelectorAll(".slide-sec");
 const navLinks = document.querySelectorAll(".nav-link");
 
+let isManualScolling = true
+let clickTimeout
+
 function updateActivelinks() {
+  if (!isManualScolling) {
+    return
+  }
+
   const scroll = window.scrollY
   let current = ''
 
@@ -18,19 +25,37 @@ function updateActivelinks() {
     current = 'home'
   }
   navLinks.forEach((link) => {
-    link.classList.toggle('active', link.dataset.section == current)
+    if (scrollY) {
+      link.classList.toggle('active', link.dataset.section == current)
+    }
   })
 }
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+
+    isManualScolling = false
+
+    navLinks.forEach((i) => { i.classList.remove(".active") })
+
+    e.currentTarget.classList.add(".active")
+
+    clickTimeout = setTimeout(() => {
+      isManualScolling = true
+      updateActivelinks()
+    }, 1000)
+  })
+})
 
 window.addEventListener('scroll', updateActivelinks);
 window.addEventListener('load', updateActivelinks);
 
 
 
-function scrollToSection(sectionId){
+function scrollToSection(sectionId) {
   let element = document.getElementById(sectionId)
-  if(element) {
-    element.scrollIntoView({behavior:"auto"})
+  if (element) {
+    element.scrollIntoView({ behavior: "auto" })
   }
 }
 
