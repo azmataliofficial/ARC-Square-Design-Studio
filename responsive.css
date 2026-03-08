@@ -746,7 +746,7 @@
     /* Stats Section */
     main .stats-sec {
         padding: 1.5rem 0.9rem;
-        margin:25px 0;
+        margin: 25px 0;
     }
 
     main .stats-sec .container .grid {
@@ -812,7 +812,7 @@
 
     main .satisfaction-sec .container .content p {
         font-size: 14px;
-        padding: 0 ;
+        padding: 0;
         text-align: justify;
     }
 
@@ -820,7 +820,7 @@
         padding: 0 15px;
     }
 
-    main .satisfaction-sec .container .grid .item{
+    main .satisfaction-sec .container .grid .item {
         padding: 40px;
     }
 
@@ -862,7 +862,7 @@
     }
 
     main .about-sec .container .lower-sec .left,
-    main .about-sec .container .lower-sec .right{
+    main .about-sec .container .lower-sec .right {
         /* background-color: white; */
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
@@ -883,11 +883,15 @@
         font-size: 0.9rem;
     }
 
+    main .about-sec .container .container-points{
+        padding: 15px 0;
+    }
+
     main .about-sec .container .container-points .point {
         gap: 10px;
     }
 
-    main .about-sec .container .container-points .point .left{
+    main .about-sec .container .container-points .point .left {
         box-shadow: none;
     }
 
@@ -920,6 +924,7 @@
     }
 
     main .services-sec .grid-cont {
+        padding: 0 15px;
         margin-top: 40px;
         gap: 1rem;
         grid-template-columns: repeat(2, 1fr);
@@ -956,9 +961,35 @@
         font-size: 0.9rem;
     }
 
+
+    /* Pop Up Section */
+
+    main .services-sec .pop-sec .conta {
+        width: 90%;
+        height: 70%;
+    }
+
+    main .services-sec .pop-sec .conta .uper-part img {
+        height: auto;
+    }
+
+    main .services-sec .pop-sec .conta .uper-part {
+        width: auto;
+        /* height: auto; */
+    }
+
+    main .services-sec .pop-sec .lower-part .gallery .images {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+
     /* Consultation Section */
+    main .services-sec .consultation {
+        padding: 40px 15px;
+    }
     main .services-sec .consultation .cont {
-        padding: 20px 15px;
+        padding: 25px;
     }
 
     main .services-sec .consultation .cont h2 {
@@ -1221,4 +1252,3 @@
         height: 120px;
     }
 }
-
