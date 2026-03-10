@@ -12,6 +12,13 @@ html {
     scroll-behavior: smooth;
 }
 
+body,
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
 :root {
     /* Primary Colors */
     --text-primary: #2c2c2c;
@@ -111,7 +118,7 @@ header nav .nav-bar .item-cont #toggleBtn {
     transition: all 0.3s ease;
 }
 
-header nav .nav-bar .item-cont #toggleBtn:active{
+header nav .nav-bar .item-cont #toggleBtn:active {
     transform: scale(1.14);
 }
 
@@ -151,37 +158,27 @@ header nav .nav-bar .item-cont .nav-links .nav-link::after {
 
 header nav .nav-bar .item-cont .nav-links .nav-link:hover::after {
     background: var(--medium-yellow);
-    transition: all 0.3s ease;
+    height: 4px;
 }
 
 header nav .nav-bar .item-cont .nav-links .nav-link:hover:not(.active) {
     color: var(--text-primary);
-    transform: translateY(-4px) scale(1.05);
-    transition: all 0.3s ease;
+    transform: translateY(-4px);
 }
 
 header nav .nav-bar .item-cont .nav-links .nav-link:active {
-    transform: scale(0.9);
-    transition: all 0.3s ease;
+    transform: scaleX(1.2);
 }
 
 header nav .nav-bar .item-cont .nav-links .nav-link.active {
-    font-size: 16px;
-    font-weight: 600;
     transform: translateY(-4px);
-    transition: all 0.3s ease;
 }
 
 header nav .nav-bar .item-cont .nav-links .nav-link.active::after {
     height: 4px;
     background: var(--medium-yellow);
-    transition: all 0.3s ease;
 }
 
-header nav .nav-bar .item-cont .nav-links .nav-link:active::after {
-    background: transparent !important;
-    transition: all 0.3s ease;
-}
 
 
 /* Mobile menu button (hidden by default) */
@@ -303,7 +300,7 @@ header .hero-sec .arrow:hover {
     background: var(--slate-gray);
 }
 
-header .hero-sec .arrow:active{
+header .hero-sec .arrow:active {
     background-color: transparent;
 }
 

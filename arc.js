@@ -3,61 +3,39 @@
 const sections = document.querySelectorAll(".slide-sec");
 const navLinks = document.querySelectorAll(".nav-link");
 
-let isManualScolling = true
-let clickTimeout
-
 function updateActivelinks() {
-  if (!isManualScolling) {
-    return
-  }
-
-  const scroll = window.scrollY
-  let current = ''
+  const scroll = window.scrollY;
+  let current = '';
 
   sections.forEach((section) => {
-    const top = section.offsetTop
-    const height = section.clientHeight
+    const top = section.offsetTop;
+    const height = section.clientHeight;
 
     if (scroll >= top - 300 && scroll < top + height - 300) {
-      current = section.id
+      current = section.id;
     }
-  })
+  });
+
+  if (current === 'home') {
+    current = 'home';
+  }
 
   if (scroll < 100) {
-    current = 'home'
+    current = 'home';
   }
+
   navLinks.forEach((link) => {
-    if (scrollY) {
-      link.classList.toggle('active', link.dataset.section == current)
-    }
-  })
+    link.classList.toggle('active', link.dataset.section == current);
+  });
 }
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-
-    isManualScolling = false
-
-    navLinks.forEach((i) => { i.classList.remove(".active") })
-
-    e.currentTarget.classList.add(".active")
-
-    clickTimeout = setTimeout(() => {
-      isManualScolling = true
-      updateActivelinks()
-    }, 1000)
-  })
-})
 
 window.addEventListener('scroll', updateActivelinks);
 window.addEventListener('load', updateActivelinks);
 
-
-
 function scrollToSection(sectionId) {
-  let element = document.getElementById(sectionId)
+  let element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: "auto" })
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -74,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
 
     btn.onclick = function (event) {
-      event.stopPropagation(); 
+      event.stopPropagation();
       menu.classList.toggle("active");
       overlay.classList.toggle("active");
 
@@ -134,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Hero Slider start
-(function() {
+(function () {
   const slides = document.querySelectorAll(".slide");
   const [prevBtn, nextBtn] = ["prevSlide", "nextSlide"].map(id => document.getElementById(id));
   const dotsContainer = document.getElementById("dotsContainer");
@@ -184,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Hero Slider end
 
 // Stats Animation start
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
   const stats = [
     { el: document.getElementById("statExp"), target: 15 },
     { el: document.getElementById("statClients"), target: 240 },
@@ -199,7 +177,7 @@ window.addEventListener("load", function() {
     stats.forEach(({ el, target }) => {
       el.innerText = Math.floor(target * (step / steps)) + "+";
     });
-    
+
     if (step >= steps) {
       clearInterval(timer);
       stats.forEach(({ el, target }) => el.innerText = target + "+");
@@ -214,17 +192,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      
+
       const el = entry.target;
       const target = +el.dataset.target;
       const start = performance.now();
-      
+
       const animate = (now) => {
         const progress = Math.min((now - start) / 1500, 1);
         el.innerText = Math.floor(progress * target) + (progress < 1 ? '' : '+');
         progress < 1 && requestAnimationFrame(animate);
       };
-      
+
       requestAnimationFrame(animate);
       observer.unobserve(el);
     });
