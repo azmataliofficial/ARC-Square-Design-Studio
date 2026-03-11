@@ -24,7 +24,7 @@
 
 <body>
 
-    <header class="main-content slide-sec" id="main-content">
+    <header class="main-content slide-sec" id="home">
         <nav>
             <div class="nav-bar">
                 <div class="logo-section">
@@ -37,31 +37,37 @@
                     </div>
                 </div>
 
+                <div class="item-cont">
+                    <button id="toggleBtn">
+                        <i id="icon" class="fas fa-moon"></i>
+                    </button>
 
-                <button id="toggleBtn">
-                    <i id="icon" class="fas fa-moon"></i>
-                </button>
+                    <div class="nav-links" id="nav-links">
+                        <button class="nav-link active" data-section="home"
+                            onclick="scrollToSection('home')">Home</button>
+                        <button class="nav-link" data-section="about" onclick="scrollToSection('about')">About</button>
+                        <button class="nav-link" data-section="services"
+                            onclick="scrollToSection('services')">Services</button>
+                        <button class="nav-link" data-section="projects"
+                            onclick="scrollToSection('projects')">Projects</button>
+                        <button class="nav-link" data-section="gallery"
+                            onclick="scrollToSection('gallery')">Gallery</button>
+                        <button class="nav-link" data-section="blog" onclick="scrollToSection('blog')">Blog</button>
+                        <button class="nav-link" data-section="contact"
+                            onclick="scrollToSection('contact')">Contact</button>
+                    </div>
 
-                <div class="nav-links" id="nav-links">
-                    <button class="nav-link active" data-section="home" onclick="scrollToSection('main-content')">Home</button>
-                    <button class="nav-link" data-section="about" onclick="scrollToSection('about')">About</button>
-                    <button class="nav-link" data-section="services" onclick="scrollToSection('services')">Services</button>
-                    <button class="nav-link" data-section="projects" onclick="scrollToSection('projects')">Projects</button>
-                    <button class="nav-link" data-section="gallery" onclick="scrollToSection('gallery')">Gallery</button>
-                    <button class="nav-link" data-section="blog" onclick="scrollToSection('blog')">Blog</button>
-                    <button class="nav-link" data-section="contact" onclick="scrollToSection('contact')">Contact</button>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
         </nav>
 
 
 
 
-        <section class="hero-sec" id="hero">
+        <section class="hero-sec " id="hero">
             <div class="slide active"
                 style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');">
                 <div class="overlay"></div>
@@ -69,7 +75,7 @@
                     <h1>Modern Living Spaces</h1>
                     <p>Where architecture meets comfort</p>
                     <!-- <a href="#services"> -->
-                    <button style="--clr: #7808d0" onclick="scrollToSection(services)" style="text-decoration: none;">
+                    <button style="--clr: #7808d0" onclick="scrollToSection('services')" style="text-decoration: none;">
                         <span class="button__icon-wrapper">
                             <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                                 class="button__icon-svg" width="10">
@@ -97,7 +103,7 @@
                     <h1>Modern Interior Design</h1>
                     <p>Designed with modern aesthetics in mind</p>
                     <!-- <a href="#services"> -->
-                    <button style="--clr: #7808d0" onclick="scrollToSection(services)" style="text-decoration: none;">
+                    <button style="--clr: #7808d0" onclick="scrollToSection('services')" style="text-decoration: none;">
                         <span class="button__icon-wrapper">
                             <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                                 class="button__icon-svg" width="10">
@@ -125,7 +131,7 @@
                     <h1>Stunning Exterior Design</h1>
                     <p>Architecture that inspires</p>
                     <!-- <a href="#services"> -->
-                    <button style="--clr: #7808d0" onclick="scrollToSection(services)" style="text-decoration: none;">
+                    <button style="--clr: #7808d0" onclick="scrollToSection('services')" style="text-decoration: none;">
                         <span class="button__icon-wrapper">
                             <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
                                 class="button__icon-svg" width="10">
@@ -371,7 +377,7 @@
             <div id="ser-grid-cont" class="grid-cont">
                 <!-- Card avilable in script inner html -->
             </div>
-            
+
             <section class="pop-sec" id="pop-sec">
                 <!-- pop up card available in script inner html -->
             </section>
@@ -794,31 +800,28 @@
                     <p>Creating exceptional architectural designs and interior spaces that inspire and transform the way
                         people live and work.</p>
                 </div>
-                <div class="col-main">
-                    <div class="col">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
+                <div class="col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
 
-                    <div class="col">
-                        <h4>Services</h4>
-                        <ul>
-                            <li>Architecture</li>
-                            <li>Interior Design</li>
-                            <li>Exterior Design</li>
-                            <li>Planning</li>
-                            <li>2D Modeling</li>
-                            <li>3D Modeling</li>
-                        </ul>
-                    </div>
+                <div class="col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Architecture</li>
+                        <li>Interior Design</li>
+                        <li>Exterior Design</li>
+                        <li>Planning</li>
+                        <li>2D Modeling</li>
+                        <li>3D Modeling</li>
+                    </ul>
                 </div>
 
                 <div class="col">

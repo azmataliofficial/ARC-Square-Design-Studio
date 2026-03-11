@@ -1,36 +1,41 @@
+// navbaar  start
+
 const sections = document.querySelectorAll(".slide-sec");
 const navLinks = document.querySelectorAll(".nav-link");
 
 function updateActivelinks() {
-  const scroll = window.scrollY
-  let current = ''
+  const scroll = window.scrollY;
+  let current = '';
 
   sections.forEach((section) => {
-    const top = section.offsetTop
-    const height = section.clientHeight
+    const top = section.offsetTop;
+    const height = section.clientHeight;
 
     if (scroll >= top - 300 && scroll < top + height - 300) {
-      current = section.id
+      current = section.id;
     }
-  })
+  });
+
+  if (current === 'home') {
+    current = 'home';
+  }
 
   if (scroll < 100) {
-    current = 'home'
+    current = 'home';
   }
+
   navLinks.forEach((link) => {
-    link.classList.toggle('active', link.dataset.section == current)
-  })
+    link.classList.toggle('active', link.dataset.section == current);
+  });
 }
 
 window.addEventListener('scroll', updateActivelinks);
 window.addEventListener('load', updateActivelinks);
 
-
-
-function scrollToSection(sectionId){
-  let element = document.getElementById(sectionId)
-  if(element) {
-    element.scrollIntoView({behavior:"auto"})
+function scrollToSection(sectionId) {
+  let element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -47,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
 
     btn.onclick = function (event) {
-      event.stopPropagation(); // Important: event ko rokta hai
+      event.stopPropagation();
       menu.classList.toggle("active");
       overlay.classList.toggle("active");
 
@@ -102,158 +107,111 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// navbaar end
+
+
+
+// Hero Slider start
 (function () {
-  // ----- HERO SLIDER -----
   const slides = document.querySelectorAll(".slide");
-  const prevBtn = document.getElementById("prevSlide");
-  const nextBtn = document.getElementById("nextSlide");
+  const [prevBtn, nextBtn] = ["prevSlide", "nextSlide"].map(id => document.getElementById(id));
   const dotsContainer = document.getElementById("dotsContainer");
   let currentSlide = 0;
   const totalSlides = slides.length;
   let autoInterval;
 
+  const updateDots = () => {
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentSlide);
+    });
+  };
 
-  // create dots
-  function createDots() {
+  const createDots = () => {
     dotsContainer.innerHTML = "";
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement("button");
-      dot.classList.add("dot");
-      if (i === currentSlide) dot.classList.add("active");
-      dot.setAttribute("data-index", i);
-      dot.addEventListener("click", function (e) {
-        const idx = parseInt(e.target.getAttribute("data-index"));
-        goToSlide(idx);
+      dot.className = `dot ${i === currentSlide ? 'active' : ''}`;
+      dot.dataset.index = i;
+      dot.onclick = (e) => {
+        goToSlide(+e.target.dataset.index);
         resetTimer();
-      });
+      };
       dotsContainer.appendChild(dot);
     }
-  }
+  };
 
-  function goToSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove("active");
-    });
-    slides[index].classList.add("active");
+  const goToSlide = (index) => {
+    slides.forEach((s, i) => s.classList.toggle("active", i === index));
     currentSlide = index;
-    document.querySelectorAll(".dot").forEach((dot, i) => {
-      if (i === currentSlide) dot.classList.add("active");
-      else dot.classList.remove("active");
-    });
-  }
+    updateDots();
+  };
 
-  function nextSlide() {
-    let next = (currentSlide + 1) % totalSlides;
-    goToSlide(next);
-  }
+  const nextSlide = () => goToSlide((currentSlide + 1) % totalSlides);
+  const prevSlide = () => goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+  const startAutoSlide = () => autoInterval = setInterval(nextSlide, 5000);
+  const resetTimer = () => { clearInterval(autoInterval); startAutoSlide(); };
 
-  function prevSlide() {
-    let prev = (currentSlide - 1 + totalSlides) % totalSlides;
-    goToSlide(prev);
-  }
-
-  function startAutoSlide() {
-    autoInterval = setInterval(nextSlide, 5000);
-  }
-
-  function resetTimer() {
-    clearInterval(autoInterval);
-    startAutoSlide();
-  }
-
-  nextBtn.addEventListener("click", function () {
-    nextSlide();
-    resetTimer();
-  });
-  prevBtn.addEventListener("click", function () {
-    prevSlide();
-    resetTimer();
-  });
+  nextBtn.onclick = () => { nextSlide(); resetTimer(); };
+  prevBtn.onclick = () => { prevSlide(); resetTimer(); };
 
   createDots();
   goToSlide(0);
   startAutoSlide();
-
-
-  // ----- STATS ANIMATION -----
-  const targetValues = {
-    experience: 15,
-    clients: 240,
-    projects: 380,
-    awards: 28,
-  };
-
-  const statExp = document.getElementById("statExp");
-  const statClients = document.getElementById("statClients");
-  const statProjects = document.getElementById("statProjects");
-  const statAwards = document.getElementById("statAwards");
-
-  function animateStats() {
-    const duration = 2000;
-    const steps = 60;
-    const intervalTime = duration / steps;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-
-      const exp = Math.floor(targetValues.experience * progress);
-      const clients = Math.floor(targetValues.clients * progress);
-      const projects = Math.floor(targetValues.projects * progress);
-      const awards = Math.floor(targetValues.awards * progress);
-
-      statExp.innerText = exp + "+";
-      statClients.innerText = clients + "+";
-      statProjects.innerText = projects + "+";
-      statAwards.innerText = awards + "+";
-
-      if (step >= steps) {
-        clearInterval(timer);
-        statExp.innerText = targetValues.experience + "+";
-        statClients.innerText = targetValues.clients + "+";
-        statProjects.innerText = targetValues.projects + "+";
-        statAwards.innerText = targetValues.awards + "+";
-      }
-    }, intervalTime);
-  }
-
-  window.addEventListener("load", animateStats);
-
 })();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".number");
+// Hero Slider end
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const counter = entry.target;
-          const target = +counter.dataset.target;
-          let start = 0;
-          const duration = 1500;
-          const startTime = performance.now();
+// Stats Animation start
+window.addEventListener("load", function () {
+  const stats = [
+    { el: document.getElementById("statExp"), target: 15 },
+    { el: document.getElementById("statClients"), target: 240 },
+    { el: document.getElementById("statProjects"), target: 380 },
+    { el: document.getElementById("statAwards"), target: 28 }
+  ];
 
-          const update = (currentTime) => {
-            const progress = Math.min((currentTime - startTime) / duration, 1);
-            counter.innerText = Math.floor(progress * target);
-            progress < 1
-              ? requestAnimationFrame(update)
-              : (counter.innerText = target + "+");
-          };
+  let step = 0;
+  const steps = 60;
+  const timer = setInterval(() => {
+    step++;
+    stats.forEach(({ el, target }) => {
+      el.innerText = Math.floor(target * (step / steps)) + "+";
+    });
 
-          requestAnimationFrame(update);
-          observer.unobserve(counter);
-        }
-      });
-    },
-    { threshold: 0.5 },
-  );
-
-  counters.forEach((counter) => observer.observe(counter));
+    if (step >= steps) {
+      clearInterval(timer);
+      stats.forEach(({ el, target }) => el.innerText = target + "+");
+    }
+  }, 2000 / steps);
 });
 
+// Stats Animation end
+
+// Stats Animation start
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+      const target = +el.dataset.target;
+      const start = performance.now();
+
+      const animate = (now) => {
+        const progress = Math.min((now - start) / 1500, 1);
+        el.innerText = Math.floor(progress * target) + (progress < 1 ? '' : '+');
+        progress < 1 && requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll(".number").forEach(el => observer.observe(el));
+});
+
+// Stats Animation end
 
 // WhatsApp Chat Box
 const whatsappToggle = document.getElementById("whatsappToggle");
