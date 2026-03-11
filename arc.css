@@ -400,38 +400,38 @@ header .hero-sec .dots .dot.active {
 
 
 /* stats emerald section */
-main .stats-sec {
+header .stats-sec {
     background-color: var(--pure-white);
     padding: 4rem 1.5rem 4rem 1.5rem;
 }
 
-main .stats-sec .container {
+header .stats-sec .container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-main .stats-sec .container .grid {
+header .stats-sec .container .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     text-align: center;
 }
 
-main .stats-sec .container .grid .item {
+header .stats-sec .container .grid .item {
     padding: 2rem 1.5rem;
     background-color: var(--glass-bg);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
-main .stats-sec .container .grid .item .number {
+header .stats-sec .container .grid .item .number {
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--medium-yellow);
     line-height: 1.2;
 }
 
-main .stats-sec .container .grid .item .label {
+header .stats-sec .container .grid .item .label {
     color: var(--slate-gray);
     font-weight: 500;
     font-size: 1.2rem;

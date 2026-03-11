@@ -1,5 +1,5 @@
-// navbaar  start
 
+// navbaar  start
 const sections = document.querySelectorAll(".slide-sec");
 const navLinks = document.querySelectorAll(".nav-link");
 
@@ -257,6 +257,7 @@ document.getElementById("receivedTime").textContent = getTime();
 setInterval(() => {
   document.getElementById("receivedTime").textContent = getTime();
 }, 60000);
+
 
 function sendWhatsApp() {
   const message = whatsappMessageInput.value.trim();
