@@ -24,7 +24,7 @@
 
 <body>
 
-    <header class="main-content slide-sec" id="home">
+    <header>
         <nav>
             <div class="nav-bar">
                 <div class="logo-section">
@@ -64,131 +64,174 @@
             </div>
         </nav>
 
-
-
-
-        <section class="hero-sec " id="hero">
-            <div class="slide active"
-                style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-                <div class="overlay"></div>
-                <div class="slide-content">
-                    <h1>Modern Living Spaces</h1>
-                    <p>Where architecture meets comfort</p>
-                    <!-- <a href="#services"> -->
-                    <button style="--clr: #7808d0" onclick="scrollToSection('services')" style="text-decoration: none;">
-                        <span class="button__icon-wrapper">
-                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                class="button__icon-svg" width="10">
-                                <path
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                    fill="currentColor"></path>
-                            </svg>
-
-                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                class="button__icon-svg button__icon-svg--copy">
-                                <path
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                    fill="currentColor"></path>
-                            </svg>
-                        </span>
-                        Get Start
-                    </button>
-                    <!-- </a> -->
-                </div>
-            </div>
-            <div class="slide"
-                style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-                <div class="overlay"></div>
-                <div class="slide-content">
-                    <h1>Modern Interior Design</h1>
-                    <p>Designed with modern aesthetics in mind</p>
-                    <!-- <a href="#services"> -->
-                    <button style="--clr: #7808d0" onclick="scrollToSection('services')" style="text-decoration: none;">
-                        <span class="button__icon-wrapper">
-                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                class="button__icon-svg" width="10">
-                                <path
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                    fill="currentColor"></path>
-                            </svg>
-
-                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                class="button__icon-svg button__icon-svg--copy">
-                                <path
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                    fill="currentColor"></path>
-                            </svg>
-                        </span>
-                        Get Start
-                    </button>
-                    <!-- </a> -->
-                </div>
-            </div>
-            <div class="slide"
-                style="background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-                <div class="overlay"></div>
-                <div class="slide-content">
-                    <h1>Stunning Exterior Design</h1>
-                    <p>Architecture that inspires</p>
-                    <!-- <a href="#services"> -->
-                    <button style="--clr: #7808d0" onclick="scrollToSection('services')" style="text-decoration: none;">
-                        <span class="button__icon-wrapper">
-                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                class="button__icon-svg" width="10">
-                                <path
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                    fill="currentColor"></path>
-                            </svg>
-
-                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                class="button__icon-svg button__icon-svg--copy">
-                                <path
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                    fill="currentColor"></path>
-                            </svg>
-                        </span>
-                        Get Start
-                    </button>
-                    <!-- </a> -->
-                </div>
-            </div>
-
-            <!-- arrows & dots -->
-            <button class="arrow arrow-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-            <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-            <div class="dots" id="dotsContainer"></div>
-        </section>
-
-        <!-- STATS section with counting animation -->
-        <section class="stats-sec">
-            <div class="container">
-                <div class="grid">
-                    <div class="item">
-                        <div class="number" id="statExp" data-target="15">0+</div>
-                        <div class="label">Years Experience</div>
-                    </div>
-                    <div class="item">
-                        <div class="number" id="statClients" data-target="240">0+</div>
-                        <div class="label">Happy Clients</div>
-                    </div>
-                    <div class="item">
-                        <div class="number" id="statProjects" data-target="380">0+</div>
-                        <div class="label">Projects Completed</div>
-                    </div>
-                    <div class="item">
-                        <div class="number" id="statAwards" data-target="28">0+</div>
-                        <div class="label">Awards Won</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </header>
 
 
 
 
     <main>
+
+        <section class="main-content slide-sec show" id="home">
+            <div class="hero-sec">
+                <div class="slide active"
+                    style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                    <div class="overlay"></div>
+                    <div class="slide-content">
+                        <h1>Modern Living Spaces</h1>
+                        <p>Where architecture meets comfort</p>
+                        <!-- <a href="#services"> -->
+                        <button style="--clr: #7808d0" onclick="scrollToSection('services')"
+                            style="text-decoration: none;">
+                            <span class="button__icon-wrapper">
+                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="button__icon-svg" width="10">
+                                    <path
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                        fill="currentColor"></path>
+                                </svg>
+
+                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                    class="button__icon-svg button__icon-svg--copy">
+                                    <path
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            Get Start
+                        </button>
+                        <!-- </a> -->
+                    </div>
+                </div>
+                <div class="slide"
+                    style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                    <div class="overlay"></div>
+                    <div class="slide-content">
+                        <h1>Modern Interior Design</h1>
+                        <p>Designed with modern aesthetics in mind</p>
+                        <!-- <a href="#services"> -->
+                        <button style="--clr: #7808d0" onclick="scrollToSection('services')"
+                            style="text-decoration: none;">
+                            <span class="button__icon-wrapper">
+                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="button__icon-svg" width="10">
+                                    <path
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                        fill="currentColor"></path>
+                                </svg>
+
+                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                    class="button__icon-svg button__icon-svg--copy">
+                                    <path
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            Get Start
+                        </button>
+                        <!-- </a> -->
+                    </div>
+                </div>
+                <div class="slide"
+                    style="background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                    <div class="overlay"></div>
+                    <div class="slide-content">
+                        <h1>Stunning Exterior Design</h1>
+                        <p>Architecture that inspires</p>
+                        <!-- <a href="#services"> -->
+                        <button style="--clr: #7808d0" onclick="scrollToSection('services')"
+                            style="text-decoration: none;">
+                            <span class="button__icon-wrapper">
+                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="button__icon-svg" width="10">
+                                    <path
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                        fill="currentColor"></path>
+                                </svg>
+
+                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                    class="button__icon-svg button__icon-svg--copy">
+                                    <path
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            Get Start
+                        </button>
+                        <!-- </a> -->
+                    </div>
+                </div>
+
+                <!-- arrows & dots -->
+                <button class="arrow arrow-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+                <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+                <div class="dots" id="dotsContainer"></div>
+            </div>
+            <!-- STATS section with counting animation -->
+            <section class="stats-sec">
+                <div class="container">
+                    <div class="grid">
+                        <div class="item">
+                            <div class="number" id="statExp" data-target="15">0+</div>
+                            <div class="label">Years Experience</div>
+                        </div>
+                        <div class="item">
+                            <div class="number" id="statClients" data-target="240">0+</div>
+                            <div class="label">Happy Clients</div>
+                        </div>
+                        <div class="item">
+                            <div class="number" id="statProjects" data-target="380">0+</div>
+                            <div class="label">Projects Completed</div>
+                        </div>
+                        <div class="item">
+                            <div class="number" id="statAwards" data-target="28">0+</div>
+                            <div class="label">Awards Won</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Satisfaction -->
+            <section class="satisfaction-sec">
+                <div class="container">
+                    <div class="content">
+                        <h2>Welcome to ARC Square Design Studio</h2>
+                        <p>We are a team of passionate architects and designers dedicated to creating exceptional spaces
+                            that
+                            inspire and transform. With over 15 years of experience, we bring your vision to life
+                            through
+                            innovative
+                            design and meticulous attention to detail.</p>
+                    </div>
+                    <div class="grid">
+                        <div class="item">
+                            <i class="fa-regular fa-circle-check"></i>
+                            <h3>Quality Design</h3>
+                            <p>Every project is crafted with precision and care, ensuring the highest standards of
+                                design
+                                excellence.</p>
+                        </div>
+                        <div class="item">
+                            <i class="fa-regular fa-clock"></i>
+                            <h3>Timely Delivery</h3>
+                            <p>We value your time and ensure projects are completed within the agreed timeline without
+                                compromising
+                                quality.</p>
+                        </div>
+                        <div class="item">
+                            <i class="fa-regular fa-thumbs-up"></i>
+                            <h3>Client Satisfaction</h3>
+                            <p>Your satisfaction is our priority. We work closely with you to ensure every detail meets
+                                your
+                                expectations.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+
+
         <!-- WhatsApp Chat Widget -->
         <section class="whatsapp-sec">
             <div class="widget">
@@ -233,41 +276,6 @@
         </section>
 
 
-
-        <!-- Client Satisfaction -->
-        <section class="satisfaction-sec">
-            <div class="container">
-                <div class="content">
-                    <h2>Welcome to ARC Square Design Studio</h2>
-                    <p>We are a team of passionate architects and designers dedicated to creating exceptional spaces
-                        that
-                        inspire and transform. With over 15 years of experience, we bring your vision to life through
-                        innovative
-                        design and meticulous attention to detail.</p>
-                </div>
-                <div class="grid">
-                    <div class="item">
-                        <i class="fa-regular fa-circle-check"></i>
-                        <h3>Quality Design</h3>
-                        <p>Every project is crafted with precision and care, ensuring the highest standards of design
-                            excellence.</p>
-                    </div>
-                    <div class="item">
-                        <i class="fa-regular fa-clock"></i>
-                        <h3>Timely Delivery</h3>
-                        <p>We value your time and ensure projects are completed within the agreed timeline without
-                            compromising
-                            quality.</p>
-                    </div>
-                    <div class="item">
-                        <i class="fa-regular fa-thumbs-up"></i>
-                        <h3>Client Satisfaction</h3>
-                        <p>Your satisfaction is our priority. We work closely with you to ensure every detail meets your
-                            expectations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
 

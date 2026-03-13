@@ -193,8 +193,26 @@ header nav .nav-bar .nav-links.open {
     right: 0;
 }
 
+main .slide-sec {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide-sec.active-section {
+    display: block;
+    opacity: 1;
+}
+
+#home.slide-sec{
+    display: block;
+    opacity: 1;
+}
+
+
+
 /* Hero slider section */
-header .hero-sec {
+main .hero-sec {
     position: relative;
     height: 100vh;
     min-height: 600px;
@@ -202,7 +220,7 @@ header .hero-sec {
     background-color: var(--pure-white);
 }
 
-header .hero-sec .slide {
+main .hero-sec .slide {
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -214,19 +232,19 @@ header .hero-sec .slide {
     justify-content: center;
 }
 
-header .hero-sec .active {
+main .hero-sec .active {
     opacity: 1;
     z-index: 10;
 }
 
-header .hero-sec .slide .overlay {
+main .hero-sec .slide .overlay {
     position: absolute;
     inset: 0;
     background: rgba(44, 44, 44, 0.4);
     z-index: 1;
 }
 
-header .hero-sec .slide .slide-content {
+main .hero-sec .slide .slide-content {
     position: relative;
     z-index: 20;
     text-align: center;
@@ -236,13 +254,13 @@ header .hero-sec .slide .slide-content {
     max-width: 900px;
 }
 
-header .hero-sec .slide .slide-content h1 {
+main .hero-sec .slide .slide-content h1 {
     font-size: 3rem;
     font-weight: 800;
     animation: fadeUp 1s ease;
 }
 
-header .hero-sec .slide .slide-content p {
+main .hero-sec .slide .slide-content p {
     font-size: 1.3rem;
     opacity: 0.9;
     animation: fadeUp 1s 0.2s both;
@@ -262,7 +280,7 @@ header .hero-sec .slide .slide-content p {
 }
 
 /* arrows */
-header .hero-sec .arrow {
+main .hero-sec .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -282,24 +300,24 @@ header .hero-sec .arrow {
     transition: background 0.2s;
 }
 
-header .hero-sec .arrow:hover {
+main .hero-sec .arrow:hover {
     background: var(--slate-gray);
 }
 
-header .hero-sec .arrow:active {
+main .hero-sec .arrow:active {
     background-color: transparent;
 }
 
-header .hero-sec .arrow-left {
+main .hero-sec .arrow-left {
     left: 60px;
 }
 
-header .hero-sec .arrow-right {
+main .hero-sec .arrow-right {
     right: 60px;
 }
 
 
-header .hero-sec .slide .slide-content button {
+main .hero-sec .slide .slide-content button {
     line-height: 1;
     text-decoration: none;
     display: inline-flex;
@@ -319,7 +337,7 @@ header .hero-sec .slide .slide-content button {
     transition: background-color 0.3s;
 }
 
-header .hero-sec .slide .slide-content button .button__icon-wrapper {
+main .hero-sec .slide .slide-content button .button__icon-wrapper {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -332,12 +350,12 @@ header .hero-sec .slide .slide-content button .button__icon-wrapper {
     overflow: hidden;
 }
 
-header .hero-sec .slide .slide-content button:hover {
+main .hero-sec .slide .slide-content button:hover {
     background: var(--text-primary);
     color: var(--pure-white);
 }
 
-header .hero-sec .slide .slide-content button:hover .button__icon-wrapper {
+main .hero-sec .slide .slide-content button:hover .button__icon-wrapper {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -350,17 +368,17 @@ header .hero-sec .slide .slide-content button:hover .button__icon-wrapper {
     overflow: hidden;
 }
 
-header .hero-sec .slide .slide-content button .button__icon-svg--copy {
+main .hero-sec .slide .slide-content button .button__icon-svg--copy {
     position: absolute;
     transform: translate(-150%, 150%);
 }
 
-header .hero-sec .slide .slide-content button:hover .button__icon-svg:first-child {
+main .hero-sec .slide .slide-content button:hover .button__icon-svg:first-child {
     transition: all 0.3s ease-in-out;
     transform: translate(150%, -150%);
 }
 
-header .hero-sec .slide .slide-content button:hover .button__icon-svg--copy {
+main .hero-sec .slide .slide-content button:hover .button__icon-svg--copy {
     transition: all 0.3s ease-in-out 0.1s;
     transform: translate(0);
 }
@@ -368,7 +386,7 @@ header .hero-sec .slide .slide-content button:hover .button__icon-svg--copy {
 
 
 /* dots */
-header .hero-sec .dots {
+main .hero-sec .dots {
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -378,7 +396,7 @@ header .hero-sec .dots {
     z-index: 30;
 }
 
-header .hero-sec .dots .dot {
+main .hero-sec .dots .dot {
     width: 12px;
     height: 12px;
     background-color: var(--slate-gray);
@@ -388,7 +406,7 @@ header .hero-sec .dots .dot {
     transition: all 0.2s;
 }
 
-header .hero-sec .dots .dot.active {
+main .hero-sec .dots .dot.active {
     background-color: var(--pure-white);
     width: 36px;
     border-radius: 20px;
@@ -400,38 +418,38 @@ header .hero-sec .dots .dot.active {
 
 
 /* stats emerald section */
-header .stats-sec {
+main .stats-sec {
     background-color: var(--pure-white);
     padding: 4rem 1.5rem 4rem 1.5rem;
 }
 
-header .stats-sec .container {
+main .stats-sec .container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-header .stats-sec .container .grid {
+main .stats-sec .container .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     text-align: center;
 }
 
-header .stats-sec .container .grid .item {
+main .stats-sec .container .grid .item {
     padding: 2rem 1.5rem;
     background-color: var(--glass-bg);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
-header .stats-sec .container .grid .item .number {
+main .stats-sec .container .grid .item .number {
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--medium-yellow);
     line-height: 1.2;
 }
 
-header .stats-sec .container .grid .item .label {
+main .stats-sec .container .grid .item .label {
     color: var(--slate-gray);
     font-weight: 500;
     font-size: 1.2rem;
@@ -1236,6 +1254,7 @@ main .project-sec .pro-cont {
     position: relative;
     min-height: 400px;
     max-width: 1400px;
+    margin: auto;
 }
 
 main .project-sec .pro-cont .pro-tabs {
@@ -1440,8 +1459,6 @@ main .project-sec .pro-cont .projects .projects-grid {
 
 
 
-
-
 /* Gallery like pinterst theme */
 main .gallery-sec {
     padding: 100px 0 30px;
@@ -1455,6 +1472,7 @@ main .gallery-sec {
 main .gallery-sec .cont {
     max-width: 1400px;
     width: 100%;
+    margin: auto;
 }
 
 main .gallery-sec .cont .head {

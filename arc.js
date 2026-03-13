@@ -1,41 +1,85 @@
+document.addEventListener("DOMContentLoaded", function () {
+  let navContaners = document.querySelectorAll(".slide-sec")
+  let navItems = document.querySelectorAll(".nav-link")
 
-// navbaar  start
-const sections = document.querySelectorAll(".slide-sec");
-const navLinks = document.querySelectorAll(".nav-link");
-
-function updateActivelinks() {
-  const scroll = window.scrollY;
-  let current = '';
-
-  sections.forEach((section) => {
-    const top = section.offsetTop;
-    const height = section.clientHeight;
-
-    if (scroll >= top - 300 && scroll < top + height - 300) {
-      current = section.id;
+  navContaners.forEach((cont) => {
+    if (cont.id !== "home") {
+      cont.style.display = "none"
+    } else {
+      cont.style.display = "block"
     }
-  });
+  })
 
-  if (current === 'home') {
-    current = 'home';
+  function showSection(sectionId) {
+    navContaners.forEach((cont) => {
+      if (cont.id == sectionId) {
+        cont.style.display = "block"
+        setTimeout(() => {
+          cont.style.opacity = "1"
+        }, 100)
+      } else {
+        cont.style.opacity = "0"
+        setTimeout(() => {
+          cont.style.display = "none"
+        }, 300)
+      }
+    })
+
+    navItems.forEach((link) => {
+      if (link.style.dataset.section === sectionId) {
+        link.classList.add('active')
+      } else {
+        link.classList.remove('active')
+      }
+    })
   }
 
-  if (scroll < 100) {
-    current = 'home';
+  navItems.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      let sectionId = this.dataset.section;
+      showSection(sectionId)
+
+      const section = document.getElementById(sectionId)
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+    })
+  })
+
+  window.addEventListener("popstate", function () {
+    const hash = this.window.location.hash.substring(1) || 'home'
+    showSection(hash)
+  })
+
+  if (!window.location.hash) {
+    window.location.hash = "#home"
   }
 
-  navLinks.forEach((link) => {
-    link.classList.toggle('active', link.dataset.section == current);
-  });
-}
-
-window.addEventListener('scroll', updateActivelinks);
-window.addEventListener('load', updateActivelinks);
+})
 
 function scrollToSection(sectionId) {
-  let element = document.getElementById(sectionId);
+  let navContaners = document.querySelectorAll(".slide-sec")
+  let navItems = document.querySelectorAll(".nav-link")
+
+  navContaners.forEach(cont => {
+    if (cont.id === sectionId) {
+      cont.style.display = "block"
+      cont.style.opacity = "1"
+    } else {
+      cont.style.display = "none"
+    }
+  })
+
+  navItems.forEach(link => {
+    link.classList.toggle("active", link.dataset.section === sectionId)
+  })
+
+  window.location.hash = sectionId
+
+  let element = document.getElementById(sectionId)
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView({ behavior: "smooth" })
   }
 }
 
