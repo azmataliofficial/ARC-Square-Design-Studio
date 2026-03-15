@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     navItems.forEach((link) => {
-      if (link.style.dataset.section === sectionId) {
+      if (link.dataset.section === sectionId) {
         link.classList.add('active')
       } else {
         link.classList.remove('active')
@@ -39,16 +39,20 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       let sectionId = this.dataset.section;
       showSection(sectionId)
+      menuBaar.style.transform = "rotate(0deg)"
+      navLinkCont.style.maxHeight = "0px"
 
       const section = document.getElementById(sectionId)
       if (section) {
         section.scrollIntoView({ behavior: "smooth", block: "start" })
+        menuBaar.style.transform = "rotate(0deg)"
+        navLinkCont.style.maxHeight = "0px"
       }
     })
   })
 
   window.addEventListener("popstate", function () {
-    const hash = this.window.location.hash.substring(1) || 'home'
+    const hash = window.location.hash.substring(1) || 'home'
     showSection(hash)
   })
 
@@ -61,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function scrollToSection(sectionId) {
   let navContaners = document.querySelectorAll(".slide-sec")
   let navItems = document.querySelectorAll(".nav-link")
+
 
   navContaners.forEach(cont => {
     if (cont.id === sectionId) {
@@ -84,75 +89,64 @@ function scrollToSection(sectionId) {
 }
 
 
+let menuBaar = document.getElementById("mobile-menu-btn")
+let navLinkCont = document.getElementById("nav-links")
+let isOpen = false
 
-// for mobile menu button
-document.addEventListener("DOMContentLoaded", function () {
-  let btn = document.querySelector(".mobile-menu-btn");
-  let menu = document.querySelector(".nav-links");
 
-  if (btn && menu) {
-    let overlay = document.createElement("div");
-    overlay.className = "nav-overlay";
-    document.body.appendChild(overlay);
+let navbItems = document.querySelectorAll("#nav-links button")
 
-    btn.onclick = function (event) {
-      event.stopPropagation();
-      menu.classList.toggle("active");
-      overlay.classList.toggle("active");
-
-      let icon = btn.querySelector("i");
-      if (menu.classList.contains("active")) {
-        icon.className = "fas fa-times";
-        document.body.style.overflow = "hidden";
-      } else {
-        icon.className = "fas fa-bars";
-        document.body.style.overflow = "";
-      }
-    };
-
-    document.addEventListener("click", function (event) {
-      if (menu.classList.contains("active")) {
-        if (!menu.contains(event.target) && !btn.contains(event.target)) {
-          closeMenu();
-        }
-      }
-    });
-
-    overlay.addEventListener("click", function () {
-      closeMenu();
-    });
-
-    // **Target container jahan click karne se menu close ho jayega**
-    let targetContainer = document.querySelector("#nav-links"); // Yahan apna container selector daalein
-
-    if (targetContainer) {
-      targetContainer.addEventListener("click", function (event) {
-        if (menu.classList.contains("active")) {
-          closeMenu();
-        }
-      });
+navbItems.forEach((link) => {
+  link.addEventListener("click", function () {
+    if (window.innerWidth <= 768) {
+      navLinkCont.style.maxHeight = "0px"
+      menuBaar.style.transform = "rotate(0deg)"
+      navLinkCont.style.padding = "0px"
+      isOpen = false
     }
+  })
+})
 
-    function closeMenu() {
-      menu.classList.remove("active");
-      overlay.classList.remove("active");
-      document.body.style.overflow = "";
+function initializeMenu() {
+  if (window.innerWidth <= 768) {
+    navLinkCont.style.maxHeight = "0px"
+    isOpen = false
+  } else {
+    navLinkCont.style.maxHeight = "none"
+    isOpen = true
+  }
+}
 
-      let icon = btn.querySelector("i");
-      if (icon) icon.className = "fas fa-bars";
-    }
 
-    window.onresize = function () {
-      if (window.innerWidth > 768) {
-        closeMenu();
-      }
-    };
+function toggleMenu() {
+  if (!isOpen) {
+    menuBaar.style.transform = "rotate(90deg)"
+    navLinkCont.style.maxHeight = "400px"
+    navLinkCont.style.padding = "20px 0px"
+    isOpen = true
+  } else {
+    menuBaar.style.transform = "rotate(0deg)"
+    navLinkCont.style.maxHeight = "0px"
+    navLinkCont.style.padding = "0px"
+    isOpen = false
+  }
+}
+
+window.addEventListener("load", initializeMenu())
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 768) {
+    navLinkCont.style.maxHeight = "0px"
+    navLinkCont.style.padding = "0px"
+    isOpen = false
+  } else {
+    navLinkCont.style.maxHeight = "none"
+    isOpen = false
   }
 });
 
 
 // navbaar end
-
 
 
 // Hero Slider start
@@ -401,6 +395,22 @@ document.addEventListener("DOMContentLoaded", function () {
       countSpan.textContent = "0";
       likes[cardId] = { count: 0, liked: false };
     }
+
+    btn.addEventListener("click", function () {
+      if (likes[cardId].liked) {
+        likes[cardId].count--;
+        likes[cardId].liked = false;
+        btn.classList.remove("liked");
+        icon.className = "fa-regular fa-heart";
+      } else {
+        likes[cardId].count++;
+        likes[cardId].liked = true;
+        btn.classList.add("liked");
+        icon.className = "fa-solid fa-heart";
+      }
+      countSpan.textContent = likes[cardId].count;
+      saveLikes(likes);
+    });
   });
 
   saveLikes(likes);
@@ -689,6 +699,7 @@ function openpop(index) {
   popsec.style.opacity = "1";
   popsec.style.visibility = "visible";
   body.style.overflow = "hidden";
+  popsec.style.zIndex = "1000"
 
   const innerClose = popsec.querySelector("#close-pop");
   if (innerClose) {
@@ -696,6 +707,7 @@ function openpop(index) {
       popsec.style.opacity = "0";
       popsec.style.visibility = "hidden";
       body.style.overflow = "auto";
+      popsec.style.zIndex = "0"
     });
   }
 

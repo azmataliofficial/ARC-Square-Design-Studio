@@ -29,6 +29,9 @@ html {
     --glass-bg: #ffffffdd;
     --btn-hover: #1a1a1a;
     --border-color: #e0daca;
+    
+    /* Container Width */
+    --container-max-width: 90vw;
 }
 
 
@@ -42,7 +45,7 @@ header nav {
 }
 
 header nav .nav-bar {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0px 50px;
     background-color: var(--glass-bg);
@@ -103,6 +106,7 @@ header nav .nav-bar .item-cont {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    position: relative;
 }
 
 header nav .nav-bar .item-cont #toggleBtn {
@@ -180,7 +184,7 @@ header nav .nav-bar .item-cont .nav-links .nav-link.active::after {
 }
 
 
-header nav .nav-bar .mobile-menu-btn {
+header nav .nav-bar #mobile-menu-btn {
     display: none;
     background: none;
     border: none;
@@ -189,9 +193,12 @@ header nav .nav-bar .mobile-menu-btn {
     cursor: pointer;
 }
 
-header nav .nav-bar .nav-links.open {
-    right: 0;
-}
+
+
+
+
+
+/* MAIN START */
 
 main .slide-sec {
     display: none;
@@ -199,12 +206,12 @@ main .slide-sec {
     transition: opacity 0.5s ease;
 }
 
-.slide-sec.active-section {
+main .slide-sec .active-section {
     display: block;
     opacity: 1;
 }
 
-#home.slide-sec{
+main #home.slide-sec{
     display: block;
     opacity: 1;
 }
@@ -424,7 +431,7 @@ main .stats-sec {
 }
 
 main .stats-sec .container {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
@@ -647,17 +654,19 @@ main .whatsapp-sec .widget .chat-box .input button:hover {
 
 
 /* Satisfaction Section */
-main .satisfaction-sec .container {
-    max-width: 100vw;
-    margin: 0 auto;
+main .satisfaction-sec {
     background: var(--off-white);
     border-radius: 30px;
     padding: 50px 40px;
 }
 
+main .satisfaction-sec .container {
+    max-width: var(--container-max-width);
+    margin: auto;
+}
+
 main .satisfaction-sec .container .content {
     text-align: center;
-    max-width: 1200px;
     margin: 0 auto 50px auto;
 }
 
@@ -681,7 +690,7 @@ main .satisfaction-sec .container .content p {
 
 /* Grid Section */
 main .satisfaction-sec .container .grid {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -738,7 +747,7 @@ main .about-sec {
 }
 
 main .about-sec .container {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
@@ -874,15 +883,18 @@ main .services-sec .service-cont p {
 
 /* Services Grid */
 main .services-sec .grid-cont {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 1rem;
+    max-width: var(--container-max-width);
     margin: 75px auto 0 auto;
 }
 
 main .services-sec .grid-cont .card {
-    max-width: 450px;
+    flex-grow: 2;
+    flex-basis: 355px;
+    /* max-width: 450px; */
     width: 100%;
     background: var(--pure-white);
     border-radius: 16px;
@@ -1021,7 +1033,7 @@ main .services-sec .consultation {
 }
 
 main .services-sec .consultation .cont {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     text-align: left;
     padding: 40px;
     border-radius: 15px;
@@ -1253,7 +1265,7 @@ main .project-sec .pro-head p {
 main .project-sec .pro-cont {
     position: relative;
     min-height: 400px;
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: auto;
 }
 
@@ -1470,7 +1482,7 @@ main .gallery-sec {
 }
 
 main .gallery-sec .cont {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     width: 100%;
     margin: auto;
 }
@@ -1575,7 +1587,7 @@ main .blog-sec {
 }
 
 main .blog-sec .container {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0;
 }
@@ -1731,7 +1743,7 @@ main .contact-sec .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
@@ -1922,16 +1934,24 @@ footer {
 }
 
 footer .container {
-    max-width: 1400px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
 footer .container .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin-bottom: 25px;
+}
+
+
+footer .container .grid .col-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 0px;
 }
 
 footer .container .grid h3,
@@ -2023,3 +2043,5 @@ footer .footer-bottom p a {
     text-decoration: none;
     cursor: pointer;
 }
+
+

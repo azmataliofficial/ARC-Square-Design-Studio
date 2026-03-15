@@ -42,7 +42,7 @@
                         <i id="icon" class="fas fa-moon"></i>
                     </button>
 
-                    <div class="nav-links" id="nav-links">
+                    <div class="nav-links navtoggle" id="nav-links">
                         <button class="nav-link active" data-section="home"
                             onclick="scrollToSection('home')">Home</button>
                         <button class="nav-link" data-section="about" onclick="scrollToSection('about')">About</button>
@@ -57,7 +57,7 @@
                             onclick="scrollToSection('contact')">Contact</button>
                     </div>
 
-                    <button class="mobile-menu-btn">
+                    <button id="mobile-menu-btn" onclick="toggleMenu()">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -806,28 +806,30 @@
                     <p>Creating exceptional architectural designs and interior spaces that inspire and transform the way
                         people live and work.</p>
                 </div>
-                <div class="col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                    </ul>
-                </div>
+                <div class="col col-1">
+                    <div class="col-1-1">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
 
-                <div class="col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li>Architecture</li>
-                        <li>Interior Design</li>
-                        <li>Exterior Design</li>
-                        <li>Planning</li>
-                        <li>2D Modeling</li>
-                        <li>3D Modeling</li>
-                    </ul>
+                    <div class="col-1-2">
+                        <h4>Services</h4>
+                        <ul>
+                            <li>Architecture</li>
+                            <li>Interior Design</li>
+                            <li>Exterior Design</li>
+                            <li>Planning</li>
+                            <li>2D Modeling</li>
+                            <li>3D Modeling</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="col">
