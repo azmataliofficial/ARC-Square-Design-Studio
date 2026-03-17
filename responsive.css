@@ -293,6 +293,23 @@
         padding: 25px 15px 30px;
     }
 
+    main .whatsapp-sec .widget .chat-box {
+        width: 300px;
+        right: 0;
+    }
+
+    main .whatsapp-sec .widget .chat-box .header {
+        padding: 16px;
+    }
+
+    main .whatsapp-sec .widget .chat-box .body .message p {
+        font-size: 0.8rem;
+    }
+
+    main .whatsapp-sec .widget .chat-box .input {
+        padding: 15px 10px;
+    }
+
     main .about-sec .container .upper-sec {
         padding: 80px 0 30px;
     }
@@ -449,10 +466,7 @@
         font-size: 1.8rem;
     }
 
-    main .whatsapp-sec .widget .chat-box {
-        width: 300px;
-        right: 0;
-    }
+
 
     footer {
         padding: 40px 0 20px;
@@ -771,7 +785,15 @@
     }
 
     main .whatsapp-sec .widget .chat-box .header {
-        padding: 15px;
+        padding: 12px;
+    }
+
+    main .whatsapp-sec .widget .chat-box .header .content .info h5 {
+        font-size: 0.9rem;
+    }
+
+    main .whatsapp-sec .widget .chat-box .header .content .info p {
+        font-size: 0.7rem;
     }
 
     main .whatsapp-sec .widget .chat-box .body {
@@ -779,8 +801,35 @@
         max-height: 350px;
     }
 
-    main .whatsapp-sec .widget .chat-box .input {
+    main .whatsapp-sec .widget .chat-box .body .message {
+        margin-bottom: 12px;
+        max-width: 90%;
+    }
+
+    main .whatsapp-sec .widget .chat-box .body .received {
+        align-self: flex-start;
+    }
+
+    main .whatsapp-sec .widget .chat-box .body .message p {
+        background: #f0f0f0;
         padding: 12px 15px;
+        border-radius: 18px 18px 18px 4px;
+        margin: 0;
+        font-size: 0.7rem;
+        color: #333;
+    }
+
+    main .whatsapp-sec .widget .chat-box .body .mess-time {
+        font-size: 0.6rem;
+    }
+
+    main .whatsapp-sec .widget .chat-box .input {
+        padding: 12px 12px;
+    }
+
+    main .whatsapp-sec .widget .chat-box .input input{
+        flex: 1;
+        width: 80%;
     }
 
     footer .container .grid .col-1 {
@@ -901,6 +950,7 @@
     main .blog-sec .container .head h1 {
         font-size: 1.8rem;
     }
+
 
     main .contact-sec .head h1 {
         font-size: 1.8rem;

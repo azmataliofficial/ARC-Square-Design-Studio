@@ -662,7 +662,7 @@ main .whatsapp-sec .widget .chat-box .body {
     overflow-y: auto;
 }
 
-main .whatsapp-sec .widget .chat-box .body .mess {
+main .whatsapp-sec .widget .chat-box .body .message {
     margin-bottom: 15px;
     max-width: 80%;
 }
@@ -671,7 +671,7 @@ main .whatsapp-sec .widget .chat-box .body .received {
     align-self: flex-start;
 }
 
-main .whatsapp-sec .widget .chat-box .body .mess p {
+main .whatsapp-sec .widget .chat-box .body .message p {
     background: #f0f0f0;
     padding: 12px 15px;
     border-radius: 18px 18px 18px 4px;
