@@ -147,8 +147,6 @@ window.addEventListener("resize", () => {
     isOpen = false
   }
 });
-
-
 // navbaar end
 
 
