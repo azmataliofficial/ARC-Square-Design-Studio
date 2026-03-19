@@ -752,41 +752,31 @@ window.addEventListener('DOMContentLoaded', testimonials);
 
 
 // faq
-(function () {
-  // 1) category tabs – pure switch (no array methods, just class toggles)
-  const tabs = document.querySelectorAll('.cat-tab');
-  const panels = document.querySelectorAll('.faq-panel');
-
-  function activateCategory(catId) {
-    // deactivate all tabs + panels
-    tabs.forEach(t => t.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
-    // activate matching ones
-    document.querySelector(`.cat-tab[data-cat="${catId}"]`).classList.add('active');
-    document.querySelector(`.faq-panel[data-panel="${catId}"]`).classList.add('active');
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      const cat = tab.getAttribute('data-cat');
-      activateCategory(cat);
+document.querySelectorAll('.cat-tab').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    document.querySelectorAll('.cat-tab').forEach(function (t) {
+      t.classList.remove('active');
     });
-  });
 
-  // 2) accordion: open/close individual questions (simple toggle, closes others in same panel)
-  const allQuestions = document.querySelectorAll('.faq-question');
-  allQuestions.forEach(q => {
-    q.addEventListener('click', (e) => {
-      const currentItem = q.closest('.faq-item');
-      const panel = currentItem.closest('.faq-panel');
-      // close all items inside this panel
-      panel.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== currentItem) item.classList.remove('open');
-      });
-      // toggle current
-      currentItem.classList.toggle('open');
+    document.querySelectorAll('.faq-panel').forEach(function (p) {
+      p.classList.remove('active');
     });
-  });
 
-  // ensure first general panel item is closed by default (they all start closed)
-})();
+    this.classList.add('active');
+
+    let catId = this.getAttribute('data-cat');
+    document.querySelector('.faq-panel[data-panel="' + catId + '"]').classList.add('active');
+  });
+});
+document.querySelectorAll('.faq-question').forEach(function (question) {
+  question.addEventListener('click', function () {
+    let currentItem = this.closest('.faq-item');
+    let panel = currentItem.closest('.faq-panel');
+    panel.querySelectorAll('.faq-item').forEach(function (item) {
+      if (item !== currentItem) {
+        item.classList.remove('open');
+      }
+    });
+    currentItem.classList.toggle('open');
+  });
+});
