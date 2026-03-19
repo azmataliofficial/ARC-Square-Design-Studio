@@ -622,3 +622,171 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
+// testimonial
+const testimonial = [{
+  id: 1,
+  clientName: "Rajesh Kumar",
+  location: "Yamunapuram, Bulandshahr",
+  rating: 5,
+  text: "ARC Square transformed our vision into reality with their exceptional architectural design. From concept to completion, their team showed remarkable professionalism. The space planning was innovative and they paid attention to every minute detail. Highly recommended for residential projects.",
+  projectType: "Residential Architecture",
+  avatar: "RK"
+},
+{
+  id: 2,
+  clientName: "Priya Sharma",
+  location: "Bulandshahr City",
+  rating: 5,
+  text: "We engaged ARC Square for our office interior design and the results exceeded our expectations. Their 3D visualization helped us visualize the space before execution. The team was responsive, creative, and delivered the project within the stipulated timeline. Great experience!",
+  projectType: "Commercial Interior",
+  avatar: "PS"
+},
+{
+  id: 3,
+  clientName: "Vikas Chaudhary",
+  location: "Delhi NCR",
+  rating: 5,
+  text: "Professional approach combined with creative excellence. ARC Square handled our villa project with utmost care. The structural planning was flawless and they incorporated modern aesthetics while maintaining functionality. Their attention to client requirements is commendable.",
+  projectType: "Villa Design",
+  avatar: "VC"
+},
+{
+  id: 4,
+  clientName: "Neha Agarwal",
+  location: "Yamunapuram Extension",
+  rating: 5,
+  text: "Exterior design for our home was executed beautifully by ARC Square. They suggested innovative facade designs that made our house stand out. The material selection guidance was valuable and they coordinated with contractors seamlessly. Truly a dedicated team.",
+  projectType: "Exterior Design",
+  avatar: "NA"
+},
+{
+  id: 5,
+  clientName: "Sanjeev Mittal",
+  location: "Bulandshahr",
+  rating: 5,
+  text: "Complete commercial building solution provider! From 2D planning to 3D rendering to final execution, ARC Square handled everything professionally. Their project management skills are impressive. They respected our budget and delivered quality work. Will definitely work with them again.",
+  projectType: "Commercial Building",
+  avatar: "SM"
+}
+];
+
+let currentTestimonialIndex = 0;
+
+function renderTestimonials() {
+  const grid = document.querySelector('.testiminial-grid');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  for (let i = 0; i < 2; i++) {
+    const itemIndex = (currentTestimonialIndex + i) % testimonial.length;
+    const item = testimonial[itemIndex];
+
+    const delay = i * 0.2;
+    const stars = Array(item.rating).fill('<i class="fas fa-star"></i>').join('');
+    const card = `
+      <div class="testimonial-card slide-in-card" style="animation-delay: ${delay}s;">
+        <div class="card-header">
+          <div class="client-avatar">${item.avatar}</div>
+          <div class="client-info">
+            <h3>${item.clientName}</h3>
+            <p class="client-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
+          </div>
+        </div>
+        <div class="rating">${stars} <span>${item.rating}.0</span></div>
+        <div class="testimonial-content">
+          <div class="testimonial-text">${item.text}</div>
+          <div class="project-meta">
+            <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+          </div>
+        </div>
+      </div>
+    `;
+    grid.innerHTML += card;
+  }
+}
+
+function testimonials() {
+  const grid = document.querySelector('.testiminial-grid');
+  if (!grid) return;
+
+  renderTestimonials();
+
+  setInterval(() => {
+    currentTestimonialIndex = (currentTestimonialIndex + 2) % testimonial.length;
+    renderTestimonials();
+  }, 8000);
+}
+
+window.addEventListener('DOMContentLoaded', testimonials);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// faq
+(function () {
+  // 1) category tabs – pure switch (no array methods, just class toggles)
+  const tabs = document.querySelectorAll('.cat-tab');
+  const panels = document.querySelectorAll('.faq-panel');
+
+  function activateCategory(catId) {
+    // deactivate all tabs + panels
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    // activate matching ones
+    document.querySelector(`.cat-tab[data-cat="${catId}"]`).classList.add('active');
+    document.querySelector(`.faq-panel[data-panel="${catId}"]`).classList.add('active');
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      const cat = tab.getAttribute('data-cat');
+      activateCategory(cat);
+    });
+  });
+
+  // 2) accordion: open/close individual questions (simple toggle, closes others in same panel)
+  const allQuestions = document.querySelectorAll('.faq-question');
+  allQuestions.forEach(q => {
+    q.addEventListener('click', (e) => {
+      const currentItem = q.closest('.faq-item');
+      const panel = currentItem.closest('.faq-panel');
+      // close all items inside this panel
+      panel.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== currentItem) item.classList.remove('open');
+      });
+      // toggle current
+      currentItem.classList.toggle('open');
+    });
+  });
+
+  // ensure first general panel item is closed by default (they all start closed)
+})();
