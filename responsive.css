@@ -199,7 +199,7 @@
         background: var(--glass-bg);
         backdrop-filter: blur(10px);
         flex-direction: column;
-        width: 250px;
+        /* width: 250px; */
         border-radius: 20px;
         box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
         max-height: 0;
@@ -209,14 +209,16 @@
     }
 
     header nav .nav-bar .item-cont .nav-links .nav-link {
-        width: 100%;
+        width: 400px;
         text-align: center;
-        padding: 12px 20px;
-        font-size: 16px;
+        padding: 12px;
+        font-size: 14px;
+        /* border: 1px solid; */
     }
 
     header nav .nav-bar .item-cont .nav-links .nav-link::after {
         bottom: 0;
+        width: 30%;
     }
 
     header nav .nav-bar #mobile-menu-btn {
@@ -351,7 +353,7 @@
     }
 
     main .services-sec .grid-cont .card .image {
-        height: 220px;
+        height: 300px;
     }
 
     main .services-sec .consultation {
@@ -645,7 +647,7 @@
     }
 
     main .services-sec .grid-cont .card .image {
-        height: 200px;
+        height: 225px;
     }
 
     main .services-sec .grid-cont .card .content {
