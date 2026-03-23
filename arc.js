@@ -628,7 +628,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // testimonial
 const testimonial = [{
-  id: 1,
   clientName: "Rajesh Kumar",
   location: "Yamunapuram, Bulandshahr",
   rating: 5,
@@ -637,16 +636,14 @@ const testimonial = [{
   avatar: "RK"
 },
 {
-  id: 2,
   clientName: "Priya Sharma",
   location: "Bulandshahr City",
-  rating: 5,
+  rating: 4.5,
   text: "We engaged ARC Square for our office interior design and the results exceeded our expectations. Their 3D visualization helped us visualize the space before execution. The team was responsive, creative, and delivered the project within the stipulated timeline. Great experience!",
   projectType: "Commercial Interior",
   avatar: "PS"
 },
 {
-  id: 3,
   clientName: "Vikas Chaudhary",
   location: "Delhi NCR",
   rating: 5,
@@ -655,19 +652,17 @@ const testimonial = [{
   avatar: "VC"
 },
 {
-  id: 4,
   clientName: "Neha Agarwal",
   location: "Yamunapuram Extension",
-  rating: 5,
+  rating: 4,
   text: "Exterior design for our home was executed beautifully by ARC Square. They suggested innovative facade designs that made our house stand out. The material selection guidance was valuable and they coordinated with contractors seamlessly. Truly a dedicated team.",
   projectType: "Exterior Design",
   avatar: "NA"
 },
 {
-  id: 5,
   clientName: "Sanjeev Mittal",
   location: "Bulandshahr",
-  rating: 5,
+  rating: 4.5,
   text: "Complete commercial building solution provider! From 2D planning to 3D rendering to final execution, ARC Square handled everything professionally. Their project management skills are impressive. They respected our budget and delivered quality work. Will definitely work with them again.",
   projectType: "Commercial Building",
   avatar: "SM"
@@ -687,7 +682,18 @@ function renderTestimonials() {
     const item = testimonial[itemIndex];
 
     const delay = i * 0.2;
-    const stars = Array(item.rating).fill('<i class="fas fa-star"></i>').join('');
+
+    let stars = '';
+    const fullStars = Math.floor(item.rating);
+    const hasHalfStar = item.rating % 1 !== 0;
+    for (let j = 0; j < fullStars; j++) {
+      stars += '<i class="fas fa-star"></i>';
+    }
+
+    if (hasHalfStar) {
+      stars += '<i class="fas fa-star-half-alt"></i>';
+    }
+
     const card = `
       <div class="testimonial-card slide-in-card" style="animation-delay: ${delay}s;">
         <div class="card-header">
@@ -697,7 +703,7 @@ function renderTestimonials() {
             <p class="client-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
           </div>
         </div>
-        <div class="rating">${stars} <span>${item.rating}.0</span></div>
+        <div class="rating">${stars} <span>${item.rating}</span></div>
         <div class="testimonial-content">
           <div class="testimonial-text">${item.text}</div>
           <div class="project-meta">
@@ -723,7 +729,6 @@ function testimonials() {
 }
 
 window.addEventListener('DOMContentLoaded', testimonials);
-
 
 
 
