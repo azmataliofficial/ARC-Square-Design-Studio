@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-     -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -2001,6 +2001,24 @@ footer .footer-bottom p a {
     font-size: 0.7em;
     font-weight: 500;
     display: inline-block;
+}
+
+.instagram-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    color: white;
+    margin-left: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.instagram-tag i {
+    font-size: 14px;
 }
 
 
