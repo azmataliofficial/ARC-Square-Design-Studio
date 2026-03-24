@@ -37,7 +37,39 @@ html {
 
     /* Container Width */
     --container-max-width: 90vw;
+
+    /*section container view animate */
+    --cont-animate: fadeInUp 0.5s ease forwards;
+
+    /* section heading view animate */
+    --heading: fadeUp 1s ease;
+    --tag-line: fadeUp 1s 0.2s both;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 /* Header Styles */
@@ -265,27 +297,17 @@ main .hero-sec .slide .slide-content {
 main .hero-sec .slide .slide-content h1 {
     font-size: 3rem;
     font-weight: 800;
-    animation: fadeUp 1s ease;
+    animation: var(--heading);
 }
 
 main .hero-sec .slide .slide-content p {
     font-size: 1.3rem;
     opacity: 0.9;
-    animation: fadeUp 1s 0.2s both;
+    animation: var(--tag-line);
     margin-bottom: 1rem;
 }
 
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(15px);
-    }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* arrows in slides */
 main .hero-sec .arrow {
@@ -1050,18 +1072,20 @@ main .about-sec .container .upper-sec h1 {
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
+    animation: var(--heading);
 }
 
 main .about-sec .container .upper-sec p {
     font-size: 1.1rem;
     margin: 0 auto;
     color: var(--slate-gray);
+    animation: var(--tag-line);
 }
 
 main .about-sec .container .lower-sec {
     gap: 32px;
     display: flex;
-
+    animation: var(--cont-animate);
 }
 
 main .about-sec .container .lower-sec .left p,
@@ -1162,12 +1186,14 @@ main .services-sec .service-cont h2 {
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
+    animation: var(--heading);
 }
 
 main .services-sec .service-cont p {
     font-size: 1.1rem;
     color: var(--slate-gray);
     font-weight: 600;
+    animation: var(--tag-line);
 }
 
 /* Services Grid */
@@ -1177,6 +1203,7 @@ main .services-sec .grid-cont {
     gap: 1rem;
     max-width: var(--container-max-width);
     margin: 75px auto 0 auto;
+    animation: var(--cont-animate);
 }
 
 main .services-sec .grid-cont .card {
@@ -1397,7 +1424,6 @@ main .services-sec .pop-sec {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
-
 }
 
 main .services-sec .pop-sec .conta::-webkit-scrollbar {
@@ -1538,12 +1564,14 @@ main .project-sec .pro-head h2 {
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
+    animation:var(--heading);
 }
 
 main .project-sec .pro-head p {
     font-size: 1.1rem;
     margin: auto;
     color: var(--slate-gray);
+    animation: var(--tag-line);
 }
 
 main .project-sec .pro-cont {
@@ -1595,20 +1623,10 @@ main .project-sec .pro-cont .projects.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
-    animation: fadeInUp 0.5s ease forwards;
+    animation: var(--cont-animate);
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 main .project-sec .pro-cont .projects .projects-grid {
     display: grid;
@@ -1739,17 +1757,20 @@ main .gallery-sec .cont .head h1 {
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
+    animation: var(--heading);
 }
 
 main .gallery-sec .cont .head p {
     font-size: 1.1rem;
     margin: 0 0 30px auto;
     color: var(--slate-gray);
+    animation: var(--tag-line);
 }
 
 main .gallery-sec .cont .photos {
     column-count: 5;
     column-gap: 1.2rem;
+    animation: var(--cont-animate);
 }
 
 main .gallery-sec .cont .photos figure {
@@ -1834,11 +1855,13 @@ main .contact-sec .head h1 {
     font-size: 3rem;
     font-weight: 700;
     color: var(--text-primary);
+    animation: var(--heading);
 }
 
 main .contact-sec .head p {
     font-size: 1.1rem;
     color: var(--slate-gray);
+    animation:var(--tag-line);
 }
 
 main .contact-sec .body {
@@ -1847,6 +1870,7 @@ main .contact-sec .body {
     gap: 2.5rem;
     max-width: var(--container-max-width);
     margin: 0 auto;
+    animation: var(--cont-animate);
 }
 
 main .contact-sec .body .cont-tab h2 {
