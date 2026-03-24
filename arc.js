@@ -631,6 +631,7 @@ const testimonial = [{
   clientName: "Rakhi Singh",
   location: "DM Road Bulandshahar",
   instagram: "https://www.instagram.com/uv_glaam/",
+  instagramId: "@uv_glaam",
   rating: 5,
   text: "I am very happy with the work of ARC Square. They have done a great job in designing my beauty parlour. The team was very professional and they completed the work within the given time frame. I would definitely recommend them to others.",
   projectType: "Beauty Parlour Design",
@@ -640,6 +641,7 @@ const testimonial = [{
   clientName: "Arif Saifi",
   location: "Bulandshahr City",
   instagram: "https://www.instagram.com/arcsquaredesignstudio/",
+  instagramId: "@arcsquaredesignstudio",
   rating: 4.5,
   text: "We engaged ARC Square for our office interior design and the results exceeded our expectations. Their 3D visualization helped us visualize the space before execution. The team was responsive, creative, and delivered the project within the stipulated timeline. Great experience!",
   projectType: "Commercial Interior",
@@ -649,6 +651,7 @@ const testimonial = [{
   clientName: "Azmat Ali",
   location: "Delhi NCR",
   instagram: "https://www.instagram.com/azmataliofficial/",
+  instagramId: "@azmataliofficial",
   rating: 5,
   text: "Professional approach combined with creative excellence. ARC Square handled our villa project with utmost care. The structural planning was flawless and they incorporated modern aesthetics while maintaining functionality. Their attention to client requirements is commendable.",
   projectType: "Villa Design",
@@ -694,11 +697,14 @@ function renderTestimonials() {
         <div class="testimonial-content">
           <div class="testimonial-text">${item.text}</div>
           <div class="project-meta">
-            <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
-            <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
-              <i class="fab fa-instagram"></i></a>
+            <div>
+              <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+            </div>
+            <div>
+              <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
+                <i class="fab fa-instagram"></i>${item.instagramId}</a>
+            </div>
           </div>
-        </div>
       </div>
     `;
     grid.innerHTML += card;
