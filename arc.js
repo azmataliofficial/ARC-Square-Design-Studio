@@ -158,14 +158,14 @@ const slidesData = [
     title: "Modern Interior Design",
     description: "Designed with modern aesthetics in mind",
     buttonText: "Get Started",
-    buttonLink: "#services"
+    buttonLink: "#contact"
   },
   {
     image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
     title: "Stunning Exterior Design",
     description: "Architecture that inspires",
-    buttonText: "Get Started",
-    buttonLink: "#services"
+    buttonText: "Explore Images",
+    buttonLink: "#gallery"
   },
   {
     image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920",
@@ -236,7 +236,7 @@ function nextSlide() { current = (current + 1) % slidesData.length; update(); re
 function prevSlide() { current = (current - 1 + slidesData.length) % slidesData.length; update(); resetTimer(); }
 function goTo(i) { current = i; update(); resetTimer(); }
 
-function startAuto() { timer = setInterval(nextSlide, 3000); }
+function startAuto() { timer = setInterval(nextSlide, 6000); }
 function stopAuto() { clearInterval(timer); }
 function resetTimer() { stopAuto(); startAuto(); }
 
@@ -248,9 +248,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-const container = document.querySelector('.hero-sec');
-container.onmouseenter = stopAuto;
-container.onmouseleave = startAuto;
 
 document.onkeydown = (e) => {
     if (e.key === 'ArrowLeft') { prevSlide(); e.preventDefault(); }
