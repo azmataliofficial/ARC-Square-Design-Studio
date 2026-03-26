@@ -44,6 +44,12 @@ html {
     /* section heading view animate */
     --heading: fadeUp 1s ease;
     --tag-line: fadeUp 1s 0.2s both;
+
+    /* Text sizing */
+    --main-heading: 3rem;
+    --sub-heading: 1.5rem;
+    --title: 1rem;
+    --text: 0.9rem;
 }
 
 @keyframes fadeInUp {
@@ -269,7 +275,7 @@ main .hero-sec .slides-wrapper {
 
 main .hero-sec .slides-wrapper .slide {
     position: absolute;
-     top: 0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1069,113 +1075,173 @@ main .whatsapp-sec .widget .chat-box .input button:hover {
 
 /* About Section */
 main .about-sec {
-    background-color: var(--pure-white);
-    padding-bottom: 60px;
+    /* width: var(--container-max-width); */
+    height: auto;
+    margin: auto;
 }
 
-main .about-sec .container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
+main .about-sec .about-cont {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-image: url("https://images.pexels.com/photos/4438536/pexels-photo-4438536.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
-main .about-sec .container .upper-sec {
-    padding: 100px 0 50px 0;
+main .about-sec .about-cont::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
+}
+
+main .about-sec .about-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 150px;
+}
+
+main .about-sec .about-content h2 {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+main .about-sec .about-content span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+main .about-sec .about-content p {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* about 2nd page */
+main .about-sec .about-cont2 {
+    margin: auto;
+    width: var(--container-max-width);
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+
+}
+
+main .about-sec .about-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+main .about-sec .about-item h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+main .about-sec .about-item p {
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* about 3rd page */
+main .about-sec .about-cont3 {
+    width: var(--container-max-width);
+    margin: auto;
+}
+
+main .about-sec .about-content1 {
+    width: 95vw;
+    padding: 20px;
     text-align: center;
 }
 
-main .about-sec .container .upper-sec h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+main .about-sec .about-content1 h2 {
+    font-size: 35px;
     font-weight: 700;
-    color: var(--text-primary);
-    animation: var(--heading);
+    margin-bottom: 15px;
 }
 
-main .about-sec .container .upper-sec p {
-    font-size: 1.1rem;
-    margin: 0 auto;
-    color: var(--slate-gray);
-    animation: var(--tag-line);
-}
-
-main .about-sec .container .lower-sec {
-    gap: 32px;
-    display: flex;
-    animation: var(--cont-animate);
-}
-
-main .about-sec .container .lower-sec .left p,
-main .about-sec .container .lower-sec .right p {
-    font-size: 1rem;
+main .about-sec .about-content1 p {
+    font-size: 15px;
+    font-weight: 400;
     line-height: 1.5;
-    color: var(--slate-gray);
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 70%;
+    margin: auto
 }
 
-main .about-sec .container .lower-sec .left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+main .about-sec .about-grid2 {
+    position: relative;
+
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-bottom: 50px;
 }
 
-main .about-sec .container .lower-sec .right {
-    flex: 1.05;
-    display: flex;
-    flex-direction: column;
+main .about-sec .itm1::before,
+main .about-sec .itm2::before,
+main .about-sec .itm3::before {
+    counter-increment: item;
+    content: counter(item);
+    font-size: 50px;
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    color: rgba(255, 165, 0, 0.8);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-main .about-sec .container .lower-sec .left h2,
-main .about-sec .container .lower-sec .right h2 {
-    font-size: 2rem;
+main .about-sec .itm1 {
+    counter-reset: item 0;
+}
+
+main .about-sec .itm2 {
+    counter-reset: item 1;
+}
+
+main .about-sec .itm3 {
+    counter-reset: item 2;
+}
+
+main .about-sec .about-item1 {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+main .about-sec .about-item1 h2 {
+    font-size: 35px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--text-primary);
 }
 
-main .about-sec .container .container-points {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-main .about-sec .container .container-points .point {
-    display: flex;
-    gap: 20px;
-}
-
-main .about-sec .container .container-points .point .left {
-    flex: 1;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-main .about-sec .container .container-points .point .left span {
-    width: 50px;
-    height: 50px;
-    border-radius: 6px;
-    background: var(--medium-yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--pure-white);
-    font-weight: 700;
-}
-
-main .about-sec .container .container-points .point .right {
-    flex: 11;
-}
-
-main .about-sec .container .container-points .point .right h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-main .about-sec .container .container-points .point .right p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: var(--slate-gray);
+main .about-sec .about-item1 p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 
