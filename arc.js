@@ -158,21 +158,21 @@ const slidesData = [
     title: "Modern Interior Design",
     description: "Designed with modern aesthetics in mind",
     buttonText: "Get Started",
-    buttonLink: "#contact"
+    buttonLink: "contact"
   },
   {
     image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
     title: "Stunning Exterior Design",
     description: "Architecture that inspires",
     buttonText: "Explore Images",
-    buttonLink: "#gallery"
+    buttonLink: "gallery"
   },
   {
     image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920",
     title: "Modern Living Spaces",
     description: "Where architecture meets comfort",
     buttonText: "View Projects",
-    buttonLink: "#projects"
+    buttonLink: "projects"
   }
 ];
 
@@ -250,8 +250,8 @@ document.addEventListener('click', (e) => {
 
 
 document.onkeydown = (e) => {
-    if (e.key === 'ArrowLeft') { prevSlide(); e.preventDefault(); }
-    if (e.key === 'ArrowRight') { nextSlide(); e.preventDefault(); }
+  if (e.key === 'ArrowLeft') { prevSlide(); e.preventDefault(); }
+  if (e.key === 'ArrowRight') { nextSlide(); e.preventDefault(); }
 };
 
 prevbtn.onclick = prevSlide;
@@ -442,17 +442,17 @@ function renderTestimonials() {
           <div class="client-avatar">${item.avatar}</div>
           <div class="client-info">
             <h3>${item.clientName}</h3>
-            <p class="client-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
           </div>
         </div>
-        <div class="rating">${stars} <span>${item.rating}</span></div>
         <div class="testimonial-content">
+          <div class="rating">${stars} <span>${item.rating}</span></div>
           <div class="testimonial-text">${item.text}</div>
-          <div class="project-meta">
-            <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
-            <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
-              <i class="fab fa-instagram"></i></a>
-          </div>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+          <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
+          <i class="fab fa-instagram"></i></a>
         </div>
       </div>
     `;
