@@ -558,6 +558,8 @@ main .satisfaction-sec .container .grid .item {
 main .satisfaction-sec .container .grid .item:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
+    border: 1px solid var(--medium-yellow);
+    color: var(--medium-yellow);
 }
 
 /* satisfaction Icons styling */
@@ -577,6 +579,7 @@ main .satisfaction-sec .container .grid .item h3 {
     margin-bottom: 15px;
     font-weight: 600;
 }
+
 
 main .satisfaction-sec .container .grid .item p {
     font-size: 13px;
@@ -1064,9 +1067,8 @@ main .whatsapp-sec .widget .chat-box .input button:hover {
 
 
 
-/* About Section */
+/* About 1 Section */
 main .about-sec {
-    /* width: var(--container-max-width); */
     height: auto;
     margin: auto;
 }
@@ -1081,6 +1083,7 @@ main .about-sec .about-cont {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
 }
 
@@ -1098,107 +1101,156 @@ main .about-sec .about-content {
     position: relative;
     z-index: 1;
     text-align: center;
-    padding-bottom: 150px;
+    margin-bottom: 120px;
 }
 
 main .about-sec .about-content h2 {
-    font-size: 35px;
+    font-size: var(--main-heading);
     font-weight: 700;
+    color: var(--medium-yellow);
+    margin-bottom: 10px;
 }
 
 main .about-sec .about-content span {
-    font-size: 20px;
+    font-size: var(--sub-heading);
     font-weight: 500;
+    color: var(--text-primary);
 }
 
 main .about-sec .about-content p {
-    font-size: 15px;
+    font-size: var(--paragraph-text);
     font-weight: 400;
+    color: var(--text-primary);
+    margin-top: 5px;
 }
 
-/* about 2nd page */
+/* About 2 section */
 main .about-sec .about-cont2 {
-    margin: auto;
-    width: var(--container-max-width);
-    height: auto;
+    max-width: var(--container-max-width);
+    margin: 100px auto;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 20px;
+    gap: 50px;
+}
 
+main .about-sec .about-item {
+    width: 100%;
 }
 
 main .about-sec .about-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+main .about-sec .about-item img:hover {
+    transform: scale(1.02);
 }
 
 main .about-sec .about-item h2 {
-    font-size: 35px;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+    position: relative;
+}
+
+main .about-sec .about-item h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--medium-yellow);
 }
 
 main .about-sec .about-item p {
-    font-size: 15px;
+    font-size: var(--text);
     font-weight: 400;
-    width: 100%;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    text-align: justify;
+    margin-bottom: 10px;
+    color: var(--slate-gray);
 }
 
-/* about 3rd page */
+/* About 3 section*/
 main .about-sec .about-cont3 {
-    width: var(--container-max-width);
-    margin: auto;
+    max-width: var(--container-max-width);
+    margin: 100px auto;
+    padding: 0 20px;
 }
 
 main .about-sec .about-content1 {
-    width: 95vw;
-    padding: 20px;
     text-align: center;
+    max-width: 80%;
+    margin: 0 auto 60px auto;
 }
 
 main .about-sec .about-content1 h2 {
-    font-size: 35px;
+    font-size: var(--main-heading);
     font-weight: 700;
-    margin-bottom: 15px;
+    color: var(--text-primary);
 }
 
 main .about-sec .about-content1 p {
-    font-size: 15px;
+    font-size: var(--title);
+    color: var(--slate-gray);
     font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    width: 70%;
-    margin: auto
+    line-height: 1.6;
 }
 
 main .about-sec .about-grid2 {
-    position: relative;
-
-    height: auto;
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-bottom: 50px;
+    gap: 30px;
+    margin: 50px 0;
 }
 
-main .about-sec .itm1::before,
-main .about-sec .itm2::before,
-main .about-sec .itm3::before {
-    counter-increment: item;
-    content: counter(item);
-    font-size: 50px;
-    font-family: 'Georgia', serif;
+main .about-sec .about-item1 {
+    position: relative;
+    padding: 2.5rem 2rem;
+    background: var(--glass-bg);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+main .about-sec .about-item1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
+    border-color: var(--medium-yellow);
+}
+
+main .about-sec .about-item1:hover::before {
+    transform: scaleX(1);
+}
+
+main .about-sec .about-item1 h2 {
+    font-size: var(--sub-heading);
     font-weight: 700;
-    color: rgba(255, 165, 0, 0.8);
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+main .about-sec .about-item1:hover h2 {
+    color: var(--medium-yellow);
+}
+
+
+main .about-sec .about-item1 p {
+    font-size: var(--text);
+    font-weight: 400;
+    color: var(--slate-gray);
+    line-height: 1.6;
+    margin: 0;
 }
 
 main .about-sec .itm1 {
@@ -1213,27 +1265,20 @@ main .about-sec .itm3 {
     counter-reset: item 2;
 }
 
-main .about-sec .about-item1 {
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-    position: relative;
+main .about-sec .itm1::before,
+main .about-sec .itm2::before,
+main .about-sec .itm3::before {
+    counter-increment: item;
+    content: "0" counter(item);
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--medium-yellow);
+    opacity: 0.5;
+    position: absolute;
+    top: 30px;
+    left: 350px;
 }
 
-main .about-sec .about-item1 h2 {
-    font-size: 35px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-main .about-sec .about-item1 p {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
 
 
 
@@ -1263,9 +1308,8 @@ main .services-sec .service-cont h2 {
 }
 
 main .services-sec .service-cont p {
-    font-size: 1.1rem;
+    font-size: var(--title);
     color: var(--slate-gray);
-    font-weight: 600;
     animation: var(--tag-line);
 }
 
