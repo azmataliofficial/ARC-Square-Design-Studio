@@ -255,36 +255,52 @@ main #home.slide-sec {
 main .hero-sec {
     position: relative;
     height: 100vh;
+    width: 100%;
     min-height: 600px;
     overflow: hidden;
     background-color: var(--pure-white);
 }
 
-main .hero-sec .slide {
+main .hero-sec .slides-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+main .hero-sec .slides-wrapper .slide {
     position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.6s ease-in-out;
 }
 
-main .hero-sec .active {
+main .hero-sec .slides-wrapper .slide.active {
     opacity: 1;
     z-index: 10;
 }
 
-main .hero-sec .slide .overlay {
+main .hero-sec .slides-wrapper .slide::before {
+    content: '';
     position: absolute;
-    inset: 0;
-    background: rgba(44, 44, 44, 0.4);
-    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 3;
 }
 
-main .hero-sec .slide .slide-content {
+main .hero-sec .slides-wrapper .slide .slide-content {
     position: relative;
     z-index: 20;
     text-align: center;
@@ -294,22 +310,86 @@ main .hero-sec .slide .slide-content {
     max-width: 900px;
 }
 
-main .hero-sec .slide .slide-content h1 {
+main .hero-sec .slides-wrapper .slide .slide-content h1 {
     font-size: 3rem;
     font-weight: 800;
     animation: var(--heading);
 }
 
-main .hero-sec .slide .slide-content p {
+main .hero-sec .slides-wrapper .slide .slide-content p {
     font-size: 1.3rem;
     opacity: 0.9;
     animation: var(--tag-line);
     margin-bottom: 1rem;
 }
 
+main .hero-sec .slides-wrapper .slide .slide-content button {
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--medium-yellow);
+    color: var(--pure-white);
+    border-radius: 10rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s;
+}
+
+main .hero-sec .slides-wrapper .slide .slide-content button .button__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    color: var(--medium-yellow);
+    background-color: var(--pure-white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+main .hero-sec .slides-wrapper .slide .slide-content button:hover {
+    background: var(--text-primary);
+    color: var(--pure-white);
+}
+
+main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    color: var(--text-primary);
+    background-color: var(--pure-white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+main .hero-sec .slides-wrapper .slide .slide-content button .button__icon-svg--copy {
+    position: absolute;
+    transform: translate(-150%, 150%);
+}
+
+main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-svg:first-child {
+    transition: all 0.3s ease-in-out;
+    transform: translate(150%, -150%);
+}
+
+main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-svg--copy {
+    transition: all 0.3s ease-in-out 0.1s;
+    transform: translate(0);
+}
 
 
-/* arrows in slides */
 main .hero-sec .arrow {
     position: absolute;
     top: 50%;
@@ -347,71 +427,7 @@ main .hero-sec .arrow-right {
 }
 
 
-main .hero-sec .slide .slide-content button {
-    line-height: 1;
-    text-decoration: none;
-    display: inline-flex;
-    border: none;
-    cursor: pointer;
-    align-items: center;
-    gap: 0.75rem;
-    background-color: var(--medium-yellow);
-    color: var(--pure-white);
-    border-radius: 10rem;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    padding-left: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: background-color 0.3s;
-}
 
-main .hero-sec .slide .slide-content button .button__icon-wrapper {
-    flex-shrink: 0;
-    width: 25px;
-    height: 25px;
-    position: relative;
-    color: var(--medium-yellow);
-    background-color: var(--pure-white);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
-main .hero-sec .slide .slide-content button:hover {
-    background: var(--text-primary);
-    color: var(--pure-white);
-}
-
-main .hero-sec .slide .slide-content button:hover .button__icon-wrapper {
-    flex-shrink: 0;
-    width: 25px;
-    height: 25px;
-    position: relative;
-    color: var(--text-primary);
-    background-color: var(--pure-white);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
-main .hero-sec .slide .slide-content button .button__icon-svg--copy {
-    position: absolute;
-    transform: translate(-150%, 150%);
-}
-
-main .hero-sec .slide .slide-content button:hover .button__icon-svg:first-child {
-    transition: all 0.3s ease-in-out;
-    transform: translate(150%, -150%);
-}
-
-main .hero-sec .slide .slide-content button:hover .button__icon-svg--copy {
-    transition: all 0.3s ease-in-out 0.1s;
-    transform: translate(0);
-}
 
 /* dots in bottom of the slides */
 main .hero-sec .dots {
@@ -434,9 +450,9 @@ main .hero-sec .dots .dot {
     transition: all 0.2s;
 }
 
-main .hero-sec .dots .dot.active {
+main .hero-sec .dots .dot.active-dot {
     background-color: var(--pure-white);
-    width: 36px;
+    width: 24px;
     border-radius: 20px;
 }
 
@@ -1274,7 +1290,7 @@ main .project-sec .pro-head h2 {
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
-    animation:var(--heading);
+    animation: var(--heading);
 }
 
 main .project-sec .pro-head p {
@@ -1571,7 +1587,7 @@ main .contact-sec .head h1 {
 main .contact-sec .head p {
     font-size: 1.1rem;
     color: var(--slate-gray);
-    animation:var(--tag-line);
+    animation: var(--tag-line);
 }
 
 main .contact-sec .body {

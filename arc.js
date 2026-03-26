@@ -151,52 +151,117 @@ window.addEventListener("resize", () => {
 
 
 // Hero Slider start
-(function () {
-  const slides = document.querySelectorAll(".slide");
-  const [prevBtn, nextBtn] = ["prevSlide", "nextSlide"].map(id => document.getElementById(id));
-  const dotsContainer = document.getElementById("dotsContainer");
-  let currentSlide = 0;
-  const totalSlides = slides.length;
-  let autoInterval;
 
-  const updateDots = () => {
-    document.querySelectorAll(".dot").forEach((dot, i) => {
-      dot.classList.toggle("active", i === currentSlide);
-    });
-  };
+const slidesData = [
+  {
+    image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Modern Interior Design",
+    description: "Designed with modern aesthetics in mind",
+    buttonText: "Get Started",
+    buttonLink: "#services"
+  },
+  {
+    image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Stunning Exterior Design",
+    description: "Architecture that inspires",
+    buttonText: "Get Started",
+    buttonLink: "#services"
+  },
+  {
+    image: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    title: "Modern Living Spaces",
+    description: "Where architecture meets comfort",
+    buttonText: "View Projects",
+    buttonLink: "#projects"
+  }
+];
 
-  const createDots = () => {
-    dotsContainer.innerHTML = "";
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement("button");
-      dot.className = `dot ${i === currentSlide ? 'active' : ''}`;
-      dot.dataset.index = i;
-      dot.onclick = (e) => {
-        goToSlide(+e.target.dataset.index);
-        resetTimer();
-      };
-      dotsContainer.appendChild(dot);
-    }
-  };
 
-  const goToSlide = (index) => {
-    slides.forEach((s, i) => s.classList.toggle("active", i === index));
-    currentSlide = index;
-    updateDots();
-  };
+let current = 0
+let timer;
 
-  const nextSlide = () => goToSlide((currentSlide + 1) % totalSlides);
-  const prevSlide = () => goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
-  const startAutoSlide = () => autoInterval = setInterval(nextSlide, 5000);
-  const resetTimer = () => { clearInterval(autoInterval); startAutoSlide(); };
 
-  nextBtn.onclick = () => { nextSlide(); resetTimer(); };
-  prevBtn.onclick = () => { prevSlide(); resetTimer(); };
+let wrapper = document.getElementById('slideswrapper')
+let prevbtn = document.getElementById('prevSlide')
+let nextbtn = document.getElementById('nextSlide')
+let dotsContainer = document.getElementById('dotsContainer');
 
-  createDots();
-  goToSlide(0);
-  startAutoSlide();
-})();
+slidesData.forEach((data, index) => {
+  const slide = document.createElement('div')
+  slide.className = 'slide'
+  slide.style.backgroundImage = `url('${data.image}')`
+  slide.innerHTML = ` <div class="slide-content">
+                            <h1>${data.title}</h1>
+                            <p>${data.description}</p>
+                            <button style="--clr: #7808d0" onclick="scrollToSection('${data.buttonLink}')"
+                                style="text-decoration: none;"> 
+                                <span class="button__icon-wrapper">
+                                    <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                        class="button__icon-svg" width="10">
+                                        <path
+                                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                            fill="currentColor"></path>
+                                    </svg>
+
+                                    <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                        class="button__icon-svg button__icon-svg--copy">
+                                        <path
+                                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </span>
+                              ${data.buttonText}
+                            </button>
+                      </div> `
+  wrapper.appendChild(slide)
+
+
+  let dot = document.createElement('button')
+  dot.className = 'dot'
+  dot.onclick = () => goTo(index)
+  dotsContainer.appendChild(dot)
+})
+
+
+function update() {
+  document.querySelectorAll('.slide').forEach((s, i) => {
+    s.classList.toggle('active', i === current)
+  })
+  document.querySelectorAll('.dot').forEach((d, i) => {
+    d.classList.toggle('active-dot', i === current)
+  })
+}
+
+function nextSlide() { current = (current + 1) % slidesData.length; update(); resetTimer(); }
+function prevSlide() { current = (current - 1 + slidesData.length) % slidesData.length; update(); resetTimer(); }
+function goTo(i) { current = i; update(); resetTimer(); }
+
+function startAuto() { timer = setInterval(nextSlide, 3000); }
+function stopAuto() { clearInterval(timer); }
+function resetTimer() { stopAuto(); startAuto(); }
+
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('slide-btn')) {
+    const link = e.target.dataset.link;
+    const target = document.querySelector(link);
+    target ? target.scrollIntoView({ behavior: 'smooth' }) : alert(`Clicked: ${e.target.innerText}`);
+  }
+});
+
+const container = document.querySelector('.hero-sec');
+container.onmouseenter = stopAuto;
+container.onmouseleave = startAuto;
+
+document.onkeydown = (e) => {
+    if (e.key === 'ArrowLeft') { prevSlide(); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { nextSlide(); e.preventDefault(); }
+};
+
+prevbtn.onclick = prevSlide;
+nextbtn.onclick = nextSlide;
+
+update();
+startAuto();
 
 // Hero Slider end
 
@@ -251,7 +316,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // Stats Animation end
 
 
-// WhatsApp Chat Box
+// WhatsApp Chat Box start
+
 const whatsappToggle = document.getElementById("whatsappToggle");
 const whatsappChatBox = document.getElementById("whatsappChatBox");
 const closeChat = document.getElementById("closeChat");
@@ -315,6 +381,103 @@ function sendWhatsApp() {
     }
   }
 }
+
+// WhatsApp Chat Box end
+
+// testimonial start
+const testimonial = [{
+  clientName: "Rakhi Singh",
+  location: "DM Road Bulandshahar",
+  instagram: "https://www.instagram.com/uv_glaam/",
+  rating: 5,
+  text: "I am very happy with the work of ARC Square. They have done a great job in designing my beauty parlour. The team was very professional and they completed the work within the given time frame. I would definitely recommend them to others.",
+  projectType: "Beauty Parlour Design",
+  avatar: "RS"
+},
+{
+  clientName: "Arif Saifi",
+  location: "Bulandshahr City",
+  instagram: "https://www.instagram.com/arcsquaredesignstudio/",
+  rating: 4.5,
+  text: "We engaged ARC Square for our office interior design and the results exceeded our expectations. Their 3D visualization helped us visualize the space before execution. The team was responsive, creative, and delivered the project within the stipulated timeline. Great experience!",
+  projectType: "Commercial Interior",
+  avatar: "AS"
+},
+{
+  clientName: "Azmat Ali",
+  location: "Delhi NCR",
+  instagram: "https://www.instagram.com/azmataliofficial/",
+  rating: 5,
+  text: "Professional approach combined with creative excellence. ARC Square handled our villa project with utmost care. The structural planning was flawless and they incorporated modern aesthetics while maintaining functionality. Their attention to client requirements is commendable.",
+  projectType: "Villa Design",
+  avatar: "AA"
+}
+];
+
+let currentTestimonialIndex = 0;
+
+function renderTestimonials() {
+  const grid = document.querySelector('.testiminial-grid');
+  if (!grid) return;
+
+  grid.innerHTML = '';
+
+  for (let i = 0; i < 2; i++) {
+    const itemIndex = (currentTestimonialIndex + i) % testimonial.length;
+    const item = testimonial[itemIndex];
+
+    const delay = i * 0.2;
+
+    let stars = '';
+    const fullStars = Math.floor(item.rating);
+    const hasHalfStar = item.rating % 1 !== 0;
+    for (let j = 0; j < fullStars; j++) {
+      stars += '<i class="fas fa-star"></i>';
+    }
+
+    if (hasHalfStar) {
+      stars += '<i class="fas fa-star-half-alt"></i>';
+    }
+
+    const card = `
+      <div class="testimonial-card slide-in-card" style="animation-delay: ${delay}s;">
+        <div class="card-header">
+          <div class="client-avatar">${item.avatar}</div>
+          <div class="client-info">
+            <h3>${item.clientName}</h3>
+            <p class="client-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
+          </div>
+        </div>
+        <div class="rating">${stars} <span>${item.rating}</span></div>
+        <div class="testimonial-content">
+          <div class="testimonial-text">${item.text}</div>
+          <div class="project-meta">
+            <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+            <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
+              <i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    `;
+    grid.innerHTML += card;
+  }
+}
+
+function testimonials() {
+  const grid = document.querySelector('.testiminial-grid');
+  if (!grid) return;
+
+  renderTestimonials();
+
+  setInterval(() => {
+    currentTestimonialIndex = (currentTestimonialIndex + 2) % testimonial.length;
+    renderTestimonials();
+  }, 8000);
+}
+
+window.addEventListener('DOMContentLoaded', testimonials);
+
+// testimonial end
 
 
 
@@ -409,7 +572,7 @@ for (let cards = 0; cards < serCardDetails.length; cards++) {
 
 
 
-// service popup section
+// service popup 
 
 let popsec = document.getElementById("pop-sec");
 let closebtn = document.getElementById("close-pop");
@@ -481,10 +644,7 @@ function openpop(index) {
 
 }
 
-
-
-
-
+// Services section end
 
 
 // Projects Tabs script
@@ -518,7 +678,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Pinterest-like Masonry Grid for Gallery Section
+// Gallery Section start
 (function () {
   const pins = [
     {
@@ -620,108 +780,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 })();
 
-
-
-
-
-
-
-// testimonial
-const testimonial = [{
-  clientName: "Rakhi Singh",
-  location: "DM Road Bulandshahar",
-  instagram: "https://www.instagram.com/uv_glaam/",
-  rating: 5,
-  text: "I am very happy with the work of ARC Square. They have done a great job in designing my beauty parlour. The team was very professional and they completed the work within the given time frame. I would definitely recommend them to others.",
-  projectType: "Beauty Parlour Design",
-  avatar: "RS"
-},
-{
-  clientName: "Arif Saifi",
-  location: "Bulandshahr City",
-  instagram: "https://www.instagram.com/arcsquaredesignstudio/",
-  rating: 4.5,
-  text: "We engaged ARC Square for our office interior design and the results exceeded our expectations. Their 3D visualization helped us visualize the space before execution. The team was responsive, creative, and delivered the project within the stipulated timeline. Great experience!",
-  projectType: "Commercial Interior",
-  avatar: "AS"
-},
-{
-  clientName: "Azmat Ali",
-  location: "Delhi NCR",
-  instagram: "https://www.instagram.com/azmataliofficial/",
-  rating: 5,
-  text: "Professional approach combined with creative excellence. ARC Square handled our villa project with utmost care. The structural planning was flawless and they incorporated modern aesthetics while maintaining functionality. Their attention to client requirements is commendable.",
-  projectType: "Villa Design",
-  avatar: "AA"
-}
-];
-
-let currentTestimonialIndex = 0;
-
-function renderTestimonials() {
-  const grid = document.querySelector('.testiminial-grid');
-  if (!grid) return;
-
-  grid.innerHTML = '';
-
-  for (let i = 0; i < 2; i++) {
-    const itemIndex = (currentTestimonialIndex + i) % testimonial.length;
-    const item = testimonial[itemIndex];
-
-    const delay = i * 0.2;
-
-    let stars = '';
-    const fullStars = Math.floor(item.rating);
-    const hasHalfStar = item.rating % 1 !== 0;
-    for (let j = 0; j < fullStars; j++) {
-      stars += '<i class="fas fa-star"></i>';
-    }
-
-    if (hasHalfStar) {
-      stars += '<i class="fas fa-star-half-alt"></i>';
-    }
-
-    const card = `
-      <div class="testimonial-card slide-in-card" style="animation-delay: ${delay}s;">
-        <div class="card-header">
-          <div class="client-avatar">${item.avatar}</div>
-          <div class="client-info">
-            <h3>${item.clientName}</h3>
-            <p class="client-location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
-          </div>
-        </div>
-        <div class="rating">${stars} <span>${item.rating}</span></div>
-        <div class="testimonial-content">
-          <div class="testimonial-text">${item.text}</div>
-          <div class="project-meta">
-            <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
-            <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
-              <i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    `;
-    grid.innerHTML += card;
-  }
-}
-
-function testimonials() {
-  const grid = document.querySelector('.testiminial-grid');
-  if (!grid) return;
-
-  renderTestimonials();
-
-  setInterval(() => {
-    currentTestimonialIndex = (currentTestimonialIndex + 2) % testimonial.length;
-    renderTestimonials();
-  }, 8000);
-}
-
-window.addEventListener('DOMContentLoaded', testimonials);
-
-
-
-
+// Gallery Section end
 
 
 

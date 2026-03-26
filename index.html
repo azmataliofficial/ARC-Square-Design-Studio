@@ -72,87 +72,7 @@
 
         <section class="main-content slide-sec show" id="home">
             <div class="hero-sec">
-                <div class="slide active"
-                    style="background-image: url('https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-                    <div class="overlay"></div>
-                    <div class="slide-content">
-                        <h1>Modern Living Spaces</h1>
-                        <p>Where architecture meets comfort</p>
-                        <button style="--clr: #7808d0" onclick="scrollToSection('services')"
-                            style="text-decoration: none;">
-                            <span class="button__icon-wrapper">
-                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg" width="10">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-
-                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg button__icon-svg--copy">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            Get Start
-                        </button>
-                    </div>
-                </div>
-                <div class="slide"
-                    style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-                    <div class="overlay"></div>
-                    <div class="slide-content">
-                        <h1>Modern Interior Design</h1>
-                        <p>Designed with modern aesthetics in mind</p>
-                        <button style="--clr: #7808d0" onclick="scrollToSection('services')"
-                            style="text-decoration: none;">
-                            <span class="button__icon-wrapper">
-                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg" width="10">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-
-                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg button__icon-svg--copy">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            Get Start
-                        </button>
-                    </div>
-                </div>
-                <div class="slide"
-                    style="background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-                    <div class="overlay"></div>
-                    <div class="slide-content">
-                        <h1>Stunning Exterior Design</h1>
-                        <p>Architecture that inspires</p>
-                        <button style="--clr: #7808d0" onclick="scrollToSection('services')"
-                            style="text-decoration: none;">
-                            <span class="button__icon-wrapper">
-                                <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg" width="10">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-
-                                <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                    class="button__icon-svg button__icon-svg--copy">
-                                    <path
-                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            Get Start
-                        </button>
-                    </div>
-                </div>
+                <div class="slides-wrapper" id="slideswrapper"></div>
 
                 <button class="arrow arrow-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
                 <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
@@ -583,7 +503,7 @@
             </div>
         </section>
 
-            
+
 
         <!-- Services Section -->
         <section class="services-sec slide-sec" id="services">
