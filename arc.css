@@ -46,9 +46,11 @@ html {
 
     /* Text sizing */
     --main-heading: 3rem;
-    --sub-heading: 1.5rem;
-    --title: 1rem;
-    --text: 0.9rem;
+    --sub-heading: 2rem;
+    --title: 1.3rem;
+    --tagline: 1.1rem;
+    --text: 0.95rem;
+    --sub-text: 0.75rem;
 }
 
 @keyframes fadeInUp {
@@ -135,20 +137,20 @@ header nav .bar .logo .name {
 }
 
 header nav .bar .logo .name span:nth-child(1) {
-    font-size: 20px;
-    font-weight: 800;
+    font-size: var(--title);
+    font-weight: 700;
     letter-spacing: 1px;
     color: var(--medium-yellow);
 }
 
 header nav .bar .logo .name #span {
-    font-size: 20px;
-    font-weight: 300;
+    font-size: var(--text);
+    font-weight: 400;
     color: var(--text-primary);
 }
 
 header nav .bar .logo .name span:last-child {
-    font-size: 12px;
+    font-size: var(--text);
     letter-spacing: 1px;
     color: var(--text-primary);
     font-weight: 600;
@@ -188,7 +190,7 @@ header nav .bar .container .nav-links {
 
 header nav .bar .container .nav-links .link {
     text-decoration: none;
-    font-size: 15px;
+    font-size: var(--text);
     font-weight: 600;
     color: var(--text-primary);
     position: relative;
@@ -236,7 +238,7 @@ header nav .bar #mobile-menu-btn {
     display: none;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: var(--title);
     color: var(--text-primary);
     cursor: pointer;
 }
@@ -308,13 +310,13 @@ main .main-content .hero-sec .wrapper .slide .content {
 }
 
 main .main-content .hero-sec .wrapper .slide .content h1 {
-    font-size: 3rem;
+    font-size: var(--main-heading);
     font-weight: 800;
     animation: var(--heading);
 }
 
 main .main-content .hero-sec .wrapper .slide .content p {
-    font-size: 1.3rem;
+    font-size: var(--title);
     opacity: 0.9;
     animation: var(--tag-line);
     margin-bottom: 1rem;
@@ -333,7 +335,6 @@ main .main-content .hero-sec .wrapper .slide .content button {
     border-radius: 10rem;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
-    padding-left: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -398,7 +399,7 @@ main .main-content .hero-sec .arrow {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    font-size: 1.8rem;
+    font-size: var(--title);
     cursor: pointer;
     z-index: 30;
     display: flex;
@@ -478,7 +479,7 @@ main .main-content .stats-sec .container .grid .item {
 }
 
 main .main-content .stats-sec .container .grid .item .number {
-    font-size: 3.5rem;
+    font-size: var(--main-heading);
     font-weight: 800;
     color: var(--medium-yellow);
     line-height: 1.2;
@@ -487,7 +488,7 @@ main .main-content .stats-sec .container .grid .item .number {
 main .main-content .stats-sec .container .grid .item .label {
     color: var(--slate-gray);
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: var(--title);
 }
 
 
@@ -511,7 +512,7 @@ main .main-content .satisfaction-sec .container .content {
 }
 
 main .main-content .satisfaction-sec .container .content h2 {
-    font-size: 36px;
+    font-size: var(--sub-heading);
     color: var(--text-primary);
     margin-bottom: 20px;
     font-weight: 600;
@@ -520,9 +521,9 @@ main .main-content .satisfaction-sec .container .content h2 {
 }
 
 main .main-content .satisfaction-sec .container .content p {
-    font-size: 16px;
+    font-size: var(--tagline);
+    color: var(--slate-gray);
     line-height: 1.8;
-    color: var(--text-primary);
 }
 
 main .main-content .satisfaction-sec .container .grid {
@@ -550,7 +551,7 @@ main .main-content .satisfaction-sec .container .grid .item:hover {
 }
 
 main .main-content .satisfaction-sec .container .grid .item i {
-    font-size: 45px;
+    font-size: var(--main-heading);
     margin-bottom: 20px;
     background: linear-gradient(135deg, var(--medium-yellow), var(--text-primary));
     background-clip: text;
@@ -560,14 +561,14 @@ main .main-content .satisfaction-sec .container .grid .item i {
 }
 
 main .main-content .satisfaction-sec .container .grid .item h3 {
-    font-size: 22px;
+    font-size: var(--title);
     color: var(--text-primary);
     margin-bottom: 15px;
     font-weight: 600;
 }
 
 main .main-content .satisfaction-sec .container .grid .item p {
-    font-size: 13px;
+    font-size: var(--text);
     line-height: 1.7;
     color: var(--slate-gray);
 }
@@ -584,7 +585,7 @@ main .main-content .testimonial-sec {
 main .main-content .testimonial-sec h2 {
     text-align: center;
     color: var(--text-primary);
-    font-size: 2rem;
+    font-size: var(--sub-heading);
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -604,7 +605,7 @@ main .main-content .testimonial-sec .grid-cont .card {
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     display: grid;
     grid-template-rows: auto 1fr auto;
-     opacity: 0;
+    opacity: 0;
     animation: var(--testimol);
 }
 
@@ -617,7 +618,7 @@ main .main-content .testimonial-sec .grid-cont .card .header {
 main .main-content .testimonial-sec .grid-cont .card .header .info p i,
 main .main-content .testimonial-sec .grid-cont .card .meta span i {
     color: var(--medium-yellow);
-    font-size: 1rem;
+    font-size: var(--text);
     margin-right: 5px;
 }
 
@@ -628,7 +629,7 @@ main .main-content .testimonial-sec .grid-cont .card .header .info h3 {
 main .main-content .testimonial-sec .grid-cont .card .header .client-info p,
 main .main-content .testimonial-sec .grid-cont .card .meta span {
     color: var(--slate-gray);
-    font-size: 0.85em;
+    font-size: var(--text);
 }
 
 main .main-content .testimonial-sec .grid-cont .card .header .avatar {
@@ -641,7 +642,7 @@ main .main-content .testimonial-sec .grid-cont .card .header .avatar {
     justify-content: center;
     color: var(--pure-white);
     font-weight: 700;
-    font-size: 1em;
+    font-size: var(--text);
 }
 
 
@@ -649,7 +650,7 @@ main .main-content .testimonial-sec .grid-cont .card .header .avatar {
 
 main .main-content .testimonial-sec .grid-cont .card .header .info p {
     color: var(--slate-gray);
-    font-size: 0.75em;
+    font-size: var(--text);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -657,19 +658,19 @@ main .main-content .testimonial-sec .grid-cont .card .header .info p {
 
 main .main-content .testimonial-sec .grid-cont .card .header .info p i {
     color: var(--medium-yellow);
-    font-size: 0.7em;
+    font-size: var(--text);
 }
 
 main .main-content .testimonial-sec .grid-cont .card .content .rating {
     margin-bottom: 10px;
     color: var(--medium-yellow);
-    font-size: 0.75em;
+    font-size: var(--text);
 }
 
 main .main-content .testimonial-sec .grid-cont .card .content .text {
     color: var(--slate-gray);
     line-height: 1.5;
-    font-size: 0.85em;
+    font-size: var(--text);
     margin-bottom: 12px;
     padding-left: 10px;
     border-left: 2px solid var(--medium-yellow);
@@ -682,7 +683,7 @@ main .main-content .testimonial-sec .grid-cont .card .meta {
 
 main .main-content .testimonial-sec .grid-cont .card .meta a {
     color: var(--medium-yellow);
-    font-size: 0.85em;
+    font-size: var(--text);
     text-decoration: none;
 
 }
@@ -694,11 +695,15 @@ main .main-content .testimonial-sec .grid-cont .card .meta a i {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     padding: 6px;
     border-radius: 50%;
-    font-size: 14px;
+    font-size: var(--text);
     color: white;
     margin-right: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+main .testimonial-cont .instagram-tag i {
+    font-size: var(--text);
 }
 
 
@@ -716,7 +721,7 @@ main .main-content .faq-sec {
 main .main-content .faq-sec .title {
     text-align: center;
     color: var(--text-primary);
-    font-size: 2rem;
+    font-size: var(--sub-heading);
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -744,7 +749,7 @@ main .main-content .faq-sec .grid-cont .categories .tab {
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: var(--text);
     color: var(--slate-gray);
     transition: all 0.2s;
     width: 100%;
@@ -752,7 +757,7 @@ main .main-content .faq-sec .grid-cont .categories .tab {
 
 main .main-content .faq-sec .grid-cont .categories .tab i {
     float: right;
-    font-size: 0.75rem;
+    font-size: var(--text);
     opacity: 0;
 }
 
@@ -798,13 +803,13 @@ main .main-content .faq-sec .grid-cont .data .panel .item .question {
 }
 
 main .main-content .faq-sec .grid-cont .data .panel .item .question span {
-    font-size: 0.95rem;
+    font-size: var(--text);
     font-weight: 500;
     color: var(--text-primary);
 }
 
 main .main-content .faq-sec .grid-cont .data .panel .item .question i {
-    font-size: 0.8rem;
+    font-size: var(--text);
     color: var(--slate-gray);
     transition: transform 0.2s;
 }
@@ -821,16 +826,16 @@ main .main-content .faq-sec .grid-cont .data .panel .item .answer {
 }
 
 main .main-content .faq-sec .grid-cont .data .panel .item .answer p {
-    font-size: 0.9rem;
-    color: #6c757d;
+    font-size: var(--text);
+    color: var(--slate-gray);
     line-height: 1.6;
     margin: 0;
     padding: 0 20px 20px;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid var(--medium-yellow);
     padding-top: 16px;
 }
 
-main .main-content .faq-sec .grid-cont .data .panel .item.open #faq-ans{
+main .main-content .faq-sec .grid-cont .data .panel .item.open #faq-ans {
     max-height: 250px;
 }
 
@@ -854,8 +859,8 @@ main .whatsapp-sec .widget .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    color: white;
+    font-size: var(--sub-heading);
+    color: var(--pure-white);
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
     transition: all 0.3s ease;
@@ -872,8 +877,8 @@ main .whatsapp-sec .widget .icon .notifi-badge {
     top: -5px;
     right: -5px;
     background: #ff4757;
-    color: white;
-    font-size: 12px;
+    color: var(--pure-white);
+    font-size: var(--sub-text);
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -907,7 +912,7 @@ main .whatsapp-sec .widget .chat-box.active {
 
 main .whatsapp-sec .widget .chat-box .header {
     background: #075E54;
-    color: white;
+    color: var(--pure-white);
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -928,7 +933,7 @@ main .whatsapp-sec .widget .chat-box .header .content .avatar {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: var(--text);
 }
 
 main .whatsapp-sec .widget .chat-box .header .content .avatar img {
@@ -939,20 +944,20 @@ main .whatsapp-sec .widget .chat-box .header .content .avatar img {
 
 main .whatsapp-sec .widget .chat-box .header .content .info h5 {
     margin: 0;
-    font-size: 1rem;
+    font-size: var(--text);
 }
 
 main .whatsapp-sec .widget .chat-box .header .content .info p {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: var(--sub-text);
     opacity: 0.8;
 }
 
 main .whatsapp-sec .widget .chat-box .header .close-btn {
     background: none;
     border: none;
-    color: white;
-    font-size: 18px;
+    color: var(--pure-white);
+    font-size: var(--text);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -977,13 +982,13 @@ main .whatsapp-sec .widget .chat-box .body .message p {
     padding: 12px 15px;
     border-radius: 18px 18px 18px 4px;
     margin: 0;
-    font-size: 0.9rem;
-    color: #333;
+    font-size: var(--text);
+    color: var(--text-primary);
 }
 
 main .whatsapp-sec .widget .chat-box .body .mess-time {
-    font-size: 0.7rem;
-    color: #7f7f7f;
+    font-size: var(--sub-text);
+    color: var(--text-primary);
     margin-top: 5px;
     text-align: right;
     background-color: var(--pure-white);
@@ -993,7 +998,6 @@ main .whatsapp-sec .widget .chat-box .body .mess-time {
 
 main .whatsapp-sec .widget .chat-box .input {
     padding: 15px 20px;
-    border-top: 1px solid #eee;
     display: flex;
     gap: 10px;
 }
@@ -1003,7 +1007,7 @@ main .whatsapp-sec .widget .chat-box .input input {
     border: 1px solid #ddd;
     border-radius: 50px;
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: var(--text);
     outline: none;
     transition: all 0.3s ease;
 }
@@ -1018,8 +1022,8 @@ main .whatsapp-sec .widget .chat-box .input button {
     background: #25D366;
     border: none;
     border-radius: 50%;
-    color: white;
-    font-size: 18px;
+    color: var(--pure-white);
+    font-size: var(--text);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -1079,15 +1083,15 @@ main .about-sec .container1 .content h2 {
 }
 
 main .about-sec .container1 .content span {
-    font-size: var(--sub-heading);
-    font-weight: 500;
+    font-size: var(--title);
+    font-weight: 700;
     color: var(--text-primary);
     animation: var(--heading);
     display: inline-block;
 }
 
 main .about-sec .container1 .content p {
-    font-size: var(--paragraph-text);
+    font-size: var(--tagline);
     font-weight: 400;
     color: var(--text-primary);
     margin-top: 5px;
@@ -1125,7 +1129,7 @@ main .about-sec .container2 .contents{
 }
 
 main .about-sec .container2 .contents h2 {
-    font-size: 2.5rem;
+    font-size: var(--sub-heading);
     font-weight: 700;
     color: var(--text-primary);
     position: relative;
@@ -1164,13 +1168,13 @@ main .about-sec .container3 .content {
 }
 
 main .about-sec .container3 .content h2 {
-    font-size: var(--main-heading);
+    font-size: var(--sub-heading);
     font-weight: 700;
     color: var(--text-primary);
 }
 
 main .about-sec .container3 .content p {
-    font-size: var(--title);
+    font-size: var(--tagline);
     color: var(--slate-gray);
     font-weight: 400;
     line-height: 1.6;
@@ -1206,16 +1210,12 @@ main .about-sec .container3 .grid .items:hover::before {
 }
 
 main .about-sec .container3 .grid .items h2 {
-    font-size: var(--sub-heading);
+    font-size: var(--title);
     font-weight: 700;
     margin-bottom: 20px;
     color: var(--text-primary);
     position: relative;
     transition: color 0.3s ease;
-}
-
-main .about-sec .container3 .grid .items:hover h2 {
-    color: var(--medium-yellow);
 }
 
 
@@ -1244,8 +1244,8 @@ main .about-sec .container3 .grid .itm2::before,
 main .about-sec .container3 .grid .itm3::before {
     counter-increment: item;
     content: "0" counter(item);
-    font-size: 30px;
-    font-weight: 800;
+    font-size: var(--sub-heading);
+    font-weight: 700;
     color: var(--medium-yellow);
     opacity: 0.5;
     position: absolute;
@@ -1274,7 +1274,7 @@ main .services-sec .service-cont {
 }
 
 main .services-sec .service-cont h2 {
-    font-size: 3rem;
+    font-size: var(--main-heading);
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
@@ -1282,7 +1282,7 @@ main .services-sec .service-cont h2 {
 }
 
 main .services-sec .service-cont p {
-    font-size: var(--title);
+    font-size: var(--tagline);
     color: var(--slate-gray);
     animation: var(--tag-line);
 }
@@ -1364,8 +1364,8 @@ main .services-sec .grid-cont .card:hover #card-cont {
 
 main .services-sec .grid-cont .card .image .content span {
     display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: var(--sub-text);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     background: rgba(255, 255, 255, 0.2);
@@ -1375,7 +1375,7 @@ main .services-sec .grid-cont .card .image .content span {
 }
 
 main .services-sec .grid-cont .card .image .content h2 {
-    font-size: 22px;
+    font-size: var(--title);
     font-weight: 700;
     line-height: 1.3;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -1389,7 +1389,7 @@ main .services-sec .grid-cont .card .content {
 main .services-sec .grid-cont .card .content .description {
     color: var(--slate-gray);
     height: 95px;
-    font-size: 1rem;
+    font-size: var(--text);
     overflow: hidden;
 }
 
@@ -1400,8 +1400,8 @@ main .services-sec .grid-cont .card .content .learn-more {
     background: none;
     border: none;
     color: var(--medium-yellow);
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: var(--text);
     padding: 0.5rem 0;
     cursor: pointer;
     position: relative;
@@ -1410,7 +1410,7 @@ main .services-sec .grid-cont .card .content .learn-more {
 
 main .services-sec .grid-cont .card .content .learn-more::after {
     content: '→';
-    font-size: 1.2rem;
+    font-size: var(--text);
     transition: transform 0.3s ease;
 }
 
@@ -1431,11 +1431,11 @@ main .services-sec .consultation {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
 }
 
 main .services-sec .consultation .cont {
-    max-width: var(--container-max-width);
+    width: var(--container-max-width);
+    margin: auto;
     text-align: left;
     padding: 40px;
     border-radius: 15px;
@@ -1444,15 +1444,16 @@ main .services-sec .consultation .cont {
 }
 
 main .services-sec .consultation .cont h2 {
-    font-size: 2rem;
+    font-size: var(--sub-heading);
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.5px;
     color: var(--text-primary);
 }
 
 main .services-sec .consultation .cont p {
-    font-size: 1.2rem;
+    font-size: var(--tagline);
+    width: 85%;
     line-height: 1.6;
     margin-bottom: 30px;
     opacity: 0.9;
@@ -1464,8 +1465,8 @@ main .services-sec .consultation .cont button {
     color: var(--pure-white);
     border: none;
     padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: var(--text);
+    font-weight: 400;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1475,7 +1476,7 @@ main .services-sec .consultation .cont button {
 }
 
 main .services-sec .consultation .cont button i {
-    font-size: 20px;
+    font-size: var(--text);
     background-color: var(--medium-yellow);
     border-radius: 50%;
     padding: 10px;
@@ -1511,7 +1512,7 @@ main .services-sec .pop-sec {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
@@ -1546,7 +1547,7 @@ main .services-sec .pop-sec .conta .uper-part img {
     object-fit: cover;
 }
 
-main .services-sec .pop-sec .conta .uper-part .closE-btn {
+main .services-sec .pop-sec .conta .uper-part .close-btn {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -1557,13 +1558,13 @@ main .services-sec .pop-sec .conta .uper-part .closE-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: var(--text);
     color: var(--text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-main .services-sec .pop-sec .conta .uper-part .closE-btn i {
+main .services-sec .pop-sec .conta .uper-part .close-btn i {
     position: fixed;
     background-color: var(--pure-white);
     border-radius: 10px;
@@ -1571,7 +1572,7 @@ main .services-sec .pop-sec .conta .uper-part .closE-btn i {
     transition: all 0.3s ease;
 }
 
-main .services-sec .pop-sec .conta .uper-part .closE-btn i:hover {
+main .services-sec .pop-sec .conta .uper-part .close-btn i:hover {
     transform: rotate(90deg);
 }
 
@@ -1581,7 +1582,7 @@ main .services-sec .pop-sec .lower-part {
 
 main .services-sec .pop-sec .lower-part .cont span {
     display: inline-block;
-    font-size: 12px;
+    font-size: var(--sub-text);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1592,7 +1593,7 @@ main .services-sec .pop-sec .lower-part .cont span {
 }
 
 main .services-sec .pop-sec .lower-part .cont h2 {
-    font-size: 32px;
+    font-size: var(--title);
     font-weight: 700;
     line-height: 1.3;
     color: var(--text-primary);
@@ -1603,6 +1604,7 @@ main .services-sec .pop-sec .lower-part .cont p {
     color: var(--slate-gray);
     line-height: 1.6;
     margin-bottom: 20px;
+    font-size: var(--text);
 }
 
 main .services-sec .pop-sec .lower-part .gallery {
