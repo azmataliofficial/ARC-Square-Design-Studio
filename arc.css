@@ -13,12 +13,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
 body,
 html {
+    scroll-behavior: smooth;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -87,7 +85,7 @@ header nav {
     z-index: 1000;
 }
 
-header nav .nav-bar {
+header nav .bar {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0px 50px;
@@ -103,40 +101,40 @@ header nav .nav-bar {
 
 
 /* Logo section */
-header nav .nav-bar .logo-section {
+header nav .bar .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
 }
 
-header nav .nav-bar .logo-section .logo-img img {
+header nav .bar .logo img {
     width: 75px;
     height: 75px;
     object-fit: contain;
 }
 
-header nav .nav-bar .logo-section .brand-name {
+header nav .bar .logo .name {
     display: flex;
     flex-direction: column;
     line-height: 1.5;
     text-align: left;
 }
 
-header nav .nav-bar .logo-section .brand-name span:nth-child(1) {
+header nav .bar .logo .name span:nth-child(1) {
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 1px;
     color: var(--medium-yellow);
 }
 
-header nav .nav-bar .logo-section .brand-name #span {
+header nav .bar .logo .name #span {
     font-size: 20px;
     font-weight: 300;
     color: var(--text-primary);
 }
 
-header nav .nav-bar .logo-section .brand-name span:last-child {
+header nav .bar .logo .name span:last-child {
     font-size: 12px;
     letter-spacing: 1px;
     color: var(--text-primary);
@@ -144,7 +142,7 @@ header nav .nav-bar .logo-section .brand-name span:last-child {
 }
 
 
-header nav .nav-bar .item-cont {
+header nav .bar .container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,7 +150,7 @@ header nav .nav-bar .item-cont {
     position: relative;
 }
 
-header nav .nav-bar .item-cont #toggleBtn {
+header nav .bar .container #toggleBtn {
     background-color: transparent;
     border: 2px solid var(--text-primary);
     border-radius: 50px;
@@ -165,17 +163,17 @@ header nav .nav-bar .item-cont #toggleBtn {
     transition: all 0.3s ease;
 }
 
-header nav .nav-bar .item-cont #toggleBtn:active {
+header nav .bar .container #toggleBtn:active {
     transform: scale(1.14);
 }
 
-header nav .nav-bar .item-cont .nav-links {
+header nav .bar .container .nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-header nav .nav-bar .item-cont .nav-links .nav-link {
+header nav .bar .container .nav-links .link {
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -189,7 +187,7 @@ header nav .nav-bar .item-cont .nav-links .nav-link {
 }
 
 
-header nav .nav-bar .item-cont .nav-links .nav-link::after {
+header nav .bar .container .nav-links .link::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -201,31 +199,27 @@ header nav .nav-bar .item-cont .nav-links .nav-link::after {
     transition: all 0.3s ease;
 }
 
-header nav .nav-bar .item-cont .nav-links .nav-link:hover::after {
+header nav .bar .container .nav-links .link:hover::after {
     background: var(--medium-yellow);
     height: 4px;
 }
 
-header nav .nav-bar .item-cont .nav-links .nav-link:hover:not(.active) {
+header nav .bar .container .nav-links .link:hover:not(.active) {
     color: var(--text-primary);
     transform: translateY(-4px);
 }
 
-header nav .nav-bar .item-cont .nav-links .nav-link:active {
-    transform: scaleX(1.2);
-}
-
-header nav .nav-bar .item-cont .nav-links .nav-link.active {
+header nav .bar .container .nav-links .link.active {
     transform: translateY(-4px);
 }
 
-header nav .nav-bar .item-cont .nav-links .nav-link.active::after {
+header nav .bar .container .nav-links .link.active::after {
     height: 4px;
     background: var(--medium-yellow);
 }
 
 
-header nav .nav-bar #mobile-menu-btn {
+header nav .bar #mobile-menu-btn {
     display: none;
     background: none;
     border: none;

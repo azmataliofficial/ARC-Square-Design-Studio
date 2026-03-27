@@ -1,7 +1,7 @@
 // Navbaar Items script
 document.addEventListener("DOMContentLoaded", function () {
   let navContaners = document.querySelectorAll(".slide-sec")
-  let navItems = document.querySelectorAll(".nav-link")
+  let navItems = document.querySelectorAll(".link")
 
   navContaners.forEach((cont) => {
     if (cont.id !== "home") {
