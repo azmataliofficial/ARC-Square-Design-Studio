@@ -1649,7 +1649,7 @@ main .project-sec .pro-head {
 }
 
 main .project-sec .pro-head h2 {
-    font-size: 3rem;
+    font-size: var(--main-heading);
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
@@ -1657,7 +1657,7 @@ main .project-sec .pro-head h2 {
 }
 
 main .project-sec .pro-head p {
-    font-size: 1.1rem;
+    font-size: var(--tagline);
     margin: auto;
     color: var(--slate-gray);
     animation: var(--tag-line);
@@ -1683,7 +1683,7 @@ main .project-sec .pro-cont .pro-tabs .pro-tab {
     border: 2px solid var(--border-color);
     background: transparent;
     color: var(--slate-gray);
-    font-size: 1rem;
+    font-size: var(--text);
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
@@ -1775,7 +1775,7 @@ main .project-sec .pro-cont .projects .projects-grid .pro-overlay button {
     background: var(--pure-white);
     border: none;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: var(--text);
     font-weight: 600;
     color: var(--slate-gray);
     cursor: pointer;
@@ -1802,12 +1802,12 @@ main .project-sec .pro-cont .projects .projects-grid .pro-cont-head {
 
 main .project-sec .pro-cont .projects .projects-grid .pro-cont-head h3 {
     color: var(--slate-gray);
-    font-size: 1.2rem;
+    font-size: var(--title);
 }
 
 main .project-sec .pro-cont .projects .projects-grid .pro-content span {
     color: var(--medium-yellow);
-    font-size: 0.9rem;
+    font-size: var(--text);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
