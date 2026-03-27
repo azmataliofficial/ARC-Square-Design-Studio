@@ -48,7 +48,8 @@ html {
     --main-heading: 3rem;
     --sub-heading: 2rem;
     --title: 1.3rem;
-    --text: 0.9rem;
+    --tagline: 1.1rem;
+    --text: 0.95rem;
     --sub-text: 0.75rem;
 }
 
@@ -520,9 +521,9 @@ main .main-content .satisfaction-sec .container .content h2 {
 }
 
 main .main-content .satisfaction-sec .container .content p {
-    font-size: var(--text);
+    font-size: var(--tagline);
+    color: var(--slate-gray);
     line-height: 1.8;
-    color: var(--text-primary);
 }
 
 main .main-content .satisfaction-sec .container .grid {
@@ -834,7 +835,7 @@ main .main-content .faq-sec .grid-cont .data .panel .item .answer p {
     padding-top: 16px;
 }
 
-main .main-content .faq-sec .grid-cont .data .panel .item.open #faq-ans{
+main .main-content .faq-sec .grid-cont .data .panel .item.open #faq-ans {
     max-height: 250px;
 }
 
@@ -877,7 +878,7 @@ main .whatsapp-sec .widget .icon .notifi-badge {
     right: -5px;
     background: #ff4757;
     color: var(--pure-white);
-    font-size: 0.7rem;
+    font-size: var(--sub-text);
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -948,7 +949,7 @@ main .whatsapp-sec .widget .chat-box .header .content .info h5 {
 
 main .whatsapp-sec .widget .chat-box .header .content .info p {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: var(--sub-text);
     opacity: 0.8;
 }
 
@@ -981,12 +982,12 @@ main .whatsapp-sec .widget .chat-box .body .message p {
     padding: 12px 15px;
     border-radius: 18px 18px 18px 4px;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--text);
     color: var(--text-primary);
 }
 
 main .whatsapp-sec .widget .chat-box .body .mess-time {
-    font-size: 0.7rem;
+    font-size: var(--sub-text);
     color: var(--text-primary);
     margin-top: 5px;
     text-align: right;
@@ -1006,7 +1007,7 @@ main .whatsapp-sec .widget .chat-box .input input {
     border: 1px solid #ddd;
     border-radius: 50px;
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: var(--text);
     outline: none;
     transition: all 0.3s ease;
 }
@@ -1090,7 +1091,7 @@ main .about-sec .about-content span {
 }
 
 main .about-sec .about-content p {
-    font-size: var(--text);
+    font-size: var(--tagline);
     font-weight: 400;
     color: var(--text-primary);
     margin-top: 5px;
@@ -1169,7 +1170,7 @@ main .about-sec .about-content1 h2 {
 }
 
 main .about-sec .about-content1 p {
-    font-size: var(--text);
+    font-size: var(--tagline);
     color: var(--slate-gray);
     font-weight: 400;
     line-height: 1.6;
@@ -1211,10 +1212,6 @@ main .about-sec .about-item1 h2 {
     color: var(--text-primary);
     position: relative;
     transition: color 0.3s ease;
-}
-
-main .about-sec .about-item1:hover h2 {
-    color: var(--medium-yellow);
 }
 
 
@@ -1281,7 +1278,7 @@ main .services-sec .service-cont h2 {
 }
 
 main .services-sec .service-cont p {
-    font-size: var(--title);
+    font-size: var(--tagline);
     color: var(--slate-gray);
     animation: var(--tag-line);
 }
@@ -1363,7 +1360,7 @@ main .services-sec .grid-cont .card:hover #card-cont {
 
 main .services-sec .grid-cont .card .image .content span {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: var(--sub-text);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1374,7 +1371,7 @@ main .services-sec .grid-cont .card .image .content span {
 }
 
 main .services-sec .grid-cont .card .image .content h2 {
-    font-size: var(--sub-heading);
+    font-size: var(--title);
     font-weight: 700;
     line-height: 1.3;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -1409,7 +1406,7 @@ main .services-sec .grid-cont .card .content .learn-more {
 
 main .services-sec .grid-cont .card .content .learn-more::after {
     content: '→';
-    font-size: 1.2rem;
+    font-size: var(--text);
     transition: transform 0.3s ease;
 }
 
@@ -1451,7 +1448,8 @@ main .services-sec .consultation .cont h2 {
 }
 
 main .services-sec .consultation .cont p {
-    font-size: var(--text);
+    font-size: var(--tagline);
+    width: 85%;
     line-height: 1.6;
     margin-bottom: 30px;
     opacity: 0.9;
@@ -1556,7 +1554,7 @@ main .services-sec .pop-sec .conta .uper-part .close-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--title);
+    font-size: var(--text);
     color: var(--text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1580,7 +1578,7 @@ main .services-sec .pop-sec .lower-part {
 
 main .services-sec .pop-sec .lower-part .cont span {
     display: inline-block;
-    font-size: var(--text);
+    font-size: var(--sub-text);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1591,7 +1589,7 @@ main .services-sec .pop-sec .lower-part .cont span {
 }
 
 main .services-sec .pop-sec .lower-part .cont h2 {
-    font-size: var(--sub-heading);
+    font-size: var(--title);
     font-weight: 700;
     line-height: 1.3;
     color: var(--text-primary);
@@ -1602,6 +1600,7 @@ main .services-sec .pop-sec .lower-part .cont p {
     color: var(--slate-gray);
     line-height: 1.6;
     margin-bottom: 20px;
+    font-size: var(--text);
 }
 
 main .services-sec .pop-sec .lower-part .gallery {
