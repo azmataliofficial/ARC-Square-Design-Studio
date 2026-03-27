@@ -706,14 +706,14 @@ main .main-content .testimonial-sec .grid-cont .card .meta a i {
 
 
 /* FAQ */
-main .faq-cont {
+main .main-content .faq-sec {
     background: var(--off-white);
     padding: 40px 0px;
     border-radius: 30px 30px 0px 0px;
     margin: 0 auto;
 }
 
-main .faq-cont .faq-title {
+main .main-content .faq-sec .title {
     text-align: center;
     color: var(--text-primary);
     font-size: 2rem;
@@ -721,7 +721,7 @@ main .faq-cont .faq-title {
     font-weight: 700;
 }
 
-main .faq-cont .faq-grid {
+main .main-content .faq-sec .grid-cont {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 30px;
@@ -729,7 +729,7 @@ main .faq-cont .faq-grid {
     margin: 0 auto;
 }
 
-main .faq-cont .faq-grid .faq-categories {
+main .main-content .faq-sec .grid-cont .categories {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -737,7 +737,7 @@ main .faq-cont .faq-grid .faq-categories {
     top: 20px;
 }
 
-main .faq-cont .faq-grid .faq-categories .cat-tab {
+main .main-content .faq-sec .grid-cont .categories .tab {
     padding: 16px 20px;
     background: var(--pure-white);
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.05);
@@ -750,45 +750,45 @@ main .faq-cont .faq-grid .faq-categories .cat-tab {
     width: 100%;
 }
 
-main .faq-cont .faq-grid .faq-categories .cat-tab i {
+main .main-content .faq-sec .grid-cont .categories .tab i {
     float: right;
     font-size: 0.75rem;
     opacity: 0;
 }
 
-main .faq-cont .faq-grid .faq-categories .cat-tab:hover {
+main .main-content .faq-sec .grid-cont .categories .tab:hover {
     background: var(--medium-yellow);
     color: var(--pure-white);
 }
 
-main .faq-cont .faq-grid .faq-categories .cat-tab.active {
+main .main-content .faq-sec .grid-cont .categories .tab.active {
     background: var(--medium-yellow);
     color: var(--pure-white);
 }
 
-main .faq-cont .faq-grid .faq-categories .cat-tab.active i {
+main .main-content .faq-sec .grid-cont .categories .tab.active i {
     opacity: 1;
 }
 
-main .faq-cont .faq-grid .faq-right {
+main .main-content .faq-sec .grid-cont .data {
     min-height: 250px;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel {
+main .main-content .faq-sec .grid-cont .data .panel {
     display: none;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel.active {
+main .main-content .faq-sec .grid-cont .data .panel.active {
     display: block;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item {
+main .main-content .faq-sec .grid-cont .data .panel .item {
     background: var(--pure-white);
     border-radius: 6px;
     margin-bottom: 8px;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-question {
+main .main-content .faq-sec .grid-cont .data .panel .item .question {
     padding: 16px 20px;
     cursor: pointer;
     display: flex;
@@ -797,30 +797,30 @@ main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-question {
     gap: 12px;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-question .faq-q-text {
+main .main-content .faq-sec .grid-cont .data .panel .item .question span {
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-primary);
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-question i {
+main .main-content .faq-sec .grid-cont .data .panel .item .question i {
     font-size: 0.8rem;
     color: var(--slate-gray);
     transition: transform 0.2s;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item.open .faq-question i {
+main .main-content .faq-sec .grid-cont .data .panel .item.open #faq-que-i {
     transform: rotate(180deg);
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-answer {
+main .main-content .faq-sec .grid-cont .data .panel .item .answer {
     max-height: 0;
     overflow: hidden;
     color: var(--slate-gray);
     transition: max-height 0.3s ease-out;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-answer p {
+main .main-content .faq-sec .grid-cont .data .panel .item .answer p {
     font-size: 0.9rem;
     color: #6c757d;
     line-height: 1.6;
@@ -830,7 +830,7 @@ main .faq-cont .faq-grid .faq-right .faq-panel .faq-item .faq-answer p {
     padding-top: 16px;
 }
 
-main .faq-cont .faq-grid .faq-right .faq-panel .faq-item.open .faq-answer {
+main .main-content .faq-sec .grid-cont .data .panel .item.open #faq-ans{
     max-height: 250px;
 }
 

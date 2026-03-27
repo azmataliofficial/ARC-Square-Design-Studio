@@ -802,27 +802,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // faq
-document.querySelectorAll('.cat-tab').forEach(function (tab) {
+document.querySelectorAll('.tab').forEach(function (tab) {
   tab.addEventListener('click', function () {
-    document.querySelectorAll('.cat-tab').forEach(function (t) {
+    document.querySelectorAll('.tab').forEach(function (t) {
       t.classList.remove('active');
     });
 
-    document.querySelectorAll('.faq-panel').forEach(function (p) {
+    document.querySelectorAll('.panel').forEach(function (p) {
       p.classList.remove('active');
     });
 
     this.classList.add('active');
 
     let catId = this.getAttribute('data-cat');
-    document.querySelector('.faq-panel[data-panel="' + catId + '"]').classList.add('active');
+    document.querySelector('.panel[data-panel="' + catId + '"]').classList.add('active');
   });
 });
-document.querySelectorAll('.faq-question').forEach(function (question) {
+document.querySelectorAll('.question').forEach(function (question) {
   question.addEventListener('click', function () {
-    let currentItem = this.closest('.faq-item');
-    let panel = currentItem.closest('.faq-panel');
-    panel.querySelectorAll('.faq-item').forEach(function (item) {
+    let currentItem = this.closest('.item');
+    let panel = currentItem.closest('.panel');
+    panel.querySelectorAll('.item').forEach(function (item) {
       if (item !== currentItem) {
         item.classList.remove('open');
       }
