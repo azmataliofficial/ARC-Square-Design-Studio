@@ -127,6 +127,7 @@ header nav .bar .logo img {
     width: 75px;
     height: 75px;
     object-fit: contain;
+    border-radius: 50%;
 }
 
 header nav .bar .logo .name {
@@ -928,7 +929,7 @@ main .whatsapp-sec .widget .chat-box .header .content {
 main .whatsapp-sec .widget .chat-box .header .content .avatar {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1941,18 +1942,19 @@ main .contact-sec .head {
 }
 
 main .contact-sec .head h1 {
-    font-size: 3rem;
+    font-size: var(--main-heading);
     font-weight: 700;
     color: var(--text-primary);
     animation: var(--heading);
 }
 
 main .contact-sec .head p {
-    font-size: 1.1rem;
+    font-size: var(--tagline);
     color: var(--slate-gray);
     animation: var(--tag-line);
 }
 
+/* contact tab 1 */
 main .contact-sec .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1963,7 +1965,7 @@ main .contact-sec .body {
 }
 
 main .contact-sec .body .cont-tab h2 {
-    font-size: 2.2rem;
+    font-size: var(--sub-heading);
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
@@ -1971,6 +1973,7 @@ main .contact-sec .body .cont-tab h2 {
 
 main .contact-sec .body .cont-tab p {
     margin: 0 0 30px auto;
+    font-size: var(--text);
     color: var(--slate-gray);
     letter-spacing: 0.5px;
 }
@@ -1996,18 +1999,18 @@ main .contact-sec .body .cont-tab .cards .card .icons {
     background: linear-gradient(135deg, var(--medium-yellow), #a88a3a);
     border-radius: 12px;
     color: var(--pure-white);
-    font-size: 1.5rem;
+    font-size: var(--title);
 }
 
 main .contact-sec .body .cont-tab .cards .card .detail h3 {
-    font-size: 1.2rem;
+    font-size: var(--title);
     color: var(--text-primary);
     margin-bottom: 0.3rem;
     font-weight: 600;
 }
 
 main .contact-sec .body .cont-tab .cards .card .detail p {
-    font-size: 0.95rem;
+    font-size: var(--text);
     color: var(--slate-gray);
     margin: 0;
     line-height: 1.6;
@@ -2026,6 +2029,8 @@ main .contact-sec .body .cont-tab .cards .map iframe {
     border: none;
 }
 
+
+/* contact tab 2 */
 main .contact-sec .body form {
     background-color: var(--pure-white);
     border-radius: 15px;
@@ -2034,7 +2039,7 @@ main .contact-sec .body form {
 }
 
 main .contact-sec .body form h2 {
-    font-size: 2rem;
+    font-size: var(--sub-heading);
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
@@ -2054,7 +2059,7 @@ main .contact-sec .body form .form-inputs .cont {
 }
 
 main .contact-sec .body form .form-inputs .cont label {
-    font-size: 0.95rem;
+    font-size: var(--text);
     font-weight: 600;
     color: var(--text-primary);
     text-transform: capitalize;
@@ -2065,8 +2070,7 @@ main .contact-sec .body form .form-inputs .cont input {
     padding: 12px 15px;
     border: 2px solid var(--border-color);
     border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
+    font-size: var(--text);
     color: var(--text-primary);
     background-color: var(--pure-white);
     transition: all 0.3s ease;
@@ -2078,7 +2082,7 @@ main .contact-sec .body form .form-inputs .cont textarea {
     border-radius: 8px;
     height: 220px;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: var(--text);
     color: var(--text-primary);
     background-color: var(--pure-white);
     transition: all 0.3s ease;
@@ -2107,7 +2111,7 @@ main .contact-sec .body form .form-inputs .cont textarea {
 main .contact-sec .body form .form-inputs button {
     margin-top: 1rem;
     padding: 14px 40px;
-    font-size: 1rem;
+    font-size: var(--text);
     font-weight: 600;
     border: none;
     border-radius: 8px;
@@ -2167,13 +2171,13 @@ footer .container .grid h4 {
 
 
 footer .container .grid .col h3 {
-    font-size: 24px;
+    font-size: var(--title);
 }
 
 footer .container .grid .col p {
     line-height: 1.6;
     color: var(--pure-white);
-    font-size: 14px;
+    font-size: var(--text);
     font-weight: 300;
 }
 
@@ -2185,7 +2189,7 @@ footer .container .grid .col ul {
 footer .container .grid .col ul li {
     margin-bottom: 6px;
     color: var(--pure-white);
-    font-size: 14px;
+    font-size: var(--text);
     font-weight: 300;
 }
 
@@ -2194,7 +2198,7 @@ footer .container .grid .col ul li a {
     text-decoration: none;
     transition: color 0.3s ease;
     cursor: pointer;
-    font-size: 14px;
+    font-size: var(--text);
     font-weight: 300;
 }
 
@@ -2222,7 +2226,7 @@ footer .container .grid .col .links {
 
 footer .container .grid .col .links a {
     color: var(--pure-white);
-    font-size: 20px;
+    font-size: var(--text);
     transition: all 0.3s ease;
 }
 
@@ -2239,7 +2243,7 @@ footer .footer-bottom {
 }
 
 footer .footer-bottom p {
-    font-size: 14px;
+    font-size: var(--text);
     color: var(--pure-white);
 }
 
