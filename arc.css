@@ -1842,7 +1842,7 @@ main .gallery-sec .cont .head {
 }
 
 main .gallery-sec .cont .head h1 {
-    font-size: 3rem;
+    font-size: var(--main-heading);
     margin-bottom: 10px;
     font-weight: 700;
     color: var(--text-primary);
@@ -1850,7 +1850,7 @@ main .gallery-sec .cont .head h1 {
 }
 
 main .gallery-sec .cont .head p {
-    font-size: 1.1rem;
+    font-size: var(--tag-line);
     margin: 0 0 30px auto;
     color: var(--slate-gray);
     animation: var(--tag-line);
@@ -1909,7 +1909,7 @@ main .gallery-sec .cont .photos figure:hover figcaption {
 
 main .gallery-sec .cont .photos figcaption strong {
     display: block;
-    font-size: 1.25rem;
+    font-size: var(--text);
     font-weight: 600;
     line-height: 1.3;
 }
@@ -1919,7 +1919,7 @@ main .gallery-sec .cont .photos figcaption span {
     background: rgba(255, 255, 255, 0.2);
     padding: 0.25rem 1rem;
     border-radius: 30px;
-    font-size: 0.75rem;
+    font-size: var(--sub-text);
     font-weight: 500;
     letter-spacing: 0.4px;
     margin-top: 0.4rem;
