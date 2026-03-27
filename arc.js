@@ -414,7 +414,7 @@ const testimonial = [{
 let currentTestimonialIndex = 0;
 
 function renderTestimonials() {
-  const grid = document.querySelector('.testiminial-grid');
+  const grid = document.querySelector('.grid-cont');
   if (!grid) return;
 
   grid.innerHTML = '';
@@ -437,21 +437,21 @@ function renderTestimonials() {
     }
 
     const card = `
-      <div class="testimonial-card slide-in-card" style="animation-delay: ${delay}s;">
-        <div class="card-header">
-          <div class="client-avatar">${item.avatar}</div>
-          <div class="client-info">
+      <div class="card" style="animation-delay: ${delay}s;">
+        <div class="header">
+          <div class="avatar">${item.avatar}</div>
+          <div class="info">
             <h3>${item.clientName}</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
+            <p><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
           </div>
         </div>
-        <div class="testimonial-content">
+        <div class="content">
           <div class="rating">${stars} <span>${item.rating}</span></div>
-          <div class="testimonial-text">${item.text}</div>
+          <div class="text">${item.text}</div>
         </div>
-        <div class="project-meta">
-          <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
-          <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
+        <div class="meta">
+          <span class="tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+          <a href="${item.instagram}"  target="_blank" rel="noopener noreferrer" class="instagram-tag">
           <i class="fab fa-instagram"></i></a>
         </div>
       </div>
@@ -461,7 +461,7 @@ function renderTestimonials() {
 }
 
 function testimonials() {
-  const grid = document.querySelector('.testiminial-grid');
+  const grid = document.querySelector('.grid-cont');
   if (!grid) return;
 
   renderTestimonials();

@@ -38,10 +38,11 @@ html {
 
     /*section container view animate */
     --cont-animate: fadeInUp 0.5s ease forwards;
-
-    /* section heading view animate */
     --heading: fadeUp 1s ease;
     --tag-line: fadeUp 1s 0.2s both;
+
+    /*testimol view animate */
+    --testimol: slideInRight 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 
     /* Text sizing */
     --main-heading: 3rem;
@@ -71,6 +72,18 @@ html {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -481,23 +494,23 @@ main .main-content .stats-sec .container .grid .item .label {
 
 
 /* Satisfaction Section */
-main .satisfaction-sec {
+main .main-content .satisfaction-sec {
     background: var(--off-white);
     border-radius: 30px;
     padding: 50px 40px;
 }
 
-main .satisfaction-sec .container {
+main .main-content .satisfaction-sec .container {
     max-width: var(--container-max-width);
     margin: auto;
 }
 
-main .satisfaction-sec .container .content {
+main .main-content .satisfaction-sec .container .content {
     text-align: center;
     margin: 0 auto 50px auto;
 }
 
-main .satisfaction-sec .container .content h2 {
+main .main-content .satisfaction-sec .container .content h2 {
     font-size: 36px;
     color: var(--text-primary);
     margin-bottom: 20px;
@@ -506,13 +519,13 @@ main .satisfaction-sec .container .content h2 {
     padding-bottom: 15px;
 }
 
-main .satisfaction-sec .container .content p {
+main .main-content .satisfaction-sec .container .content p {
     font-size: 16px;
     line-height: 1.8;
     color: var(--text-primary);
 }
 
-main .satisfaction-sec .container .grid {
+main .main-content .satisfaction-sec .container .grid {
     max-width: var(--container-max-width);
     margin: 0 auto;
     display: grid;
@@ -520,7 +533,7 @@ main .satisfaction-sec .container .grid {
     gap: 30px;
 }
 
-main .satisfaction-sec .container .grid .item {
+main .main-content .satisfaction-sec .container .grid .item {
     text-align: center;
     padding: 30px 20px 40px 20px;
     background: var(--pure-white);
@@ -529,15 +542,14 @@ main .satisfaction-sec .container .grid .item {
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
-main .satisfaction-sec .container .grid .item:hover {
+main .main-content .satisfaction-sec .container .grid .item:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     border: 1px solid var(--medium-yellow);
     color: var(--medium-yellow);
 }
 
-/* satisfaction Icons styling */
-main .satisfaction-sec .container .grid .item i {
+main .main-content .satisfaction-sec .container .grid .item i {
     font-size: 45px;
     margin-bottom: 20px;
     background: linear-gradient(135deg, var(--medium-yellow), var(--text-primary));
@@ -547,15 +559,14 @@ main .satisfaction-sec .container .grid .item i {
     display: inline-block;
 }
 
-main .satisfaction-sec .container .grid .item h3 {
+main .main-content .satisfaction-sec .container .grid .item h3 {
     font-size: 22px;
     color: var(--text-primary);
     margin-bottom: 15px;
     font-weight: 600;
 }
 
-
-main .satisfaction-sec .container .grid .item p {
+main .main-content .satisfaction-sec .container .grid .item p {
     font-size: 13px;
     line-height: 1.7;
     color: var(--slate-gray);
@@ -565,12 +576,12 @@ main .satisfaction-sec .container .grid .item p {
 
 
 /* Testimonial */
-main .testimonial-cont {
+main .main-content .testimonial-sec {
     padding: 50px 20px;
     background: var(--pure-white);
 }
 
-main .testimonial-cont h2 {
+main .main-content .testimonial-sec h2 {
     text-align: center;
     color: var(--text-primary);
     font-size: 2rem;
@@ -578,7 +589,7 @@ main .testimonial-cont h2 {
     font-weight: 700;
 }
 
-main .testimonial-cont .testiminial-grid {
+main .main-content .testimonial-sec .grid-cont {
     max-width: 90vw;
     margin: 0 auto;
     display: grid;
@@ -586,56 +597,41 @@ main .testimonial-cont .testiminial-grid {
     gap: 20px;
 }
 
-main .testimonial-cont .testiminial-grid .testimonial-card {
+main .main-content .testimonial-sec .grid-cont .card {
     background: var(--pure-white);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     display: grid;
     grid-template-rows: auto 1fr auto;
+     opacity: 0;
+    animation: var(--testimol);
 }
 
-@keyframes slideInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-main .testimonial-cont .testiminial-grid .slide-in-card {
-    opacity: 0;
-    animation: slideInRight 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-main .testimonial-cont .testiminial-grid .testimonial-card .card-header {
+main .main-content .testimonial-sec .grid-cont .card .header {
     display: flex;
     gap: 20px;
     margin-bottom: 18px;
 }
 
-main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-info p i,
-main .testimonial-cont .testiminial-grid .testimonial-card .project-meta span i {
+main .main-content .testimonial-sec .grid-cont .card .header .info p i,
+main .main-content .testimonial-sec .grid-cont .card .meta span i {
     color: var(--medium-yellow);
     font-size: 1rem;
     margin-right: 5px;
 }
 
-main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-info h3 {
+main .main-content .testimonial-sec .grid-cont .card .header .info h3 {
     color: var(--text-primary);
 }
 
-main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-info p,
-main .testimonial-cont .testiminial-grid .testimonial-card .project-meta span {
+main .main-content .testimonial-sec .grid-cont .card .header .client-info p,
+main .main-content .testimonial-sec .grid-cont .card .meta span {
     color: var(--slate-gray);
     font-size: 0.85em;
 }
 
-main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-avatar {
+main .main-content .testimonial-sec .grid-cont .card .header .avatar {
     width: 45px;
     height: 45px;
     background: var(--medium-yellow);
@@ -651,7 +647,7 @@ main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-
 
 
 
-main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-info .location {
+main .main-content .testimonial-sec .grid-cont .card .header .info p {
     color: var(--slate-gray);
     font-size: 0.75em;
     display: flex;
@@ -659,18 +655,18 @@ main .testimonial-cont .testiminial-grid .testimonial-card .card-header .client-
     gap: 4px;
 }
 
-main .testimonial-cont .location i {
+main .main-content .testimonial-sec .grid-cont .card .header .info p i {
     color: var(--medium-yellow);
     font-size: 0.7em;
 }
 
-main .testimonial-cont .rating {
+main .main-content .testimonial-sec .grid-cont .card .content .rating {
     margin-bottom: 10px;
     color: var(--medium-yellow);
     font-size: 0.75em;
 }
 
-main .testimonial-cont .testimonial-text {
+main .main-content .testimonial-sec .grid-cont .card .content .text {
     color: var(--slate-gray);
     line-height: 1.5;
     font-size: 0.85em;
@@ -679,34 +675,30 @@ main .testimonial-cont .testimonial-text {
     border-left: 2px solid var(--medium-yellow);
 }
 
-main .testimonial-cont .project-meta {
+main .main-content .testimonial-sec .grid-cont .card .meta {
     display: flex;
     justify-content: space-between;
 }
 
-main .testimonial-cont .project-meta a {
+main .main-content .testimonial-sec .grid-cont .card .meta a {
     color: var(--medium-yellow);
     font-size: 0.85em;
     text-decoration: none;
 
 }
 
-main .testimonial-cont .instagram-tag i {
+main .main-content .testimonial-sec .grid-cont .card .meta a i {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     padding: 6px;
     border-radius: 50%;
-    font-size: 12px;
+    font-size: 14px;
     color: white;
     margin-right: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
-}
-
-main .testimonial-cont .instagram-tag i {
-    font-size: 14px;
 }
 
 
@@ -1083,12 +1075,15 @@ main .about-sec .about-content h2 {
     font-weight: 700;
     color: var(--medium-yellow);
     margin-bottom: 10px;
+    animation: var(--heading);
 }
 
 main .about-sec .about-content span {
     font-size: var(--sub-heading);
     font-weight: 500;
     color: var(--text-primary);
+    animation: var(--heading);
+    display: inline-block;
 }
 
 main .about-sec .about-content p {
@@ -1096,6 +1091,7 @@ main .about-sec .about-content p {
     font-weight: 400;
     color: var(--text-primary);
     margin-top: 5px;
+    animation: var(--tag-line);
 }
 
 /* About 2 section */
