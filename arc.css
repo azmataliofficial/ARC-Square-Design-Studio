@@ -236,7 +236,7 @@ header nav .bar #mobile-menu-btn {
 /* Main Container start */
 
 /* Hero slider section */
-main .hero-sec {
+main .main-content .hero-sec {
     position: relative;
     height: 100vh;
     width: 100%;
@@ -245,13 +245,13 @@ main .hero-sec {
     background-color: var(--pure-white);
 }
 
-main .hero-sec .wrapper {
+main .main-content .hero-sec .wrapper {
     position: relative;
     height: 100%;
     width: 100%;
 }
 
-main .hero-sec .wrapper .slide {
+main .main-content .hero-sec .wrapper .slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -268,12 +268,12 @@ main .hero-sec .wrapper .slide {
     transition: opacity 0.6s ease-in-out;
 }
 
-main .hero-sec .wrapper .slide.active {
+main .main-content .hero-sec .wrapper .slide.active {
     opacity: 1;
     z-index: 10;
 }
 
-main .hero-sec .wrapper .slide::before {
+main .main-content .hero-sec .wrapper .slide::before {
     content: '';
     position: absolute;
     top: 0;
@@ -284,7 +284,7 @@ main .hero-sec .wrapper .slide::before {
     z-index: 3;
 }
 
-main .hero-sec .wrapper .slide .content {
+main .main-content .hero-sec .wrapper .slide .content {
     position: relative;
     z-index: 20;
     text-align: center;
@@ -294,20 +294,20 @@ main .hero-sec .wrapper .slide .content {
     max-width: 900px;
 }
 
-main .hero-sec .wrapper .slide .content h1 {
+main .main-content .hero-sec .wrapper .slide .content h1 {
     font-size: 3rem;
     font-weight: 800;
     animation: var(--heading);
 }
 
-main .hero-sec .wrapper .slide .content p {
+main .main-content .hero-sec .wrapper .slide .content p {
     font-size: 1.3rem;
     opacity: 0.9;
     animation: var(--tag-line);
     margin-bottom: 1rem;
 }
 
-main .hero-sec .wrapper .slide .content button {
+main .main-content .hero-sec .wrapper .slide .content button {
     line-height: 1;
     text-decoration: none;
     display: inline-flex;
@@ -327,7 +327,7 @@ main .hero-sec .wrapper .slide .content button {
     transition: background-color 0.3s;
 }
 
-main .hero-sec .wrapper .slide .content button .btn-icon {
+main .main-content .hero-sec .wrapper .slide .content button .btn-icon {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -340,12 +340,12 @@ main .hero-sec .wrapper .slide .content button .btn-icon {
     overflow: hidden;
 }
 
-main .hero-sec .wrapper .slide .content button:hover {
+main .main-content .hero-sec .wrapper .slide .content button:hover {
     background: var(--text-primary);
     color: var(--pure-white);
 }
 
-main .hero-sec .wrapper .slide .content button:hover .btn-icon {
+main .main-content .hero-sec .wrapper .slide .content button:hover .btn-icon {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -358,23 +358,23 @@ main .hero-sec .wrapper .slide .content button:hover .btn-icon {
     overflow: hidden;
 }
 
-main .hero-sec .wrapper .slide .content button .btn-svg-copy {
+main .main-content .hero-sec .wrapper .slide .content button .btn-svg-copy {
     position: absolute;
     transform: translate(-150%, 150%);
 }
 
-main .hero-sec .wrapper .slide .content button:hover .btn-svg:first-child {
+main .main-content .hero-sec .wrapper .slide .content button:hover .btn-svg:first-child {
     transition: all 0.3s ease-in-out;
     transform: translate(150%, -150%);
 }
 
-main .hero-sec .wrapper .slide .content button:hover .btn-svg-copy {
+main .main-content .hero-sec .wrapper .slide .content button:hover .btn-svg-copy {
     transition: all 0.3s ease-in-out 0.1s;
     transform: translate(0);
 }
 
 
-main .hero-sec .arrow {
+main .main-content .hero-sec .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -394,27 +394,23 @@ main .hero-sec .arrow {
     transition: background 0.2s;
 }
 
-main .hero-sec .arrow:hover {
+main .main-content .hero-sec .arrow:hover {
     background: var(--slate-gray);
 }
 
-main .hero-sec .arrow:active {
+main .main-content .hero-sec .arrow:active {
     background-color: transparent;
 }
 
-main .hero-sec .arrow-left {
+main .main-content .hero-sec .arrow-left {
     left: 60px;
 }
 
-main .hero-sec .arrow-right {
+main .main-content .hero-sec .arrow-right {
     right: 60px;
 }
 
-
-
-
-/* dots in bottom of the slides */
-main .hero-sec .dots {
+main .main-content .hero-sec .dots {
     position: absolute;
     bottom: 30px;
     left: 50%;
@@ -424,7 +420,7 @@ main .hero-sec .dots {
     z-index: 30;
 }
 
-main .hero-sec .dots .dot {
+main .main-content .hero-sec .dots .dot {
     width: 12px;
     height: 12px;
     background-color: var(--slate-gray);
@@ -434,7 +430,7 @@ main .hero-sec .dots .dot {
     transition: all 0.2s;
 }
 
-main .hero-sec .dots .dot.active-dot {
+main .main-content .hero-sec .dots .dot.active-dot {
     background-color: var(--pure-white);
     width: 24px;
     border-radius: 20px;
@@ -444,38 +440,38 @@ main .hero-sec .dots .dot.active-dot {
 
 
 /* stats section */
-main .stats-sec {
+main .main-content .stats-sec {
     background-color: var(--pure-white);
     padding: 4rem 1.5rem 4rem 1.5rem;
 }
 
-main .stats-sec .container {
+main .main-content .stats-sec .container {
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
-main .stats-sec .container .grid {
+main .main-content .stats-sec .container .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     text-align: center;
 }
 
-main .stats-sec .container .grid .item {
+main .main-content .stats-sec .container .grid .item {
     padding: 2rem 1.5rem;
     background-color: var(--glass-bg);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
 }
 
-main .stats-sec .container .grid .item .number {
+main .main-content .stats-sec .container .grid .item .number {
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--medium-yellow);
     line-height: 1.2;
 }
 
-main .stats-sec .container .grid .item .label {
+main .main-content .stats-sec .container .grid .item .label {
     color: var(--slate-gray);
     font-weight: 500;
     font-size: 1.2rem;
