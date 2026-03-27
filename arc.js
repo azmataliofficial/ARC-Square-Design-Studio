@@ -592,7 +592,7 @@ function openpop(index) {
                 <div class="uper-part">
                     <img src="${detail.mainImage}"
                         alt="${detail.cardTittle}">
-                    <div class="closE-btn">
+                    <div class="close-btn">
                         <i id="close-pop" class="fa-solid fa-xmark"></i>
                     </div>
                 </div>
