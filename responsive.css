@@ -5,11 +5,11 @@
         --container-max-width: 95vw;
     }
 
-    header nav .nav-bar {
+    header nav .bar {
         padding: 0px 30px;
     }
 
-    main .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .slide .slide-content h1 {
         font-size: 2.8rem;
     }
 }
@@ -19,27 +19,27 @@
         --container-max-width: 90vw;
     }
 
-    header nav .nav-bar {
+    header nav .bar {
         padding: 0px 25px;
     }
 
-    main .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .wrapper .slide .content h1 {
         font-size: 2.5rem;
     }
 
-    main .hero-sec .slide .slide-content p {
+    main .main-content .hero-sec .wrapper .slide .content p {
         font-size: 1.1rem;
     }
 
-    main .stats-sec .container .grid {
+    main .main-content .stats-sec .container .grid {
         gap: 1.5rem;
     }
 
-    main .stats-sec .container .grid .item {
+    main .main-content .stats-sec .container .grid .item {
         padding: 1.5rem 1rem;
     }
 
-    main .stats-sec .container .grid .item .number {
+    main .main-content .stats-sec .container .grid .item .number {
         font-size: 3rem;
     }
 
@@ -58,48 +58,48 @@
 
 @media screen and (max-width: 992px) {
 
-    header nav .nav-bar .item-cont {
+    header nav .bar .container {
         gap: 10px;
     }
 
-    header nav .nav-bar .item-cont .nav-links {
+    header nav .bar .container .nav-links {
         gap: 5px;
     }
 
-    header nav .nav-bar .item-cont .nav-links .nav-link {
+    header nav .bar .container .nav-links .link {
         font-size: 14px;
         padding: 2px 6px;
     }
 
-    header nav .nav-bar .logo-section .logo-img img {
+    header nav .bar .logo img {
         width: 60px;
         height: 60px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
-    header nav .nav-bar .logo-section .brand-name #span {
+    header nav .bar .logo .name span:nth-child(1),
+    header nav .bar .logo .name #span {
         font-size: 17px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:last-child {
+    header nav .bar .logo .name span:last-child {
         font-size: 10px;
     }
 
-    main .hero-sec .arrow-left {
+    main .main-content .hero-sec .arrow-left {
         left: 30px;
     }
 
-    main .hero-sec .arrow-right {
+    main .main-content .hero-sec .arrow-right {
         right: 30px;
     }
 
-    main .hero-sec .arrow {
+    main .main-content .hero-sec .arrow {
         width: 45px;
         height: 45px;
         font-size: 1.5rem;
     }
 
-    main .stats-sec .container .grid {
+    main .main-content .stats-sec .container .grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
@@ -164,35 +164,35 @@
         top: 10px;
     }
 
-    header nav .nav-bar {
+    header nav .bar {
         padding: 0px 20px;
         border-radius: 50px;
     }
 
-    header nav .nav-bar .logo-section .logo-img img {
+    header nav .bar .logo img {
         width: 50px;
         height: 50px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
-    header nav .nav-bar .logo-section .brand-name #span {
+    header nav .bar .logo .name span:nth-child(1),
+    header nav .bar .logo .name #span {
         font-size: 16px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:last-child {
+    header nav .bar .logo .name span:last-child {
         font-size: 9px;
     }
 
-    header nav .nav-bar .item-cont {
+    header nav .bar .container {
         gap: 20px;
     }
 
-    header nav .nav-bar .item-cont #toggleBtn {
+    header nav .bar .container #toggleBtn {
         padding: 8px;
         font-size: 14px;
     }
 
-    header nav .nav-bar .item-cont .nav-links {
+    header nav .bar .container .nav-links {
         position: absolute;
         top: 60px;
         right: 0;
@@ -208,7 +208,7 @@
         z-index: 1000;
     }
 
-    header nav .nav-bar .item-cont .nav-links .nav-link {
+    header nav .bar .container .nav-links .link {
         width: 400px;
         text-align: center;
         padding: 12px;
@@ -216,7 +216,7 @@
         /* border: 1px solid; */
     }
 
-    header nav .nav-bar .item-cont .nav-links .nav-link::after {
+    header nav .bar .container .nav-links .link::after {
         bottom: 0;
         width: 30%;
     }
@@ -225,59 +225,59 @@
         display: block;
     }
 
-    main .hero-sec {
+    main .main-content .hero-sec {
         min-height: 500px;
     }
 
-    main .hero-sec .slide .slide-content {
+    main .main-content .hero-sec .wrapper .slide .content {
         margin-top: 250px;
         padding: 0 1rem;
     }
 
-    main .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .wrapper .slide .content h1 {
         font-size: 2rem;
     }
 
-    main .hero-sec .slide .slide-content p {
+    main .main-content .hero-sec .wrapper .slide .content p {
         font-size: 1rem;
     }
 
-    main .hero-sec .slide .slide-content button {
+    main .main-content .hero-sec .wrapper .slide .content button {
         padding: 0.6rem 1.2rem;
         font-size: 14px;
     }
 
-    main .hero-sec .arrow-left {
+    main .main-content .hero-sec .arrow-left {
         left: 15px;
     }
 
-    main .hero-sec .arrow-right {
+    main .main-content .hero-sec .arrow-right {
         right: 15px;
     }
 
-    main .hero-sec .arrow {
+    main .main-content .hero-sec .arrow {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
     }
 
-    main .stats-sec {
+    main .main-content .stats-sec {
         padding: 3rem 1rem;
     }
 
-    main .stats-sec .container .grid {
+    main .main-content .stats-sec .container .grid {
         gap: 1rem;
     }
 
-    main .stats-sec .container .grid .item {
+    main .main-content .stats-sec .container .grid .item {
         padding: 1.2rem 0.8rem;
     }
 
-    main .stats-sec .container .grid .item .number {
+    main .main-content .stats-sec .container .grid .item .number {
         font-size: 2.5rem;
     }
 
-    main .stats-sec .container .grid .item .label {
+    main .main-content .stats-sec .container .grid .item .label {
         font-size: 1rem;
     }
 
@@ -527,25 +527,25 @@
 
 /* Mobile Styles */
 @media screen and (max-width: 576px) {
-    header nav .nav-bar {
+    header nav .bar {
         padding: 0px 15px;
     }
 
-    header nav .nav-bar .logo-section {
+    header nav .bar .logo {
         gap: 8px;
     }
 
-    header nav .nav-bar .logo-section .logo-img img {
+    header nav .bar .logo img {
         width: 45px;
         height: 45px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
-    header nav .nav-bar .logo-section .brand-name #span {
+    header nav .bar .logo .name span:nth-child(1),
+    header nav .bar .logo .name #span {
         font-size: 14px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:last-child {
+    header nav .bar .logo .name span:last-child {
         font-size: 8px;
     }
 
@@ -553,61 +553,61 @@
         gap: 15px;
     }
 
-    header nav .nav-bar .item-cont #toggleBtn {
+    header nav .bar .container #toggleBtn {
         padding: 6px;
         font-size: 12px;
     }
 
-    header nav .nav-bar .item-cont .nav-links {
+    header nav .bar .container .nav-links {
         width: 220px;
         top: 55px;
     }
 
-    main .hero-sec {
+    main .main-content .hero-sec {
         min-height: 450px;
     }
 
-    main .hero-sec .slide .slide-content {
+    main .main-content .hero-sec .wrapper .slide .content {
         margin-top: 200px;
     }
 
-    main .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .wrapper .slide .content h1 {
         font-size: 1.5rem;
     }
 
-    main .hero-sec .slide .slide-content p {
+    main .main-content .hero-sec .wrapper .slide .content p {
         font-size: 0.9rem;
         margin-bottom: 0.8rem;
     }
 
-    main .hero-sec .arrow {
+    main .main-content .hero-sec .arrow {
         width: 35px;
         height: 35px;
         font-size: 1rem;
     }
 
-    main .hero-sec .dots .dot {
+    main .main-content .hero-sec .dots .dot {
         width: 8px;
         height: 8px;
     }
 
-    main .hero-sec .dots .dot.active {
+    main .main-content .hero-sec .dots .dot.active {
         width: 25px;
     }
 
-    main .stats-sec .container .grid {
+    main .main-content .stats-sec .container .grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    main .stats-sec .container .grid .item {
+    main .main-content .stats-sec .container .grid .item {
         padding: 1rem;
     }
 
-    main .stats-sec .container .grid .item .number {
+    main .main-content .stats-sec .container .grid .item .number {
         font-size: 2.2rem;
     }
 
-    main .stats-sec .container .grid .item .label {
+    main .main-content .stats-sec .container .grid .item .label {
         font-size: 0.9rem;
     }
 
@@ -886,49 +886,49 @@
 
 /* Small Mobile Devices */
 @media screen and (max-width: 380px) {
-    header nav .nav-bar .logo-section .logo-img img {
+    header nav .bar .logo img {
         width: 40px;
         height: 40px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:nth-child(1),
-    header nav .nav-bar .logo-section .brand-name #span {
+    header nav .bar .logo .name span:nth-child(1),
+    header nav .bar .logo .name #span {
         font-size: 12px;
     }
 
-    header nav .nav-bar .logo-section .brand-name span:last-child {
+    header nav .bar .logo .name span:last-child {
         font-size: 7px;
     }
 
-    header nav .nav-bar .item-cont #toggleBtn {
+    header nav .bar .container #toggleBtn {
         padding: 5px;
         font-size: 10px;
     }
 
-    header nav .nav-bar .item-cont .nav-links {
+    header nav .bar .container .nav-links {
         width: 200px;
     }
 
-    main .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .wrapper .slide .content h1 {
         font-size: 1.3rem;
     }
 
-    main .hero-sec .slide .slide-content p {
+    main .main-content .hero-sec .wrapper .slide .content p {
         font-size: 0.8rem;
     }
 
-    main .hero-sec .slide .slide-content button {
+    main .main-content .hero-sec .wrapper .slide .content button {
         padding: 0.5rem 1rem;
         font-size: 12px;
     }
 
-    main .hero-sec .arrow {
+    main .main-content .hero-sec .arrow {
         width: 30px;
         height: 30px;
         font-size: 0.9rem;
     }
 
-    main .stats-sec .container .grid {
+    main .main-content .stats-sec .container .grid {
         grid-template-columns: 1fr;
     }
 
@@ -969,24 +969,24 @@
 
 /* Landscape Mode for Mobile */
 @media screen and (max-height: 500px) and (orientation: landscape) {
-    main .hero-sec {
+    main .main-content .hero-sec {
         min-height: 300px;
     }
 
-    main .hero-sec .slide .slide-content {
+    main .main-content .hero-sec .wrapper .slide .content {
         margin-top: 100px;
     }
 
-    main .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .wrapper .slide .content h1 {
         font-size: 1.5rem;
     }
 
-    main .hero-sec .slide .slide-content p {
+    main .main-content .hero-sec .wrapper .slide .content p {
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
     }
 
-    main .hero-sec .arrow {
+    main .main-content .hero-sec .arrow {
         width: 35px;
         height: 35px;
     }
@@ -1009,8 +1009,8 @@
 
     header,
     .whatsapp-sec,
-    .hero-sec .arrow,
-    .hero-sec .dots,
+    .main-content .hero-sec .arrow,
+    .main-content .hero-sec .dots,
     footer .footer-bottom p a,
     .like-btn,
     .pro-overlay,

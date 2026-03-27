@@ -26,33 +26,33 @@
 
     <header>
         <nav>
-            <div class="nav-bar">
-                <div class="logo-section">
-                    <div class="logo-img">
+            <div class="bar">
+                <div class="logo">
+                    <div class="img">
                         <img src="images/logo.png" alt="logo">
                     </div>
-                    <div class="brand-name">
+                    <div class="name">
                         <span>ARC<span id="span"> Square</span></span>
                         <span>Design Studio</span>
                     </div>
                 </div>
 
-                <div class="item-cont">
+                <div class="container">
                     <button id="toggleBtn">
                         <i id="icon" class="fas fa-moon"></i>
                     </button>
 
                     <div class="nav-links navtoggle" id="nav-links">
-                        <button class="nav-link active" data-section="home"
+                        <button class="link active" data-section="home"
                             onclick="scrollToSection('home')">Home</button>
-                        <button class="nav-link" data-section="about" onclick="scrollToSection('about')">About</button>
-                        <button class="nav-link" data-section="services"
+                        <button class="link" data-section="about" onclick="scrollToSection('about')">About</button>
+                        <button class="link" data-section="services"
                             onclick="scrollToSection('services')">Services</button>
-                        <button class="nav-link" data-section="projects"
+                        <button class="link" data-section="projects"
                             onclick="scrollToSection('projects')">Projects</button>
-                        <button class="nav-link" data-section="gallery"
+                        <button class="link" data-section="gallery"
                             onclick="scrollToSection('gallery')">Gallery</button>
-                        <button class="nav-link" data-section="contact"
+                        <button class="link" data-section="contact"
                             onclick="scrollToSection('contact')">Contact</button>
                     </div>
 
@@ -70,13 +70,13 @@
 
     <main>
         <section class="main-content slide-sec show" id="home">
-            <div class="hero-sec">
-                <div class="slides-wrapper" id="slideswrapper"></div>
+            <section class="hero-sec">
+                <div class="wrapper" id="slideswrapper"></div>
 
                 <button class="arrow arrow-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
                 <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
                 <div class="dots" id="dotsContainer"></div>
-            </div>
+            </section>
 
 
 
@@ -145,9 +145,9 @@
             </section>
 
             <!-- Testimonial -->
-            <section class="testimonial-cont">
+            <section class="testimonial-sec">
                 <h2>What Our Clients Say</h2>
-                <div class="testiminial-grid">
+                <div class="grid-cont">
                     <!-- in js -->
                 </div>
             </section>
@@ -156,37 +156,37 @@
 
 
             <!-- FAQ -->
-            <section class="faq-cont">
-                <h2 class="faq-title">Frequently Asked Questions</h2>
+            <section class="faq-sec">
+                <h2 class="title">Frequently Asked Questions</h2>
 
-                <div class="faq-grid">
-                    <div class="faq-categories" id="catTabs">
-                        <button class="cat-tab active" data-cat="general">
+                <div class="grid-cont">
+                    <div class="categories" id="catTabs">
+                        <button class="tab active" data-cat="general">
                             <span>General Asked</span>
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
-                        <button class="cat-tab" data-cat="about">
+                        <button class="tab" data-cat="about">
                             <span>About Us</span>
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
-                        <button class="cat-tab" data-cat="pricing">
+                        <button class="tab" data-cat="pricing">
                             <span>Pricing Plans</span>
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
 
                     <!-- RIGHT: panels – hardcoded FAQ html, each panel with its items -->
-                    <div class="faq-right" id="faqPanels">
+                    <div class="data" id="faqPanels">
 
                         <!-- PANEL 1 – General Asked (active by default) -->
-                        <div class="faq-panel active" data-panel="general">
+                        <div class="panel active" data-panel="general">
                             <!-- item 1 -->
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">What services does ARC Square Design Studio offer?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >What services does ARC Square Design Studio offer?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>We offer Architecture, Interior Design, Exterior Design, Space Planning, 2D
                                         Drafting,
                                         and 3D Modeling & Rendering — all tailored to your vision, budget, and
@@ -195,24 +195,24 @@
                                 </div>
                             </div>
                             <!-- item 2 -->
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Do you handle both architecture and interior design?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Do you handle both architecture and interior design?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Yes! ARC Square specializes in both architecture and interior design. We provide
                                         end-to-end solutions from structural planning to final interior styling and 3D
                                         visualization.</p>
                                 </div>
                             </div>
                             <!-- item 3 -->
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">How involved will I be during the design process?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >How involved will I be during the design process?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Very involved! We believe in a fully collaborative approach. You will be
                                         consulted at
                                         every key milestone — from initial concept to final delivery — so the design
@@ -221,12 +221,12 @@
                                 </div>
                             </div>
                             <!-- item 4 -->
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Can you work with a specific budget or timeline?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Can you work with a specific budget or timeline?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Absolutely. We always begin with understanding your budget and deadline. Our team
                                         creates customized design plans that maximize value within your constraints
                                         without
@@ -234,12 +234,12 @@
                                 </div>
                             </div>
                             <!-- item 5 -->
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Do you provide 3D visualization before construction?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Do you provide 3D visualization before construction?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Yes, we provide detailed 3D renderings and walkthroughs so you can see exactly
                                         how
                                         your space will look before a single brick is laid. This helps avoid surprises
@@ -250,47 +250,47 @@
                         </div>
 
                         <!-- PANEL 2 – About Us -->
-                        <div class="faq-panel" data-panel="about">
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">When was ARC Square Design Studio founded?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                        <div class="panel" data-panel="about">
+                            <div class="item">
+                                <div class="question">
+                                    <span >When was ARC Square Design Studio founded?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>ARC Square Design Studio was founded in 2009 by Md. Arif Saifi with a vision to
                                         create spaces that are both functionally excellent and visually inspiring.</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Where is your studio located?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Where is your studio located?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Our studio is located at Shop No. 2/24, Ground Floor, B.D.A Complex, M.G Road,
                                         Bulandshahr, Uttar Pradesh 203001. We also serve clients across Delhi NCR and
                                         pan
                                         India remotely.</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">How many projects have you completed?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >How many projects have you completed?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Over the past 15+ years, we have successfully completed 380+ projects ranging
                                         from
                                         residential homes and commercial spaces to large-scale architectural planning
                                         projects.</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">What makes ARC Square different from other studios?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >What makes ARC Square different from other studios?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>We combine 15+ years of experience with a truly client-first philosophy. Every
                                         project gets dedicated attention, personalized design, and a commitment to
                                         timely
@@ -300,13 +300,13 @@
                         </div>
 
                         <!-- PANEL 3 – Pricing Plans -->
-                        <div class="faq-panel" data-panel="pricing">
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">How is the pricing structured for design projects?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                        <div class="panel" data-panel="pricing">
+                            <div class="item">
+                                <div class="question">
+                                    <span >How is the pricing structured for design projects?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Pricing is based on project scope, area size, and type of service required. We
                                         offer
                                         transparent, milestone-based payment plans so you always know what you're paying
@@ -314,36 +314,36 @@
                                         and when.</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Do you offer a free initial consultation?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Do you offer a free initial consultation?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Yes! We offer a completely free initial consultation. We understand your
                                         requirements, share our approach, and provide a project estimate — all before
                                         any
                                         commitment from your side.</p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Are revisions included in the project cost?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Are revisions included in the project cost?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Minor revisions and adjustments are included in all our packages. For major scope
                                         changes, we discuss transparently and provide a revised estimate before
                                         proceeding.
                                     </p>
                                 </div>
                             </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span class="faq-q-text">Can I get a custom quote for my project?</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
+                            <div class="item">
+                                <div class="question">
+                                    <span >Can I get a custom quote for my project?</span>
+                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
                                 </div>
-                                <div class="faq-answer">
+                                <div class="answer" id="faq-ans">
                                     <p>Absolutely. Every project is unique. Contact us at +91 96509 27987 or
                                         arcsquaredesignstudio@gmail.com and we will provide a detailed custom quote
                                         tailored
@@ -660,12 +660,12 @@
             </div>
             <div class="body">
                 <div class="cont-tab">
-                    <h2>Get in Touch</h2>
-                    <p>We'd love to hear from you. Whether you have a question about our services, pricing, or anything
-                        else, our team is ready to answer all your questions.</p>
-                    <div class="cards">
+                    <h2>Get in To/h2>
+                    <p>We'd love to hfrom you. Whether you have a question about our services, pricing, or anything
+                        else, our tswer all your questions.</p>
+                    <div class="ca id="faq-que-i"rds">
                         <div class="card">
-                            <div class="icons">
+                            <div clascons">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div class="detail">

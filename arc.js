@@ -1,7 +1,7 @@
 // Navbaar Items script
 document.addEventListener("DOMContentLoaded", function () {
   let navContaners = document.querySelectorAll(".slide-sec")
-  let navItems = document.querySelectorAll(".nav-link")
+  let navItems = document.querySelectorAll(".link")
 
   navContaners.forEach((cont) => {
     if (cont.id !== "home") {
@@ -190,21 +190,21 @@ slidesData.forEach((data, index) => {
   const slide = document.createElement('div')
   slide.className = 'slide'
   slide.style.backgroundImage = `url('${data.image}')`
-  slide.innerHTML = ` <div class="slide-content">
+  slide.innerHTML = ` <div class="content">
                             <h1>${data.title}</h1>
                             <p>${data.description}</p>
                             <button style="--clr: #7808d0" onclick="scrollToSection('${data.buttonLink}')"
                                 style="text-decoration: none;"> 
-                                <span class="button__icon-wrapper">
+                                <span class="btn-icon">
                                     <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                        class="button__icon-svg" width="10">
+                                        class="btn-svg" width="10">
                                         <path
                                             d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
                                             fill="currentColor"></path>
                                     </svg>
 
                                     <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
-                                        class="button__icon-svg button__icon-svg--copy">
+                                        class="btn-svg btn-svg-copy">
                                         <path
                                             d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
                                             fill="currentColor"></path>
@@ -414,7 +414,7 @@ const testimonial = [{
 let currentTestimonialIndex = 0;
 
 function renderTestimonials() {
-  const grid = document.querySelector('.testiminial-grid');
+  const grid = document.querySelector('.grid-cont');
   if (!grid) return;
 
   grid.innerHTML = '';
@@ -437,21 +437,21 @@ function renderTestimonials() {
     }
 
     const card = `
-      <div class="testimonial-card slide-in-card" style="animation-delay: ${delay}s;">
-        <div class="card-header">
-          <div class="client-avatar">${item.avatar}</div>
-          <div class="client-info">
+      <div class="card" style="animation-delay: ${delay}s;">
+        <div class="header">
+          <div class="avatar">${item.avatar}</div>
+          <div class="info">
             <h3>${item.clientName}</h3>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
+            <p><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
           </div>
         </div>
-        <div class="testimonial-content">
+        <div class="content">
           <div class="rating">${stars} <span>${item.rating}</span></div>
-          <div class="testimonial-text">${item.text}</div>
+          <div class="text">${item.text}</div>
         </div>
-        <div class="project-meta">
-          <span class="project-tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
-          <a href="${item.instagram}" target="_blank" rel="noopener noreferrer" class="instagram-tag">
+        <div class="meta">
+          <span class="tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+          <a href="${item.instagram}"  target="_blank" rel="noopener noreferrer" class="instagram-tag">
           <i class="fab fa-instagram"></i></a>
         </div>
       </div>
@@ -461,7 +461,7 @@ function renderTestimonials() {
 }
 
 function testimonials() {
-  const grid = document.querySelector('.testiminial-grid');
+  const grid = document.querySelector('.grid-cont');
   if (!grid) return;
 
   renderTestimonials();
@@ -802,27 +802,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // faq
-document.querySelectorAll('.cat-tab').forEach(function (tab) {
+document.querySelectorAll('.tab').forEach(function (tab) {
   tab.addEventListener('click', function () {
-    document.querySelectorAll('.cat-tab').forEach(function (t) {
+    document.querySelectorAll('.tab').forEach(function (t) {
       t.classList.remove('active');
     });
 
-    document.querySelectorAll('.faq-panel').forEach(function (p) {
+    document.querySelectorAll('.panel').forEach(function (p) {
       p.classList.remove('active');
     });
 
     this.classList.add('active');
 
     let catId = this.getAttribute('data-cat');
-    document.querySelector('.faq-panel[data-panel="' + catId + '"]').classList.add('active');
+    document.querySelector('.panel[data-panel="' + catId + '"]').classList.add('active');
   });
 });
-document.querySelectorAll('.faq-question').forEach(function (question) {
+document.querySelectorAll('.question').forEach(function (question) {
   question.addEventListener('click', function () {
-    let currentItem = this.closest('.faq-item');
-    let panel = currentItem.closest('.faq-panel');
-    panel.querySelectorAll('.faq-item').forEach(function (item) {
+    let currentItem = this.closest('.item');
+    let panel = currentItem.closest('.panel');
+    panel.querySelectorAll('.item').forEach(function (item) {
       if (item !== currentItem) {
         item.classList.remove('open');
       }
