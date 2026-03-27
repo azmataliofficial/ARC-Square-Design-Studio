@@ -234,22 +234,6 @@ header nav .bar #mobile-menu-btn {
 
 
 /* Main Container start */
-main .slide-sec {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-main .slide-sec .active-section {
-    display: block;
-    opacity: 1;
-}
-
-main #home.slide-sec {
-    display: block;
-    opacity: 1;
-}
-
 
 /* Hero slider section */
 main .hero-sec {
@@ -261,13 +245,13 @@ main .hero-sec {
     background-color: var(--pure-white);
 }
 
-main .hero-sec .slides-wrapper {
+main .hero-sec .wrapper {
     position: relative;
     height: 100%;
     width: 100%;
 }
 
-main .hero-sec .slides-wrapper .slide {
+main .hero-sec .wrapper .slide {
     position: absolute;
     top: 0;
     left: 0;
@@ -284,12 +268,12 @@ main .hero-sec .slides-wrapper .slide {
     transition: opacity 0.6s ease-in-out;
 }
 
-main .hero-sec .slides-wrapper .slide.active {
+main .hero-sec .wrapper .slide.active {
     opacity: 1;
     z-index: 10;
 }
 
-main .hero-sec .slides-wrapper .slide::before {
+main .hero-sec .wrapper .slide::before {
     content: '';
     position: absolute;
     top: 0;
@@ -300,7 +284,7 @@ main .hero-sec .slides-wrapper .slide::before {
     z-index: 3;
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content {
+main .hero-sec .wrapper .slide .content {
     position: relative;
     z-index: 20;
     text-align: center;
@@ -310,20 +294,20 @@ main .hero-sec .slides-wrapper .slide .slide-content {
     max-width: 900px;
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content h1 {
+main .hero-sec .wrapper .slide .content h1 {
     font-size: 3rem;
     font-weight: 800;
     animation: var(--heading);
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content p {
+main .hero-sec .wrapper .slide .content p {
     font-size: 1.3rem;
     opacity: 0.9;
     animation: var(--tag-line);
     margin-bottom: 1rem;
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button {
+main .hero-sec .wrapper .slide .content button {
     line-height: 1;
     text-decoration: none;
     display: inline-flex;
@@ -343,7 +327,7 @@ main .hero-sec .slides-wrapper .slide .slide-content button {
     transition: background-color 0.3s;
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button .button__icon-wrapper {
+main .hero-sec .wrapper .slide .content button .btn-icon {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -356,12 +340,12 @@ main .hero-sec .slides-wrapper .slide .slide-content button .button__icon-wrappe
     overflow: hidden;
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button:hover {
+main .hero-sec .wrapper .slide .content button:hover {
     background: var(--text-primary);
     color: var(--pure-white);
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-wrapper {
+main .hero-sec .wrapper .slide .content button:hover .btn-icon {
     flex-shrink: 0;
     width: 25px;
     height: 25px;
@@ -374,17 +358,17 @@ main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-
     overflow: hidden;
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button .button__icon-svg--copy {
+main .hero-sec .wrapper .slide .content button .btn-svg-copy {
     position: absolute;
     transform: translate(-150%, 150%);
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-svg:first-child {
+main .hero-sec .wrapper .slide .content button:hover .btn-svg:first-child {
     transition: all 0.3s ease-in-out;
     transform: translate(150%, -150%);
 }
 
-main .hero-sec .slides-wrapper .slide .slide-content button:hover .button__icon-svg--copy {
+main .hero-sec .wrapper .slide .content button:hover .btn-svg-copy {
     transition: all 0.3s ease-in-out 0.1s;
     transform: translate(0);
 }
