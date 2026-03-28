@@ -1,5 +1,4 @@
-/*Complete Responsive Styles */
-
+/* 1400px */
 @media screen and (max-width: 1400px) {
     :root {
         --container-max-width: 95vw;
@@ -9,11 +8,13 @@
         padding: 0px 30px;
     }
 
-    main .main-content .hero-sec .slide .slide-content h1 {
+    main .main-content .hero-sec .wrapper .slide .content h1 {
         font-size: 2.8rem;
     }
 }
 
+
+/* 1200px */
 @media screen and (max-width: 1200px) {
     :root {
         --container-max-width: 90vw;
@@ -43,12 +44,14 @@
         font-size: 3rem;
     }
 
-    main .satisfaction-sec .container .grid {
+    main .main-content .satisfaction-sec .container .grid {
         gap: 20px;
     }
 
-    main .blog-sec .container .blog-grid {
-        grid-template-columns: repeat(3, 1fr);
+    main .testimonial-sec .card .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
     }
 
     main .gallery-sec .cont .photos {
@@ -56,6 +59,8 @@
     }
 }
 
+
+/* 992px */
 @media screen and (max-width: 992px) {
 
     header nav .bar .container {
@@ -104,21 +109,19 @@
         gap: 1.5rem;
     }
 
-    main .satisfaction-sec .container .grid {
+    main .main-content .satisfaction-sec .container .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    main .about-sec .container .lower-sec {
-        flex-direction: column;
-        gap: 40px;
+
+    /* About */
+    main .about-sec .container2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     main .services-sec .grid-cont .card {
         flex-basis: calc(50% - 0.5rem);
-    }
-
-    main .blog-sec .container .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     main .contact-sec .body {
@@ -132,7 +135,7 @@
     }
 
     footer .container .grid .col-1 {
-        grid-column: span 2;
+        grid-column: span 1;
     }
 
     footer .container .grid li,
@@ -159,7 +162,8 @@
     }
 }
 
-/* Tablet Styles */
+
+/* 768px (Tablet) */
 @media screen and (max-width: 768px) {
     header nav {
         top: 10px;
@@ -280,27 +284,28 @@
         font-size: 1rem;
     }
 
-    main .satisfaction-sec {
+    main .main-content .satisfaction-sec {
         padding: 30px 20px;
     }
 
-    main .satisfaction-sec .container .content h2 {
+    main .main-content .satisfaction-sec .container .content h2 {
         font-size: 28px;
     }
 
-    main .satisfaction-sec .container .content p {
+    main .main-content .satisfaction-sec .container .content p {
         font-size: 14px;
     }
 
-    main .satisfaction-sec .container .grid {
+    main .main-content .satisfaction-sec .container .grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    main .satisfaction-sec .container .grid .item {
+    main .main-content .satisfaction-sec .container .grid .item {
         padding: 25px 15px 30px;
     }
 
+    /* WhatsApp widget */
     main .whatsapp-sec .widget .chat-box {
         width: 300px;
         right: 0;
@@ -318,23 +323,34 @@
         padding: 15px 10px;
     }
 
-    main .about-sec .container .upper-sec {
-        padding: 80px 0 30px;
-    }
-
-    main .about-sec .container .upper-sec h1 {
+    main .about-sec .container1 .content h2 {
         font-size: 2.5rem;
     }
 
-    main .about-sec .container .upper-sec p {
+    main .about-sec .container1 .content p {
         font-size: 1rem;
     }
 
-    main .about-sec .container .lower-sec .left h2,
-    main .about-sec .container .lower-sec .right h2 {
+    main .about-sec .container2 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 60px auto;
+    }
+
+    main .about-sec .container2 .contents h2 {
         font-size: 1.8rem;
     }
 
+    main .about-sec .container3 .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    main .about-sec .container3 .content {
+        max-width: 100%;
+    }
+
+    /* Services */
     main .services-sec {
         padding: 80px 0 20px;
     }
@@ -372,6 +388,7 @@
         font-size: 16px;
     }
 
+    /* Projects */
     main .project-sec {
         padding: 80px 0;
     }
@@ -401,6 +418,7 @@
         padding: 0 15px;
     }
 
+    /* Gallery */
     main .gallery-sec {
         padding: 80px 0 20px;
     }
@@ -432,24 +450,7 @@
         padding: 0.2rem 0.8rem;
     }
 
-    main .blog-sec {
-        padding: 80px 0 20px;
-    }
-
-    main .blog-sec .container .head h1 {
-        font-size: 2.5rem;
-    }
-
-    main .blog-sec .container .head p {
-        font-size: 1rem;
-    }
-
-    main .blog-sec .container .blog-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 15px;
-    }
-
+    /* Contact */
     main .contact-sec {
         padding: 80px 0;
     }
@@ -474,8 +475,7 @@
         font-size: 1.8rem;
     }
 
-
-
+    /* Footer */
     footer {
         padding: 40px 0 20px;
         text-align: center;
@@ -484,7 +484,6 @@
     footer .container .grid {
         grid-template-columns: 1fr;
         gap: 30px;
-        /* text-align: center; */
     }
 
     footer .container .grid .col-1 {
@@ -499,7 +498,7 @@
         align-items: center;
     }
 
-    /* Service Popup Responsive */
+    /* Service Popup */
     main .services-sec .pop-sec .conta {
         max-width: 90%;
         height: 90vh;
@@ -524,7 +523,8 @@
     }
 }
 
-/* Mobile Styles */
+
+/* 576px (Mobile) */
 @media screen and (max-width: 576px) {
     header nav .bar {
         padding: 0px 15px;
@@ -546,10 +546,6 @@
 
     header nav .bar .logo .name span:last-child {
         font-size: 8px;
-    }
-
-    header nav .nav-bar .item-cont {
-        gap: 15px;
     }
 
     header nav .bar .container #toggleBtn {
@@ -590,7 +586,7 @@
         height: 8px;
     }
 
-    main .main-content .hero-sec .dots .dot.active {
+    main .main-content .hero-sec .dots .dot.active-dot {
         width: 25px;
     }
 
@@ -610,41 +606,39 @@
         font-size: 0.9rem;
     }
 
-    main .satisfaction-sec .container .content h2 {
+    main .main-content .satisfaction-sec .container .content h2 {
         font-size: 24px;
     }
 
-    main .satisfaction-sec .container .grid {
+    main .main-content .satisfaction-sec .container .grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
-    main .satisfaction-sec .container .grid .item i {
+    main .main-content .satisfaction-sec .container .grid .item i {
         font-size: 35px;
     }
 
-    main .satisfaction-sec .container .grid .item h3 {
+    main .main-content .satisfaction-sec .container .grid .item h3 {
         font-size: 20px;
     }
 
-    main .about-sec .container .upper-sec h1 {
+    main .about-sec .container1 .content h2 {
         font-size: 2rem;
     }
 
-    main .about-sec .container .lower-sec .left h2,
-    main .about-sec .container .lower-sec .right h2 {
+    main .about-sec .container2 .contents h2 {
         font-size: 1.5rem;
     }
 
-    main .about-sec .container .container-points .point {
-        gap: 15px;
+    main .about-sec .container3 .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    main .about-sec .container .container-points .point .left span {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
+    /* Services */
     main .services-sec .service-cont h2 {
         font-size: 2rem;
     }
@@ -685,6 +679,30 @@
         padding: 8px;
     }
 
+
+    /* Service Popup Mobile */
+    main .services-sec .pop-sec .conta .uper-part img {
+        height: 250px;
+    }
+
+    main .services-sec .pop-sec .lower-part {
+        padding: 15px;
+    }
+
+    main .services-sec .pop-sec .lower-part .cont h2 {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    main .services-sec .pop-sec .lower-part .cont p {
+        font-size: 0.9rem;
+    }
+
+    main .services-sec .pop-sec .lower-part .gallery h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Projects */
     main .project-sec .pro-head h2 {
         font-size: 2rem;
     }
@@ -706,6 +724,7 @@
         font-size: 1rem;
     }
 
+    /* Gallery */
     main .gallery-sec .cont .head h1 {
         font-size: 2rem;
     }
@@ -714,27 +733,7 @@
         column-count: 2;
     }
 
-    main .blog-sec .container .head h1 {
-        font-size: 2rem;
-    }
-
-    main .blog-sec .container .blog-grid .card .content {
-        padding: 1rem;
-    }
-
-    main .blog-sec .container .blog-grid .card .content h2 {
-        font-size: 1.1rem;
-    }
-
-    main .blog-sec .container .blog-grid .card .content p {
-        font-size: 0.9rem;
-    }
-
-    main .blog-sec .container .blog-grid .card .content button {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
+    /* Contact */
     main .contact-sec .head h1 {
         font-size: 2rem;
     }
@@ -780,6 +779,7 @@
         font-size: 0.9rem;
     }
 
+    /* WhatsApp */
     main .whatsapp-sec .widget {
         bottom: 20px;
         right: 20px;
@@ -836,7 +836,7 @@
     }
 
     main .whatsapp-sec .widget .chat-box .input {
-        padding: 12px 12px;
+        padding: 12px;
     }
 
     main .whatsapp-sec .widget .chat-box .input input {
@@ -844,6 +844,7 @@
         width: 80%;
     }
 
+    /* Footer */
     footer .container .grid .col-1 {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -863,31 +864,10 @@
     footer .footer-bottom p {
         font-size: 12px;
     }
-
-    /* Service Popup Mobile */
-    main .services-sec .pop-sec .conta .uper-part img {
-        height: 250px;
-    }
-
-    main .services-sec .pop-sec .lower-part {
-        padding: 15px;
-    }
-
-    main .services-sec .pop-sec .lower-part .cont h2 {
-        font-size: 22px;
-        margin: 10px 0;
-    }
-
-    main .services-sec .pop-sec .lower-part .cont p {
-        font-size: 0.9rem;
-    }
-
-    main .services-sec .pop-sec .lower-part .gallery h3 {
-        font-size: 1.2rem;
-    }
 }
 
-/* Small Mobile Devices */
+
+/* 380px (Small Mobile) */
 @media screen and (max-width: 380px) {
     header nav .bar .logo img {
         width: 40px;
@@ -935,13 +915,16 @@
         grid-template-columns: 1fr;
     }
 
-
-    main .satisfaction-sec .container .content h2 {
+    main .main-content .satisfaction-sec .container .content h2 {
         font-size: 20px;
     }
 
-    main .about-sec .container .upper-sec h1 {
+    main .about-sec .container1 .content h2 {
         font-size: 1.8rem;
+    }
+
+    main .about-sec .container2 .contents h2 {
+        font-size: 1.4rem;
     }
 
     main .services-sec .service-cont h2 {
@@ -961,16 +944,13 @@
         font-size: 1.8rem;
     }
 
-    main .blog-sec .container .head h1 {
-        font-size: 1.8rem;
-    }
-
     main .contact-sec .head h1 {
         font-size: 1.8rem;
     }
 }
 
-/* Landscape Mode for Mobile */
+
+/* Landscape mode */
 @media screen and (max-height: 500px) and (orientation: landscape) {
     main .main-content .hero-sec {
         min-height: 300px;
@@ -1007,7 +987,9 @@
     }
 }
 
-/* Print Styles */
+
+
+/* Print media */
 @media print {
 
     header,
@@ -1015,7 +997,6 @@
     .main-content .hero-sec .arrow,
     .main-content .hero-sec .dots,
     footer .footer-bottom p a,
-    .like-btn,
     .pro-overlay,
     .services-sec .consultation button,
     .contact-sec .body form button {

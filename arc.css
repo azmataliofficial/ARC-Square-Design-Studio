@@ -682,22 +682,31 @@ main .main-content .testimonial-sec .grid-cont .card .meta {
     justify-content: space-between;
 }
 
+main .main-content .testimonial-sec .grid-cont .card .meta span {
+    background: var(--pure-white);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
 main .main-content .testimonial-sec .grid-cont .card .meta a {
     color: var(--medium-yellow);
     font-size: var(--text);
     text-decoration: none;
-
+    background: var(--pure-white);
+    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
 }
 
 main .main-content .testimonial-sec .grid-cont .card .meta a i {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    padding: 6px;
-    border-radius: 50%;
     font-size: var(--text);
-    color: white;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-right: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
