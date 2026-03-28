@@ -1135,8 +1135,6 @@ main .about-sec .container2 .profile img:hover {
     transform: scale(1.02);
 }
 
-main .about-sec .container2 .contents {}
-
 main .about-sec .container2 .contents h2 {
     font-size: var(--sub-heading);
     font-weight: 700;
@@ -1198,7 +1196,7 @@ main .about-sec .container3 .grid {
 
 main .about-sec .container3 .grid .items {
     position: relative;
-    padding: 2.5rem 2rem;
+    padding: 3rem 2rem 2rem 2rem;
     background: var(--glass-bg);
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -1236,6 +1234,10 @@ main .about-sec .container3 .grid .items p {
     margin: 0;
 }
 
+main .about-sec .container3 .grid .items {
+    border: 1px solid var(--medium-yellow);
+}
+
 main .about-sec .container3 .grid .itm1 {
     counter-reset: item 0;
 }
@@ -1258,8 +1260,8 @@ main .about-sec .container3 .grid .itm3::before {
     color: var(--medium-yellow);
     opacity: 0.5;
     position: absolute;
-    top: 30px;
-    left: 350px;
+    top: 3%;
+    right: 5%;
 }
 
 

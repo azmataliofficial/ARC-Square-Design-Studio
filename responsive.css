@@ -311,6 +311,12 @@
         gap: 20px;
     }
 
+    /* FAQ */
+    main .faq-sec .grid-cont {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     /* WhatsApp widget */
     main .whatsapp-sec .widget .chat-box {
         width: 300px;
@@ -573,7 +579,7 @@
     }
 
     main .main-content .hero-sec .wrapper .slide .content h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     main .main-content .hero-sec .wrapper .slide .content p {
@@ -744,8 +750,18 @@
         font-size: 2rem;
     }
 
+    main .contact-sec .head p {
+        font-size: 1rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
     main .contact-sec .body .cont-tab h2 {
         font-size: 1.8rem;
+    }
+
+    main .contact-sec .body .cont-tab p {
+        font-size: 0.9rem;
     }
 
     main .contact-sec .body .cont-tab .cards .card {
