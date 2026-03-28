@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function scrollToSection(sectionId) {
   let navContaners = document.querySelectorAll(".slide-sec")
-  let navItems = document.querySelectorAll(".nav-link")
+  let navItems = document.querySelectorAll(".link")
 
 
   navContaners.forEach(cont => {
@@ -135,7 +135,7 @@ function toggleMenu() {
   }
 }
 
-window.addEventListener("load", initializeMenu())
+window.addEventListener("load", initializeMenu)
 
 window.addEventListener("resize", () => {
   if (window.innerWidth <= 768) {
@@ -144,7 +144,7 @@ window.addEventListener("resize", () => {
     isOpen = false
   } else {
     navLinkCont.style.maxHeight = "none"
-    isOpen = false
+    isOpen = true
   }
 });
 // navbaar end

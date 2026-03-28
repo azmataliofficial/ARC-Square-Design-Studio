@@ -1108,7 +1108,7 @@ main .about-sec .container2 {
     gap: 50px;
 }
 
-main .about-sec .container2 .profile{
+main .about-sec .container2 .profile {
     width: 100%;
 }
 
@@ -1125,9 +1125,8 @@ main .about-sec .container2 .profile img {
 main .about-sec .container2 .profile img:hover {
     transform: scale(1.02);
 }
-main .about-sec .container2 .contents{
 
-}
+main .about-sec .container2 .contents {}
 
 main .about-sec .container2 .contents h2 {
     font-size: var(--sub-heading);
