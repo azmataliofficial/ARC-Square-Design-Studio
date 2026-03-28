@@ -305,6 +305,12 @@
         padding: 25px 15px 30px;
     }
 
+    /* Testimonial */
+    main .main-content .testimonial-sec .grid-cont {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
     /* WhatsApp widget */
     main .whatsapp-sec .widget .chat-box {
         width: 300px;
