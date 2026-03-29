@@ -1031,10 +1031,6 @@
         font-size: 0.9rem;
     }
 
-    main .main-content .stats-sec .container .grid {
-        grid-template-columns: 1fr;
-    }
-
     main .main-content .satisfaction-sec .container .content h2 {
         font-size: 20px;
     }

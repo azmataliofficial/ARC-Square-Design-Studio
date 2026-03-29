@@ -833,3 +833,69 @@ document.querySelectorAll('.question').forEach(function (question) {
     currentItem.classList.toggle('open');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// contact submission
+// ===== Contact Form Submit =====
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqRwez_B7ODZJ7qxy9g9A6SWPuBqSt55rSKaABlTvARHrl-koIIDHuAnwpbLlOJiqb/exec";
+
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const btn = document.getElementById("cf-btn");
+  const name = document.getElementById("cf-name").value.trim();
+  const phone = document.getElementById("cf-phone").value.trim();
+  const email = document.getElementById("cf-email").value.trim();
+  const subject = document.getElementById("cf-subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !phone || !email || !subject || !message) {
+    alert("⚠️ Please fill all fields!");
+    return;
+  }
+
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phone, email, subject, message })
+    });
+
+    btn.textContent = "✅ Message Sent!";
+    btn.style.background = "#2e7d32";
+    document.getElementById("contactForm").reset();
+
+    setTimeout(() => {
+      btn.textContent = "Send Message";
+      btn.style.background = "";
+      btn.disabled = false;
+    }, 3000);
+
+  } catch (err) {
+    btn.textContent = "❌ Failed. Try Again";
+    btn.style.background = "#c62828";
+    btn.disabled = false;
+  }
+});
+
+
+
+

@@ -711,29 +711,34 @@
                     </div>
                 </div>
 
-                <form>
+                <form id="contactForm">
                     <h2>Send us a Message</h2>
                     <div class="form-inputs">
                         <div class="cont">
                             <label for="name">Name</label>
-                            <input type="text" placeholder="Your full name">
+                            <input type="text" id="cf-name" placeholder="Your full name">
+                        </div>
+
+                        <div class="cont">
+                            <label for="number">Phone Number</label>
+                            <input type="tel" id="cf-phone" placeholder="Your phone number">
                         </div>
 
                         <div class="cont">
                             <label for="email">Email</label>
-                            <input type="email" placeholder="Youremail@example.com">
+                            <input type="email" id="cf-email" placeholder="Youremail@example.com">
                         </div>
 
                         <div class="cont">
                             <label for="subject">Subject</label>
-                            <input type="text" placeholder="How can we help you?">
+                            <input type="text" id="cf-subject" placeholder="How can we help you?">
                         </div>
 
                         <div class="cont">
                             <label for="message">Message</label>
                             <textarea name="message" id="message" placeholder="Enter your message"></textarea>
                         </div>
-                        <button>Submit</button>
+                        <button type="submit" id="cf-btn">Submit</button>
                     </div>
                 </form>
             </div>
