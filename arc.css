@@ -740,7 +740,7 @@ main .main-content .faq-sec .grid-cont {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 30px;
-    width: 90vw;
+    width: var(--container-max-width);
     margin: 0 auto;
 }
 
