@@ -887,7 +887,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
       btn.textContent = "Send Message";
       btn.style.background = "";
       btn.disabled = false;
-    }, 3000);
+    }, 2000);
 
   } catch (err) {
     btn.textContent = "❌ Failed. Try Again";
