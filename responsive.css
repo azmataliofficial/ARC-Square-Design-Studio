@@ -680,6 +680,11 @@
 
     main .main-content .satisfaction-sec .container .content h2 {
         font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    main .main-content .satisfaction-sec .container .content p{
+        line-height: normal;
     }
 
     main .main-content .satisfaction-sec .container .grid {
@@ -696,6 +701,7 @@
     main .main-content .satisfaction-sec .container .grid .item h3 {
         font-size: 20px;
     }
+
 
     main .about-sec .container1 .content h2 {
         font-size: 2rem;

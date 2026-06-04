@@ -98,6 +98,7 @@ header nav {
     left: 0;
     width: 100%;
     z-index: 1000;
+    animation: var(--cont-animate);
 }
 
 header nav .bar {
@@ -530,8 +531,8 @@ main .main-content .satisfaction-sec .container .content p {
 main .main-content .satisfaction-sec .container .grid {
     max-width: var(--container-max-width);
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -542,6 +543,8 @@ main .main-content .satisfaction-sec .container .grid .item {
     border-radius: 15px;
     transition: all 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
+    border: 1px solid transparent;
+    flex: 1 0 345px;
 }
 
 main .main-content .satisfaction-sec .container .grid .item:hover {
@@ -1970,6 +1973,7 @@ main .contact-sec .head p {
 main .contact-sec .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr ;
     gap: 2.5rem;
     max-width: var(--container-max-width);
     margin: 0 auto;
@@ -2092,7 +2096,7 @@ main .contact-sec .body form .form-inputs .cont textarea {
     padding: 12px 15px;
     border: 2px solid var(--border-color);
     border-radius: 8px;
-    height: 220px;
+    border-radius: 8px;
     font-family: inherit;
     font-size: var(--text);
     color: var(--text-primary);
