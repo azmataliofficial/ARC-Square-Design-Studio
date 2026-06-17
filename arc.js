@@ -2,8 +2,9 @@
 
 const STATE = {
   data: {
-    galleryData: [],
-    slidesData: []
+    slidesData: [],
+    testimonialData : [],
+    galleryData: []
   },
 
   galleryLoading: document.getElementById('galleryLoading')
@@ -32,8 +33,9 @@ async function fetchingData() {
     let allData = await response.json()
 
     STATE.data = {
-      galleryData: allData.galleryData,
-      slidesData: allData.slidesData
+      slidesData: allData.slidesData,
+      testimonialData: allData.testimonialData,
+      galleryData: allData.galleryData
     }
 
 
@@ -48,6 +50,7 @@ async function fetchingData() {
 async function init() {
   await fetchingData()
   renderHeroSlider()
+  startTestimonialRotation()
   renderGallery()
 }
 
@@ -414,50 +417,21 @@ function sendWhatsApp() {
 
 // WhatsApp Chat Box end
 
+
+
 // testimonial start
-const testimonial = [{
-  clientName: "Rakhi Singh",
-  location: "DM Road Bulandshahar",
-  instagram: "https://www.instagram.com/uv_glaam/",
-  instaId: "@uv_glaam",
-  rating: 5,
-  text: "I am very happy with the work of ARC Square. They have done a great job in designing my beauty parlour. The team was very professional and they completed the work within the given time frame. I would definitely recommend them to others.",
-  projectType: "Beauty Parlour Design",
-  avatar: "RS"
-},
-{
-  clientName: "Arif Saifi",
-  location: "Bulandshahr City",
-  instagram: "https://www.instagram.com/arcsquaredesignstudio/",
-  instaId: "@arcsquaredesignstudio",
-  rating: 4.5,
-  text: "We engaged ARC Square for our office interior design and the results exceeded our expectations. Their 3D visualization helped us visualize the space before execution. The team was responsive, creative, and delivered the project within the stipulated timeline. Great experience!",
-  projectType: "Commercial Interior",
-  avatar: "AS"
-},
-{
-  clientName: "Azmat Ali",
-  location: "Delhi NCR",
-  instagram: "https://www.instagram.com/azmataliofficial/",
-  instaId: "@azmataliofficial",
-  rating: 5,
-  text: "Professional approach combined with creative excellence. ARC Square handled our villa project with utmost care. The structural planning was flawless and they incorporated modern aesthetics while maintaining functionality. Their attention to client requirements is commendable.",
-  projectType: "Villa Design",
-  avatar: "AA"
-}
-];
 
 let currentTestimonialIndex = 0;
 
 function renderTestimonials() {
   const grid = document.querySelector('.grid-cont');
-  if (!grid) return;
+  if (!STATE.data.testimonialData.length) return;
 
   grid.innerHTML = '';
 
   for (let i = 0; i < 2; i++) {
-    const itemIndex = (currentTestimonialIndex + i) % testimonial.length;
-    const item = testimonial[itemIndex];
+    const itemIndex = (currentTestimonialIndex + i) % STATE.data.testimonialData.length;
+    const item = STATE.data.testimonialData[itemIndex];
 
     const delay = i * 0.2;
 
@@ -496,19 +470,18 @@ function renderTestimonials() {
   }
 }
 
-function testimonials() {
+function startTestimonialRotation() {
   const grid = document.querySelector('.grid-cont');
-  if (!grid) return;
+  if (!STATE.data.testimonialData.length) return;
 
   renderTestimonials();
 
   setInterval(() => {
-    currentTestimonialIndex = (currentTestimonialIndex + 2) % testimonial.length;
+    currentTestimonialIndex = (currentTestimonialIndex + 2) % STATE.data.testimonialData.length;
     renderTestimonials();
-  }, 8000);
+  }, 5000);
 }
 
-window.addEventListener('DOMContentLoaded', testimonials);
 
 // testimonial end
 
