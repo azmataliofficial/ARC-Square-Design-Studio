@@ -1,3 +1,39 @@
+// create a STATE object for all api response data hendale
+
+const STATE = {
+  galleryData: []
+}
+
+
+// fetching all data 
+
+async function fetchingData() {
+  try {
+    const API_URL = './arc.json'
+    const response = await fetch(API_URL)
+
+    if (!response.ok) {
+      throw new Error(`HTTP network error! Status code ${response.status}`)
+    }
+
+    let data = await response.json()
+
+    STATE.galleryData = data
+
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
+async function init() {
+  await fetchingData()
+  renderGallery()
+}
+
+
+
+
 // Navbaar Items script
 document.addEventListener("DOMContentLoaded", function () {
   let navContaners = document.querySelectorAll(".slide-sec")
@@ -679,89 +715,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Gallery Section start
-(function () {
-  const pins = [
-    {
-      img: "https://images.pexels.com/photos/1767434/pexels-photo-1767434.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
-      title: "coastal whisper",
-      cat: "seascape",
-    },
-    {
-      img: "https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
-      title: "urban layers",
-      cat: "architecture",
-    },
-    {
-      img: "https://images.pexels.com/photos/1128795/pexels-photo-1128795.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
-      title: "golden hour",
-      cat: "portrait",
-    },
-    {
-      img: "https://images.pexels.com/photos/2896387/pexels-photo-2896387.jpeg?auto=compress&cs=tinysrgb&w=600&h=950&fit=crop",
-      title: "verdant dreams",
-      cat: "nature",
-    },
-    {
-      img: "https://images.pexels.com/photos/2570064/pexels-photo-2570064.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-      title: "minimal mood",
-      cat: "still life",
-    },
-    {
-      img: "https://images.pexels.com/photos/3785708/pexels-photo-3785708.jpeg?auto=compress&cs=tinysrgb&w=600&h=850&fit=crop",
-      title: "street rhythm",
-      cat: "urban",
-    },
-    {
-      img: "https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop",
-      title: "abstract light",
-      cat: "experimental",
-    },
-    {
-      img: "https://images.pexels.com/photos/2085126/pexels-photo-2085126.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop",
-      title: "wild textures",
-      cat: "macro",
-    },
-    {
-      img: "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=600&h=980&fit=crop",
-      title: "ethereal waves",
-      cat: "fine art",
-    },
-    {
-      img: "https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=600&h=820&fit=crop",
-      title: "morning fog",
-      cat: "landscape",
-    },
-    {
-      img: "https://images.pexels.com/photos/1229042/pexels-photo-1229042.jpeg?auto=compress&cs=tinysrgb&w=600&h=670&fit=crop",
-      title: "neon blur",
-      cat: "street",
-    },
-    {
-      img: "https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
-      title: "desert solitude",
-      cat: "travel",
-    },
-    {
-      img: "https://images.pexels.com/photos/2774197/pexels-photo-2774197.jpeg?auto=compress&cs=tinysrgb&w=600&h=720&fit=crop",
-      title: "pastel dreams",
-      cat: "still life",
-    },
-    {
-      img: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=600&h=1050&fit=crop",
-      title: "floral whisper",
-      cat: "macro",
-    },
-    {
-      img: "https://images.pexels.com/photos/1181534/pexels-photo-1181534.jpeg?auto=compress&cs=tinysrgb&w=600&h=630&fit=crop",
-      title: "clean lines",
-      cat: "minimal",
-    },
-  ];
 
+function renderGallery() {
   const grid = document.getElementById("pinterestGrid");
 
-  for (let i = 0; i < pins.length; i++) {
-    const item = pins[i];
+  for (let i = 0; i < STATE.galleryData.length; i++) {
+    const item = STATE.galleryData[i];
 
     const figure = document.createElement("figure");
     const img = document.createElement("img");
@@ -778,7 +737,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     grid.appendChild(figure);
   }
-})();
+}
 
 // Gallery Section end
 
@@ -899,3 +858,4 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 
+document.addEventListener('DOMContentLoaded', init)
