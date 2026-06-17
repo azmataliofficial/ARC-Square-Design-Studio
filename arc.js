@@ -21,7 +21,7 @@ async function fetchingData() {
     }
 
     await new Promise((resolve, reject) => {
-      setTimeout(()=>{
+      setTimeout(() => {
         resolve()
       }, 5000)
     })
