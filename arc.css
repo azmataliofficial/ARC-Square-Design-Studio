@@ -1872,6 +1872,15 @@ main .gallery-sec .cont .head p {
     animation: var(--tag-line);
 }
 
+main .gallery-sec .cont .gallery-error-loader{
+    display: none;
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.5rem;
+    color: var(--medium-yellow);
+    font-weight: 900;
+}
+
 main .gallery-sec .cont .photos {
     column-count: 5;
     column-gap: 1.2rem;

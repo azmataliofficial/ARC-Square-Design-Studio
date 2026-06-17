@@ -1,13 +1,17 @@
 // create a STATE object for all api response data hendale
 
 const STATE = {
-  galleryData: []
+  galleryData: [],
+
+  galleryLoading: document.getElementById('galleryLoading')
 }
 
 
 // fetching all data 
 
 async function fetchingData() {
+  galleryToggleloading(true)
+
   try {
     const API_URL = './arc.json'
     const response = await fetch(API_URL)
@@ -16,13 +20,21 @@ async function fetchingData() {
       throw new Error(`HTTP network error! Status code ${response.status}`)
     }
 
+    await new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve()
+      }, 5000)
+    })
+
     let data = await response.json()
 
     STATE.galleryData = data
 
   } catch (error) {
     console.log(error);
-
+  }
+  finally {
+    galleryToggleloading(false)
   }
 }
 
@@ -716,8 +728,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Gallery Section start
 
+function galleryToggleloading(isLoading) {
+  STATE.galleryLoading.style.display = isLoading ? 'block' : 'none'
+}
+
+
 function renderGallery() {
-  const grid = document.getElementById("pinterestGrid");
+  const grid = document.getElementById("galleryPhotos");
 
   for (let i = 0; i < STATE.galleryData.length; i++) {
     const item = STATE.galleryData[i];
@@ -858,4 +875,4 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
 
-document.addEventListener('DOMContentLoaded', init)
+init()
