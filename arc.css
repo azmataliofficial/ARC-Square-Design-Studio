@@ -1299,144 +1299,7 @@ main .services-sec .service-cont p {
     animation: var(--tag-line);
 }
 
-/* Services Grid */
-main .services-sec .grid-cont {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    max-width: var(--container-max-width);
-    margin: 75px auto 0 auto;
-    animation: var(--cont-animate);
-}
 
-main .services-sec .grid-cont .card {
-    flex-grow: 2;
-    flex-basis: 355px;
-    width: 100%;
-    background: var(--pure-white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
-}
-
-main .services-sec .grid-cont .card .image {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    background: #f0f0f0;
-
-}
-
-main .services-sec .grid-cont .card .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: stretch-all;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    display: block;
-    cursor: pointer;
-}
-
-main .services-sec .grid-cont .card:hover #card-img {
-    transform: scale(1.08);
-}
-
-main .services-sec .grid-cont .card .image .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-main .services-sec .grid-cont .card:hover #card-over {
-    opacity: 1;
-}
-
-main .services-sec .grid-cont .card .image .content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: white;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.4s ease;
-}
-
-main .services-sec .grid-cont .card:hover #card-cont {
-    transform: translateY(0);
-    opacity: 1;
-    z-index: 999;
-}
-
-main .services-sec .grid-cont .card .image .content span {
-    display: inline-block;
-    font-size: var(--sub-text);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-bottom: 8px;
-}
-
-main .services-sec .grid-cont .card .image .content h2 {
-    font-size: var(--title);
-    font-weight: 700;
-    line-height: 1.3;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-main .services-sec .grid-cont .card .content {
-    padding: 0.6rem 1.75rem;
-    background: var(--pure-white);
-}
-
-main .services-sec .grid-cont .card .content .description {
-    color: var(--slate-gray);
-    height: 95px;
-    font-size: var(--text);
-    overflow: hidden;
-}
-
-main .services-sec .grid-cont .card .content .learn-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: none;
-    border: none;
-    color: var(--medium-yellow);
-    font-weight: 700;
-    font-size: var(--text);
-    padding: 0.5rem 0;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-main .services-sec .grid-cont .card .content .learn-more::after {
-    content: '→';
-    font-size: var(--text);
-    transition: transform 0.3s ease;
-}
-
-main .services-sec .grid-cont .card .content .learn-more:hover {
-    gap: 0.75rem;
-}
-
-main .services-sec .grid-cont .card .content .learn-more:hover::after {
-    transform: translateX(5px);
-}
-
-
-
-/* Service Consultation Section */
 main .services-sec .consultation {
     padding: 50px 20px;
     min-height: 300px;
@@ -1508,139 +1371,6 @@ main .services-sec .consultation .cont button:hover i {
     transform: rotate(15deg);
 }
 
-
-
-
-
-/* Service Popup Section */
-main .services-sec .pop-sec {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(3px);
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease;
-}
-
-main .services-sec .pop-sec .conta::-webkit-scrollbar {
-    display: none;
-}
-
-main .services-sec .pop-sec .conta {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    max-width: 710px;
-    width: 100%;
-    height: 85vh;
-    background: var(--pure-white);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-main .services-sec .pop-sec .conta .uper-part {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-}
-
-main .services-sec .pop-sec .conta .uper-part img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-}
-
-main .services-sec .pop-sec .conta .uper-part .close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--text);
-    color: var(--text-primary);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-main .services-sec .pop-sec .conta .uper-part .close-btn i {
-    position: fixed;
-    background-color: var(--pure-white);
-    border-radius: 10px;
-    padding: 10px 12px;
-    transition: all 0.3s ease;
-}
-
-main .services-sec .pop-sec .conta .uper-part .close-btn i:hover {
-    transform: rotate(90deg);
-}
-
-main .services-sec .pop-sec .lower-part {
-    padding: 20px;
-}
-
-main .services-sec .pop-sec .lower-part .cont span {
-    display: inline-block;
-    font-size: var(--sub-text);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-top: 10px;
-}
-
-main .services-sec .pop-sec .lower-part .cont h2 {
-    font-size: var(--title);
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--text-primary);
-    margin: 15px 0;
-}
-
-main .services-sec .pop-sec .lower-part .cont p {
-    color: var(--slate-gray);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: var(--text);
-}
-
-main .services-sec .pop-sec .lower-part .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-main .services-sec .pop-sec .lower-part .gallery .images {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-}
-
-main .services-sec .pop-sec .lower-part .gallery .images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 
 
@@ -1751,24 +1481,27 @@ main .project-sec .pro-cont .projects .projects-grid .pro-card:hover {
     transform: scale(1.04);
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-img-cont {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-img-cont {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16/9;
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-img-cont img {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-img-cont img {
     width: 100%;
     height: 100%;
-    object-fit: stretch-all;
+    object-fit: cover;
     transition: all 0.5s ease;
+    display: block;
+    object-fit: fill;
 }
 
 main .project-sec .pro-cont .projects .projects-grid .pro-card:hover .pro-img-cont img {
     transform: scale(1.1);
+    filter: blur(1.5px);
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-overlay {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-img-cont .pro-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -1786,7 +1519,7 @@ main .project-sec .pro-cont .projects .projects-grid .pro-card:hover .pro-overla
     opacity: 1;
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-overlay button {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-img-cont .pro-overlay button {
     padding: 0.75rem 1.5rem;
     background: var(--pure-white);
     border: none;
@@ -1801,34 +1534,295 @@ main .project-sec .pro-cont .projects .projects-grid .pro-overlay button {
     transition: all 0.3s ease;
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-overlay button:hover {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-img-cont .pro-overlay button:hover {
     transform: scale(1.05);
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-content {
-    padding: 1.5rem;
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-content {
+    padding: 1rem 1.5rem;
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-cont-head {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-content .pro-cont-head {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-cont-head h3 {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-content .pro-cont-head h3 {
     color: var(--slate-gray);
     font-size: var(--title);
+    font-weight: 700;
+    padding-bottom: 0.5rem;
 }
 
-main .project-sec .pro-cont .projects .projects-grid .pro-content span {
+main .project-sec .pro-cont .projects .projects-grid .pro-card .pro-content .pro-cont-head span {
     color: var(--medium-yellow);
     font-size: var(--text);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+
 }
 
+
+
+main .project-sec .pro-cont .pop-sec {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta::-webkit-scrollbar {
+    display: none;
+}
+
+main .project-sec .pro-cont .pop-sec .conta {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 710px;
+    width: 100%;
+    height: 85vh;
+    background: var(--pure-white);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part .close-btn i {
+    position: fixed;
+    background-color: var(--pure-white);
+    border-radius: 10px;
+    padding: 10px 12px;
+    transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part .close-btn i:hover {
+    transform: rotate(90deg);
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part {
+    padding: 20px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .cont span {
+    display: inline-block;
+    font-size: var(--sub-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .cont h2 {
+    font-size: var(--title);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin: 15px 0;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .cont p {
+    color: var(--slate-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: var(--text);
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .gallery .images {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .gallery .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .project-sec .pro-cont .pop-sec {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta::-webkit-scrollbar {
+    display: none;
+}
+
+main .project-sec .pro-cont .pop-sec .conta {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 710px;
+    width: 100%;
+    height: 85vh;
+    background: var(--pure-white);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part .close-btn i {
+    position: fixed;
+    background-color: var(--pure-white);
+    border-radius: 10px;
+    padding: 10px 12px;
+    transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .pop-sec .conta .uper-part .close-btn i:hover {
+    transform: rotate(90deg);
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part {
+    padding: 20px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .cont span {
+    display: inline-block;
+    font-size: var(--sub-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .cont h2 {
+    font-size: var(--title);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin: 15px 0;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .cont p {
+    color: var(--slate-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: var(--text);
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .gallery .images {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+main .project-sec .pro-cont .pop-sec .lower-part .gallery .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 
@@ -1872,7 +1866,7 @@ main .gallery-sec .cont .head p {
     animation: var(--tag-line);
 }
 
-main .gallery-sec .cont .gallery-error-loader{
+main .gallery-sec .cont .gallery-error-loader {
     display: none;
     text-align: center;
     padding: 3rem;
@@ -1982,7 +1976,7 @@ main .contact-sec .head p {
 main .contact-sec .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr ;
+    grid-template-rows: 1fr;
     gap: 2.5rem;
     max-width: var(--container-max-width);
     margin: 0 auto;
