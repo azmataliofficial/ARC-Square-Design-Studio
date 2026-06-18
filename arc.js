@@ -51,6 +51,7 @@ async function init() {
   await fetchingData()
   startTestimonialRotation()
   renderProject()
+  attachProjectCardListeners()
   renderGallery()
 }
 
@@ -547,43 +548,36 @@ function sendWhatsApp() {
 
 
 
+// project section start
 
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".pro-tab");
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", function () {
-
-      tabs.forEach((t) => t.classList.remove("active"));
-
-      this.classList.add("active");
-
-      let category = this.getAttribute("data-category");
-
-      let cards = document.querySelectorAll(".pro-card");
-
-      cards.forEach((card) => {
-        if (
-          category === "all" ||
-          card.getAttribute("data-category") === category
-        ) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+const tabs = document.querySelectorAll(".pro-tab");
+tabs.forEach((tab) => {
+  tab.addEventListener("click", function () {
+    tabs.forEach((t) => t.classList.remove("active"));
+    this.classList.add("active");
+    let category = this.getAttribute("data-category");
+    let cards = document.querySelectorAll(".pro-card");
+    cards.forEach((card) => {
+      if (
+        category === "all" ||
+        card.getAttribute("data-category") === category
+      ) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
     });
   });
 });
 
 
-function renderProject(){
 
-for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
-  const element = STATE.data.projectCardDetails[cards];
-  let mainContainer = document.getElementById("projectGridCont");
+function renderProject() {
+  for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
+    const element = STATE.data.projectCardDetails[cards];
+    let mainContainer = document.getElementById("projectGridCont");
 
-  mainContainer.innerHTML += `
+    mainContainer.innerHTML += `
            <div class="pro-card" data-category="${element.dataCategory}" data-id="card${cards + 1}">
             <div class="pro-img-cont">
               <img 
@@ -592,7 +586,7 @@ for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
                 loading="lazy">
 
               <div class="pro-overlay">
-                <button class="project-card-view-btn" data-index="${cards}" aria-label="Learn more about ${element.cardTittle}"><i class="fa-solid fa-eye"></i>View</button>
+                <button class="project-card-view-btn" data-index="${cards + 1}" aria-label="Learn more about ${element.cardTittle}"><i class="fa-solid fa-eye"></i>View</button>
               </div>
             </div>
             <div class="pro-content">
@@ -603,25 +597,24 @@ for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
             </div>
           </div>
                 `;
+  }
 }
-}
-
 
 
 let popsec = document.getElementById("projectPopSec");
 let closebtn = document.getElementById("closePop");
 let body = document.querySelector('body');
 
-
-const cardbtn = document.querySelectorAll("project-card-view-btn");
-cardbtn.forEach((btn) => {
-  const idx = parseInt(btn.getAttribute("data-index"), 10);
-  btn.addEventListener("click", () => openpop(idx));
-});
+function attachProjectCardListeners() {
+  document.querySelectorAll(".project-card-view-btn").forEach((btn) => {
+    const idx = parseInt(btn.getAttribute("data-index"), 10);
+    btn.addEventListener("click", () => openpop(idx));
+  });
+}
 
 
 function openpop(index) {
-  const detail = STATE.data.projectCardDetails[index];
+  const detail = STATE.data.projectCardDetails[index - 1];
   if (!detail) return;
 
   popsec.innerHTML = `
@@ -658,7 +651,7 @@ function openpop(index) {
   body.style.overflow = "hidden";
   popsec.style.zIndex = "1000"
 
-  const innerClose = popsec.querySelector("#close-pop");
+  const innerClose = popsec.querySelector("#closePop");
   if (innerClose) {
     innerClose.addEventListener("click", () => {
       popsec.style.opacity = "0";
@@ -678,16 +671,7 @@ function openpop(index) {
 
 }
 
-// Services section end
-
-
-
-
-// Projects Tabs script
-
-
-
-// project tab end
+// project section end
 
 
 // Gallery Section start
