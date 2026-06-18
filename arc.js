@@ -53,6 +53,7 @@ async function init() {
   renderProject()
   attachProjectCardListeners()
   renderGallery()
+  initRevealAnimations()
 }
 
 
@@ -618,7 +619,7 @@ function openpop(index) {
   if (!detail) return;
 
   popsec.innerHTML = `
-              <div class="conta">
+              <div class="conta animate-on-scroll">
                 <div class="uper-part">
                     <img src="${detail.mainImage}"
                         alt="${detail.cardTittle}">
@@ -670,7 +671,23 @@ function openpop(index) {
   });
 
 }
+function initRevealAnimations() {
+  const revealElements = document.querySelectorAll(
+    'section, .pro-card, .gallery-sec .photos figure, footer, .contact-sec .body form, .contact-sec .body .cont-tab'
+  );
 
+  revealElements.forEach(el => el.classList.add('animate-on-scroll'));
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
 // project section end
 
 
