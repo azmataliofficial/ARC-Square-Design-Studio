@@ -112,19 +112,6 @@ html {
     }
 }
 
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
-}
-
-.animate-on-scroll.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
 /* Header Styles */
 header nav {
     position: fixed;
