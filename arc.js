@@ -3,7 +3,7 @@
 const STATE = {
   data: {
     slidesData: [],
-    testimonialData : [],
+    testimonialData: [],
     galleryData: []
   },
 
@@ -27,7 +27,7 @@ async function fetchingData() {
     await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve()
-      }, 2000)
+      }, 1000)
     })
 
     let allData = await response.json()
@@ -49,7 +49,6 @@ async function fetchingData() {
 
 async function init() {
   await fetchingData()
-  renderHeroSlider()
   startTestimonialRotation()
   renderGallery()
 }
@@ -212,6 +211,32 @@ window.addEventListener("resize", () => {
 // Hero Slider start
 
 
+const slidesData = [
+  {
+    "image": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "Modern Interior Design",
+    "description": "Designed with modern aesthetics in mind",
+    "buttonText": "Get Started",
+    "buttonLink": "contact"
+  },
+  {
+    "image": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "Stunning Exterior Design",
+    "description": "Architecture that inspires",
+    "buttonText": "Explore Images",
+    "buttonLink": "gallery"
+  },
+  {
+    "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "Modern Living Spaces",
+    "description": "Where architecture meets comfort",
+    "buttonText": "View Projects",
+    "buttonLink": "projects"
+  }
+]
+
+
+
 let wrapper = document.getElementById('slideswrapper')
 let prevbtn = document.getElementById('prevSlide')
 let nextbtn = document.getElementById('nextSlide')
@@ -219,13 +244,12 @@ let dotsContainer = document.getElementById('dotsContainer');
 let current = 0
 let timer;
 
-function renderHeroSlider() {
 
-  STATE.data.slidesData.forEach((data, index) => {
-    const slide = document.createElement('div')
-    slide.className = 'slide'
-    slide.style.backgroundImage = `url('${data.image}')`
-    slide.innerHTML = ` <div class="content">
+slidesData.forEach((data, index) => {
+  const slide = document.createElement('div')
+  slide.className = 'slide'
+  slide.style.backgroundImage = `url('${data.image}')`
+  slide.innerHTML = ` <div class="content">
                             <h1>${data.title}</h1>
                             <p>${data.description}</p>
                             <button style="--clr: #7808d0" onclick="scrollToSection('${data.buttonLink}')"
@@ -248,15 +272,15 @@ function renderHeroSlider() {
                               ${data.buttonText}
                             </button>
                       </div> `
-    wrapper.appendChild(slide)
+  wrapper.appendChild(slide)
 
 
-    let dot = document.createElement('button')
-    dot.className = 'dot'
-    dot.onclick = () => goTo(index)
-    dotsContainer.appendChild(dot)
-  })
-}
+  let dot = document.createElement('button')
+  dot.className = 'dot'
+  dot.onclick = () => goTo(index)
+  dotsContainer.appendChild(dot)
+})
+
 
 
 function update() {
@@ -268,8 +292,8 @@ function update() {
   })
 }
 
-function nextSlide() { current = (current + 1) % STATE.data.slidesData.length; update(); resetTimer(); }
-function prevSlide() { current = (current - 1 + STATE.data.slidesData.length) % STATE.data.slidesData.length; update(); resetTimer(); }
+function nextSlide() { current = (current + 1) % slidesData.length; update(); resetTimer(); }
+function prevSlide() { current = (current - 1 + slidesData.length) % slidesData.length; update(); resetTimer(); }
 function goTo(i) { current = i; update(); resetTimer(); }
 
 function startAuto() { timer = setInterval(nextSlide, 6000); }
@@ -731,13 +755,6 @@ function renderGallery() {
 
 
 
-
-
-
-
-
-
-
 // faq
 document.querySelectorAll('.tab').forEach(function (tab) {
   tab.addEventListener('click', function () {
@@ -767,13 +784,6 @@ document.querySelectorAll('.question').forEach(function (question) {
     currentItem.classList.toggle('open');
   });
 });
-
-
-
-
-
-
-
 
 
 

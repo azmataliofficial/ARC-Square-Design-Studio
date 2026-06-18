@@ -1,28 +1,4 @@
 {
-  "slidesData": [
-    {
-      "image": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      "title": "Modern Interior Design",
-      "description": "Designed with modern aesthetics in mind",
-      "buttonText": "Get Started",
-      "buttonLink": "contact"
-    },
-    {
-      "image": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      "title": "Stunning Exterior Design",
-      "description": "Architecture that inspires",
-      "buttonText": "Explore Images",
-      "buttonLink": "gallery"
-    },
-    {
-      "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      "title": "Modern Living Spaces",
-      "description": "Where architecture meets comfort",
-      "buttonText": "View Projects",
-      "buttonLink": "projects"
-    }
-  ],
-
   "testimonialData": [
     {
       "clientName": "Rakhi Singh",
