@@ -547,6 +547,36 @@ function sendWhatsApp() {
 
 
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".pro-tab");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+
+      tabs.forEach((t) => t.classList.remove("active"));
+
+      this.classList.add("active");
+
+      let category = this.getAttribute("data-category");
+
+      let cards = document.querySelectorAll(".pro-card");
+
+      cards.forEach((card) => {
+        if (
+          category === "all" ||
+          card.getAttribute("data-category") === category
+        ) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
+
 function renderProject(){
 
 for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
@@ -554,7 +584,7 @@ for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
   let mainContainer = document.getElementById("projectGridCont");
 
   mainContainer.innerHTML += `
-           <div class="pro-card" data-category="2d" data-id="card${cards + 1}">
+           <div class="pro-card" data-category="${element.dataCategory}" data-id="card${cards + 1}">
             <div class="pro-img-cont">
               <img 
                 src="${element.mainImage}" 
@@ -562,7 +592,7 @@ for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
                 loading="lazy">
 
               <div class="pro-overlay">
-                <button data-index="${cards}" aria-label="Learn more about ${element.cardTittle}"><i class="fa-solid fa-eye"></i>View</button>
+                <button class="project-card-view-btn" data-index="${cards}" aria-label="Learn more about ${element.cardTittle}"><i class="fa-solid fa-eye"></i>View</button>
               </div>
             </div>
             <div class="pro-content">
@@ -583,7 +613,7 @@ let closebtn = document.getElementById("closePop");
 let body = document.querySelector('body');
 
 
-const cardbtn = document.querySelectorAll(".learn-more");
+const cardbtn = document.querySelectorAll("project-card-view-btn");
 cardbtn.forEach((btn) => {
   const idx = parseInt(btn.getAttribute("data-index"), 10);
   btn.addEventListener("click", () => openpop(idx));
@@ -591,7 +621,7 @@ cardbtn.forEach((btn) => {
 
 
 function openpop(index) {
-  const detail = serCardDetails[index];
+  const detail = STATE.data.projectCardDetails[index];
   if (!detail) return;
 
   popsec.innerHTML = `
@@ -654,33 +684,7 @@ function openpop(index) {
 
 
 // Projects Tabs script
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".pro-tab");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", function () {
-
-      tabs.forEach((t) => t.classList.remove("active"));
-
-      this.classList.add("active");
-
-      let category = this.getAttribute("data-category");
-
-      let cards = document.querySelectorAll(".pro-card");
-
-      cards.forEach((card) => {
-        if (
-          category === "all" ||
-          card.getAttribute("data-category") === category
-        ) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
-    });
-  });
-});
 
 
 // project tab end
