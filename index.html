@@ -1,821 +1,962 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARC Square Design Studio | Modern Architecture & Design</title>
-    <meta name="description"
-        content="ARC Square Design Studio - Professional architecture, interior design, and structural planning services by Md. Arif Saifi">
-    <meta name="keywords" content="architecture, design, interior, structural, 3D rendering, space planning">
-    <meta name="author" content="Md. Arif Saifi">
+    <meta
+      name="description"
+      content="ARC Square Design Studio - Professional architecture, interior design, and structural planning services by Md. Arif Saifi"
+    />
+    <meta
+      name="keywords"
+      content="architecture, design, interior, structural, 3D rendering, space planning"
+    />
+    <meta name="author" content="Md. Arif Saifi" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="arc.css">
-    <link rel="stylesheet" href="responsive.css">
-</head>
+    <link rel="stylesheet" href="arc.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <nav>
-            <div class="bar">
-                <div class="logo">
-                    <div class="img">
-                        <img src="images/arc logo.png" alt="logo">
-                    </div>
-                    <div class="name">
-                        <span>ARC<span id="span"> Square</span></span>
-                        <span>Design Studio</span>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <button id="toggleBtn">
-                        <i id="icon" class="fas fa-moon"></i>
-                    </button>
-
-                    <div class="nav-links navtoggle" id="nav-links">
-                        <button class="link active" data-section="home" onclick="scrollToSection('home')">Home</button>
-                        <button class="link" data-section="about" onclick="scrollToSection('about')">About</button>
-                        <button class="link" data-section="services"
-                            onclick="scrollToSection('services')">Services</button>
-                        <button class="link" data-section="projects"
-                            onclick="scrollToSection('projects')">Projects</button>
-                        <button class="link" data-section="gallery"
-                            onclick="scrollToSection('gallery')">Gallery</button>
-                        <button class="link" data-section="contact"
-                            onclick="scrollToSection('contact')">Contact</button>
-                    </div>
-
-                    <button id="mobile-menu-btn" onclick="toggleMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+      <nav>
+        <div class="bar">
+          <div class="logo">
+            <div class="img">
+              <img src="images/arc logo.png" alt="logo" />
             </div>
-        </nav>
+            <div class="name">
+              <span>ARC<span id="span"> Square</span></span>
+              <span>Design Studio</span>
+            </div>
+          </div>
 
+          <div class="container">
+            <button id="toggleBtn">
+              <i id="icon" class="fas fa-moon"></i>
+            </button>
+
+            <div class="nav-links navtoggle" id="nav-links">
+              <button
+                class="link active"
+                data-section="home"
+                onclick="scrollToSection('home')"
+              >
+                Home
+              </button>
+              <button
+                class="link"
+                data-section="about"
+                onclick="scrollToSection('about')"
+              >
+                About
+              </button>
+              <button
+                class="link"
+                data-section="services"
+                onclick="scrollToSection('services')"
+              >
+                Services
+              </button>
+              <button
+                class="link"
+                data-section="projects"
+                onclick="scrollToSection('projects')"
+              >
+                Projects
+              </button>
+              <button
+                class="link"
+                data-section="gallery"
+                onclick="scrollToSection('gallery')"
+              >
+                Gallery
+              </button>
+              <button
+                class="link"
+                data-section="contact"
+                onclick="scrollToSection('contact')"
+              >
+                Contact
+              </button>
+            </div>
+
+            <button id="mobile-menu-btn" onclick="toggleMenu()">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
-
-
-
     <main>
-        <section class="main-content slide-sec show" id="home">
-            <section class="hero-sec">
-                <div class="wrapper" id="slideswrapper"></div>
+      <section class="main-content slide-sec show" id="home">
+        <section class="hero-sec">
+          <div class="wrapper" id="slideswrapper"></div>
 
-                <button class="arrow arrow-left" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
-                <button class="arrow arrow-right" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
-                <div class="dots" id="dotsContainer"></div>
-            </section>
-
-
-
-            <!-- STATS section with counting animation -->
-            <section class="stats-sec">
-                <div class="container">
-                    <div class="grid">
-                        <div class="item">
-                            <div class="number" id="statExp" data-target="15">0+</div>
-                            <div class="label">Years Experience</div>
-                        </div>
-                        <div class="item">
-                            <div class="number" id="statClients" data-target="240">0+</div>
-                            <div class="label">Happy Clients</div>
-                        </div>
-                        <div class="item">
-                            <div class="number" id="statProjects" data-target="380">0+</div>
-                            <div class="label">Projects Completed</div>
-                        </div>
-                        <div class="item">
-                            <div class="number" id="statAwards" data-target="28">0+</div>
-                            <div class="label">Awards Won</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <!-- Client Satisfaction -->
-            <section class="satisfaction-sec">
-                <div class="container">
-                    <div class="content">
-                        <h2>Welcome to ARC Square Design Studio</h2>
-                        <p>We are a team of passionate architects and designers dedicated to creating exceptional spaces
-                            that
-                            inspire and transform. With over 15 years of experience, we bring your vision to life
-                            through
-                            innovative
-                            design and meticulous attention to detail.</p>
-                    </div>
-                    <div class="grid">
-                        <div class="item">
-                            <i class="fa-regular fa-circle-check"></i>
-                            <h3>Quality Design</h3>
-                            <p>Every project is crafted with precision and care, ensuring the highest standards of
-                                design
-                                excellence.</p>
-                        </div>
-                        <div class="item">
-                            <i class="fa-regular fa-clock"></i>
-                            <h3>Timely Delivery</h3>
-                            <p>We value your time and ensure projects are completed within the agreed timeline without
-                                compromising
-                                quality.</p>
-                        </div>
-                        <div class="item">
-                            <i class="fa-regular fa-thumbs-up"></i>
-                            <h3>Client Satisfaction</h3>
-                            <p>Your satisfaction is our priority. We work closely with you to ensure every detail meets
-                                your
-                                expectations.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonial -->
-            <section class="testimonial-sec">
-                <h2>What Our Clients Say</h2>
-                <div class="grid-cont">
-                    <!-- in js -->
-                </div>
-            </section>
-
-
-
-
-            <!-- FAQ -->
-            <section class="faq-sec">
-                <h2 class="title">Frequently Asked Questions</h2>
-
-                <div class="grid-cont">
-                    <div class="categories" id="catTabs">
-                        <button class="tab active" data-cat="general">
-                            <span>General Asked</span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                        <button class="tab" data-cat="about">
-                            <span>About Us</span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                        <button class="tab" data-cat="pricing">
-                            <span>Pricing Plans</span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
-
-                    <!-- RIGHT: panels – hardcoded FAQ html, each panel with its items -->
-                    <div class="data" id="faqPanels">
-
-                        <!-- PANEL 1 – General Asked (active by default) -->
-                        <div class="panel active" data-panel="general">
-                            <!-- item 1 -->
-                            <div class="item">
-                                <div class="question">
-                                    <span>What services does ARC Square Design Studio offer?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>We offer Architecture, Interior Design, Exterior Design, Space Planning, 2D
-                                        Drafting,
-                                        and 3D Modeling & Rendering — all tailored to your vision, budget, and
-                                        requirements.
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- item 2 -->
-                            <div class="item">
-                                <div class="question">
-                                    <span>Do you handle both architecture and interior design?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Yes! ARC Square specializes in both architecture and interior design. We provide
-                                        end-to-end solutions from structural planning to final interior styling and 3D
-                                        visualization.</p>
-                                </div>
-                            </div>
-                            <!-- item 3 -->
-                            <div class="item">
-                                <div class="question">
-                                    <span>How involved will I be during the design process?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Very involved! We believe in a fully collaborative approach. You will be
-                                        consulted at
-                                        every key milestone — from initial concept to final delivery — so the design
-                                        truly
-                                        reflects your vision.</p>
-                                </div>
-                            </div>
-                            <!-- item 4 -->
-                            <div class="item">
-                                <div class="question">
-                                    <span>Can you work with a specific budget or timeline?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Absolutely. We always begin with understanding your budget and deadline. Our team
-                                        creates customized design plans that maximize value within your constraints
-                                        without
-                                        compromising on quality.</p>
-                                </div>
-                            </div>
-                            <!-- item 5 -->
-                            <div class="item">
-                                <div class="question">
-                                    <span>Do you provide 3D visualization before construction?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Yes, we provide detailed 3D renderings and walkthroughs so you can see exactly
-                                        how
-                                        your space will look before a single brick is laid. This helps avoid surprises
-                                        and
-                                        saves time and money.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PANEL 2 – About Us -->
-                        <div class="panel" data-panel="about">
-                            <div class="item">
-                                <div class="question">
-                                    <span>When was ARC Square Design Studio founded?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>ARC Square Design Studio was founded in 2009 by Md. Arif Saifi with a vision to
-                                        create spaces that are both functionally excellent and visually inspiring.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="question">
-                                    <span>Where is your studio located?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Our studio is located at Shop No. 2/24, Ground Floor, B.D.A Complex, M.G Road,
-                                        Bulandshahr, Uttar Pradesh 203001. We also serve clients across Delhi NCR and
-                                        pan
-                                        India remotely.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="question">
-                                    <span>How many projects have you completed?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Over the past 15+ years, we have successfully completed 380+ projects ranging
-                                        from
-                                        residential homes and commercial spaces to large-scale architectural planning
-                                        projects.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="question">
-                                    <span>What makes ARC Square different from other studios?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>We combine 15+ years of experience with a truly client-first philosophy. Every
-                                        project gets dedicated attention, personalized design, and a commitment to
-                                        timely
-                                        delivery with uncompromised quality.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PANEL 3 – Pricing Plans -->
-                        <div class="panel" data-panel="pricing">
-                            <div class="item">
-                                <div class="question">
-                                    <span>How is the pricing structured for design projects?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Pricing is based on project scope, area size, and type of service required. We
-                                        offer
-                                        transparent, milestone-based payment plans so you always know what you're paying
-                                        for
-                                        and when.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="question">
-                                    <span>Do you offer a free initial consultation?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Yes! We offer a completely free initial consultation. We understand your
-                                        requirements, share our approach, and provide a project estimate — all before
-                                        any
-                                        commitment from your side.</p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="question">
-                                    <span>Are revisions included in the project cost?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Minor revisions and adjustments are included in all our packages. For major scope
-                                        changes, we discuss transparently and provide a revised estimate before
-                                        proceeding.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="question">
-                                    <span>Can I get a custom quote for my project?</span>
-                                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
-                                </div>
-                                <div class="answer" id="faq-ans">
-                                    <p>Absolutely. Every project is unique. Contact us at +91 96509 27987 or
-                                        arcsquaredesignstudio@gmail.com and we will provide a detailed custom quote
-                                        tailored
-                                        to your specific needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+          <button class="arrow arrow-left" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="arrow arrow-right" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="dots" id="dotsContainer"></div>
         </section>
 
-
-
-
-        <!-- WhatsApp Chat Widget -->
-        <section class="whatsapp-sec">
-            <div class="widget">
-                <div class="icon" id="whatsappToggle">
-                    <i class="fab fa-whatsapp"></i>
-                    <span class="notifi-badge">1</span>
-                </div>
-
-                <div class="chat-box" id="whatsappChatBox">
-                    <div class="header">
-                        <div class="content">
-                            <div class="avatar">
-                                <img src="images/arc logo.png" alt="">
-                            </div>
-                            <div class="info">
-                                <h5>ARC Square Support</h5>
-                                <p>Typically replies within 1 Day</p>
-                            </div>
-                        </div>
-                        <button class="close-btn" id="closeChat">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-
-                    <div class="body">
-                        <div class="message received">
-                            <p>Hello! 👋 Welcome to ARC Square Design Studio. How can we assist you with your
-                                architectural
-                                project today?</p>
-                            <span class="mess-time" id="receivedTime">10:00 AM</span>
-                        </div>
-                    </div>
-
-                    <div class="input">
-                        <input type="text" id="whatsappMessageInput" placeholder="Type your message...">
-                        <button id="send-Message">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
+        <!-- STATS section with counting animation -->
+        <section class="stats-sec">
+          <div class="container">
+            <div class="grid">
+              <div class="item">
+                <div class="number" id="statExp" data-target="15">0+</div>
+                <div class="label">Years Experience</div>
+              </div>
+              <div class="item">
+                <div class="number" id="statClients" data-target="240">0+</div>
+                <div class="label">Happy Clients</div>
+              </div>
+              <div class="item">
+                <div class="number" id="statProjects" data-target="380">0+</div>
+                <div class="label">Projects Completed</div>
+              </div>
+              <div class="item">
+                <div class="number" id="statAwards" data-target="28">0+</div>
+                <div class="label">Awards Won</div>
+              </div>
             </div>
+          </div>
         </section>
 
-
-
-
-
-        <!-- ABOUT section -->
-        <section class="about-sec slide-sec" id="about">
-            <!-- about 1st page -->
-            <div class="container1">
-                <div class="content">
-                    <h2>ARC Square</h2>
-                    <span>Design Studio</span>
-                    <p>Crafting exceptional spaces through innovative design and architectural excellence.</p>
-                </div>
+        <!-- Client Satisfaction -->
+        <section class="satisfaction-sec">
+          <div class="container">
+            <div class="content">
+              <h2>Welcome to ARC Square Design Studio</h2>
+              <p>
+                We are a team of passionate architects and designers dedicated
+                to creating exceptional spaces that inspire and transform. With
+                over 15 years of experience, we bring your vision to life
+                through innovative design and meticulous attention to detail.
+              </p>
             </div>
-
-            <!-- about 2nd page -->
-            <div class="container2">
-                <div class="profile">
-                    <img src="https://images.pexels.com/photos/5570230/pexels-photo-5570230.jpeg" alt="Premium-Design">
-                </div>
-                <div class="contents">
-                    <h2>About Us</h2>
-                    <p>Founded in 2009, ARC Square Design Studio has grown from a small boutique firm into one of
-                        the region's most respected architectural and design practices. Our journey began with a
-                        simple vision: to create spaces that not only look beautiful but also enhance the way people
-                        live, work, and interact.</p>
-                    <p>Over the years, we've had the privilege of working on diverse projects ranging from intimate
-                        residential renovations to large-scale commercial developments. Each project is an
-                        opportunity for us to push creative boundaries while staying true to our core principles of
-                        functionality, sustainability, and timeless design.</p>
-                    <p>Today, our team of talented architects, designers, and project managers continues to deliver
-                        exceptional results, combining technical expertise with artistic vision to transform dreams
-                        into reality</p>
-                </div>
+            <div class="grid">
+              <div class="item">
+                <i class="fa-regular fa-circle-check"></i>
+                <h3>Quality Design</h3>
+                <p>
+                  Every project is crafted with precision and care, ensuring the
+                  highest standards of design excellence.
+                </p>
+              </div>
+              <div class="item">
+                <i class="fa-regular fa-clock"></i>
+                <h3>Timely Delivery</h3>
+                <p>
+                  We value your time and ensure projects are completed within
+                  the agreed timeline without compromising quality.
+                </p>
+              </div>
+              <div class="item">
+                <i class="fa-regular fa-thumbs-up"></i>
+                <h3>Client Satisfaction</h3>
+                <p>
+                  Your satisfaction is our priority. We work closely with you to
+                  ensure every detail meets your expectations.
+                </p>
+              </div>
             </div>
-
-            <!-- about 3rd page -->
-            <div class="container3">
-                <div class="content">
-                    <h2>Our Vision</h2>
-                    <p>At ARC Square, we believe that great design is more than just aesthetics. It's about creating
-                        spaces that tell a story, evoke emotions, and serve their purpose beautifully. Our approach is
-                        rooted in three fundamental principles.</p>
-                </div>
-
-                <div class="grid">
-                    <div class="items itm1">
-                        <h2>Collaborative Design</h2>
-                        <p>At ARC Square, we believe that great design is more than just aesthetics. It's about creating
-                            spaces that tell a story, evoke emotions, and serve their purpose beautifully.</p>
-                    </div>
-                    <div class="items itm2">
-                        <h2>Sustainable Practic</h2>
-                        <p>We're committed to environmentally responsible design, incorporating sustainable materials
-                            and energy-efficient solutions in every project</p>
-                    </div>
-                    <div class="items itm3">
-                        <h2>Timeless Excellence</h2>
-                        <p>We create designs that stand the test of time, balancing contemporary trends with classic
-                            princi ensure lasting beauty and functionality.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </section>
 
-
-
-        <!-- Services Section -->
-        <section class="services-sec slide-sec" id="services">
-            <div class="service-cont">
-                <h2>Our Services</h2>
-                <p>Comprehensive design solutions tailored to bring your vision to life</p>
-            </div>
-
-            <div id="ser-grid-cont" class="grid-cont">
-                <!-- Card avilable in script inner html -->
-            </div>
-
-            <section class="pop-sec" id="pop-sec">
-                <!-- pop up card available in script inner html -->
-            </section>
-
-            <div class="consultation" id="consultation">
-                <div class="cont">
-                    <h2>Need a Custom Solution?</h2>
-                    <p>We understand that every project is unique. Our team can create customized design solutions that
-                        perfectly match your specific requirements and vision.</p>
-                    <a href="#contact">
-                        <button>
-                            <i class="fa-solid fa-phone"></i>
-                            Request a Consultation
-                        </button></a>
-                </div>
-            </div>
+        <!-- Testimonial -->
+        <section class="testimonial-sec">
+          <h2>What Our Clients Say</h2>
+          <div class="grid-cont">
+            <!-- in js -->
+          </div>
         </section>
 
+        <!-- FAQ -->
+        <section class="faq-sec">
+          <h2 class="title">Frequently Asked Questions</h2>
 
-
-
-
-
-        <!-- Projects Section -->
-        <section class="project-sec slide-sec" id="projects">
-            <div class="pro-head">
-                <h2>Our Projects</h2>
-                <p>Explore our portfolio of stunning designs across various categories</p>
+          <div class="grid-cont">
+            <div class="categories" id="catTabs">
+              <button class="tab active" data-cat="general">
+                <span>General Asked</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <button class="tab" data-cat="about">
+                <span>About Us</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <button class="tab" data-cat="pricing">
+                <span>Pricing Plans</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
-            <div class="pro-cont">
-                <div class="pro-tabs">
-                    <button class="pro-tab active" data-category="all">All</button>
-                    <button class="pro-tab" data-category="architecture">Architecture</button>
-                    <button class="pro-tab" data-category="interior">Interior</button>
-                    <button class="pro-tab" data-category="exterior">Exterior</button>
-                    <button class="pro-tab" data-category="planning">Planning</button>
-                    <button class="pro-tab" data-category="2d">2D</button>
-                    <button class="pro-tab" data-category="3d">3D</button>
+
+            <!-- RIGHT: panels – hardcoded FAQ html, each panel with its items -->
+            <div class="data" id="faqPanels">
+              <!-- PANEL 1 – General Asked (active by default) -->
+              <div class="panel active" data-panel="general">
+                <!-- item 1 -->
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >What services does ARC Square Design Studio offer?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      We offer Architecture, Interior Design, Exterior Design,
+                      Space Planning, 2D Drafting, and 3D Modeling & Rendering —
+                      all tailored to your vision, budget, and requirements.
+                    </p>
+                  </div>
                 </div>
-
-                <div class="projects active" id="all-projects" data-category="all">
-                    <div class="projects-grid">
-                        <div class="pro-card" data-category="2d" data-id="card6">
-                            <div class="pro-img-cont">
-                                <img src="https://images.pexels.com/photos/9052461/pexels-photo-9052461.jpeg"
-                                    alt="Commercial Home">
-                                <div class="pro-overlay">
-                                    <button><i class="fa-solid fa-eye"></i>View</button>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="pro-cont-head">
-                                    <h3>Commercial Home</h3>
-                                </div>
-                                <span>2D Modeling</span>
-                            </div>
-                        </div>
-
-                        <div class="pro-card" data-category="architecture" data-id="card1">
-                            <div class="pro-img-cont">
-                                <img src="https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg"
-                                    alt="Architecture Design">
-                                <div class="pro-overlay">
-                                    <button><i class="fa-solid fa-eye"></i>View</button>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="pro-cont-head">
-                                    <h3>Modern Architecture</h3>
-                                </div>
-                                <span>Architecture</span>
-                            </div>
-                        </div>
-
-                        <div class="pro-card" data-category="interior" data-id="card2">
-                            <div class="pro-img-cont">
-                                <img src="https://images.pexels.com/photos/6782577/pexels-photo-6782577.jpeg"
-                                    alt="Modern Bedroom">
-                                <div class="pro-overlay">
-                                    <button><i class="fa-solid fa-eye"></i>View</button>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="pro-cont-head">
-                                    <h3>Modern Bedroom</h3>
-                                </div>
-                                <span>Interior Design</span>
-                            </div>
-                        </div>
-
-
-                        <div class="pro-card" data-category="exterior" data-id="card3">
-                            <div class="pro-img-cont">
-                                <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
-                                    alt="Exterior Designing">
-                                <div class="pro-overlay">
-                                    <button><i class="fa-solid fa-eye"></i>View</button>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="pro-cont-head">
-                                    <h3>Commercial House</h3>
-                                </div>
-                                <span>Exterior Design</span>
-                            </div>
-                        </div>
-
-                        <div class="pro-card" data-category="planning" data-id="card4">
-                            <div class="pro-img-cont">
-                                <img src="https://images.pexels.com/photos/6615107/pexels-photo-6615107.jpeg"
-                                    alt="Modern Villa">
-                                <div class="pro-overlay">
-                                    <button><i class="fa-solid fa-eye"></i>View</button>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="pro-cont-head">
-                                    <h3>Modern Villa</h3>
-                                </div>
-                                <span>Planning</span>
-                            </div>
-                        </div>
-
-
-                        <div class="pro-card" data-category="3d" data-id="card5">
-                            <div class="pro-img-cont">
-                                <img src="https://images.pexels.com/photos/28456460/pexels-photo-28456460.jpeg"
-                                    alt="3D Modeling">
-                                <div class="pro-overlay">
-                                    <button><i class="fa-solid fa-eye"></i>View</button>
-                                </div>
-                            </div>
-                            <div class="pro-content">
-                                <div class="pro-cont-head">
-                                    <h3>Modern Dianing Area</h3>
-                                </div>
-                                <span>3D Modeling</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- item 2 -->
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >Do you handle both architecture and interior
+                      design?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Yes! ARC Square specializes in both architecture and
+                      interior design. We provide end-to-end solutions from
+                      structural planning to final interior styling and 3D
+                      visualization.
+                    </p>
+                  </div>
                 </div>
+                <!-- item 3 -->
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >How involved will I be during the design process?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Very involved! We believe in a fully collaborative
+                      approach. You will be consulted at every key milestone —
+                      from initial concept to final delivery — so the design
+                      truly reflects your vision.
+                    </p>
+                  </div>
+                </div>
+                <!-- item 4 -->
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >Can you work with a specific budget or timeline?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Absolutely. We always begin with understanding your budget
+                      and deadline. Our team creates customized design plans
+                      that maximize value within your constraints without
+                      compromising on quality.
+                    </p>
+                  </div>
+                </div>
+                <!-- item 5 -->
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >Do you provide 3D visualization before
+                      construction?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Yes, we provide detailed 3D renderings and walkthroughs so
+                      you can see exactly how your space will look before a
+                      single brick is laid. This helps avoid surprises and saves
+                      time and money.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 2 – About Us -->
+              <div class="panel" data-panel="about">
+                <div class="item">
+                  <div class="question">
+                    <span>When was ARC Square Design Studio founded?</span>
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      ARC Square Design Studio was founded in 2009 by Md. Arif
+                      Saifi with a vision to create spaces that are both
+                      functionally excellent and visually inspiring.
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="question">
+                    <span>Where is your studio located?</span>
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Our studio is located at Shop No. 2/24, Ground Floor,
+                      B.D.A Complex, M.G Road, Bulandshahr, Uttar Pradesh
+                      203001. We also serve clients across Delhi NCR and pan
+                      India remotely.
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="question">
+                    <span>How many projects have you completed?</span>
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Over the past 15+ years, we have successfully completed
+                      380+ projects ranging from residential homes and
+                      commercial spaces to large-scale architectural planning
+                      projects.
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >What makes ARC Square different from other studios?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      We combine 15+ years of experience with a truly
+                      client-first philosophy. Every project gets dedicated
+                      attention, personalized design, and a commitment to timely
+                      delivery with uncompromised quality.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 3 – Pricing Plans -->
+              <div class="panel" data-panel="pricing">
+                <div class="item">
+                  <div class="question">
+                    <span
+                      >How is the pricing structured for design projects?</span
+                    >
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Pricing is based on project scope, area size, and type of
+                      service required. We offer transparent, milestone-based
+                      payment plans so you always know what you're paying for
+                      and when.
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="question">
+                    <span>Do you offer a free initial consultation?</span>
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Yes! We offer a completely free initial consultation. We
+                      understand your requirements, share our approach, and
+                      provide a project estimate — all before any commitment
+                      from your side.
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="question">
+                    <span>Are revisions included in the project cost?</span>
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Minor revisions and adjustments are included in all our
+                      packages. For major scope changes, we discuss
+                      transparently and provide a revised estimate before
+                      proceeding.
+                    </p>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="question">
+                    <span>Can I get a custom quote for my project?</span>
+                    <i class="fa-solid fa-chevron-down" id="faq-que-i"></i>
+                  </div>
+                  <div class="answer" id="faq-ans">
+                    <p>
+                      Absolutely. Every project is unique. Contact us at +91
+                      96509 27987 or arcsquaredesignstudio@gmail.com and we will
+                      provide a detailed custom quote tailored to your specific
+                      needs.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </section>
+      </section>
 
+      <!-- WhatsApp Chat Widget -->
+      <section class="whatsapp-sec">
+        <div class="widget">
+          <div class="icon" id="whatsappToggle">
+            <i class="fab fa-whatsapp"></i>
+            <span class="notifi-badge">1</span>
+          </div>
 
-
-
-
-
-
-        <!-- Gallery Section -->
-        <section class="gallery-sec slide-sec" id="gallery">
-            <div class="cont">
-                <div class="head">
-                    <h1>Gallery</h1>
-                    <p>A curated collection of our finest work</p>
+          <div class="chat-box" id="whatsappChatBox">
+            <div class="header">
+              <div class="content">
+                <div class="avatar">
+                  <img src="images/arc logo.png" alt="" />
                 </div>
-
-                <div id="galleryLoading" class="gallery-error-loader"> Loading Product Database...  Please wait...</div>
-                
-                <div class="photos" id="galleryPhotos">
-                    <!-- Photos avilable in script inner html -->
+                <div class="info">
+                  <h5>ARC Square Support</h5>
+                  <p>Typically replies within 1 Day</p>
                 </div>
+              </div>
+              <button class="close-btn" id="closeChat">
+                <i class="fas fa-times"></i>
+              </button>
             </div>
-        </section>
 
-
-
-
-
-
-        <!-- Contact Section -->
-        <div class="contact-sec slide-sec" id="contact">
-            <div class="head">
-                <h1>Contact Us</h1>
-                <p>Let's discuss how we can bring your vision to life</p>
-            </div>
             <div class="body">
-                <div class="cont-tab">
-                    <h2>Get in Touch</h2>
-                    <p>We'd love to hfrom you. Whether you have a question about our services, pricing, or anything
-                        else, our tswer all your questions.</p>
-                    <div class="cards">
-                        <div class="card">
-                            <div class="icons">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="detail">
-                                <h3>Office Address</h3>
-                                <p>Shop no. 2/24 ground floor B.D.A Complex M.G Road Bulandshahar, Uttar Pradesh
-                                    203001
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="icons">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="detail">
-                                <h3>Phone</h3>
-                                <p>+91 96509 27987</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="icons">
-                                <i class="fa-regular fa-envelope"></i>
-                            </div>
-                            <div class="detail">
-                                <h3>E-mail</h3>
-                                <p>arcsquaredesignstudio@gmail.com</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="icons">
-                                <i class="fa-regular fa-clock"></i>
-                            </div>
-                            <div class="detail">
-                                <h3>Business Hours</h3>
-                                <p>Monday - Saturday : 10:00 AM - 6:00 PM</p>
-                                <p>Sunady : Closed</p>
-                            </div>
-                        </div>
-
-                        <div class="map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.633668315716!2d77.8296414!3d28.4155196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ca3fb49cf4d3f%3A0xb3daff5137e19093!2sArc%20Square%20Design%20Studio!5e1!3m2!1sen!2sin!4v1771751592330!5m2!1sen!2sin"
-                                width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <form id="contactForm">
-                    <h2>Send us a Message</h2>
-                    <div class="form-inputs">
-                        <div class="cont">
-                            <label for="name">Name</label>
-                            <input type="text" id="cf-name" placeholder="Your full name">
-                        </div>
-
-                        <div class="cont">
-                            <label for="number">Phone Number</label>
-                            <input type="tel" id="cf-phone" placeholder="Your phone number">
-                        </div>
-
-                        <div class="cont">
-                            <label for="email">Email</label>
-                            <input type="email" id="cf-email" placeholder="Youremail@example.com">
-                        </div>
-
-                        <div class="cont">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="cf-subject" placeholder="How can we help you?">
-                        </div>
-
-                        <div class="cont">
-                            <label for="message">Message</label>
-                            <textarea name="message" id="message" placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit" id="cf-btn">Submit</button>
-                    </div>
-                </form>
+              <div class="message received">
+                <p>
+                  Hello! 👋 Welcome to ARC Square Design Studio. How can we
+                  assist you with your architectural project today?
+                </p>
+                <span class="mess-time" id="receivedTime">10:00 AM</span>
+              </div>
             </div>
+
+            <div class="input">
+              <input
+                type="text"
+                id="whatsappMessageInput"
+                placeholder="Type your message..."
+              />
+              <button id="send-Message">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- ABOUT section -->
+      <section class="about-sec slide-sec" id="about">
+        <div class="container1">
+          <div class="content">
+            <h2>ARC Square</h2>
+            <span>Design Studio</span>
+            <p>
+              Crafting exceptional spaces through innovative design and
+              architectural excellence.
+            </p>
+          </div>
+        </div>
+
+        <div class="container2">
+          <div class="profile">
+            <img
+              src="https://images.pexels.com/photos/5570230/pexels-photo-5570230.jpeg"
+              alt="Premium-Design"
+            />
+          </div>
+          <div class="contents">
+            <h2>About Us</h2>
+            <p>
+              Founded in 2009, ARC Square Design Studio has grown from a small
+              boutique firm into one of the region's most respected
+              architectural and design practices. Our journey began with a
+              simple vision: to create spaces that not only look beautiful but
+              also enhance the way people live, work, and interact.
+            </p>
+            <p>
+              Over the years, we've had the privilege of working on diverse
+              projects ranging from intimate residential renovations to
+              large-scale commercial developments. Each project is an
+              opportunity for us to push creative boundaries while staying true
+              to our core principles of functionality, sustainability, and
+              timeless design.
+            </p>
+            <p>
+              Today, our team of talented architects, designers, and project
+              managers continues to deliver exceptional results, combining
+              technical expertise with artistic vision to transform dreams into
+              reality
+            </p>
+          </div>
+        </div>
+
+        <!-- about 3rd page -->
+        <div class="container3">
+          <div class="content">
+            <h2>Our Vision</h2>
+            <p>
+              At ARC Square, we believe that great design is more than just
+              aesthetics. It's about creating spaces that tell a story, evoke
+              emotions, and serve their purpose beautifully. Our approach is
+              rooted in three fundamental principles.
+            </p>
+          </div>
+
+          <div class="grid">
+            <div class="items itm1">
+              <h2>Collaborative Design</h2>
+              <p>
+                At ARC Square, we believe that great design is more than just
+                aesthetics. It's about creating spaces that tell a story, evoke
+                emotions, and serve their purpose beautifully.
+              </p>
+            </div>
+            <div class="items itm2">
+              <h2>Sustainable Practic</h2>
+              <p>
+                We're committed to environmentally responsible design,
+                incorporating sustainable materials and energy-efficient
+                solutions in every project
+              </p>
+            </div>
+            <div class="items itm3">
+              <h2>Timeless Excellence</h2>
+              <p>
+                We create designs that stand the test of time, balancing
+                contemporary trends with classic princi ensure lasting beauty
+                and functionality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-sec slide-sec" id="services">
+        <div class="service-cont">
+          <h2>Our Services</h2>
+          <p>
+            Comprehensive design solutions tailored to bring your vision to life
+          </p>
+        </div>
+
+        <div id="ser-grid-cont" class="grid-cont">
+          <!-- Card avilable in script inner html -->
+        </div>
+
+        <div class="consultation" id="consultation">
+          <div class="cont">
+            <h2>Need a Custom Solution?</h2>
+            <p>
+              We understand that every project is unique. Our team can create
+              customized design solutions that perfectly match your specific
+              requirements and vision.
+            </p>
+            <a href="#contact">
+              <button>
+                <i class="fa-solid fa-phone"></i>
+                Request a Consultation
+              </button></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="project-sec slide-sec" id="projects">
+        <div class="pro-head">
+          <h2>Our Projects</h2>
+          <p>
+            Explore our portfolio of stunning designs across various categories
+          </p>
+        </div>
+        <div class="pro-cont">
+          <div class="pro-tabs">
+            <button class="pro-tab active" data-category="all">All</button>
+            <button class="pro-tab" data-category="architecture">
+              Architecture
+            </button>
+            <button class="pro-tab" data-category="interior">Interior</button>
+            <button class="pro-tab" data-category="exterior">Exterior</button>
+            <button class="pro-tab" data-category="planning">Planning</button>
+            <button class="pro-tab" data-category="2d">2D</button>
+            <button class="pro-tab" data-category="3d">3D</button>
+          </div>
+
+          <div class="projects active" id="all-projects" data-category="all">
+            <div class="projects-grid" id="projectGridCont">
+              <!-- <div class="pro-card" data-category="2d" data-id="card6">
+                <div class="pro-img-cont">
+                  <img
+                    src="https://images.pexels.com/photos/9052461/pexels-photo-9052461.jpeg"
+                    alt="Commercial Home"
+                  />
+                  <div class="pro-overlay">
+                    <button><i class="fa-solid fa-eye"></i>View</button>
+                  </div>
+                </div>
+                <div class="pro-content">
+                  <div class="pro-cont-head">
+                    <h3>Commercial Home</h3>
+                  </div>
+                  <span>2D Modeling</span>
+                </div>
+              </div>
+
+              <div
+                class="pro-card"
+                data-category="architecture"
+                data-id="card1"
+              >
+                <div class="pro-img-cont">
+                  <img
+                    src="https://images.pexels.com/photos/7031408/pexels-photo-7031408.jpeg"
+                    alt="Architecture Design"
+                  />
+                  <div class="pro-overlay">
+                    <button><i class="fa-solid fa-eye"></i>View</button>
+                  </div>
+                </div>
+                <div class="pro-content">
+                  <div class="pro-cont-head">
+                    <h3>Modern Architecture</h3>
+                  </div>
+                  <span>Architecture</span>
+                </div>
+              </div>
+
+              <div class="pro-card" data-category="interior" data-id="card2">
+                <div class="pro-img-cont">
+                  <img
+                    src="https://images.pexels.com/photos/6782577/pexels-photo-6782577.jpeg"
+                    alt="Modern Bedroom"
+                  />
+                  <div class="pro-overlay">
+                    <button><i class="fa-solid fa-eye"></i>View</button>
+                  </div>
+                </div>
+                <div class="pro-content">
+                  <div class="pro-cont-head">
+                    <h3>Modern Bedroom</h3>
+                  </div>
+                  <span>Interior Design</span>
+                </div>
+              </div>
+
+              <div class="pro-card" data-category="exterior" data-id="card3">
+                <div class="pro-img-cont">
+                  <img
+                    src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
+                    alt="Exterior Designing"
+                  />
+                  <div class="pro-overlay">
+                    <button><i class="fa-solid fa-eye"></i>View</button>
+                  </div>
+                </div>
+                <div class="pro-content">
+                  <div class="pro-cont-head">
+                    <h3>Commercial House</h3>
+                  </div>
+                  <span>Exterior Design</span>
+                </div>
+              </div>
+
+              <div class="pro-card" data-category="planning" data-id="card4">
+                <div class="pro-img-cont">
+                  <img
+                    src="https://images.pexels.com/photos/6615107/pexels-photo-6615107.jpeg"
+                    alt="Modern Villa"
+                  />
+                  <div class="pro-overlay">
+                    <button><i class="fa-solid fa-eye"></i>View</button>
+                  </div>
+                </div>
+                <div class="pro-content">
+                  <div class="pro-cont-head">
+                    <h3>Modern Villa</h3>
+                  </div>
+                  <span>Planning</span>
+                </div>
+              </div>
+
+              <div class="pro-card" data-category="3d" data-id="card5">
+                <div class="pro-img-cont">
+                  <img
+                    src="https://images.pexels.com/photos/28456460/pexels-photo-28456460.jpeg"
+                    alt="3D Modeling"
+                  />
+                  <div class="pro-overlay">
+                    <button><i class="fa-solid fa-eye"></i>View</button>
+                  </div>
+                </div>
+                <div class="pro-content">
+                  <div class="pro-cont-head">
+                    <h3>Modern Dianing Area</h3>
+                  </div>
+                  <span>3D Modeling</span>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+          <section class="pop-sec" id="projectPopSec">
+            <!-- pop up card available in script inner html -->
+          </section>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="gallery-sec slide-sec" id="gallery">
+        <div class="cont">
+          <div class="head">
+            <h1>Gallery</h1>
+            <p>A curated collection of our finest work</p>
+          </div>
+
+          <div id="galleryLoading" class="gallery-error-loader">
+            Loading Product Database... Please wait...
+          </div>
+
+          <div class="photos" id="galleryPhotos">
+            <!-- Photos avilable in script inner html -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <div class="contact-sec slide-sec" id="contact">
+        <div class="head">
+          <h1>Contact Us</h1>
+          <p>Let's discuss how we can bring your vision to life</p>
+        </div>
+        <div class="body">
+          <div class="cont-tab">
+            <h2>Get in Touch</h2>
+            <p>
+              We'd love to hfrom you. Whether you have a question about our
+              services, pricing, or anything else, our tswer all your questions.
+            </p>
+            <div class="cards">
+              <div class="card">
+                <div class="icons">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="detail">
+                  <h3>Office Address</h3>
+                  <p>
+                    Shop no. 2/24 ground floor B.D.A Complex M.G Road
+                    Bulandshahar, Uttar Pradesh 203001
+                  </p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="icons">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="detail">
+                  <h3>Phone</h3>
+                  <p>+91 96509 27987</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="icons">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="detail">
+                  <h3>E-mail</h3>
+                  <p>arcsquaredesignstudio@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="icons">
+                  <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="detail">
+                  <h3>Business Hours</h3>
+                  <p>Monday - Saturday : 10:00 AM - 6:00 PM</p>
+                  <p>Sunady : Closed</p>
+                </div>
+              </div>
+
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.633668315716!2d77.8296414!3d28.4155196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ca3fb49cf4d3f%3A0xb3daff5137e19093!2sArc%20Square%20Design%20Studio!5e1!3m2!1sen!2sin!4v1771751592330!5m2!1sen!2sin"
+                  width="600"
+                  height="350"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <form id="contactForm">
+            <h2>Send us a Message</h2>
+            <div class="form-inputs">
+              <div class="cont">
+                <label for="name">Name</label>
+                <input type="text" id="cf-name" placeholder="Your full name" />
+              </div>
+
+              <div class="cont">
+                <label for="number">Phone Number</label>
+                <input
+                  type="tel"
+                  id="cf-phone"
+                  placeholder="Your phone number"
+                />
+              </div>
+
+              <div class="cont">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="cf-email"
+                  placeholder="Youremail@example.com"
+                />
+              </div>
+
+              <div class="cont">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="cf-subject"
+                  placeholder="How can we help you?"
+                />
+              </div>
+
+              <div class="cont">
+                <label for="message">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Enter your message"
+                ></textarea>
+              </div>
+              <button type="submit" id="cf-btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
-
-
-
 
     <!-- Footer Section -->
     <footer>
-        <div class="container">
-            <div class="grid">
-                <div class="col">
-                    <h3>ARC SQUARE</h3>
-                    <p>Creating exceptional architectural designs and interior spaces that inspire and transform the way
-                        people live and work.</p>
-                </div>
-                <div class="col col-1">
-                    <div class="col-1-1">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
+      <div class="container">
+        <div class="grid">
+          <div class="col">
+            <h3>ARC SQUARE</h3>
+            <p>
+              Creating exceptional architectural designs and interior spaces
+              that inspire and transform the way people live and work.
+            </p>
+          </div>
+          <div class="col col-1">
+            <div class="col-1-1">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
 
-                    <div class="col-1-2">
-                        <h4>Services</h4>
-                        <ul>
-                            <li>Architecture</li>
-                            <li>Interior Design</li>
-                            <li>Exterior Design</li>
-                            <li>Planning</li>
-                            <li>2D Modeling</li>
-                            <li>3D Modeling</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="col-1-2">
+              <h4>Services</h4>
+              <ul>
+                <li>Architecture</li>
+                <li>Interior Design</li>
+                <li>Exterior Design</li>
+                <li>Planning</li>
+                <li>2D Modeling</li>
+                <li>3D Modeling</li>
+              </ul>
+            </div>
+          </div>
 
-                <div class="col">
-                    <h4>Contact Info</h4>
-                    <ul class="info">
-                        <li><i class="fas fa-map-marker-alt"></i>Shop no. 2/24 ground floor B.D.A Complex M.G Road
-                            Bulandshahar, Uttar Pradesh 203001</li>
-                        <li><i class="fas fa-phone"></i> +91 96509 27987</li>
-                        <li><i class="fas fa-envelope"></i>arcsquaredesignstudio</li>
-                    </ul>
-                    <div class="links">
-                        <a href="https://www.instagram.com/arcsquaredesignstudio/" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61571924545076" target="_blank"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.youtube.com/@arcsquaredesignstudio" target="_blank"><i
-                                class="fab fa-youtube"></i></a>
-                        <!-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <div class="col">
+            <h4>Contact Info</h4>
+            <ul class="info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>Shop no. 2/24 ground floor
+                B.D.A Complex M.G Road Bulandshahar, Uttar Pradesh 203001
+              </li>
+              <li><i class="fas fa-phone"></i> +91 96509 27987</li>
+              <li><i class="fas fa-envelope"></i>arcsquaredesignstudio</li>
+            </ul>
+            <div class="links">
+              <a
+                href="https://www.instagram.com/arcsquaredesignstudio/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61571924545076"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@arcsquaredesignstudio"
+                target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <!-- <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a> -->
-                    </div>
-                </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 ARC Square Design Studio || All rights reserved by <a
-                        href="https://azmataliofficial.vercel.app/" target="_blank"> azmataliofficial</a></p>
-            </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 ARC Square Design Studio || All rights reserved by
+            <a href="https://azmataliofficial.vercel.app/" target="_blank">
+              azmataliofficial</a
+            >
+          </p>
+        </div>
+      </div>
     </footer>
+  </body>
 
-</body>
-
-<script src="arc.js"></script>
-
+  <script src="arc.js"></script>
 </html>

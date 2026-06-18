@@ -2,8 +2,8 @@
 
 const STATE = {
   data: {
-    slidesData: [],
-    testimonialData : [],
+    testimonialData: [],
+    projectCardDetails: [],
     galleryData: []
   },
 
@@ -27,14 +27,14 @@ async function fetchingData() {
     await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve()
-      }, 2000)
+      }, 1000)
     })
 
     let allData = await response.json()
 
     STATE.data = {
-      slidesData: allData.slidesData,
       testimonialData: allData.testimonialData,
+      projectCardDetails: allData.projectCardDetails,
       galleryData: allData.galleryData
     }
 
@@ -49,8 +49,8 @@ async function fetchingData() {
 
 async function init() {
   await fetchingData()
-  renderHeroSlider()
   startTestimonialRotation()
+  renderProject()
   renderGallery()
 }
 
@@ -212,6 +212,32 @@ window.addEventListener("resize", () => {
 // Hero Slider start
 
 
+const slidesData = [
+  {
+    "image": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "Modern Interior Design",
+    "description": "Designed with modern aesthetics in mind",
+    "buttonText": "Get Started",
+    "buttonLink": "contact"
+  },
+  {
+    "image": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "Stunning Exterior Design",
+    "description": "Architecture that inspires",
+    "buttonText": "Explore Images",
+    "buttonLink": "gallery"
+  },
+  {
+    "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "title": "Modern Living Spaces",
+    "description": "Where architecture meets comfort",
+    "buttonText": "View Projects",
+    "buttonLink": "projects"
+  }
+]
+
+
+
 let wrapper = document.getElementById('slideswrapper')
 let prevbtn = document.getElementById('prevSlide')
 let nextbtn = document.getElementById('nextSlide')
@@ -219,13 +245,12 @@ let dotsContainer = document.getElementById('dotsContainer');
 let current = 0
 let timer;
 
-function renderHeroSlider() {
 
-  STATE.data.slidesData.forEach((data, index) => {
-    const slide = document.createElement('div')
-    slide.className = 'slide'
-    slide.style.backgroundImage = `url('${data.image}')`
-    slide.innerHTML = ` <div class="content">
+slidesData.forEach((data, index) => {
+  const slide = document.createElement('div')
+  slide.className = 'slide'
+  slide.style.backgroundImage = `url('${data.image}')`
+  slide.innerHTML = ` <div class="content">
                             <h1>${data.title}</h1>
                             <p>${data.description}</p>
                             <button style="--clr: #7808d0" onclick="scrollToSection('${data.buttonLink}')"
@@ -248,15 +273,15 @@ function renderHeroSlider() {
                               ${data.buttonText}
                             </button>
                       </div> `
-    wrapper.appendChild(slide)
+  wrapper.appendChild(slide)
 
 
-    let dot = document.createElement('button')
-    dot.className = 'dot'
-    dot.onclick = () => goTo(index)
-    dotsContainer.appendChild(dot)
-  })
-}
+  let dot = document.createElement('button')
+  dot.className = 'dot'
+  dot.onclick = () => goTo(index)
+  dotsContainer.appendChild(dot)
+})
+
 
 
 function update() {
@@ -268,8 +293,8 @@ function update() {
   })
 }
 
-function nextSlide() { current = (current + 1) % STATE.data.slidesData.length; update(); resetTimer(); }
-function prevSlide() { current = (current - 1 + STATE.data.slidesData.length) % STATE.data.slidesData.length; update(); resetTimer(); }
+function nextSlide() { current = (current + 1) % slidesData.length; update(); resetTimer(); }
+function prevSlide() { current = (current - 1 + slidesData.length) % slidesData.length; update(); resetTimer(); }
 function goTo(i) { current = i; update(); resetTimer(); }
 
 function startAuto() { timer = setInterval(nextSlide, 6000); }
@@ -349,6 +374,109 @@ document.addEventListener("DOMContentLoaded", () => {
 // Stats Animation end
 
 
+
+
+// testimonial start
+
+let currentTestimonialIndex = 0;
+
+function renderTestimonials() {
+  const grid = document.querySelector('.grid-cont');
+  if (!STATE.data.testimonialData.length) return;
+
+  grid.innerHTML = '';
+
+  for (let i = 0; i < 2; i++) {
+    const itemIndex = (currentTestimonialIndex + i) % STATE.data.testimonialData.length;
+    const item = STATE.data.testimonialData[itemIndex];
+
+    const delay = i * 0.2;
+
+    let stars = '';
+    const fullStars = Math.floor(item.rating);
+    const hasHalfStar = item.rating % 1 !== 0;
+    for (let j = 0; j < fullStars; j++) {
+      stars += '<i class="fas fa-star"></i>';
+    }
+
+    if (hasHalfStar) {
+      stars += '<i class="fas fa-star-half-alt"></i>';
+    }
+
+    const card = `
+      <div class="card" style="animation-delay: ${delay}s;">
+        <div class="header">
+          <div class="avatar">${item.avatar}</div>
+          <div class="info">
+            <h3>${item.clientName}</h3>
+            <p><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="rating">${stars} <span>${item.rating}</span></div>
+          <div class="text">${item.text}</div>
+        </div>
+        <div class="meta">
+          <span class="tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
+          <a href="${item.instagram}"  target="_blank" rel="noopener noreferrer" class="instagram-tag">
+          <i class="fab fa-instagram"></i>${item.instaId}</a>
+        </div>
+      </div>
+    `;
+    grid.innerHTML += card;
+  }
+}
+
+function startTestimonialRotation() {
+  const grid = document.querySelector('.grid-cont');
+  if (!STATE.data.testimonialData.length) return;
+
+  renderTestimonials();
+
+  setInterval(() => {
+    currentTestimonialIndex = (currentTestimonialIndex + 2) % STATE.data.testimonialData.length;
+    renderTestimonials();
+  }, 5000);
+}
+
+// testimonial end
+
+
+
+// faq start
+document.querySelectorAll('.tab').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    document.querySelectorAll('.tab').forEach(function (t) {
+      t.classList.remove('active');
+    });
+
+    document.querySelectorAll('.panel').forEach(function (p) {
+      p.classList.remove('active');
+    });
+
+    this.classList.add('active');
+
+    let catId = this.getAttribute('data-cat');
+    document.querySelector('.panel[data-panel="' + catId + '"]').classList.add('active');
+  });
+});
+document.querySelectorAll('.question').forEach(function (question) {
+  question.addEventListener('click', function () {
+    let currentItem = this.closest('.item');
+    let panel = currentItem.closest('.panel');
+    panel.querySelectorAll('.item').forEach(function (item) {
+      if (item !== currentItem) {
+        item.classList.remove('open');
+      }
+    });
+    currentItem.classList.toggle('open');
+  });
+});
+
+// faq end
+
+
+
 // WhatsApp Chat Box start
 
 const whatsappToggle = document.getElementById("whatsappToggle");
@@ -419,169 +547,39 @@ function sendWhatsApp() {
 
 
 
-// testimonial start
+function renderProject(){
 
-let currentTestimonialIndex = 0;
-
-function renderTestimonials() {
-  const grid = document.querySelector('.grid-cont');
-  if (!STATE.data.testimonialData.length) return;
-
-  grid.innerHTML = '';
-
-  for (let i = 0; i < 2; i++) {
-    const itemIndex = (currentTestimonialIndex + i) % STATE.data.testimonialData.length;
-    const item = STATE.data.testimonialData[itemIndex];
-
-    const delay = i * 0.2;
-
-    let stars = '';
-    const fullStars = Math.floor(item.rating);
-    const hasHalfStar = item.rating % 1 !== 0;
-    for (let j = 0; j < fullStars; j++) {
-      stars += '<i class="fas fa-star"></i>';
-    }
-
-    if (hasHalfStar) {
-      stars += '<i class="fas fa-star-half-alt"></i>';
-    }
-
-    const card = `
-      <div class="card" style="animation-delay: ${delay}s;">
-        <div class="header">
-          <div class="avatar">${item.avatar}</div>
-          <div class="info">
-            <h3>${item.clientName}</h3>
-            <p><i class="fas fa-map-marker-alt"></i> ${item.location}</p>
-          </div>
-        </div>
-        <div class="content">
-          <div class="rating">${stars} <span>${item.rating}</span></div>
-          <div class="text">${item.text}</div>
-        </div>
-        <div class="meta">
-          <span class="tag"><i class="fas fa-tag"></i> ${item.projectType}</span>
-          <a href="${item.instagram}"  target="_blank" rel="noopener noreferrer" class="instagram-tag">
-          <i class="fab fa-instagram"></i>${item.instaId}</a>
-        </div>
-      </div>
-    `;
-    grid.innerHTML += card;
-  }
-}
-
-function startTestimonialRotation() {
-  const grid = document.querySelector('.grid-cont');
-  if (!STATE.data.testimonialData.length) return;
-
-  renderTestimonials();
-
-  setInterval(() => {
-    currentTestimonialIndex = (currentTestimonialIndex + 2) % STATE.data.testimonialData.length;
-    renderTestimonials();
-  }, 5000);
-}
-
-
-// testimonial end
-
-
-
-// service section cards
-
-let serCardDetails = [
-  {
-    mainImage: "images/Architect main.jpg",
-    cardCategory: "Architecture",
-    cardTittle: "Modern Architect",
-    cardDecription: "We design modern homes, villas, offices, shops, and showrooms that look beautiful and work perfectly for your needs. Our team plans every detail carefully – from the way rooms connect to how sunlight enters your space. We create buildings that stand strong, look impressive, and make you feel proud. Whether you want a cozy home or a grand commercial space, we turn your ideas into real structures that match your lifestyle and budget.",
-    gallaryimg1: "images/Architect 1.jpg",
-    gallaryimg2: "images/Architect 2.jpg",
-    gallaryimg3: "images/Architect 3.jpg"
-  },
-  {
-    mainImage: "images/interior main.jpg",
-    cardCategory: "Interior Design",
-    cardTittle: "Modern Drawing Area",
-    cardDecription: "We transform empty spaces into beautiful, comfortable rooms where you'll love spending time. For homes and villas, we create warm, personal spaces that reflect your style. For offices, shops, and showrooms, we design smart layouts that impress customers and help your business grow. We handle everything – wall colors, furniture, lighting, and decorations – to make your space both stylish and functional.",
-    gallaryimg1: "images/interior 1.jpg",
-    gallaryimg2: "images/interior 2.jpg",
-    gallaryimg3: "images/interior 3.jpg"
-  },
-  {
-    mainImage: "images/Exterior main.jpg",
-    cardCategory: "Exterior Design",
-    cardTittle: "Commercial Villa",
-    cardDecription: "We make the outside of your building look stunning and welcoming. For modern homes and villas, we create beautiful facades, elegant entrances, and attractive outdoor areas. For offices, shops, and showrooms, we design exteriors that catch people's attention and make your business stand out. We work with materials, colors, and lighting to give your building a personality that impresses everyone who sees it.",
-    gallaryimg1: "images/Exterior 1.jpg",
-    gallaryimg2: "images/Exterior 2.jpg",
-    gallaryimg3: "images/Exterior 3.jpg"
-  },
-  {
-    mainImage: "images/Planning main.jpg",
-    cardCategory: "Planning",
-    cardTittle: "Home Planning",
-    cardDecription: "Before we build anything, we create smart plans that save you time and money. We study your space carefully and design layouts that make the best use of every square foot. For homes and villas, we ensure smooth movement between rooms. For offices, shops, and showrooms, we plan spaces that improve work flow and customer experience. Good planning means fewer problems later and a space that truly works for you.",
-    gallaryimg1: "images/Planning 1.jpg",
-    gallaryimg2: "images/Planning 2.jpg",
-    gallaryimg3: "images/Planning 3.jpg"
-  },
-  {
-    mainImage: "images/2D main.jpg",
-    cardCategory: "2D Modeling",
-    cardTittle: "Villa Drawing",
-    cardDecription: "We create detailed drawings that show exactly how your project will look and work. These floor plans, elevations, and layouts help you understand every room's size, door positions, window placements, and more. For homes and villas, we map out your perfect living space. For offices, shops, and showrooms, we plan efficient layouts. These 2D designs are your project's roadmap – clear, simple, and easy to follow.",
-    gallaryimg1: "images/2D 1.jpg",
-    gallaryimg2: "images/2D 2.jpg",
-    gallaryimg3: "images/2D 3.jpg"
-  },
-  {
-    mainImage: "images/3D main.jpg",
-    cardCategory: "3D Modeling",
-    cardTittle: "Modern 3D Villa",
-    cardDecription: "We bring your project to life with realistic 3D models that let you see your finished space before we start building. You can walk through your future home, villa, office, shop, or showroom on screen. See how colors look together, how furniture fits, and how light moves through rooms. This helps you make changes easily and feel confident about your decisions. What you imagine, we show you in stunning detail.",
-    gallaryimg1: "images/3D 1.jpg",
-    gallaryimg2: "images/3D 2.jpg",
-    gallaryimg3: "images/3D 3.jpg"
-  },
-]
-
-
-for (let cards = 0; cards < serCardDetails.length; cards++) {
-  const element = serCardDetails[cards];
-  let mainContainer = document.getElementById("ser-grid-cont");
+for (let cards = 0; cards < STATE.data.projectCardDetails.length; cards++) {
+  const element = STATE.data.projectCardDetails[cards];
+  let mainContainer = document.getElementById("projectGridCont");
 
   mainContainer.innerHTML += `
-                 <div class="card">
-                   <div  class="image">
-                        <img
-                            src="${element.mainImage}"
-                            alt="Modern Living Room with Natural Light" loading="lazy">
-                        <div class="overlay" id="card-over"></div>
-                        <div class="content" id="card-cont">
-                            <span>${element.cardCategory}</span>
-                            <h2>${element.cardTittle}</h2>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <p class="description">
-                           ${element.cardDecription}
-                        </p>
-                        <button class="learn-more" data-index="${cards}" aria-label="Learn more about Modern Living Room design">
-                            Learn More
-                        </button>
-                    </div>
-                 </div>
+           <div class="pro-card" data-category="2d" data-id="card${cards + 1}">
+            <div class="pro-img-cont">
+              <img 
+                src="${element.mainImage}" 
+                alt="${element.cardTittle}" 
+                loading="lazy">
+
+              <div class="pro-overlay">
+                <button data-index="${cards}" aria-label="Learn more about ${element.cardTittle}"><i class="fa-solid fa-eye"></i>View</button>
+              </div>
+            </div>
+            <div class="pro-content">
+              <div class="pro-cont-head">
+                <h3>${element.cardTittle}</h3>
+                <span class="card-category-badge">${element.cardCategory}</span>
+              </div>
+            </div>
+          </div>
                 `;
+}
 }
 
 
 
-
-// service popup 
-
-let popsec = document.getElementById("pop-sec");
-let closebtn = document.getElementById("close-pop");
+let popsec = document.getElementById("projectPopSec");
+let closebtn = document.getElementById("closePop");
 let body = document.querySelector('body');
 
 
@@ -602,7 +600,7 @@ function openpop(index) {
                     <img src="${detail.mainImage}"
                         alt="${detail.cardTittle}">
                     <div class="close-btn">
-                        <i id="close-pop" class="fa-solid fa-xmark"></i>
+                        <i id="closePop" class="fa-solid fa-xmark"></i>
                     </div>
                 </div>
                 <div class="lower-part">
@@ -653,6 +651,8 @@ function openpop(index) {
 // Services section end
 
 
+
+
 // Projects Tabs script
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".pro-tab");
@@ -682,6 +682,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+// project tab end
 
 
 // Gallery Section start
@@ -721,69 +723,6 @@ function renderGallery() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// faq
-document.querySelectorAll('.tab').forEach(function (tab) {
-  tab.addEventListener('click', function () {
-    document.querySelectorAll('.tab').forEach(function (t) {
-      t.classList.remove('active');
-    });
-
-    document.querySelectorAll('.panel').forEach(function (p) {
-      p.classList.remove('active');
-    });
-
-    this.classList.add('active');
-
-    let catId = this.getAttribute('data-cat');
-    document.querySelector('.panel[data-panel="' + catId + '"]').classList.add('active');
-  });
-});
-document.querySelectorAll('.question').forEach(function (question) {
-  question.addEventListener('click', function () {
-    let currentItem = this.closest('.item');
-    let panel = currentItem.closest('.panel');
-    panel.querySelectorAll('.item').forEach(function (item) {
-      if (item !== currentItem) {
-        item.classList.remove('open');
-      }
-    });
-    currentItem.classList.toggle('open');
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// contact submission
 // ===== Contact Form Submit =====
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyqRwez_B7ODZJ7qxy9g9A6SWPuBqSt55rSKaABlTvARHrl-koIIDHuAnwpbLlOJiqb/exec";
 
