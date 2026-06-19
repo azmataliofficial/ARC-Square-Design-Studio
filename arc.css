@@ -1456,6 +1456,7 @@ main .project-sec .pro-cont .pro-tabs {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 3rem;
+    animation: var(--cont-animate);
 }
 
 main .project-sec .pro-cont .pro-tabs .pro-tab {
@@ -1509,6 +1510,10 @@ main .project-sec .pro-cont .projects .projects-grid .pro-card {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .projects .projects-grid .pro-card.card-animate {
+    animation: var(--cont-animate);
 }
 
 main .project-sec .pro-cont .projects .projects-grid .pro-card:hover {

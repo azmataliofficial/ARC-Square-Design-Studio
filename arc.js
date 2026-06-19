@@ -552,14 +552,22 @@ tabs.forEach((tab) => {
     this.classList.add("active");
     let category = this.getAttribute("data-category");
     let cards = document.querySelectorAll(".pro-card");
+    
     cards.forEach((card) => {
       if (
         category === "all" ||
         card.getAttribute("data-category") === category
       ) {
         card.style.display = "block";
+        // Remove animation class to reset it
+        card.classList.remove("card-animate");
+        // Trigger reflow to restart animation
+        void card.offsetWidth;
+        // Add animation class back
+        card.classList.add("card-animate");
       } else {
         card.style.display = "none";
+        card.classList.remove("card-animate");
       }
     });
   });
@@ -574,7 +582,7 @@ function renderProject() {
 
     mainContainer.innerHTML += 
         `
-          <div class="pro-card" data-category="${element.dataCategory}" data-id="card${cards + 1}">
+          <div class="pro-card card-animate" data-category="${element.dataCategory}" data-id="card${cards + 1}">
             <div class="pro-img-cont">
               <img 
                 src="${element.mainImage}" 
@@ -614,7 +622,7 @@ function openpop(index) {
   if (!detail) return;
 
   popsec.innerHTML = `
-              <div class="conta animate-on-scroll">
+              <div class="conta">
                 <div class="uper-part">
                     <img src="${detail.mainImage}"
                         alt="${detail.cardTittle}">

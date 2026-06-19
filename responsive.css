@@ -551,15 +551,15 @@
     }
 
     main .contact-sec .head h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     main .contact-sec .head p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     main .contact-sec .body .cont-tab h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     main .contact-sec .body form {
@@ -567,7 +567,7 @@
     }
 
     main .contact-sec .body form h2 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 
     /* Footer */
@@ -850,21 +850,21 @@
 
     /* Contact */
     main .contact-sec .head h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     main .contact-sec .head p {
-        font-size: 1rem;
+        font-size: 0.9rem;
         width: 80%;
         margin: 0 auto;
     }
 
     main .contact-sec .body .cont-tab h2 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
 
     main .contact-sec .body .cont-tab p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     main .contact-sec .body .cont-tab .cards .card {
@@ -878,11 +878,11 @@
     }
 
     main .contact-sec .body .cont-tab .cards .card .detail h3 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     main .contact-sec .body .cont-tab .cards .card .detail p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     main .contact-sec .body form {
@@ -890,7 +890,7 @@
     }
 
     main .contact-sec .body form h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     main .contact-sec .body form .form-inputs .cont input,
