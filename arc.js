@@ -6,16 +6,12 @@ const STATE = {
     projectCardDetails: [],
     galleryData: []
   },
-
-  galleryLoading: document.getElementById('galleryLoading')
 }
 
 
 // fetching all data 
 
 async function fetchingData() {
-  galleryToggleloading(true)
-
   try {
     const API_URL = './arc.json'
     const response = await fetch(API_URL)
@@ -43,7 +39,6 @@ async function fetchingData() {
     console.log(error);
   }
   finally {
-    galleryToggleloading(false)
   }
 }
 
@@ -577,14 +572,15 @@ function renderProject() {
     const element = STATE.data.projectCardDetails[cards];
     let mainContainer = document.getElementById("projectGridCont");
 
-    mainContainer.innerHTML += `
-           <div class="pro-card" data-category="${element.dataCategory}" data-id="card${cards + 1}">
+    mainContainer.innerHTML += 
+        `
+          <div class="pro-card" data-category="${element.dataCategory}" data-id="card${cards + 1}">
             <div class="pro-img-cont">
               <img 
                 src="${element.mainImage}" 
                 alt="${element.cardTittle}" 
-                loading="lazy">
-
+                loading="lazy"
+              >
               <div class="pro-overlay">
                 <button class="project-card-view-btn" data-index="${cards + 1}" aria-label="Learn more about ${element.cardTittle}"><i class="fa-solid fa-eye"></i>View</button>
               </div>
@@ -596,7 +592,7 @@ function renderProject() {
               </div>
             </div>
           </div>
-                `;
+        `;
   }
 }
 
@@ -674,12 +670,9 @@ function openpop(index) {
 // project section end
 
 
+
+
 // Gallery Section start
-
-function galleryToggleloading(isLoading) {
-  STATE.galleryLoading.style.display = isLoading ? 'block' : 'none'
-}
-
 
 function renderGallery() {
   const grid = document.getElementById("galleryPhotos");
