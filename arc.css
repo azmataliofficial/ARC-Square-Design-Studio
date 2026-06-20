@@ -1,16 +1,12 @@
-/* All pages css in saperate sections like Header, Home, About, Services, Contact, Testimonial, FAQ, Gallery, Footer */
-
-
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=League+Spartan&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-/* Universal Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     -webkit-tap-highlight-color: transparent;
+    object-fit: fill;
 }
 
 
@@ -95,6 +91,7 @@ html {
         opacity: 0;
         transform: translateY(30px) scale(0.98);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -106,6 +103,7 @@ html {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1635,7 +1633,7 @@ main .project-sec .pro-cont .pop-sec .conta .uper-part {
 
 main .project-sec .pro-cont .pop-sec .conta .uper-part img {
     width: 100%;
-    height: 420px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -1726,6 +1724,7 @@ main .project-sec .pro-cont .pop-sec .lower-part .gallery .images img {
         transform: translateY(-20px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
