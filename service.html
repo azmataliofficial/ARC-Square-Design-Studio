@@ -1,358 +1,652 @@
 <!doctype html>
+
 <html lang="en">
 
+
 <head>
+
     <meta charset="UTF-8" />
+
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>CREATIVE spaces.</title>
+
 </head>
+
 <style>
+
     *,
+
     *::before,
+
     *::after {
+
         box-sizing: border-box;
+
         margin: 0;
+
         padding: 0;
+
     }
 
+
     :root {
-        --text-primary: #2c2c2c;
+
         --medium-yellow: #b89b4a;
+
         --slate-gray: #8a8989;
-        --off-white: #c6c6c629;
-        --btn-hover: #1a1a1a;
+
         --border-color: #e0daca;
 
 
-
-
-        --bg-primary: #c6c6c629;
-        --bg-card-hover: #1a2d45;
         --text-primary: #2c2c2c;
+
         --text-secondary: #8a8989;
-        --border: rgba(255, 255, 255, 0.07);
+
+        --border: #e0daca;
+
         --radius-sm: 12px;
+
         --radius-md: 16px;
+
         --radius-lg: 20px;
+
     }
+
 
     html,
+
     body {
+
         height: 100%;
+
     }
+
 
     body {
+
         font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
         background-color: var(--bg-primary);
+
         color: var(--text-primary);
+
         min-height: 100vh;
+
         overflow-x: hidden;
+
         -webkit-font-smoothing: antialiased;
+
     }
 
-    #app {
+
+    .serv-grid-cont {
+
         display: flex;
+
         flex-direction: column;
+
         min-height: 100vh;
+
         max-width: 1440px;
+
         margin: 0 auto;
+
         padding: 0 40px;
+
     }
 
-    /* Category Tabs */
-    .category-tabs {
+
+    /* ctgry Tabs */
+
+    .ctgry-tabs {
+
         display: flex;
+
         justify-content: center;
+
         gap: 10px;
+
         padding: 20px 0 8px;
-        border-bottom: 1px solid var(--border);
+
     }
 
-    .category-btn {
+
+    .ctgry-btn {
+
         padding: 0.75rem 1.5rem;
+
         border: 2px solid var(--border-color);
+
         background: transparent;
+
         color: var(--slate-gray);
+
         font-size: var(--text);
+
         font-weight: 600;
+
         border-radius: 50px;
+
         cursor: pointer;
+
         transition: all 0.3s ease;
+
     }
 
-    .category-btn:hover {
-        border-color: var(--slate-gray);
+
+    .ctgry-btn:hover {
+
+        border-color: var(--border-color);
+
         color: var(--medium-yellow);
+
     }
+
 
     /* Showcase */
+
     .showcase {
+
         display: flex;
+
         flex-direction: column;
+
         gap: 16px;
+
     }
+
 
     .hero-image-wrapper {
+
         border-radius: var(--radius-lg);
+
         overflow: hidden;
+
         aspect-ratio: 16 / 9;
+
         background: var(--bg-card);
+
         position: relative;
+
     }
 
+
     .hero-image {
+
         width: 100%;
+
         height: 100%;
+
         object-fit: cover;
+
         display: block;
+
         transition: opacity 0.35s ease;
+
     }
+
 
     .hero-image.fade {
         opacity: 0;
     }
 
+
     .thumbnails {
+
         display: grid;
+
         grid-template-columns: repeat(6, 1fr);
+
         gap: 12px;
+
     }
+
 
     .thumb {
+
         border-radius: var(--radius-sm);
+
         overflow: hidden;
+
         aspect-ratio: 3 / 2;
+
         cursor: pointer;
+
         border: 2px solid transparent;
+
         transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
     }
+
 
     .thumb img {
+
         width: 100%;
+
         height: 100%;
+
         object-fit: cover;
+
         display: block;
+
         transition: transform 0.3s ease;
+
     }
+
 
     .thumb:hover img {
+
         transform: scale(1.06);
+
     }
+
 
     .thumb:hover {
+
         border-color: rgba(240, 106, 84, 0.5);
+
         transform: translateY(-2px);
+
     }
+
 
     .thumb.active {
+
         border-color: var(--coral);
+
         box-shadow: 0 4px 16px rgba(240, 106, 84, 0.3);
+
     }
+
 
     /* Info Panel */
+
     .info-panel {
+
         background: var(--bg-card);
+
         border: 1px solid var(--border);
+
         border-radius: var(--radius-lg);
+
         box-shadow: rgba(44, 44, 44, 0.25) 0px 4px 12px;
+
         padding: 36px 28px 28px;
+
         display: flex;
+
         flex-direction: column;
+
         justify-content: space-between;
+
         gap: 32px;
+
         min-height: 460px;
+
     }
+
 
     .info-content {
+
         display: flex;
+
         flex-direction: column;
+
         gap: 20px;
+
     }
+
 
     .panel-title {
+
         font-size: 28px;
+
         font-weight: 700;
+
         line-height: 1.22;
+
         letter-spacing: -0.4px;
+
         color: var(--text-primary);
+
     }
+
 
     .panel-desc {
+
         font-size: 14px;
+
         font-weight: 400;
+
         line-height: 1.75;
+
         color: var(--text-secondary);
+
     }
+
 
     .cta-btn {
+
         background: #b89b4a;
+
         color: #ffffff;
+
         border: none;
+
         padding: 10px 20px;
+
         font-size: 0.95rem;
+
         font-weight: 400;
+
         border-radius: 50px;
+
         cursor: pointer;
+
         align-items: center;
+
         gap: 10px;
+
         box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
+
         transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+
     }
+
 
     .cta-btn:hover {
+
         background: #2c2c2c;
+
         color: #ffffff;
+
         transform: translateY(-3px);
+
         box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
+
     }
+
 
     /* Main Layout */
-    .main {
+
+    .serv-main {
+
         display: grid;
+
         grid-template-columns: 2fr 1fr;
+
         gap: 20px;
+
         padding: 24px 0 40px;
+
         flex: 1;
+
         align-items: start;
+
     }
+
 
     /* Responsive */
+
     @media (max-width: 1100px) {
+
         .main {
+
             grid-template-columns: 1fr 270px;
+
             gap: 16px;
+
         }
 
+
         #app {
+
             padding: 0 24px;
+
         }
+
     }
+
 
     @media (max-width: 900px) {
+
         #app {
+
             padding: 0 20px;
+
         }
+
 
         .main {
+
             grid-template-columns: 1fr;
+
             gap: 24px;
+
         }
 
-        .category-tabs {
+
+        .ctgry-tabs {
+
             gap: 8px;
+
             padding: 16px 0 8px;
+
         }
 
-        .category-btn {
+
+        .ctgry-btn {
+
             min-width: 120px;
+
             max-width: none;
+
             padding: 14px 16px;
+
             font-size: 14px;
+
         }
 
-        .category-btn:hover {
+
+        .ctgry-btn:hover {
+
             transform: none;
+
         }
+
 
         .info-panel {
+
             min-height: auto;
+
         }
+
     }
+
 
     @media (max-width: 600px) {
+
         .header {
+
             flex-direction: column;
+
             align-items: flex-start;
+
             gap: 16px;
+
         }
+
 
         .nav {
+
             gap: 24px;
+
         }
 
-        .category-tabs {
+
+        .ctgry-tabs {
+
             gap: 6px;
+
         }
 
-        .category-btn {
+
+        .ctgry-btn {
+
             min-width: 100px;
+
             padding: 12px 10px;
+
             font-size: 13px;
+
         }
+
 
         .thumbnails {
+
             grid-template-columns: repeat(2, 1fr);
+
         }
+
 
         .panel-title {
+
             font-size: 22px;
+
         }
+
     }
+
 </style>
 
+
 <body>
-    <div id="app">
-        <!-- Category Tabs -->
-        <div class="category-tabs">
-            <button class="category-btn" data-index="0">Interior Design</button>
-            <button class="category-btn" data-index="1">Exterior Design</button>
-            <button class="category-btn" data-index="2">2D Planning</button>
-            <button class="category-btn active" data-index="3">3D Rendering</button>
-            <button class="category-btn" data-index="4">Architectural Setup</button>
+
+    <div class="serv-grid-cont">
+
+        <div class="ctgry-tabs">
+
+            <button class="ctgry-btn" data-index="0">Interior Design</button>
+
+            <button class="ctgry-btn" data-index="1">Exterior Design</button>
+
+            <button class="ctgry-btn" data-index="2">2D Planning</button>
+
+            <button class="ctgry-btn active" data-index="3">3D Rendering</button>
+
+            <button class="ctgry-btn" data-index="4">Architectural Setup</button>
+
         </div>
 
+
         <!-- Main Content -->
-        <main class="main">
+
+        <div class="serv-main">
+
             <!-- Image Showcase -->
+
             <section class="showcase">
+
                 <div class="hero-image-wrapper">
+
                     <img id="hero-image" class="hero-image"
+
                         src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200"
+
                         alt="Modern Luxury Living Room" />
+
                 </div>
+
                 <div class="thumbnails">
+
                     <div class="thumb active" data-index="0">
+
                         <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400"
+
                             alt="Living Room 1" />
+
                     </div>
+
                     <div class="thumb" data-index="1">
+
                         <img src="https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400"
+
                             alt="Living Room 2" />
+
                     </div>
+
                     <div class="thumb" data-index="2">
+
                         <img src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400"
+
                             alt="Living Room 3" />
+
                     </div>
+
                     <div class="thumb" data-index="3">
+
                         <img src="https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400"
+
                             alt="Living Room 4" />
+
                     </div>
+
                     <div class="thumb" data-index="4">
+
                         <img src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400"
+
                             alt="Living Room 5" />
+
                     </div>
+
                     <div class="thumb" data-index="5">
-                        <img src="https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400"
-                            alt="Living Room 6" />
+
+                        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200"
+
+                            alt="Modern Luxury Living Room 7" />
+
                     </div>
+
                 </div>
+
             </section>
 
+
             <!-- Info Panel -->
+
             <aside class="info-panel">
+
                 <div class="info-content">
+
                     <h2 id="panel-title" class="panel-title">Modern Luxury Living Room Design</h2>
+
                     <p id="panel-desc" class="panel-desc">
+
                         Experience the perfect blend of luxury and functionality. Our interior layouts are crafted with
+
                         minimalist principles, premium materials, and ambient lighting setups tailored perfectly to
+
                         bring comfort and aesthetics together.
+
                     </p>
+
                 </div>
+
                 <button class="cta-btn">Book a Consultation</button>
+
             </aside>
-        </main>
+
+        </div>
+
     </div>
+
+</body>
+
+
+</html>
     <script>
         const categories = [
             {
@@ -527,6 +821,4 @@
         document.addEventListener('DOMContentLoaded', init)
 
     </script>
-</body>
-
 </html>
