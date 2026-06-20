@@ -3,6 +3,7 @@
 const STATE = {
   data: {
     testimonialData: [],
+    serviceData:[],
     projectCardDetails: [],
     galleryData: []
   },
@@ -23,13 +24,14 @@ async function fetchingData() {
     await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve()
-      }, 1000)
+      }, 2000)
     })
 
     let allData = await response.json()
 
     STATE.data = {
       testimonialData: allData.testimonialData,
+      serviceData : allData.serviceData,
       projectCardDetails: allData.projectCardDetails,
       galleryData: allData.galleryData
     }
@@ -540,6 +542,11 @@ function sendWhatsApp() {
 }
 
 // WhatsApp Chat Box end
+
+// service section
+
+
+
 
 
 
