@@ -15,6 +15,13 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     overflow-y: auto;
+    min-height: 100vh;
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 
@@ -109,6 +116,12 @@ html {
         transform: translateY(0);
     }
 }
+
+header{
+    position: relative;
+    /* min-height: 120px; */
+}
+
 
 /* Header Styles */
 header nav {
@@ -1441,6 +1454,7 @@ main .project-sec .pro-cont .pro-tabs {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 3rem;
+    animation: var(--cont-animate);
 }
 
 main .project-sec .pro-cont .pro-tabs .pro-tab {
@@ -1494,6 +1508,10 @@ main .project-sec .pro-cont .projects .projects-grid .pro-card {
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(44, 44, 44, 0.25);
     transition: all 0.3s ease;
+}
+
+main .project-sec .pro-cont .projects .projects-grid .pro-card.card-animate {
+    animation: var(--cont-animate);
 }
 
 main .project-sec .pro-cont .projects .projects-grid .pro-card:hover {
@@ -2066,7 +2084,7 @@ main .contact-sec .body form .form-inputs button:active {
 footer {
     background-color: var(--text-primary);
     color: var(--pure-white);
-    padding: 60px 0 20px;
+    padding: 30px 0 20px;
 }
 
 footer .container {
