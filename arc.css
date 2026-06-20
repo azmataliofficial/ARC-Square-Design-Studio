@@ -1308,7 +1308,7 @@ main .services-sec {
     margin: 0 auto;
     padding: 100px 0 30px;
     background-color: var(--off-white);
-    border-radius: 30px;
+    /* border-radius: 30px; */
 }
 
 main .services-sec .service-cont {
@@ -1470,7 +1470,7 @@ main .project-sec .pro-cont .pro-tabs .pro-tab {
 }
 
 main .project-sec .pro-cont .pro-tabs .pro-tab:hover {
-    border-color: var(--slate-gray);
+    border-color: var(--border-color);
     color: var(--medium-yellow);
 }
 

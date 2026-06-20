@@ -643,6 +643,10 @@ function openpop(index) {
                                 alt="">
                             <img src="${detail.gallaryimg2}"
                                 alt="">
+                            <img src="${detail.gallaryimg1}"
+                                alt="">
+                            <img src="${detail.gallaryimg2}"
+                                alt="">
                             <img src="${detail.gallaryimg3}"
                                 alt="">
                         </div>
