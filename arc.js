@@ -24,7 +24,7 @@ async function fetchingData() {
     await new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve()
-      }, 5000)
+      }, 2000)
     })
 
     let allData = await response.json()
@@ -542,6 +542,11 @@ function sendWhatsApp() {
 }
 
 // WhatsApp Chat Box end
+
+// service section
+
+
+
 
 
 
