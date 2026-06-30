@@ -1336,9 +1336,8 @@ main .services-sec .serv-grid-cont {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    max-width: 1440px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 40px;
 }
 
 main .services-sec .serv-grid-cont .ctgry-tabs {
@@ -1370,8 +1369,6 @@ main .services-sec .serv-grid-cont .serv-main {
     grid-template-columns: 2fr 1fr;
     gap: 20px;
     padding: 24px 0 40px;
-    flex: 1;
-    align-items: start;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase {
@@ -1385,7 +1382,6 @@ main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper {
     overflow: hidden;
     aspect-ratio: 16 / 9;
     background: var(--bg-card);
-    position: relative;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .hero-image {
@@ -1396,33 +1392,21 @@ main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .her
     transition: opacity 0.35s ease;
 }
 
-main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails::-webkit-scrollbar{
-    /* height: 100px; */
-    /* background-color: #128C7E; */
-    /* color: #bc1888; */
-}
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails {
-    --thumb-w: 156px;
-    --thumb-gap: .6rem;
+    aspect-ratio: 15/2;
     display: flex;
-    gap: var(--thumb-gap);
+    gap: 12px;
     margin: .75rem auto 0;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     padding-bottom: .4rem;
-    white-space: nowrap;
     scroll-snap-type: x mandatory;
-    max-width: calc(var(--thumb-w) * 6 + var(--thumb-gap) * 5);
-    
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb {
-    width: var(--thumb-w);
-    height: calc(var(--thumb-w) * 0.75);
-    min-width: var(--thumb-w);
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: 8px;
@@ -1464,7 +1448,6 @@ main .services-sec .serv-grid-cont .serv-main .info-panel {
     flex-direction: column;
     justify-content: space-between;
     gap: 32px;
-    min-height: 460px;
 }
 
 main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont {
