@@ -1359,9 +1359,15 @@ main .services-sec .serv-grid-cont .ctgry-btn {
     transition: all 0.3s ease;
 }
 
-main .services-sec .serv-grid-cont.ctgry-btn:hover {
-    border-color: var(--border-color);
+main .services-sec .serv-grid-cont .ctgry-btn:hover {
+     border-color: var(--border-color);
     color: var(--medium-yellow);
+}
+
+main .services-sec .serv-grid-cont .ctgry-btn.active {
+    background: var(--medium-yellow);
+    border-color: var(--border-color);
+    color: var(--pure-white);
 }
 
 main .services-sec .serv-grid-cont .serv-main {
@@ -1375,6 +1381,7 @@ main .services-sec .serv-grid-cont .serv-main .showcase {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: all 0.4s ease;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper {
@@ -1389,7 +1396,15 @@ main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .her
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.35s ease;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: opacity, transform;
+}
+
+main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .hero-image.is-changing {
+    opacity: 0;
+    transform: scale(1.04);
 }
 
 
@@ -1422,6 +1437,7 @@ main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb img {
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
+
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb:hover img {
@@ -1462,6 +1478,10 @@ main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2 {
     line-height: 1.22;
     letter-spacing: -0.4px;
     color: var(--text-primary);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    will-change: opacity, transform;
 }
 
 main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p {
@@ -1469,6 +1489,16 @@ main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p {
     font-weight: 400;
     line-height: 1.75;
     color: var(--text-secondary);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    will-change: opacity, transform;
+}
+
+main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2.is-changing,
+main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p.is-changing {
+    opacity: 0;
+    transform: translateY(8px);
 }
 
 main .services-sec .serv-grid-cont .serv-main .info-panel .cnltnt-btn {
