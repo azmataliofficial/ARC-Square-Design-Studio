@@ -1,4 +1,4 @@
-# 🏗️ ARC Square Design Studio
+# <img src="images/arc logo.png" alt="ARC Square Design Studio logo" width="28" height="28" style="vertical-align: middle;"> ARC Square Design Studio
 
 ## 🎯 Project Overview
 A complete architecture & design studio website with dynamic content, 
