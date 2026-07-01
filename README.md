@@ -5,12 +5,12 @@ A complete architecture & design studio website with dynamic content,
 responsive design, and real-time WhatsApp integration.
 
 ## ✨ Features
-- ✅ Responsive Design (All devices)
-- ✅ Dynamic Content from JSON
-- ✅ Google Sheets Integration
-- ✅ WhatsApp Chat Widget
-- ✅ Interactive Sliders & Tabs
-- ✅ Performance Optimized
+- ✅ Responsive Design (All devices).
+- ✅ Dynamic Content from JSON.
+- ✅ Google Sheets Integration (AppScript).
+- ✅ WhatsApp Chat Widget Redirect to Chatbox.
+- ✅ Interactive Sliders & Tabs.
+- ✅ Performance Optimized.
 
 ## 🛠️ Tech Stack
 - HTML5, CSS3, JavaScript (ES6+)
