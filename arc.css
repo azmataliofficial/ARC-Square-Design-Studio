@@ -1308,7 +1308,6 @@ main .services-sec {
     margin: 0 auto;
     padding: 100px 0 30px;
     background-color: var(--off-white);
-    /* border-radius: 30px; */
 }
 
 main .services-sec .service-cont {
@@ -1336,9 +1335,8 @@ main .services-sec .serv-grid-cont {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    max-width: 1440px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 40px;
 }
 
 main .services-sec .serv-grid-cont .ctgry-tabs {
@@ -1346,6 +1344,7 @@ main .services-sec .serv-grid-cont .ctgry-tabs {
     justify-content: center;
     gap: 10px;
     padding: 20px 0 8px;
+    animation: var(--cont-animate);
 }
 
 main .services-sec .serv-grid-cont .ctgry-btn {
@@ -1360,9 +1359,15 @@ main .services-sec .serv-grid-cont .ctgry-btn {
     transition: all 0.3s ease;
 }
 
-main .services-sec .serv-grid-cont.ctgry-btn:hover {
-    border-color: var(--border-color);
+main .services-sec .serv-grid-cont .ctgry-btn:hover {
+     border-color: var(--border-color);
     color: var(--medium-yellow);
+}
+
+main .services-sec .serv-grid-cont .ctgry-btn.active {
+    background: var(--medium-yellow);
+    border-color: var(--border-color);
+    color: var(--pure-white);
 }
 
 main .services-sec .serv-grid-cont .serv-main {
@@ -1370,14 +1375,14 @@ main .services-sec .serv-grid-cont .serv-main {
     grid-template-columns: 2fr 1fr;
     gap: 20px;
     padding: 24px 0 40px;
-    flex: 1;
-    align-items: start;
+    animation: var(--cont-animate);
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: all 0.4s ease;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper {
@@ -1385,7 +1390,6 @@ main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper {
     overflow: hidden;
     aspect-ratio: 16 / 9;
     background: var(--bg-card);
-    position: relative;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .hero-image {
@@ -1393,22 +1397,42 @@ main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .her
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.35s ease;
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    will-change: opacity, transform;
 }
 
+main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .hero-image.is-changing {
+    opacity: 0;
+    transform: translateZ(0) scale(1.01);
+}
+
+
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    aspect-ratio: 15/2;
+    display: flex;
     gap: 12px;
+    margin: .75rem auto 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .4rem;
+    scroll-snap-type: x mandatory;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb {
-    border-radius: 12px;
+    flex: 0 0 auto;
     overflow: hidden;
-    aspect-ratio: 3 / 2;
+    border-radius: 8px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transform: translateZ(0);
+    transition: transform 0.2s ease, border-color .12s ease, box-shadow 0.2s ease;
+    scroll-snap-align: start;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb img {
@@ -1416,16 +1440,19 @@ main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb img {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.2s ease;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb:hover img {
-    transform: scale(1.06);
+    transform: scale(1.02);
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb:hover {
-    border-color: rgba(240, 106, 84, 0.5);
-    transform: translateY(-2px);
+    border-color: rgba(240, 106, 84, 0.45);
+    transform: translateY(-1px);
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb.active {
@@ -1443,7 +1470,6 @@ main .services-sec .serv-grid-cont .serv-main .info-panel {
     flex-direction: column;
     justify-content: space-between;
     gap: 32px;
-    min-height: 460px;
 }
 
 main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont {
@@ -1458,6 +1484,10 @@ main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2 {
     line-height: 1.22;
     letter-spacing: -0.4px;
     color: var(--text-primary);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: opacity, transform;
 }
 
 main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p {
@@ -1465,6 +1495,16 @@ main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p {
     font-weight: 400;
     line-height: 1.75;
     color: var(--text-secondary);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: opacity, transform;
+}
+
+main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2.is-changing,
+main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p.is-changing {
+    opacity: 0;
+    transform: translateY(8px);
 }
 
 main .services-sec .serv-grid-cont .serv-main .info-panel .cnltnt-btn {
@@ -1875,14 +1915,6 @@ main .gallery-sec .cont .head p {
     animation: var(--tag-line);
 }
 
-main .gallery-sec .cont .gallery-error-loader {
-    display: none;
-    text-align: center;
-    padding: 3rem;
-    font-size: 1.5rem;
-    color: var(--medium-yellow);
-    font-weight: 900;
-}
 
 main .gallery-sec .cont .photos {
     column-count: 5;

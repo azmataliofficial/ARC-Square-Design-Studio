@@ -35,62 +35,92 @@
   "serviceData": [
     {
       "name": "Interior Design",
-      "title": "Elegant Interior Design",
-      "desc": "Transform your living spaces with our curated interior design solutions. We combine timeless aesthetics with modern sensibilities to create environments that feel both inviting and sophisticated.",
+      "title": "Timeless Elegance Interior Design",
+      "desc": "Elevate your living spaces with our curated interior design solutions that blend timeless aesthetics with modern sophistication. We focus on creating harmonious environments where every element—from texture and color to furniture placement—works together to reflect your unique personality. Our designs balance comfort with visual appeal, ensuring every room feels both inviting and exquisitely refined.",
       "hero": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "thumbs": [
         "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400"
+        "https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/271795/pexels-photo-271795.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=400"
       ]
     },
     {
       "name": "Exterior Design",
-      "title": "Stunning Exterior Facades",
-      "desc": "Make a powerful first impression with architecturally crafted exteriors. From modern minimalism to classic charm, our exterior designs harmonize with the surrounding landscape beautifully.",
+      "title": "Stunning Architectural Facades",
+      "desc": "Make a powerful first impression with architecturally crafted exteriors that seamlessly integrate with their natural surroundings. Whether you prefer sleek modern minimalism or timeless classic charm, our facade designs focus on material harmony, proportion, and curb appeal. We create exterior spaces that not only protect but also inspire, elevating the overall character of your property.",
       "hero": "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "thumbs": [
         "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400"
+        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=400"
       ]
     },
     {
       "name": "2D Planning",
-      "title": "Precise 2D Floor Planning",
-      "desc": "Every great space begins with a thoughtful plan. Our 2D planning services provide clear, accurate floor layouts that optimize flow, natural light, and functional zones for your lifestyle.",
+      "title": "Precision 2D Floor Planning",
+      "desc": "Every exceptional space begins with a meticulously crafted plan. Our 2D planning services deliver detailed, accurate floor layouts that optimize spatial flow, maximize natural light, and define functional zones tailored to your lifestyle. We focus on creating practical yet inspired layouts that ensure seamless movement and efficient use of every square foot, laying the foundation for a perfectly balanced home.",
       "hero": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "thumbs": [
         "https://images.pexels.com/photos/271795/pexels-photo-271795.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?auto=compress&cs=tinysrgb&w=400"
+        "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=400"
       ]
     },
     {
       "name": "3D Rendering",
-      "title": "Modern Luxury Living Room Design",
-      "desc": "Experience the perfect blend of luxury and functionality. Our interior layouts are crafted with minimalist principles, premium materials, and ambient lighting setups tailored perfectly to bring comfort and aesthetics together.",
+      "title": "Immersive 3D Visualization",
+      "desc": "Bring your dream design to life before a single brick is laid. Our 3D rendering services provide hyper-realistic visualizations that capture every detail—from lighting and textures to furniture and décor. Experience a true-to-life preview of your space, allowing you to explore different styles, materials, and layouts with complete confidence. This is where imagination meets reality, ensuring your vision is executed flawlessly.",
       "hero": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "thumbs": [
         "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400"
+        "https://images.pexels.com/photos/3255245/pexels-photo-3255245.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=400"
       ]
     },
     {
       "name": "Architectural Setup",
       "title": "Bespoke Architectural Solutions",
-      "desc": "From concept to completion, our architectural setup services guide you through every stage of the build. Precision engineering meets artistic vision for structures that stand the test of time.",
+      "desc": "Transform your vision into enduring architecture with our comprehensive setup services. We guide you from concept to completion, blending precision engineering with artistic vision to create structures that are both functional and breathtaking. Our approach ensures every phase of the build—from material selection to structural integrity—is executed with excellence, delivering spaces that stand the test of time.",
       "hero": "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1200",
       "thumbs": [
         "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/3288100/pexels-photo-3288100.jpeg?auto=compress&cs=tinysrgb&w=400",
         "https://images.pexels.com/photos/1838640/pexels-photo-1838640.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=400"
+        "https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=400"
       ]
     }
   ],

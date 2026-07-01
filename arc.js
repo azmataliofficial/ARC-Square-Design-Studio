@@ -47,6 +47,7 @@ async function fetchingData() {
 async function init() {
   await fetchingData()
   startTestimonialRotation()
+  initServicesSection()
   renderProject()
   attachProjectCardListeners()
   renderGallery()
@@ -545,9 +546,106 @@ function sendWhatsApp() {
 
 // service section
 
+let activeCategoryIndex = 3
+let activeThumbIndex = -1
 
+function getEliments() {
+  return {
+    heroImage: document.getElementById('heroImage'),
+    panelTitle: document.getElementById('panel-title'),
+    panelDesc: document.getElementById('panel-desc'),
+    categoryBtns: document.querySelectorAll('.ctgry-btn'),
+    thumbContainer: document.querySelector('.thumbnails')
+  }
+}
 
+function getServiceImageUrl(imageUrl, width = 1200) {
+  if (!imageUrl) return imageUrl
 
+  try {
+    const url = new URL(imageUrl)
+    url.searchParams.set('w', String(width))
+    return url.toString()
+  } catch (error) {
+    return imageUrl.replace(/w=\d+/i, `w=${width}`)
+  }
+}
+
+function initServicesSection() {
+  const elements = getEliments()
+
+  if (!elements.heroImage || !elements.panelTitle || !elements.panelDesc || !elements.thumbContainer) {
+    return
+  }
+
+  const services = STATE.data.serviceData || []
+  if (!services.length) {
+    return
+  }
+
+  const categoryButtons = Array.from(elements.categoryBtns)
+  const totalServices = services.length
+
+  function renderServiceContent() {
+    const service = services[activeCategoryIndex] || services[0]
+    if (!service) return
+
+    const previewImage = activeThumbIndex >= 0 && service.thumbs?.[activeThumbIndex]
+      ? getServiceImageUrl(service.thumbs[activeThumbIndex], 1200)
+      : getServiceImageUrl(service.hero, 1200)
+
+    elements.heroImage.classList.add('is-changing')
+    elements.panelTitle.classList.add('is-changing')
+    elements.panelDesc.classList.add('is-changing')
+
+    window.setTimeout(() => {
+      elements.heroImage.src = previewImage
+      elements.heroImage.alt = service.title
+      elements.panelTitle.textContent = service.title
+      elements.panelDesc.textContent = service.desc
+
+      elements.thumbContainer.innerHTML = '';
+
+      (service.thumbs || []).forEach((thumbSrc, index) => {
+        const thumb = document.createElement('div')
+        thumb.className = 'thumb'
+        if (index === activeThumbIndex) {
+          thumb.classList.add('active')
+        }
+        thumb.dataset.index = index
+        thumb.innerHTML = `<img src="${getServiceImageUrl(thumbSrc, 400)}" alt="${service.title} preview ${index + 1}" loading="lazy" />`
+
+        thumb.addEventListener('click', () => {
+          activeThumbIndex = index
+          renderServiceContent()
+        })
+
+        elements.thumbContainer.appendChild(thumb)
+      })
+
+      window.setTimeout(() => {
+        elements.heroImage.classList.remove('is-changing')
+        elements.panelTitle.classList.remove('is-changing')
+        elements.panelDesc.classList.remove('is-changing')
+      }, 40)
+    }, 220)
+  }
+
+  categoryButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      activeCategoryIndex = index < totalServices ? index : 0
+      activeThumbIndex = -1
+
+      categoryButtons.forEach((btn) => btn.classList.remove('active'))
+      button.classList.add('active')
+
+      renderServiceContent()
+    })
+  })
+
+  activeCategoryIndex = Math.min(activeCategoryIndex, totalServices - 1)
+  renderServiceContent()
+}
 
 
 // project section start

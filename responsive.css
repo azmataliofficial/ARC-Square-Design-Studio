@@ -17,7 +17,7 @@
 /* 1200px */
 @media screen and (max-width: 1200px) {
     :root {
-        --container-max-width: 90vw;
+        --container-max-width: 92vw;
     }
 
     header nav .bar {
@@ -56,6 +56,10 @@
 
     main .gallery-sec .cont .photos {
         column-count: 4;
+    }
+
+    main .services-sec .serv-grid-cont .serv-main .showcase{
+        gap: 12px;
     }
 }
 
@@ -127,9 +131,17 @@
         gap: 30px;
     }
 
-    main .services-sec .grid-cont .card {
-        flex-basis: calc(50% - 0.5rem);
+    main .services-sec .serv-grid-cont .ctgry-tabs{
+        flex-wrap: wrap;
     }
+
+    main .services-sec .serv-grid-cont .serv-main {
+        grid-template-columns: 1fr;
+    }
+    main .gallery-sec .cont .photos {
+        column-count: 3;
+    }
+
 
     main .contact-sec .body {
         grid-template-columns: 1fr;
@@ -152,21 +164,6 @@
         align-items: center;
     }
 
-    main .gallery-sec .cont .photos {
-        column-count: 3;
-    }
-
-    main .services-sec .consultation .cont {
-        padding: 30px;
-    }
-
-    main .services-sec .consultation .cont h2 {
-        font-size: 1.8rem;
-    }
-
-    main .services-sec .consultation .cont p {
-        font-size: 1rem;
-    }
 }
 
 
@@ -422,43 +419,25 @@
         max-width: 100%;
     }
 
-    /* Services */
-    main .services-sec {
-        padding: 80px 0 20px;
+    main .services-sec .serv-grid-cont .ctgry-btn{
+        font-size: 0.75rem;
     }
 
-    main .services-sec .service-cont h2 {
-        font-size: 2.5rem;
+    main .services-sec .serv-grid-cont .serv-main{
+        gap: 30px;
     }
 
-    main .services-sec .service-cont p {
-        font-size: 1rem;
+    main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails{
+        aspect-ratio: 14/2;
+    }
+    main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2 {
+        font-size: 24px;
     }
 
-    main .services-sec .grid-cont .card {
-        flex-basis: 100%;
+    main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p{
+        font-size: 13px;
     }
 
-    main .services-sec .grid-cont .card .image {
-        height: 300px;
-    }
-
-    main .services-sec .consultation {
-        padding: 30px 15px;
-    }
-
-    main .services-sec .consultation .cont {
-        padding: 25px;
-    }
-
-    main .services-sec .consultation .cont h2 {
-        font-size: 1.5rem;
-    }
-
-    main .services-sec .consultation .cont button {
-        padding: 8px 16px;
-        font-size: 16px;
-    }
 
     /* Projects */
     main .project-sec {
@@ -701,22 +680,7 @@
         font-size: 20px;
     }
 
-
-    main .about-sec .container1 .content h2 {
-        font-size: 2rem;
-    }
-
-    main .about-sec .container2 .contents h2 {
-        font-size: 1.5rem;
-    }
-
-    main .about-sec .container3 .grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-
-    /* FAQ */
+        /* FAQ */
     main .main-content .faq-sec {
         padding: 24px 0px;
     }
@@ -752,47 +716,43 @@
     }
 
 
-
-    /* Services */
-    main .services-sec .service-cont h2 {
+    main .about-sec .container1 .content h2 {
         font-size: 2rem;
     }
 
-    main .services-sec .grid-cont .card .image {
-        height: 225px;
+    main .about-sec .container2 .contents h2 {
+        font-size: 1.5rem;
     }
 
-    main .services-sec .grid-cont .card .content {
-        padding: 0.5rem 1.25rem;
+    main .about-sec .container3 .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    main .services-sec .grid-cont .card .content .description {
-        height: 80px;
-        font-size: 0.9rem;
+    main .services-sec .service-cont h2{
+        font-size: 2rem;
     }
 
-    main .services-sec .consultation .cont {
-        padding: 20px;
+    main .services-sec .service-cont p{
+        font-size: 1rem;
     }
 
-    main .services-sec .consultation .cont h2 {
-        font-size: 1.3rem;
+    main .services-sec .serv-grid-cont .ctgry-btn{
+        padding: 0.5rem 1.2rem;
     }
 
-    main .services-sec .consultation .cont p {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
+    main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails{
+        aspect-ratio: 13/2.1;
     }
 
-    main .services-sec .consultation .cont button {
-        padding: 8px 14px;
-        font-size: 14px;
+        main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2 {
+        font-size: 20px;
     }
 
-    main .services-sec .consultation .cont button i {
-        font-size: 16px;
-        padding: 8px;
+    main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p{
+        font-size: 12px;
     }
+
 
 
     /* Projects */
@@ -1048,15 +1008,6 @@
         font-size: 1.4rem;
     }
 
-    main .services-sec .service-cont h2 {
-        font-size: 1.8rem;
-    }
-
-    main .services-sec .consultation .cont button {
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-
     main .project-sec .pro-head h2 {
         font-size: 1.8rem;
     }
@@ -1119,7 +1070,6 @@
     .main-content .hero-sec .dots,
     footer .footer-bottom p a,
     .pro-overlay,
-    .services-sec .consultation button,
     .contact-sec .body form button {
         display: none !important;
     }
