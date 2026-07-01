@@ -24,7 +24,17 @@ responsive design, and real-time WhatsApp integration.
 ## 📸 Screenshots
 ![alt text](images/image-1.png)
 
+![alt text](images/image3.png)
+
 ![alt text](images/image-2.png)
+
+![alt text](images/image4.png)
+
+![alt text](images/image5.png)
+
+![alt text](images/image6.png)
+
+![alt text](images/image7.png)
 
 ## 👨‍💻 Author
 AZMAT ALI - [[LinkedIn Profile](https://www.linkedin.com/in/azmataliofficial/)]
