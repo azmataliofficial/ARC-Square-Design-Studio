@@ -117,6 +117,25 @@ body {
     }
 }
 
+
+.typing-heading {
+    font-size: 1.3rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+    display: block;
+    white-space: nowrap;
+    border-right: 2px solid #1e1e1e;
+    padding-right: 6px;
+    animation: blinkCaret 0.75s step-end infinite;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.typing-heading.visible {
+    opacity: 1;
+}
+
+
 header {
     position: relative;
     /* min-height: 120px; */
@@ -1319,17 +1338,17 @@ main .services-sec .service-cont {
 
 main .services-sec .service-cont h2 {
     font-size: var(--main-heading);
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-weight: 700;
     color: var(--text-primary);
     animation: var(--heading);
 }
 
-main .services-sec .service-cont p {
+/* main .services-sec .service-cont p {
     font-size: var(--tagline);
     color: var(--slate-gray);
     animation: var(--tag-line);
-}
+} */
 
 main .services-sec .serv-grid-cont {
     display: flex;
@@ -1343,7 +1362,7 @@ main .services-sec .serv-grid-cont .ctgry-tabs {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 20px 0 8px;
+    padding: 0 0 8px;
     animation: var(--cont-animate);
 }
 
@@ -1360,7 +1379,7 @@ main .services-sec .serv-grid-cont .ctgry-btn {
 }
 
 main .services-sec .serv-grid-cont .ctgry-btn:hover {
-     border-color: var(--border-color);
+    border-color: var(--border-color);
     color: var(--medium-yellow);
 }
 
@@ -1546,23 +1565,23 @@ main .project-sec {
 
 main .project-sec .pro-head {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 main .project-sec .pro-head h2 {
     font-size: var(--main-heading);
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-weight: 700;
     color: var(--text-primary);
     animation: var(--heading);
 }
 
-main .project-sec .pro-head p {
+/* main .project-sec .pro-head p {
     font-size: var(--tagline);
     margin: auto;
     color: var(--slate-gray);
     animation: var(--tag-line);
-}
+} */
 
 main .project-sec .pro-cont {
     position: relative;
@@ -1902,18 +1921,18 @@ main .gallery-sec .cont .head {
 
 main .gallery-sec .cont .head h1 {
     font-size: var(--main-heading);
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-weight: 700;
     color: var(--text-primary);
     animation: var(--heading);
 }
 
-main .gallery-sec .cont .head p {
+/* main .gallery-sec .cont .head p {
     font-size: var(--tag-line);
     margin: 0 0 30px auto;
     color: var(--slate-gray);
     animation: var(--tag-line);
-}
+} */
 
 
 main .gallery-sec .cont .photos {
@@ -1997,7 +2016,7 @@ main .contact-sec {
 
 main .contact-sec .head {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 main .contact-sec .head h1 {
@@ -2007,11 +2026,11 @@ main .contact-sec .head h1 {
     animation: var(--heading);
 }
 
-main .contact-sec .head p {
+/* main .contact-sec .head p {
     font-size: var(--tagline);
     color: var(--slate-gray);
     animation: var(--tag-line);
-}
+} */
 
 /* contact tab 1 */
 main .contact-sec .body {

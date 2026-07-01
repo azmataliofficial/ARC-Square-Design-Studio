@@ -3,7 +3,7 @@
 const STATE = {
   data: {
     testimonialData: [],
-    serviceData:[],
+    serviceData: [],
     projectCardDetails: [],
     galleryData: []
   },
@@ -31,7 +31,7 @@ async function fetchingData() {
 
     STATE.data = {
       testimonialData: allData.testimonialData,
-      serviceData : allData.serviceData,
+      serviceData: allData.serviceData,
       projectCardDetails: allData.projectCardDetails,
       galleryData: allData.galleryData
     }
@@ -53,6 +53,44 @@ async function init() {
   renderGallery()
 }
 
+const headingDelay = 0;
+
+function animateTypingInSection(section) {
+  if (!section) return;
+
+  const paragraphs = Array.from(section.querySelectorAll('.typing-heading'));
+
+  paragraphs.forEach((paragraph, index) => {
+    const fullText = paragraph.dataset.originalText || paragraph.textContent.trim();
+    paragraph.dataset.originalText = fullText;
+    paragraph.textContent = '';
+    paragraph.classList.remove('visible', 'done');
+    paragraph.style.borderRight = '2px solid #1e1e1e';
+
+    let charIndex = 0;
+    let timer = null;
+
+    function typeNextChar() {
+      if (charIndex >= fullText.length) {
+        paragraph.classList.add('done');
+        paragraph.style.borderRight = 'none';
+        clearTimeout(timer);
+        return;
+      }
+
+      paragraph.textContent = fullText.substring(0, charIndex + 1);
+      charIndex++;
+      timer = setTimeout(typeNextChar, 90);
+    }
+
+    setTimeout(() => {
+      paragraph.classList.add('visible');
+      typeNextChar();
+    }, headingDelay + index * 0);
+  });
+}
+
+
 
 
 
@@ -69,12 +107,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 
+  const initialSection = document.getElementById("home") || document.querySelector('.slide-sec');
+  if (initialSection) {
+    animateTypingInSection(initialSection);
+  }
+
   function showSection(sectionId) {
     navContaners.forEach((cont) => {
       if (cont.id == sectionId) {
         cont.style.display = "block"
         setTimeout(() => {
           cont.style.opacity = "1"
+          animateTypingInSection(cont)
         }, 100)
       } else {
         cont.style.opacity = "0"
@@ -657,7 +701,7 @@ tabs.forEach((tab) => {
     this.classList.add("active");
     let category = this.getAttribute("data-category");
     let cards = document.querySelectorAll(".pro-card");
-    
+
     cards.forEach((card) => {
       if (
         category === "all" ||
@@ -685,8 +729,8 @@ function renderProject() {
     const element = STATE.data.projectCardDetails[cards];
     let mainContainer = document.getElementById("projectGridCont");
 
-    mainContainer.innerHTML += 
-        `
+    mainContainer.innerHTML +=
+      `
           <div class="pro-card card-animate" data-category="${element.dataCategory}" data-id="card${cards + 1}">
             <div class="pro-img-cont">
               <img 
