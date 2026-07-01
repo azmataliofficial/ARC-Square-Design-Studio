@@ -559,6 +559,18 @@ function getEliments() {
   }
 }
 
+function getServiceImageUrl(imageUrl, width = 1200) {
+  if (!imageUrl) return imageUrl
+
+  try {
+    const url = new URL(imageUrl)
+    url.searchParams.set('w', String(width))
+    return url.toString()
+  } catch (error) {
+    return imageUrl.replace(/w=\d+/i, `w=${width}`)
+  }
+}
+
 function initServicesSection() {
   const elements = getEliments()
 
@@ -579,44 +591,44 @@ function initServicesSection() {
     if (!service) return
 
     const previewImage = activeThumbIndex >= 0 && service.thumbs?.[activeThumbIndex]
-      ? service.thumbs[activeThumbIndex]
-      : service.hero
+      ? getServiceImageUrl(service.thumbs[activeThumbIndex], 1200)
+      : getServiceImageUrl(service.hero, 1200)
 
     elements.heroImage.classList.add('is-changing')
     elements.panelTitle.classList.add('is-changing')
     elements.panelDesc.classList.add('is-changing')
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        elements.heroImage.src = previewImage
-        elements.heroImage.alt = service.title
-        elements.panelTitle.textContent = service.title
-        elements.panelDesc.textContent = service.desc
+    window.setTimeout(() => {
+      elements.heroImage.src = previewImage
+      elements.heroImage.alt = service.title
+      elements.panelTitle.textContent = service.title
+      elements.panelDesc.textContent = service.desc
 
-        elements.thumbContainer.innerHTML = '';
+      elements.thumbContainer.innerHTML = '';
 
-        (service.thumbs || []).forEach((thumbSrc, index) => {
-          const thumb = document.createElement('div')
-          thumb.className = 'thumb'
-          if (index === activeThumbIndex) {
-            thumb.classList.add('active')
-          }
-          thumb.dataset.index = index
-          thumb.innerHTML = `<img src="${thumbSrc}" alt="${service.title} preview ${index + 1}" loading="lazy" />`
+      (service.thumbs || []).forEach((thumbSrc, index) => {
+        const thumb = document.createElement('div')
+        thumb.className = 'thumb'
+        if (index === activeThumbIndex) {
+          thumb.classList.add('active')
+        }
+        thumb.dataset.index = index
+        thumb.innerHTML = `<img src="${getServiceImageUrl(thumbSrc, 400)}" alt="${service.title} preview ${index + 1}" loading="lazy" />`
 
-          thumb.addEventListener('click', () => {
-            activeThumbIndex = index
-            renderServiceContent()
-          })
-
-          elements.thumbContainer.appendChild(thumb)
+        thumb.addEventListener('click', () => {
+          activeThumbIndex = index
+          renderServiceContent()
         })
 
+        elements.thumbContainer.appendChild(thumb)
+      })
+
+      window.setTimeout(() => {
         elements.heroImage.classList.remove('is-changing')
         elements.panelTitle.classList.remove('is-changing')
         elements.panelDesc.classList.remove('is-changing')
-      })
-    })
+      }, 40)
+    }, 220)
   }
 
   categoryButtons.forEach((button, index) => {

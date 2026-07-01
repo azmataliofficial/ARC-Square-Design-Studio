@@ -1308,7 +1308,6 @@ main .services-sec {
     margin: 0 auto;
     padding: 100px 0 30px;
     background-color: var(--off-white);
-    /* border-radius: 30px; */
 }
 
 main .services-sec .service-cont {
@@ -1345,6 +1344,7 @@ main .services-sec .serv-grid-cont .ctgry-tabs {
     justify-content: center;
     gap: 10px;
     padding: 20px 0 8px;
+    animation: var(--cont-animate);
 }
 
 main .services-sec .serv-grid-cont .ctgry-btn {
@@ -1375,6 +1375,7 @@ main .services-sec .serv-grid-cont .serv-main {
     grid-template-columns: 2fr 1fr;
     gap: 20px;
     padding: 24px 0 40px;
+    animation: var(--cont-animate);
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase {
@@ -1397,14 +1398,16 @@ main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .her
     object-fit: cover;
     display: block;
     opacity: 1;
-    transform: scale(1);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: opacity 0.45s ease, transform 0.45s ease;
     will-change: opacity, transform;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .hero-image-wrapper .hero-image.is-changing {
     opacity: 0;
-    transform: scale(1.04);
+    transform: translateZ(0) scale(1.01);
 }
 
 
@@ -1427,7 +1430,8 @@ main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb {
     border-radius: 8px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+    transform: translateZ(0);
+    transition: transform 0.2s ease, border-color .12s ease, box-shadow 0.2s ease;
     scroll-snap-align: start;
 }
 
@@ -1436,17 +1440,19 @@ main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb img {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
-
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.2s ease;
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb:hover img {
-    transform: scale(1.06);
+    transform: scale(1.02);
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb:hover {
-    border-color: rgba(240, 106, 84, 0.5);
-    transform: translateY(-2px);
+    border-color: rgba(240, 106, 84, 0.45);
+    transform: translateY(-1px);
 }
 
 main .services-sec .serv-grid-cont .serv-main .showcase .thumbnails .thumb.active {
@@ -1480,7 +1486,7 @@ main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont h2 {
     color: var(--text-primary);
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
     will-change: opacity, transform;
 }
 
@@ -1491,7 +1497,7 @@ main .services-sec .serv-grid-cont .serv-main .info-panel .info-cont p {
     color: var(--text-secondary);
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease;
     will-change: opacity, transform;
 }
 
@@ -1909,14 +1915,6 @@ main .gallery-sec .cont .head p {
     animation: var(--tag-line);
 }
 
-main .gallery-sec .cont .gallery-error-loader {
-    display: none;
-    text-align: center;
-    padding: 3rem;
-    font-size: 1.5rem;
-    color: var(--medium-yellow);
-    font-weight: 900;
-}
 
 main .gallery-sec .cont .photos {
     column-count: 5;
