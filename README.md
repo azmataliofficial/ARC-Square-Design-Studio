@@ -22,18 +22,26 @@ responsive design, and real-time WhatsApp integration.
 [arc-square.sandbox.app](https://xrylq4.csb.app/#home)
 
 ## 📸 Screenshots
+
+# Webloader.
 ![alt text](images/image-1.png)
 
+# Home
 ![alt text](images/image3.png)
 
+# About
 ![alt text](images/image-2.png)
 
+# Services
 ![alt text](images/image4.png)
 
+# Projects
 ![alt text](images/image5.png)
 
+# Gallery
 ![alt text](images/image6.png)
 
+# Contact
 ![alt text](images/image7.png)
 
 ## 👨‍💻 Author
