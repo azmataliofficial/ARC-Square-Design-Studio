@@ -1,3 +1,25 @@
+function hideLoader() {
+  const loader = document.getElementById('loader-overlay');
+  const mainContent = document.getElementById('mainContent');
+
+  loader.classList.add('hidden');
+  mainContent.classList.add('visible');
+  document.body.style.overflow = 'auto';
+}
+
+window.addEventListener('load', function () {
+  setTimeout(hideLoader, 1500);
+});
+
+setTimeout(function () {
+  const loader = document.getElementById('loader-overlay');
+  if (!loader.classList.contains('hidden')) {
+    hideLoader();
+  }
+}, 5000);
+
+
+
 // create a STATE object for all api response data hendale
 
 const STATE = {
