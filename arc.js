@@ -545,7 +545,18 @@ function sendWhatsApp() {
 
 // service section
 
+let activeCategoryIndex = 3
+let activeThumbIndex = 0
 
+function getEliments(){
+  return{
+    heroImage : document.getElementById('heroImage'),
+    panelTitel : document.getElementById('panel-title'),
+    panelDesc : document.getElementById('panel-desc'),
+    categoryBtns: document.querySelectorAll('.ctgry-btn'),
+    thumbs: document.querySelectorAll('.thumb')
+
+}}
 
 
 
